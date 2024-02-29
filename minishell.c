@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:10:31 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/02/28 16:20:51 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/02/29 12:13:40 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	free_tree(t_shell *shell)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = 0;
 	while (shell->cmd_tree[i])
@@ -35,14 +35,7 @@ void	free_tree(t_shell *shell)
 
 void	setup_shell(t_shell *shell, char **envp)
 {
-	int	i;
-
-	i = 0;
-	while (i < 10)
-	{
-		shell->cmd_tree[i] = NULL;
-		i++;
-	}
+	shell->cmd_tree = NULL;
 	shell->line = NULL;
 	shell->status = 1;
 	shell->env = envp;
