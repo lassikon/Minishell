@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 13:30:24 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/01 16:06:45 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/01 16:18:09 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ Extracted parts in the line get replaced with '\0'.
 1. Extract redirections from the line and store them in the t_cmd struct.
 	- Redirection arrows and filenames are stored in an array.
 	- File is the first word after the redirection arrow.
-	- Flag heredoc (<<) and append (>>) if necessary.
 
 2. Extract the command from the line and store it in the t_cmd struct.
 	- Command is the first word that is not a filename for a redirection.
