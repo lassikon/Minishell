@@ -6,39 +6,35 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 16:16:29 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/01 16:12:05 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/01 17:55:42 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-void	print_tree(t_cmd **cmd_tree)
+void	print_tree(t_shell *shell)
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	while (cmd_tree[i])
+	while (i < shell->cmd_count)
 	{
-		j = 0;
-		ft_putstr_fd("cmd: ", 1);
-		ft_putendl_fd(cmd_tree[i]->cmd, 1);
-		ft_putstr_fd("args: ", 1);
-		while (cmd_tree[i]->args[j])
+		/* j = 0;
+		printf("cmd[%d]: %s\n", i, shell->cmd_tree[i].cmd);
+		 while (shell->cmd_tree[i].args[j])
 		{
-			ft_putstr_fd(cmd_tree[i]->args[j], 1);
-			ft_putstr_fd(" ", 1);
+			printf("args[%d]: %s\n", j, shell->cmd_tree[i].args[j]);
+			j++;
+		} */
+		j = 0;
+		printf("\nPrinting redirections for cmd[%d]\n", i);
+		while (shell->cmd_tree[i].redir[j])
+		{
+			printf("redir[%d]: %s\n", j, shell->cmd_tree[i].redir[j]);
 			j++;
 		}
-		ft_putstr_fd("\nredirs: ", 1);
-		j = 0;
-		while (cmd_tree[i]->redir[j])
-		{
-			ft_putstr_fd(cmd_tree[i]->redir[j], 1);
-			ft_putstr_fd(" ", 1);
-			j++;
-		}
-		ft_putstr_fd("\n", 1);
+		printf("\n");
 		i++;
 	}
 }

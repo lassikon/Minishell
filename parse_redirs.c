@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 13:03:52 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/01 16:13:04 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/01 17:53:13 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static void	delete_from_line(char *line, int start, int end)
 {
 	while (start < end)
 	{
-		line[start] = '\0';
+		line[start] = ' ';
 		start++;
 	}
 }
@@ -59,16 +59,13 @@ static int	get_redirection(t_shell *shell, t_cmd *cmd, int i, int index)
 
 	(void)shell;
 	len = 0;
-	while (cmd->line[i] == '>' || cmd->line[i] == '<')
+	while (cmd->line[i + len] == '>' || cmd->line[i + len] == '<')
 		len++;
-	if (cmd->line[i + len] == ' ')
-	{
-		while (cmd->line[i + len] == ' ')
-			len++;
-	}
+	while (cmd->line[i + len] == ' ')
+		len++;
 	while (cmd->line[i + len] && cmd->line[i + len] != ' ')
 		len++;
-	cmd->redir[index] = ft_substr(cmd->line, i, len);
+	cmd->redir[index] = ft_substr(cmd->line, i, len );
 	if (!cmd->redir[index])
 		exit(1);
 	delete_from_line(cmd->line, i, i + len);
@@ -78,25 +75,29 @@ static int	get_redirection(t_shell *shell, t_cmd *cmd, int i, int index)
 void	extract_redirections(t_shell *shell, t_cmd *cmd)
 {
 	int	i;
-	int	redir_count;
 	int	redir_index;
 
 	i = 0;
 	redir_index = 0;
-	redir_count = count_redirections(cmd->line);
-	if (redir_count == -1)
+	cmd->redir_count = count_redirections(cmd->line);
+	if (cmd->redir_count == -1)
 		exit(1);
-	cmd->redir = (char **)malloc(sizeof(char *) * (redir_count + 1));
+	if (cmd->redir_count == 0)
+		return ;
+	cmd->redir = (char **)malloc(sizeof(char *) * (cmd->redir_count + 1));
 	if (!cmd->redir)
 		exit(1);
 	while (cmd->line[i])
 	{
+		// printf("index: %d\n", i);
 		if (cmd->line[i] == '>' || cmd->line[i] == '<')
 		{
+			// printf("getting redirection %d\n", redir_index);
 			i = get_redirection(shell, cmd, i, redir_index);
 			redir_index++;
 		}
 		else
 			i++;
 	}
+	cmd->redir[cmd->redir_count] = NULL;
 }

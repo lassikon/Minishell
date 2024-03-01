@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 12:19:16 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/01 15:56:21 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/01 17:29:07 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ static void	init_command(t_cmd *cmd)
 	cmd->cmd = NULL;
 	cmd->args = NULL;
 	cmd->redir = NULL;
+	cmd->redir_count = 0;
 }
 
 void	init_tree(t_shell *shell)

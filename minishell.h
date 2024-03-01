@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/01 16:15:35 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/01 17:40:21 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct s_cmd
 	char	*cmd;
 	char	**args;
 	char	**redir; // array of <, >, >> or << + filename
+	int		redir_count;
 }	t_cmd;
 
 typedef struct s_shell
@@ -48,6 +49,6 @@ void	init_tree(t_shell *shell);
 void	extract_redirections(t_shell *shell, t_cmd *cmd);
 
 //debug.c
-void	print_tree(t_cmd **cmd_tree);
+void	print_tree(t_shell *shell);
 
 #endif

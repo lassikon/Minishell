@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 13:30:24 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/01 16:18:09 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/01 18:03:02 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 /*
 SPLIT IDEA
 
-Extracted parts in the line get replaced with '\0'.
+Extracted parts in the line get replaced with ' '.
 
 1. Extract redirections from the line and store them in the t_cmd struct.
 	- Redirection arrows and filenames are stored in an array.
@@ -40,6 +40,7 @@ void	parse_line(t_shell *shell)
 {
 	int	i;
 
+	// printf("checking for pipes\n");
 	if (!ft_strchr(shell->line, '|'))
 	{
 		shell->cmd_count = 1;
@@ -48,9 +49,11 @@ void	parse_line(t_shell *shell)
 		m_split(shell, &shell->cmd_tree[0]);
 		return ;
 	}
+	// printf("splitting pipes\n");
 	shell->pipe_split = ft_split(shell->line, '|');
 	while (shell->pipe_split[shell->cmd_count])
 		shell->cmd_count++;
+	// printf("init tree\n");
 	init_tree(shell);
 	i = 0;
 	while (shell->pipe_split[i])
