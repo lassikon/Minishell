@@ -6,39 +6,43 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:10:31 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/02/29 12:13:40 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/01 16:14:40 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
+void	free_array(char **array)
+{
+	int	i;
+
+	i = 0;
+	while (array[i])
+	{
+		free(array[i]);
+		i++;
+	}
+	free(array);
+}
+
 void	free_tree(t_shell *shell)
 {
 	int	i;
-	int	j;
 
 	i = 0;
-	while (shell->cmd_tree[i])
+	if (!shell->cmd_tree)
+		return ;
+	while (i < shell->cmd_count)
 	{
-		j = 0;
-		while (shell->cmd_tree[i][j])
-		{
-			free(shell->cmd_tree[i][j]);
-			shell->cmd_tree[i][j] = NULL;
-			j++;
-		}
-		free(shell->cmd_tree[i]);
-		shell->cmd_tree[i] = NULL;
+		if (shell->cmd_tree[i].cmd)
+			free(shell->cmd_tree[i].cmd);
+		if (shell->cmd_tree[i].args)
+			free_array(shell->cmd_tree[i].args);
+		if (shell->cmd_tree[i].redir)
+			free_array(shell->cmd_tree[i].redir);
 		i++;
 	}
-}
-
-void	setup_shell(t_shell *shell, char **envp)
-{
-	shell->cmd_tree = NULL;
-	shell->line = NULL;
-	shell->status = 1;
-	shell->env = envp;
+	free(shell->cmd_tree);
 }
 
 int	main(int argc, char **argv, char **envp)
@@ -57,7 +61,7 @@ int	main(int argc, char **argv, char **envp)
 			if (ft_strcmp(shell.line, "exit") == 0)
 				shell.status = 0;
 			parse_line(&shell);
-			print_tree(&shell);
+			print_tree(&shell.cmd_tree); // for debugging
 			// shell.status = run_command(&shell);
 			free(shell.line);
 			free_tree(&shell);

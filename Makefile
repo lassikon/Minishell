@@ -6,7 +6,9 @@ LIBFT_DIR	:= ./libft
 HEADERS	:= -I $(LIBFT)/include -I /opt/Homebrew/opt/readline/include
 LIBFT	:= $(LIBFT_DIR)/libft.a
 SRCS	:= 	minishell.c \
+			init.c \
 			parser.c \
+			parse_redirs.c \
 			debug.c
 			
 OBJS	:= ${SRCS:.c=.o}

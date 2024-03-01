@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/02/29 14:55:29 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/01 16:15:35 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,10 @@
 
 typedef struct s_cmd
 {
+	char	*line; // raw input string to be parsed
 	char	*cmd;
 	char	**args;
-	int		fd_in;
-	int		fd_out;
+	char	**redir; // array of <, >, >> or << + filename
 }	t_cmd;
 
 typedef struct s_shell
@@ -36,16 +36,18 @@ typedef struct s_shell
 	char	**env;
 	char	*line;
 	char	**pipe_split;
-	char	***cmd_tree;
-	t_cmd	**cmd_tree;
-	int		branch_size;
+	t_cmd	*cmd_tree;
+	int		cmd_count;
 	int		line_len;
 	int		status;
 }	t_shell;
 
 void	parse_line(t_shell *shell);
+void	setup_shell(t_shell *shell, char **envp);
+void	init_tree(t_shell *shell);
+void	extract_redirections(t_shell *shell, t_cmd *cmd);
 
 //debug.c
-void	print_tree(t_shell *shell);
+void	print_tree(t_cmd **cmd_tree);
 
 #endif
