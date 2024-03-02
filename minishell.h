@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/01 17:40:21 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/02 15:39:31 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,11 @@ void	parse_line(t_shell *shell);
 void	setup_shell(t_shell *shell, char **envp);
 void	init_tree(t_shell *shell);
 void	extract_redirections(t_shell *shell, t_cmd *cmd);
+void	extract_command(t_shell *shell, t_cmd *cmd);
+void	extract_args(t_shell *shell, t_cmd *cmd);
+void	delete_from_line(char *line, int start, int end);
+void	remove_spaces(char *str);
+char	*add_one_space(char *str);
 
 //debug.c
 void	print_tree(t_shell *shell);

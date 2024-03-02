@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 13:03:52 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/01 17:53:13 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/02 15:48:24 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,27 @@ static int	count_redirections(char *line)
 	return (count);
 }
 
-static void	delete_from_line(char *line, int start, int end)
+
+static void	tidy_format(t_shell *shell, int i)
 {
-	while (start < end)
+	char	*str;
+
+	str = shell->cmd_tree->redir[i];
+	if (str[1] == ' ')
 	{
-		line[start] = ' ';
-		start++;
+		if (str[2] != ' ')
+			return ;
+		else
+			remove_spaces(&str[2]);
 	}
+	else if (str[1] == '<' || str[1] == '>')
+	{
+		if (str[2] == ' ')
+			remove_spaces(&str[2]);
+	}
+	else
+		str = add_one_space(str);
+	shell->cmd_tree->redir[i] = str;
 }
 
 static int	get_redirection(t_shell *shell, t_cmd *cmd, int i, int index)
@@ -68,6 +82,7 @@ static int	get_redirection(t_shell *shell, t_cmd *cmd, int i, int index)
 	cmd->redir[index] = ft_substr(cmd->line, i, len );
 	if (!cmd->redir[index])
 		exit(1);
+	tidy_format(shell, index);
 	delete_from_line(cmd->line, i, i + len);
 	return (i + len);
 }

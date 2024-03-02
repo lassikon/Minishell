@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 12:19:16 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/01 17:29:07 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/02 16:27:50 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	init_tree(t_shell *shell)
 	int	i;
 
 	i = 0;
-	shell->cmd_tree = malloc(sizeof(t_cmd *) * (shell->cmd_count + 1));
+	shell->cmd_tree = malloc(sizeof(t_cmd) * (shell->cmd_count + 1));
 	if (!shell->cmd_tree)
 	{
 		ft_putstr_fd("Error: malloc failed\n", 2);

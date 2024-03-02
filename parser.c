@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 13:30:24 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/01 21:56:49 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/02 16:33:10 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ Extracted parts in the line get replaced with ' '.
 void	m_split(t_shell *shell, t_cmd *cmd)
 {
 	extract_redirections(shell, cmd);
-	// extract_command(shell, cmd);
-	// extract_args(shell, cmd);
+	extract_command(shell, cmd);
+	extract_args(shell, cmd);
 }
 
 void	parse_line(t_shell *shell)
@@ -46,6 +46,7 @@ void	parse_line(t_shell *shell)
 		shell->cmd_count = 1;
 		shell->cmd_tree = malloc(sizeof(t_cmd) * 2);
 		shell->cmd_tree[0].line = ft_strdup(shell->line);
+		shell->cmd_tree[1].line = NULL;
 		m_split(shell, &shell->cmd_tree[0]);
 		return ;
 	}
@@ -53,15 +54,18 @@ void	parse_line(t_shell *shell)
 	shell->pipe_split = ft_split(shell->line, '|');
 	while (shell->pipe_split[shell->cmd_count])
 		shell->cmd_count++;
+	// printf("cmd_count: %d\n", shell->cmd_count);
 	// printf("init tree\n");
 	init_tree(shell);
 	i = 0;
 	while (shell->pipe_split[i])
 	{
+		// printf("parsing cmd %d\n", i);
 		shell->cmd_tree[i].line = ft_strdup(shell->pipe_split[i]);
 		m_split(shell, &shell->cmd_tree[i]);
 		free(shell->pipe_split[i]);
 		i++;
 	}
+	shell->cmd_tree[i].line = NULL;
 	free(shell->pipe_split);
 }

@@ -6,18 +6,18 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:10:31 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/01 17:58:03 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/02 16:20:30 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-void	free_array(char **array, int size)
+void	free_array(char **array)
 {
 	int	i;
 
 	i = 0;
-	while (i < size)
+	while (array[i])
 	{
 		free(array[i]);
 		i++;
@@ -36,10 +36,10 @@ void	free_tree(t_shell *shell)
 	{
 		if (shell->cmd_tree[i].cmd)
 			free(shell->cmd_tree[i].cmd);
-	/* 	if (shell->cmd_tree[i].args)
-			free_array(shell->cmd_tree[i].args); */
+	 	if (shell->cmd_tree[i].args)
+			free_array(shell->cmd_tree[i].args);
 		if (shell->cmd_tree[i].redir)
-			free_array(shell->cmd_tree[i].redir, shell->cmd_tree[i].redir_count);
+			free_array(shell->cmd_tree[i].redir);
 		i++;
 	}
 	free(shell->cmd_tree);
