@@ -6,7 +6,7 @@
 /*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/04 14:38:40 by okarejok         ###   ########.fr       */
+/*   Updated: 2024/03/04 17:50:50 by okarejok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,9 @@ typedef struct s_cmd
 	char	**args;
 	char	**redir; // array of <, >, >> or << + filename
 	int		redir_count;
+	int		infile;
+	int		outfile;
+	int		cmd_index;
 }	t_cmd;
 
 typedef struct s_shell
@@ -43,7 +46,7 @@ typedef struct s_shell
 	int		line_len;
 	int		status;
 	int		pid[1024];
-	int		pipe[2];
+	int		pipe[1024][2];
 }	t_shell;
 
 void	parse_line(t_shell *shell);
@@ -59,7 +62,7 @@ int		skip_quotes(char *line, int i);
 void	remove_quotes(char *str);
 void    do_fork(t_shell *shell);
 void    handle_child(t_shell *shell, int i);
-void    redir_to_file(t_shell *shell);
+void    redir_to_file(t_shell *shell, int index);
 void    redir_to_pipe(t_shell *shell, int index);
 void	wait_children(t_shell *shell);
 void	paths(t_shell *shell, char **envp);

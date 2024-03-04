@@ -6,7 +6,7 @@
 /*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:10:31 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/04 14:43:06 by okarejok         ###   ########.fr       */
+/*   Updated: 2024/03/04 18:05:04 by okarejok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ int	main(int argc, char **argv, char **envp)
 			else
 			{
 				parse_line(&shell);
+				
 				print_tree(&shell); // for debugging
 				run_command(&shell);
 				//free_tree(&shell);

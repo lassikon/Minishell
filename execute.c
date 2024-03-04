@@ -6,7 +6,7 @@
 /*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:19:05 by okarejok          #+#    #+#             */
-/*   Updated: 2024/03/04 15:45:07 by okarejok         ###   ########.fr       */
+/*   Updated: 2024/03/04 17:53:15 by okarejok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	run_command(t_shell *shell)
 {
 	open_pipes(shell);
 	do_fork(shell);
-	close_pipes(shell);
 }
 
 static void	execve_with_path(t_shell *shell, char *cmd, char **envp, int index)
@@ -54,18 +53,20 @@ void	do_fork(t_shell *shell)
 			exit(1);
 		}
 		if (shell->pid[i] == 0)
+		{
+			printf("i: %d cmd_index: %d\n",i, shell->cmd_tree[i].cmd_index);
 			handle_child(shell, i);
-		printf("%s done!\n", shell->cmd_tree[i].cmd);
+		}
 		i++;
 	}
+	close_pipes(shell);
 	wait_children(shell);
 }
 
 void	handle_child(t_shell *shell, int i)
 {
-	printf("\nIndex of i: %d\n", i);
 	if (shell->cmd_tree[i].redir_count > 0)
-		redir_to_file(shell);
+		redir_to_file(shell, i);
 	if (shell->cmd_count > 1)
 		redir_to_pipe(shell, i);
 	if (ft_strchr(shell->cmd_tree[i].cmd, '/'))

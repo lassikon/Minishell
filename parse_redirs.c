@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_redirs.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 13:03:52 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/04 14:16:31 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/04 17:42:54 by okarejok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,11 @@ static int	count_redirections(char *line)
 }
 
 
-static void	tidy_format(t_shell *shell, int i)
+static void	tidy_format(t_cmd *cmd, int i)
 {
 	char	*str;
 
-	str = shell->cmd_tree->redir[i];
+	str = cmd->redir[i];
 	if (str[1] == ' ')
 	{
 		if (str[2] != ' ')
@@ -67,7 +67,7 @@ static void	tidy_format(t_shell *shell, int i)
 	}
 	else
 		str = add_one_space(str);
-	shell->cmd_tree->redir[i] = str;
+	cmd->redir[i] = str;
 }
 
 static int	get_redirection(t_shell *shell, t_cmd *cmd, int i, int index)
@@ -86,7 +86,7 @@ static int	get_redirection(t_shell *shell, t_cmd *cmd, int i, int index)
 	if (!cmd->redir[index])
 		exit(1);
 	remove_quotes(cmd->redir[index]);
-	tidy_format(shell, index);
+	tidy_format(cmd, index);
 	delete_from_line(cmd->line, i, i + len);
 	return (i + len);
 }

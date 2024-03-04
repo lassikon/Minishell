@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 13:30:24 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/04 13:59:09 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/04 17:52:13 by okarejok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ void	m_split(t_shell *shell, int i)
 	}
 	extract_command(shell, &shell->cmd_tree[i]);
 	extract_args(shell, &shell->cmd_tree[i]);
+	shell->cmd_tree[i].cmd_index = i;
 }
 
 void	parse_line(t_shell *shell)
