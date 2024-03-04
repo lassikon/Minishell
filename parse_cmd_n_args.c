@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_cmd_n_args.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 23:04:07 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/04 14:00:52 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/04 15:03:04 by okarejok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,9 +61,10 @@ void	extract_args(t_shell *shell, t_cmd *cmd)
 
 	(void)shell;
 	i = 0;
-	k = 0;
+	k = 1;
 	count = count_args(cmd->line);
-	cmd->args = malloc(sizeof(char *) * (count + 1));
+	cmd->args = malloc(sizeof(char *) * (count + 2));
+	cmd->args[0] = ft_strdup(cmd->cmd);
 	while (cmd->line[i])
 	{
 		while (cmd->line[i] && cmd->line[i] == ' ')
@@ -83,5 +84,5 @@ void	extract_args(t_shell *shell, t_cmd *cmd)
 		i = j;
 		k++;
 	}
-	cmd->args[count] = NULL;
+	cmd->args[count + 1] = NULL;
 }

@@ -11,7 +11,10 @@ SRCS	:= 	minishell.c \
 			parse_redirs.c \
 			parse_cmd_n_args.c \
 			parse_utils.c \
-			debug.c
+			debug.c \
+			execute.c \
+			redirection.c \
+			paths.c
 			
 OBJS	:= ${SRCS:.c=.o}
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/04 13:57:33 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/04 14:38:40 by okarejok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,12 @@ typedef struct s_shell
 	char	*line;
 	char	**pipe_split;
 	t_cmd	*cmd_tree;
+	char	**paths;
 	int		cmd_count;
 	int		line_len;
 	int		status;
+	int		pid[1024];
+	int		pipe[2];
 }	t_shell;
 
 void	parse_line(t_shell *shell);
@@ -54,6 +57,15 @@ void	remove_spaces(char *str);
 char	*add_one_space(char *str);
 int		skip_quotes(char *line, int i);
 void	remove_quotes(char *str);
+void    do_fork(t_shell *shell);
+void    handle_child(t_shell *shell, int i);
+void    redir_to_file(t_shell *shell);
+void    redir_to_pipe(t_shell *shell, int index);
+void	wait_children(t_shell *shell);
+void	paths(t_shell *shell, char **envp);
+void 	close_pipes(t_shell *shell);
+void 	open_pipes(t_shell *shell);
+void    run_command(t_shell *shell);
 
 //debug.c
 void	print_tree(t_shell *shell);
