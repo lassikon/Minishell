@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 23:04:07 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/02 15:52:11 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/04 14:00:52 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	extract_command(t_shell *shell, t_cmd *cmd)
 	while (cmd->line[j] && cmd->line[j] != ' ')
 		j++;
 	cmd->cmd = ft_substr(cmd->line, i, j - i);
+	remove_quotes(cmd->cmd);
 	delete_from_line(cmd->line, i, j);
 }
 
@@ -37,6 +38,8 @@ static int	count_args(char *line)
 	count = 0;
 	while (line[i])
 	{
+		if (line[i] == '\'' || line[i] == '\"')
+			i = skip_quotes(line, i);
 		if (line[i] != ' ')
 		{
 			count++;
@@ -67,8 +70,16 @@ void	extract_args(t_shell *shell, t_cmd *cmd)
 			i++;
 		j = i;
 		while (cmd->line[j] && cmd->line[j] != ' ')
+		{
+			if (cmd->line[j] == '\'' || cmd->line[j] == '\"')
+			{
+				j = skip_quotes(cmd->line, j);
+				continue ;
+			}
 			j++;
+		}
 		cmd->args[k] = ft_substr(cmd->line, i, j - i);
+		remove_quotes(cmd->args[k]);
 		i = j;
 		k++;
 	}

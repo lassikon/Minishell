@@ -6,11 +6,12 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 13:03:52 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/02 15:48:24 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/04 14:16:31 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
+
 
 static int	count_redirections(char *line)
 {
@@ -21,6 +22,8 @@ static int	count_redirections(char *line)
 	i = 0;
 	while (line[i])
 	{
+		if (line[i] == '\'' || line[i] == '\"')
+			i = skip_quotes(line, i);
 		if (line[i] == '>' || line[i] == '<')
 		{
 			if (line[i + 1] == '>')
@@ -82,12 +85,13 @@ static int	get_redirection(t_shell *shell, t_cmd *cmd, int i, int index)
 	cmd->redir[index] = ft_substr(cmd->line, i, len );
 	if (!cmd->redir[index])
 		exit(1);
+	remove_quotes(cmd->redir[index]);
 	tidy_format(shell, index);
 	delete_from_line(cmd->line, i, i + len);
 	return (i + len);
 }
 
-void	extract_redirections(t_shell *shell, t_cmd *cmd)
+int	extract_redirections(t_shell *shell, t_cmd *cmd)
 {
 	int	i;
 	int	redir_index;
@@ -96,15 +100,16 @@ void	extract_redirections(t_shell *shell, t_cmd *cmd)
 	redir_index = 0;
 	cmd->redir_count = count_redirections(cmd->line);
 	if (cmd->redir_count == -1)
-		exit(1);
+		return (1);
 	if (cmd->redir_count == 0)
-		return ;
+		return (0);
 	cmd->redir = (char **)malloc(sizeof(char *) * (cmd->redir_count + 1));
 	if (!cmd->redir)
 		exit(1);
 	while (cmd->line[i])
 	{
-		// printf("index: %d\n", i);
+		if (cmd->line[i] == '\'' || cmd->line[i] == '\"')
+			i = skip_quotes(cmd->line, i);
 		if (cmd->line[i] == '>' || cmd->line[i] == '<')
 		{
 			// printf("getting redirection %d\n", redir_index);
@@ -115,4 +120,5 @@ void	extract_redirections(t_shell *shell, t_cmd *cmd)
 			i++;
 	}
 	cmd->redir[cmd->redir_count] = NULL;
+	return (0);
 }

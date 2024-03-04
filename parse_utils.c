@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 15:19:44 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/02 15:37:44 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/04 14:06:52 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,5 +52,38 @@ void	delete_from_line(char *line, int start, int end)
 	{
 		line[start] = ' ';
 		start++;
+	}
+}
+
+int	skip_quotes(char *line, int i)
+{
+	char	quote;
+
+	quote = line[i];
+	i++;
+	while (line[i] && line[i] != quote)
+		i++;
+	return (i + 1);
+}
+
+void	remove_quotes(char *str)
+{
+	int		i;
+	int		j;
+
+	i = 0;
+	j = 0;
+	while (str[i])
+	{
+		while (str[i] && (str[i] == '\'' || str[i] == '\"'))
+			i++;
+		str[j] = str[i];
+		i++;
+		j++;
+	}
+	while (str[j])
+	{
+		str[j] = '\0';
+		j++;
 	}
 }
