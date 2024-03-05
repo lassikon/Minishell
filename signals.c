@@ -1,2 +1,2 @@
-#include "minishell.c"
+#include "minishell.h"
 

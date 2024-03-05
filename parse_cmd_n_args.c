@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_cmd_n_args.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 23:04:07 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/04 15:03:04 by okarejok         ###   ########.fr       */
+/*   Updated: 2024/03/05 14:45:37 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,10 @@ static int	count_args(char *line)
 	while (line[i])
 	{
 		if (line[i] == '\'' || line[i] == '\"')
+		{
+			count++;
 			i = skip_quotes(line, i);
+		}
 		if (line[i] != ' ')
 		{
 			count++;

@@ -14,7 +14,8 @@ SRCS	:= 	minishell.c \
 			debug.c \
 			execute.c \
 			redirection.c \
-			paths.c
+			paths.c \
+			expand.c \
 			
 OBJS	:= ${SRCS:.c=.o}
 

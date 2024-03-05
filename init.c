@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 12:19:16 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/04 14:37:54 by okarejok         ###   ########.fr       */
+/*   Updated: 2024/03/05 10:51:38 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 static void	init_command(t_cmd *cmd)
 {
+	cmd->line = NULL;
 	cmd->cmd = NULL;
 	cmd->args = NULL;
 	cmd->redir = NULL;
@@ -36,6 +37,7 @@ void	init_tree(t_shell *shell)
 		init_command(&shell->cmd_tree[i]);
 		i++;
 	}
+	shell->cmd_tree[i].line = NULL;
 }
 
 void	setup_shell(t_shell *shell, char **envp)

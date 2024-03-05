@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:10:31 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/04 18:05:04 by okarejok         ###   ########.fr       */
+/*   Updated: 2024/03/05 10:57:04 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ void	free_tree(t_shell *shell)
 		return ;
 	while (i < shell->cmd_count)
 	{
+		if (shell->cmd_tree[i].line)
+			free(shell->cmd_tree[i].line);
 		if (shell->cmd_tree[i].cmd)
 			free(shell->cmd_tree[i].cmd);
 	 	if (shell->cmd_tree[i].args)
@@ -66,7 +68,7 @@ int	main(int argc, char **argv, char **envp)
 				
 				print_tree(&shell); // for debugging
 				run_command(&shell);
-				//free_tree(&shell);
+				free_tree(&shell);
 			}
 			free(shell.line);
 		}

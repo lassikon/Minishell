@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 13:30:24 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/04 17:52:13 by okarejok         ###   ########.fr       */
+/*   Updated: 2024/03/05 14:40:04 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,51 +51,39 @@ int	check_unclosed_quotes(char *line)
 	return (0);
 }
 
-void	m_split(t_shell *shell, int i)
+void	m_split(t_shell *shell, t_cmd *cmd)
 {
-	if (check_unclosed_quotes(shell->cmd_tree[i].line))
+	if (check_unclosed_quotes(cmd->line))
 	{
-		printf("Error: Unclosed quotes in cmd[%d]\n", i);
+		printf("Error: Unclosed quotes in cmd[%d]\n", cmd->cmd_index);
 		return ;
 	}
-	if (extract_redirections(shell, &shell->cmd_tree[i]))
+	check_expands(shell, cmd);
+	if (extract_redirections(shell, cmd))
 	{
-		printf("Error: Redirections in cmd[%d]\n", i);
+		printf("Error: Redirections in cmd[%d]\n", cmd->cmd_index);
 		return ;
 	}
-	extract_command(shell, &shell->cmd_tree[i]);
-	extract_args(shell, &shell->cmd_tree[i]);
-	shell->cmd_tree[i].cmd_index = i;
+	extract_command(shell, cmd);
+	printf("Extracting args from: %s\n", cmd->line);
+	extract_args(shell, cmd);
 }
 
 void	parse_line(t_shell *shell)
 {
 	int	i;
 
-	// printf("checking for pipes\n");
-	if (!ft_strchr(shell->line, '|'))
-	{
-		shell->cmd_count = 1;
-		shell->cmd_tree = malloc(sizeof(t_cmd) * 2);
-		shell->cmd_tree[0].line = ft_strdup(shell->line);
-		shell->cmd_tree[1].line = NULL;
-		m_split(shell, 0);
-		return ;
-	}
-	// printf("splitting pipes\n");
 	shell->pipe_split = ft_split(shell->line, '|');
 	shell->cmd_count = 0;
 	while (shell->pipe_split[shell->cmd_count])
 		shell->cmd_count++;
-	// printf("cmd_count: %d\n", shell->cmd_count);
-	// printf("init tree\n");
 	init_tree(shell);
 	i = 0;
 	while (shell->pipe_split[i])
 	{
-		// printf("parsing cmd %d\n", i);
+		shell->cmd_tree[i].cmd_index = i;
 		shell->cmd_tree[i].line = ft_strdup(shell->pipe_split[i]);
-		m_split(shell, i);
+		m_split(shell, &shell->cmd_tree[i]);
 		free(shell->pipe_split[i]);
 		i++;
 	}
