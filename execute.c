@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   execute.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:19:05 by okarejok          #+#    #+#             */
-/*   Updated: 2024/03/04 17:53:15 by okarejok         ###   ########.fr       */
+/*   Updated: 2024/03/06 12:04:47 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,11 @@ void	do_fork(t_shell *shell)
 	i = 0;
 	while (i < shell->cmd_count)
 	{
+		if (parent_builtin(shell, &shell->cmd_tree[i]))
+		{
+			i++;
+			continue ;
+		}
 		shell->pid[i] = fork();
 		if (shell->pid[i] == -1)
 		{
@@ -69,6 +74,7 @@ void	handle_child(t_shell *shell, int i)
 		redir_to_file(shell, i);
 	if (shell->cmd_count > 1)
 		redir_to_pipe(shell, i);
+	child_builtin(shell, &shell->cmd_tree[i]);
 	if (ft_strchr(shell->cmd_tree[i].cmd, '/'))
 	{
 		if (access(shell->cmd_tree[i].cmd, X_OK) == -1)
@@ -83,9 +89,9 @@ void	handle_child(t_shell *shell, int i)
 	exit(1);
 }
 
-void wait_children(t_shell *shell)
+void	wait_children(t_shell *shell)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (i < shell->cmd_count)

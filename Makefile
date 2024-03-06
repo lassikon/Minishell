@@ -3,7 +3,8 @@ CC			:= cc
 CFLAGS		:= -Wall -Wextra -Werror
 LIBFT_DIR	:= ./libft
 
-HEADERS	:= -I $(LIBFT)/include -I /opt/Homebrew/opt/readline/include
+HEADERS	:= -I $(LIBFT)/include
+READLINE	:= -lreadline -L ~/.brew/opt/readline/lib -I ~/.brew/opt/readline/include
 LIBFT	:= $(LIBFT_DIR)/libft.a
 SRCS	:= 	minishell.c \
 			init.c \
@@ -16,6 +17,8 @@ SRCS	:= 	minishell.c \
 			redirection.c \
 			paths.c \
 			expand.c \
+			builtins.c \
+			array_utils.c
 			
 OBJS	:= ${SRCS:.c=.o}
 
@@ -28,7 +31,7 @@ $(LIBFT):
 	@$(CC) $(CFLAGS) -o $@ -c $< $(HEADERS)
 
 $(NAME): $(LIBFT) $(OBJS)
-	@$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(HEADERS) -lreadline -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJS) $(LIBFT) $(HEADERS) $(READLINE) -o $(NAME)
 
 clean:
 	@make -C $(LIBFT_DIR) clean

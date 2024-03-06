@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/05 14:25:38 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/06 12:18:58 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef struct s_cmd
 	char	*line; // raw input string to be parsed
 	char	*cmd;
 	char	**args;
-	char	**redir; // array of <, >, >> or << + filename
+	char	**redir; // array of <, >, >> or << + filename/LIM
 	int		redir_count;
 	int		infile;
 	int		outfile;
@@ -57,6 +57,7 @@ int		extract_redirections(t_shell *shell, t_cmd *cmd);
 void	extract_command(t_shell *shell, t_cmd *cmd);
 void	extract_args(t_shell *shell, t_cmd *cmd);
 void	delete_from_line(char *line, int start, int end);
+int		check_unclosed_quotes(char *line);
 void	remove_spaces(char *str);
 char	*add_one_space(char *str);
 int		skip_quotes(char *line, int i);
@@ -70,8 +71,14 @@ void	paths(t_shell *shell, char **envp);
 void 	close_pipes(t_shell *shell);
 void 	open_pipes(t_shell *shell);
 void    run_command(t_shell *shell);
-
+void	child_builtin(t_shell *shell, t_cmd *cmd);
+int		parent_builtin(t_shell *shell, t_cmd *cmd);
+char	**add_to_array(char **array, char *new);
+int		copy_array(char **src, char **dst);
+int		array_len(char **array);
+void	free_array(char **array);
 //debug.c
 void	print_tree(t_shell *shell);
+void	print_env(t_shell *shell);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 13:30:24 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/05 14:40:04 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/06 12:13:52 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,19 +53,18 @@ int	check_unclosed_quotes(char *line)
 
 void	m_split(t_shell *shell, t_cmd *cmd)
 {
+	check_expands(shell, cmd);
 	if (check_unclosed_quotes(cmd->line))
 	{
 		printf("Error: Unclosed quotes in cmd[%d]\n", cmd->cmd_index);
 		return ;
 	}
-	check_expands(shell, cmd);
 	if (extract_redirections(shell, cmd))
 	{
 		printf("Error: Redirections in cmd[%d]\n", cmd->cmd_index);
 		return ;
 	}
 	extract_command(shell, cmd);
-	printf("Extracting args from: %s\n", cmd->line);
 	extract_args(shell, cmd);
 }
 

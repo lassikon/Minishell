@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 16:16:29 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/02 16:31:22 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/06 11:37:25 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,18 @@ void	print_tree(t_shell *shell)
 			j++;
 		}
 		printf("\n");
+		i++;
+	}
+}
+
+void	print_env(t_shell *shell)
+{
+	int	i;
+
+	i = 0;
+	while (shell->env[i])
+	{
+		printf("%s\n", shell->env[i]);
 		i++;
 	}
 }

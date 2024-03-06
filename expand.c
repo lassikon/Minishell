@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 11:11:41 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/05 14:36:25 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/05 15:08:07 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,10 @@ void	check_expands(t_shell *shell, t_cmd *cmd)
 			printf("Found $ at i: %d, expanding...\n", i);
 			i = expand_env(shell, &cmd->line, i);
 			printf("Expanded: %s\n", cmd->line);
+		}
+		if (cmd->line[i] == '*')
+		{
+			// handle wildcard
 		}
 		i++;
 	}
