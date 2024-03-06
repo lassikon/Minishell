@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   paths.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:19:45 by okarejok          #+#    #+#             */
-/*   Updated: 2024/03/05 16:06:07 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/06 14:57:12 by okarejok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,26 @@ void	paths(t_shell *shell, char **envp)
 			envp++;
 		}
 	}
+}
+
+char	*find_home_dir(t_shell *shell)
+{
+	char	*home;
+
+	home = NULL;
+	if (shell->env != NULL)
+	{
+		while (*shell->env)
+		{
+			if (!ft_strncmp(*shell->env, "HOME", 4))
+			{
+				home = *shell->env + 5;
+				if (home == NULL)
+                    printf("home not found :(");
+				return (home);
+			}
+			shell->env++;
+		}
+	}
+	return (home);
 }

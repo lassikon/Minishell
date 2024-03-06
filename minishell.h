@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/06 12:18:58 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/06 14:57:51 by okarejok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,11 @@ char	**add_to_array(char **array, char *new);
 int		copy_array(char **src, char **dst);
 int		array_len(char **array);
 void	free_array(char **array);
+void	cd(t_shell *shell, t_cmd *cmd);
+void	pwd(t_shell *shell, t_cmd *cmd);
+void	echo(t_shell *shell, t_cmd *cmd);
+void	ft_exit(t_shell *shell, t_cmd *cmd);
+char	*find_home_dir(t_shell *shell);
 //debug.c
 void	print_tree(t_shell *shell);
 void	print_env(t_shell *shell);

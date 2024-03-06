@@ -18,7 +18,8 @@ SRCS	:= 	minishell.c \
 			paths.c \
 			expand.c \
 			builtins.c \
-			array_utils.c
+			array_utils.c \
+			builtins_2.c
 			
 OBJS	:= ${SRCS:.c=.o}
 
