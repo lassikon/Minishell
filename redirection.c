@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:30:18 by okarejok          #+#    #+#             */
-/*   Updated: 2024/03/05 16:06:01 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/07 14:56:06 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,9 @@ void	redir_to_pipe(t_shell *shell, int index)
 
 void	redir_to_file(t_shell *shell, int index)
 {
-	int i = 0;
+	int i;
+	
+	i = 0;
 	while (shell->cmd_tree[index].redir[i])
 	{
 		if (ft_strncmp(&shell->cmd_tree[index].redir[i][0], "< ", 2) == 0)

@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/07 12:17:50 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/07 15:26:32 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ typedef struct s_cmd
 	char	*cmd;
 	char	**args;
 	char	**redir; // array of <, >, >> or << + filename/LIM
+	char	***heredoc; // array of heredoc text and delimiter
+	int		heredoc_count;
 	int		redir_count;
 	int		infile;
 	int		outfile;
@@ -89,6 +91,7 @@ void	pwd(t_shell *shell, t_cmd *cmd);
 void	echo(t_shell *shell, t_cmd *cmd);
 void	ft_exit(t_shell *shell, t_cmd *cmd);
 char	*find_home_dir(t_shell *shell);
+void	heredoc(t_shell *shell, t_cmd *cmd);
 //debug.c
 void	print_tree(t_shell *shell);
 void	print_env(t_shell *shell);

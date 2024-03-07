@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:19:05 by okarejok          #+#    #+#             */
-/*   Updated: 2024/03/07 11:23:55 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/07 14:57:34 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ void	do_fork(t_shell *shell)
 
 void	handle_child(t_shell *shell, int i)
 {
+	heredoc(shell, shell->cmd_tree[i]);
 	if (shell->cmd_tree[i].redir_count > 0)
 		redir_to_file(shell, i);
 	if (shell->cmd_count > 1)
