@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/07 12:17:50 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/07 14:28:54 by okarejok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ typedef struct s_cmd
 	int		redir_count;
 	int		infile;
 	int		outfile;
-	int		cmd_index;
+	int		index;
 	int		arg_count;
 }	t_cmd;
 
@@ -70,9 +70,9 @@ char	*add_one_space(char *str);
 int		skip_quotes(char *line, int i);
 void	remove_quotes(char *str);
 void    do_fork(t_shell *shell);
-void    handle_child(t_shell *shell, int i);
-void    redir_to_file(t_shell *shell, int index);
-void    redir_to_pipe(t_shell *shell, int index);
+void    handle_child(t_shell *shell, t_cmd *cmd_vars);
+void    redir_to_file(t_shell *shell, t_cmd *cmd_vars);
+void    redir_to_pipe(t_shell *shell, t_cmd *cmd_vars);
 void	wait_children(t_shell *shell);
 void	paths(t_shell *shell, char **envp);
 void 	close_pipes(t_shell *shell);
@@ -89,6 +89,7 @@ void	pwd(t_shell *shell, t_cmd *cmd);
 void	echo(t_shell *shell, t_cmd *cmd);
 void	ft_exit(t_shell *shell, t_cmd *cmd);
 char	*find_home_dir(t_shell *shell);
+void	redir_to_pipe(t_shell *shell, t_cmd *cmd_vars);
 //debug.c
 void	print_tree(t_shell *shell);
 void	print_env(t_shell *shell);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   builtins_2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 13:36:20 by okarejok          #+#    #+#             */
-/*   Updated: 2024/03/07 10:47:17 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/07 14:33:28 by okarejok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,6 @@ void	echo(t_shell *shell, t_cmd *cmd)
 			ft_putstr_fd(cmd->args[i], 1);
 			ft_putstr_fd(" ", 1);
 			i++;
-
 		}
 	}
 	exit(1);

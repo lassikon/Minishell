@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 13:30:24 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/06 12:13:52 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/07 14:37:01 by okarejok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,12 @@ void	m_split(t_shell *shell, t_cmd *cmd)
 	check_expands(shell, cmd);
 	if (check_unclosed_quotes(cmd->line))
 	{
-		printf("Error: Unclosed quotes in cmd[%d]\n", cmd->cmd_index);
+		printf("Error: Unclosed quotes in cmd[%d]\n", cmd->index);
 		return ;
 	}
 	if (extract_redirections(shell, cmd))
 	{
-		printf("Error: Redirections in cmd[%d]\n", cmd->cmd_index);
+		printf("Error: Redirections in cmd[%d]\n", cmd->index);
 		return ;
 	}
 	extract_command(shell, cmd);
@@ -80,7 +80,7 @@ void	parse_line(t_shell *shell)
 	i = 0;
 	while (shell->pipe_split[i])
 	{
-		shell->cmd_tree[i].cmd_index = i;
+		shell->cmd_tree[i].index = i;
 		shell->cmd_tree[i].line = ft_strdup(shell->pipe_split[i]);
 		m_split(shell, &shell->cmd_tree[i]);
 		free(shell->pipe_split[i]);

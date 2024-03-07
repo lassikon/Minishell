@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   execute.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:19:05 by okarejok          #+#    #+#             */
-/*   Updated: 2024/03/07 11:23:55 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/07 14:35:32 by okarejok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,20 +18,20 @@ void	run_command(t_shell *shell)
 	do_fork(shell);
 }
 
-static void	execve_with_path(t_shell *shell, char *cmd, char **envp, int index)
+static void	execve_with_path(t_shell *shell, t_cmd *cmd_vars, char **envp)
 {
 	int		i;
 	char	*cmd_path;
 	char	*cmd_one;
 
 	i = 0;
-	cmd_one = ft_strjoin("/", cmd);
+	cmd_one = ft_strjoin("/", cmd_vars->cmd);
 	if (cmd_one == NULL)
 		printf("command is null!\n");
 	while (shell->paths[i])
 	{
 		cmd_path = ft_strjoin(shell->paths[i], cmd_one);
-		execve(cmd_path, shell->cmd_tree[index].args, envp);
+		execve(cmd_path, cmd_vars->args, envp);
 		free(cmd_path);
 		i++;
 	}
@@ -59,8 +59,7 @@ void	do_fork(t_shell *shell)
 		}
 		if (shell->pid[i] == 0)
 		{
-			// printf("i: %d cmd_index: %d\n",i, shell->cmd_tree[i].cmd_index);
-			handle_child(shell, i);
+			handle_child(shell, &shell->cmd_tree[i]);
 		}
 		i++;
 	}
@@ -68,24 +67,24 @@ void	do_fork(t_shell *shell)
 	wait_children(shell);
 }
 
-void	handle_child(t_shell *shell, int i)
+void	handle_child(t_shell *shell, t_cmd *cmd_vars)
 {
-	if (shell->cmd_tree[i].redir_count > 0)
-		redir_to_file(shell, i);
+	if (cmd_vars->redir_count > 0)
+		redir_to_file(shell, cmd_vars);
 	if (shell->cmd_count > 1)
-		redir_to_pipe(shell, i);
-	child_builtin(shell, &shell->cmd_tree[i]);
-	if (ft_strchr(shell->cmd_tree[i].cmd, '/'))
+		redir_to_pipe(shell, cmd_vars);
+	child_builtin(shell, cmd_vars);
+	if (ft_strchr(cmd_vars->cmd, '/'))
 	{
-		if (access(shell->cmd_tree[i].cmd, X_OK) == -1)
+		if (access(cmd_vars->cmd, X_OK) == -1)
 			printf("No access!\n");
-		execve(shell->cmd_tree[i].cmd, shell->cmd_tree[i].args, shell->env);
+		execve(cmd_vars->cmd, cmd_vars->args, shell->env);
 	}
 	else if (shell->paths != NULL)
 	{
-		execve_with_path(shell, shell->cmd_tree[i].cmd, shell->env, i);
+		execve_with_path(shell, cmd_vars, shell->env);
 	}
-	printf("%s failed!\n", shell->cmd_tree[i].cmd);
+	printf("%s failed!\n", cmd_vars->cmd);
 	exit(1);
 }
 
