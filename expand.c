@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 11:11:41 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/05 15:08:07 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/07 10:22:46 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,17 +23,26 @@ static int	expand_env(t_shell *shell, char **line, int i)
 	(void)shell;
 	start = i;
 	i++;
-	while ((*line)[i] && ft_isalnum((*line)[i]))
+	if ((*line)[i] == '?')
+	{
 		i++;
-	end = i;
-	env = ft_substr(*line, start + 1, end - start - 1);
-	value = getenv(env);
-	if (!value)
-		value = "";
+		end = i;
+		value = ft_itoa(shell->exit_status);
+	}
+	else
+	{
+		while ((*line)[i] && ft_isalnum((*line)[i]))
+			i++;
+		end = i;
+		env = ft_substr(*line, start + 1, end - start - 1);
+		value = getenv(env);
+		free(env);
+		if (!value)
+			value = "";
+	}
 	new = ft_strjoin(ft_substr(*line, 0, start), value);
 	new = ft_strjoin(new, ft_substr(*line, end, ft_strlen(*line) - end));
 	*line = new;
-	free(env);
 	return (start + ft_strlen(value));
 }
 
@@ -50,9 +59,7 @@ void	check_expands(t_shell *shell, t_cmd *cmd)
 		}
 		if (cmd->line[i] == '$')
 		{
-			printf("Found $ at i: %d, expanding...\n", i);
 			i = expand_env(shell, &cmd->line, i);
-			printf("Expanded: %s\n", cmd->line);
 		}
 		if (cmd->line[i] == '*')
 		{

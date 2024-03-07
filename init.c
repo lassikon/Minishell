@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 12:19:16 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/06 12:29:28 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/07 11:23:04 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void	setup_shell(t_shell *shell, char **envp)
 	shell->status = 1;
 	shell->cmd_count = 0;
 	shell->line_len = 0;
+	shell->exit_status = 0;
 	paths(shell, envp);
 	shell->env = malloc(sizeof(char *) * (array_len(envp) + 1));
 	if (!shell->env)
@@ -59,5 +60,4 @@ void	setup_shell(t_shell *shell, char **envp)
 		ft_putstr_fd("Error: malloc failed\n", 2);
 		exit(1);
 	}
-	printf("Shell setup done\n");
 }

@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:10:31 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/05 10:57:04 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/07 11:26:04 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,11 @@ void	free_array(char **array)
 	while (array[i])
 	{
 		free(array[i]);
+		array[i] = NULL;
 		i++;
 	}
 	free(array);
+	array = NULL;
 }
 
 void	free_tree(t_shell *shell)
@@ -35,9 +37,15 @@ void	free_tree(t_shell *shell)
 	while (i < shell->cmd_count)
 	{
 		if (shell->cmd_tree[i].line)
+		{
 			free(shell->cmd_tree[i].line);
+			shell->cmd_tree[i].line = NULL;
+		}
 		if (shell->cmd_tree[i].cmd)
+		{
 			free(shell->cmd_tree[i].cmd);
+			shell->cmd_tree[i].cmd = NULL;
+		}
 	 	if (shell->cmd_tree[i].args)
 			free_array(shell->cmd_tree[i].args);
 		if (shell->cmd_tree[i].redir)
@@ -45,6 +53,7 @@ void	free_tree(t_shell *shell)
 		i++;
 	}
 	free(shell->cmd_tree);
+	shell->cmd_tree = NULL;
 }
 
 int	main(int argc, char **argv, char **envp)

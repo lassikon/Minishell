@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:19:05 by okarejok          #+#    #+#             */
-/*   Updated: 2024/03/06 12:04:47 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/07 11:23:55 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	do_fork(t_shell *shell)
 		}
 		if (shell->pid[i] == 0)
 		{
-			printf("i: %d cmd_index: %d\n",i, shell->cmd_tree[i].cmd_index);
+			// printf("i: %d cmd_index: %d\n",i, shell->cmd_tree[i].cmd_index);
 			handle_child(shell, i);
 		}
 		i++;
@@ -96,7 +96,7 @@ void	wait_children(t_shell *shell)
 	i = 0;
 	while (i < shell->cmd_count)
 	{
-		waitpid(shell->pid[i], 0, 0);
+		waitpid(shell->pid[i], &shell->exit_status, 0);
 		i++;
 	}
 }

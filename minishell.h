@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/06 14:57:51 by okarejok         ###   ########.fr       */
+/*   Updated: 2024/03/07 12:17:50 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,11 @@
 
 # include "libft/include/libft.h"
 
+typedef enum e_error
+{
+	FATAL
+} t_error;
+
 typedef struct s_cmd
 {
 	char	*line; // raw input string to be parsed
@@ -33,6 +38,7 @@ typedef struct s_cmd
 	int		infile;
 	int		outfile;
 	int		cmd_index;
+	int		arg_count;
 }	t_cmd;
 
 typedef struct s_shell
@@ -45,6 +51,7 @@ typedef struct s_shell
 	int		cmd_count;
 	int		line_len;
 	int		status;
+	int		exit_status;
 	int		pid[1024];
 	int		pipe[1024][2];
 }	t_shell;

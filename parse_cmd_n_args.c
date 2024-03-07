@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 23:04:07 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/05 14:45:37 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/07 12:18:50 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,7 @@ static int	count_args(char *line)
 		{
 			count++;
 			i = skip_quotes(line, i);
+			continue ;
 		}
 		if (line[i] != ' ')
 		{
@@ -66,6 +67,7 @@ void	extract_args(t_shell *shell, t_cmd *cmd)
 	i = 0;
 	k = 1;
 	count = count_args(cmd->line);
+	cmd->arg_count = count + 1;
 	cmd->args = malloc(sizeof(char *) * (count + 2));
 	cmd->args[0] = ft_strdup(cmd->cmd);
 	while (cmd->line[i])

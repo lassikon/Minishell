@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   builtins_2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 13:36:20 by okarejok          #+#    #+#             */
-/*   Updated: 2024/03/06 17:49:10 by okarejok         ###   ########.fr       */
+/*   Updated: 2024/03/07 10:47:17 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,36 @@ void	pwd(t_shell *shell, t_cmd *cmd)
 
 void	echo(t_shell *shell, t_cmd *cmd)
 {
+	int	i;
+
 	(void)shell;
 	if (ft_strncmp(cmd->args[1], "-n", 2) == 0)
-		ft_putstr_fd(cmd->args[2], 1);
+	{
+		i = 2;
+		while (cmd->args[i])
+		{
+			ft_putstr_fd(cmd->args[i], 1);
+			if (cmd->args[i + 1])
+				ft_putstr_fd(" ", 1);
+			i++;
+		}
+	}
 	else
-		ft_putendl_fd(cmd->args[1], 1);
+	{
+		i = 1;
+		while (cmd->args[i])
+		{
+			if (!cmd->args[i + 1])
+			{
+				ft_putendl_fd(cmd->args[i], 1);
+				break ;
+			}
+			ft_putstr_fd(cmd->args[i], 1);
+			ft_putstr_fd(" ", 1);
+			i++;
+
+		}
+	}
 	exit(1);
 }
 
