@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   redirection.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:30:18 by okarejok          #+#    #+#             */
-/*   Updated: 2024/03/07 15:43:42 by okarejok         ###   ########.fr       */
+/*   Updated: 2024/03/08 15:54:15 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,35 @@ static void	open_file(char *redir, int *file, char *mode)
 			exit(1);
 		}
 	}
+}
+
+static void	heredoc(t_shell *shell, t_cmd *cmd_vars, char *redir)
+{
+	char	*line;
+	char	*tmp;
+
+	(void)shell;
+	cmd_vars->infile = open("heredoc", O_CREAT | O_RDWR | O_TRUNC, 0644);
+	if (cmd_vars->infile == -1)
+	{
+		printf("Error opening the file! /tmp/heredoc\n");
+		exit(1);
+	}
+	while (1)
+	{
+		line = readline("> ");
+		if (!line || !ft_strcmp(line, redir + 2))
+		{
+			free(line);
+			break ;
+		}
+		tmp = ft_strjoin(line, "\n");
+		write(cmd_vars->infile, tmp, ft_strlen(tmp));
+		free(tmp);
+		free(line);
+	}
+	dup2(cmd_vars->infile, STDIN_FILENO);
+	close(cmd_vars->infile);
 }
 
 void	redir_to_pipe(t_shell *shell, t_cmd *cmd_vars)
@@ -92,6 +121,8 @@ void	redir_to_file(t_shell *shell, t_cmd *cmd_vars)
 			open_file(cmd_vars->redir[i], &cmd_vars->outfile, ">>");
 			dup_and_close(cmd_vars->outfile, STDOUT_FILENO);
 		}
+		else if (ft_strncmp(&cmd_vars->redir[i][0], "<<", 2) == 0)
+			heredoc(shell, cmd_vars, cmd_vars->redir[i]);
 		i++;
 	}
 }
