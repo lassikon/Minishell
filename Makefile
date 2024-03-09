@@ -20,7 +20,8 @@ SRCS	:= 	minishell.c \
 			builtins.c \
 			array_utils.c \
 			builtins_2.c \
-			pipes.c
+			pipes.c \
+			heredoc.c \
 			
 OBJS	:= ${SRCS:.c=.o}
 

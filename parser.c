@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parser.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 13:30:24 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/07 14:37:01 by okarejok         ###   ########.fr       */
+/*   Updated: 2024/03/09 11:28:15 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ void	m_split(t_shell *shell, t_cmd *cmd)
 		printf("Error: Redirections in cmd[%d]\n", cmd->index);
 		return ;
 	}
+	heredoc(shell, cmd);
 	extract_command(shell, cmd);
 	extract_args(shell, cmd);
 }

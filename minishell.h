@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/08 15:50:53 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/09 11:28:54 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void	echo(t_shell *shell, t_cmd *cmd);
 void	ft_exit(t_shell *shell, t_cmd *cmd);
 char	*find_home_dir(t_shell *shell);
 void	redir_to_pipe(t_shell *shell, t_cmd *cmd_vars);
-// void	heredoc(t_shell *shell, t_cmd *cmd);
+void	heredoc(t_shell *shell, t_cmd *cmd);
 //debug.c
 void	print_tree(t_shell *shell);
 void	print_env(t_shell *shell);
