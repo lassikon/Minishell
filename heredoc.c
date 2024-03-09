@@ -6,20 +6,20 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 14:41:04 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/09 11:36:56 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/09 12:07:03 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-static void	write_to_heredoc(t_cmd *cmd_vars, int i, int fd)
+static void	write_to_heredoc(char *limiter, int fd)
 {
 	char	*line;
 
 	while (1)
 	{
 		line = readline("> ");
-		if (!line || !ft_strcmp(line, cmd_vars->redir[i] + 2))
+		if (!line || !ft_strcmp(line, limiter))
 		{
 			free(line);
 			break ;
@@ -46,7 +46,7 @@ void	heredoc(t_shell *shell, t_cmd *cmd_vars)
 				printf("Error opening the file! %s\n", "/tmp/heredoc");
 				exit(1);
 			}
-			write_to_heredoc(cmd_vars, i, fd);
+			write_to_heredoc(cmd_vars->redir[i] + 2, fd);
 			close(fd);
 			cmd_vars->redir[i] = ft_strdup("< /tmp/heredoc");
 			if (!cmd_vars->redir[i])
