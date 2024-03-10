@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 14:41:04 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/09 12:07:03 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/10 11:51:46 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,12 @@ void	heredoc(t_shell *shell, t_cmd *cmd_vars)
 	int		i;
 
 	(void)shell;
+	if (cmd_vars->redir_count == 0)
+		return ;
 	i = 0;
 	while (cmd_vars->redir[i])
 	{
-		if (cmd_vars->redir[i][0] == '<' && cmd_vars->redir[i][1] == '<')
+		if (ft_strncmp(cmd_vars->redir[i], "<<", 2) == 0)
 		{
 			fd = open("/tmp/heredoc", O_CREAT | O_RDWR | O_TRUNC, 0644);
 			if (fd == -1)
