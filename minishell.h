@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/09 11:28:54 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/11 14:44:05 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,13 @@
 # include <sys/wait.h>
 # include <readline/readline.h>
 # include <readline/history.h>
-
+# include <termios.h>
 # include "libft/include/libft.h"
 
 typedef enum e_error
 {
-	FATAL
+	FATAL,
+	SYNTAX
 } t_error;
 
 typedef struct s_cmd
@@ -82,18 +83,25 @@ void    run_command(t_shell *shell);
 void	child_builtin(t_shell *shell, t_cmd *cmd);
 int		parent_builtin(t_shell *shell, t_cmd *cmd);
 char	**add_to_array(char **array, char *new);
+void	remove_from_array(char **array, char *identifier);
 int		copy_array(char **src, char **dst);
+int		find_in_array(char **array, char *identifier);
 int		array_len(char **array);
 void	free_array(char **array);
 void	cd(t_shell *shell, t_cmd *cmd);
 void	pwd(t_shell *shell, t_cmd *cmd);
 void	echo(t_shell *shell, t_cmd *cmd);
+void	env(t_shell *shell);
 void	ft_exit(t_shell *shell, t_cmd *cmd);
 char	*find_home_dir(t_shell *shell);
 void	redir_to_pipe(t_shell *shell, t_cmd *cmd_vars);
 void	heredoc(t_shell *shell, t_cmd *cmd);
+char	*join_n_free(char *s1, char *s2);
+void	signal_handler(int signal);
+void    rl_replace_line (const char *text, int clear_undo);
 //debug.c
 void	print_tree(t_shell *shell);
 void	print_env(t_shell *shell);
+void	toggle_carret(int is_on);
 
 #endif

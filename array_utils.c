@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   builtin_utils.c                                    :+:      :+:    :+:   */
+/*   array_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 11:07:09 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/06 11:29:31 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/11 11:40:25 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,37 @@ int	copy_array(char **src, char **dst)
 		i++;
 	}
 	return (i);
+}
+
+int	find_in_array(char **array, char *identifier)
+{
+	int	i;
+
+	i = 0;
+	while (array[i])
+	{
+		if (ft_strncmp(array[i], identifier, ft_strlen(identifier)) == 0)
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+void	remove_from_array(char **array, char *identifier)
+{
+	int		i;
+	int		j;
+
+	i = 0;
+	j = 0;
+	while (array[i])
+	{
+		if (!ft_strncmp(array[i], identifier, ft_strlen(identifier)))
+			j++;
+		array[i] = array[i + j];
+		i++;
+	}
+	array[i] = NULL;
 }
 
 char	**add_to_array(char **array, char *new)

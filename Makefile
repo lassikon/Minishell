@@ -22,6 +22,7 @@ SRCS	:= 	minishell.c \
 			builtins_2.c \
 			pipes.c \
 			heredoc.c \
+			signals.c \
 			
 OBJS	:= ${SRCS:.c=.o}
 

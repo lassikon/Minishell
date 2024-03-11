@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 13:30:24 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/10 11:52:26 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/11 12:00:48 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,16 @@ Extracted parts in the line get replaced with ' '.
 3. Extract the arguments from the line and store them in the t_cmd struct.
 	- Arguments are split into an array of strings.
 */
+
+char	*join_n_free(char *s1, char *s2)
+{
+	char	*new;
+
+	new = ft_strjoin(s1, s2);
+	free(s1);
+	free(s2);
+	return (new);
+}
 
 int	check_unclosed_quotes(char *line)
 {
