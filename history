@@ -1,0 +1,8 @@
+ls
+pwd
+nano
+ls > wc -l
+ls | wc -l
+ls | grep e | wc
+make re
+exit
