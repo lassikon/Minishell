@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 23:04:07 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/07 12:18:50 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/12 14:12:35 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@ void	extract_command(t_shell *shell, t_cmd *cmd)
 	int		i;
 	int		j;
 
-	(void)shell;
+	if (shell->status == ERROR)
+		return ;
 	i = 0;
 	while (cmd->line[i] && cmd->line[i] == ' ')
 		i++;
@@ -25,8 +26,10 @@ void	extract_command(t_shell *shell, t_cmd *cmd)
 	while (cmd->line[j] && cmd->line[j] != ' ')
 		j++;
 	cmd->cmd = ft_substr(cmd->line, i, j - i);
+	if (!cmd->cmd)
+		error(shell, MALLOC, FATAL, 1);
 	remove_quotes(cmd->cmd);
-	delete_from_line(cmd->line, i, j);
+	replace_with_spaces(cmd->line, i, j);
 }
 
 static int	count_args(char *line)
@@ -56,38 +59,47 @@ static int	count_args(char *line)
 	return (count);
 }
 
-void	extract_args(t_shell *shell, t_cmd *cmd)
+void	fetch_args(t_shell *shell, t_cmd *cmd)
 {
 	int		i;
-	int		j;
+	int		start;
 	int		k;
-	int		count;
 
-	(void)shell;
 	i = 0;
 	k = 1;
-	count = count_args(cmd->line);
-	cmd->arg_count = count + 1;
-	cmd->args = malloc(sizeof(char *) * (count + 2));
-	cmd->args[0] = ft_strdup(cmd->cmd);
 	while (cmd->line[i])
 	{
 		while (cmd->line[i] && cmd->line[i] == ' ')
 			i++;
-		j = i;
-		while (cmd->line[j] && cmd->line[j] != ' ')
+		start = i;
+		while (cmd->line[i] && cmd->line[i] != ' ')
 		{
-			if (cmd->line[j] == '\'' || cmd->line[j] == '\"')
-			{
-				j = skip_quotes(cmd->line, j);
-				continue ;
-			}
-			j++;
+			if (cmd->line[i] == '\'' || cmd->line[i] == '\"')
+				i = skip_quotes(cmd->line, i) - 1;
+			i++;
 		}
-		cmd->args[k] = ft_substr(cmd->line, i, j - i);
+		cmd->args[k] = ft_substr(cmd->line, start, i - start);
+		if (!cmd->args[k])
+			error(shell, MALLOC, FATAL, 1);
 		remove_quotes(cmd->args[k]);
-		i = j;
 		k++;
 	}
-	cmd->args[count + 1] = NULL;
+}
+
+void	extract_args(t_shell *shell, t_cmd *cmd)
+{
+	int		count;
+
+	if (shell->status == ERROR)
+		return ;
+	count = count_args(cmd->line);
+	cmd->arg_count = count + 1;
+	cmd->args = malloc(sizeof(char *) * (count + 2));
+	if (!cmd->args)
+		error(shell, MALLOC, FATAL, 1);
+	cmd->args[0] = ft_strdup(cmd->cmd);
+	if (!cmd->args[0])
+		error(shell, MALLOC, FATAL, 1);
+	fetch_args(shell, cmd);
+	cmd->args[cmd->arg_count] = NULL;
 }

@@ -3,15 +3,33 @@
 /*                                                        :::      ::::::::   */
 /*   parse_redirs.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 13:03:52 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/04 17:42:54 by okarejok         ###   ########.fr       */
+/*   Updated: 2024/03/12 12:37:06 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
+static int	illegal_arrows(char *line, int i)
+{
+	if (line[i] == '>')
+	{
+		if (line[i - 1] == '<')
+			return (1);
+		if (line[i + 1] == '>' || line[i + 1] == '<')
+			return (1);
+	}
+	if (line[i] == '<')
+	{
+		if (line[i - 1] == '>')
+			return (1);
+		if (line[i + 1] == '>' || line[i + 1] == '<')
+			return (1);
+	}
+	return (0);
+}
 
 static int	count_redirections(char *line)
 {
@@ -26,20 +44,10 @@ static int	count_redirections(char *line)
 			i = skip_quotes(line, i);
 		if (line[i] == '>' || line[i] == '<')
 		{
-			if (line[i + 1] == '>')
-			{
-				if (line[i] == '>')
-					i++;
-				else
-					return (-1);
-			}
-			if (line[i + 1] == '<')
-			{
-				if (line[i] == '<')
-					i++;
-				else
-					return (-1);
-			}
+			if (illegal_arrows(line, i + 1))
+				return (-1);
+			if (line[i + 1] == '>' || line[i + 1] == '<')
+				i++;
 			count++;
 		}
 		i++;
@@ -48,7 +56,7 @@ static int	count_redirections(char *line)
 }
 
 
-static void	tidy_format(t_cmd *cmd, int i)
+static void	tidy_format(t_shell *shell, t_cmd *cmd, int i)
 {
 	char	*str;
 
@@ -67,6 +75,8 @@ static void	tidy_format(t_cmd *cmd, int i)
 	}
 	else
 		str = add_one_space(str);
+	if (!str)
+		error(shell, MALLOC, FATAL, 1);
 	cmd->redir[i] = str;
 }
 
@@ -84,10 +94,10 @@ static int	get_redirection(t_shell *shell, t_cmd *cmd, int i, int index)
 		len++;
 	cmd->redir[index] = ft_substr(cmd->line, i, len );
 	if (!cmd->redir[index])
-		exit(1);
+		error(shell, MALLOC, FATAL, 1);
+	tidy_format(shell, cmd, index);
 	remove_quotes(cmd->redir[index]);
-	tidy_format(cmd, index);
-	delete_from_line(cmd->line, i, i + len);
+	replace_with_spaces(cmd->line, i, i + len);
 	return (i + len);
 }
 
@@ -105,14 +115,13 @@ int	extract_redirections(t_shell *shell, t_cmd *cmd)
 		return (0);
 	cmd->redir = (char **)malloc(sizeof(char *) * (cmd->redir_count + 1));
 	if (!cmd->redir)
-		exit(1);
+		error(shell, MALLOC, FATAL, 1);
 	while (cmd->line[i])
 	{
 		if (cmd->line[i] == '\'' || cmd->line[i] == '\"')
 			i = skip_quotes(cmd->line, i);
 		if (cmd->line[i] == '>' || cmd->line[i] == '<')
 		{
-			// printf("getting redirection %d\n", redir_index);
 			i = get_redirection(shell, cmd, i, redir_index);
 			redir_index++;
 		}

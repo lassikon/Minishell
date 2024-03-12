@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 12:19:16 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/07 11:23:04 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/12 11:13:44 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,7 @@ void	init_tree(t_shell *shell)
 	i = 0;
 	shell->cmd_tree = malloc(sizeof(t_cmd) * (shell->cmd_count + 1));
 	if (!shell->cmd_tree)
-	{
-		ft_putstr_fd("Error: malloc failed\n", 2);
-		exit(1);
-	}
+		error(shell, MALLOC, FATAL, 1);
 	while (i < shell->cmd_count)
 	{
 		init_command(&shell->cmd_tree[i]);
@@ -44,20 +41,14 @@ void	setup_shell(t_shell *shell, char **envp)
 {
 	shell->pipe_split = NULL;
 	shell->line = NULL;
-	shell->status = 1;
+	shell->status = RUNNING;
 	shell->cmd_count = 0;
 	shell->line_len = 0;
 	shell->exit_status = 0;
 	paths(shell, envp);
 	shell->env = malloc(sizeof(char *) * (array_len(envp) + 1));
 	if (!shell->env)
-	{
-		ft_putstr_fd("Error: malloc failed\n", 2);
-		exit(1);
-	}
+		error(shell, MALLOC, FATAL, 1);
 	if (copy_array(envp, shell->env) == -1)
-	{
-		ft_putstr_fd("Error: malloc failed\n", 2);
-		exit(1);
-	}
+		error(shell, MALLOC, FATAL, 1);
 }

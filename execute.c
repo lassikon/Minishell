@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   execute.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:19:05 by okarejok          #+#    #+#             */
-/*   Updated: 2024/03/07 14:35:32 by okarejok         ###   ########.fr       */
+/*   Updated: 2024/03/12 14:23:46 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	run_command(t_shell *shell)
 {
+	if (shell->status == ERROR)
+		return ;
 	open_pipes(shell);
 	do_fork(shell);
 }
@@ -53,14 +55,11 @@ void	do_fork(t_shell *shell)
 		shell->pid[i] = fork();
 		if (shell->pid[i] == -1)
 		{
-			printf("FORK FAILED!\n");
 			waitpid(shell->pid[i -1], 0, 0);
-			exit(1);
+			p_error(shell, "fork", FATAL, 1);
 		}
 		if (shell->pid[i] == 0)
-		{
 			handle_child(shell, &shell->cmd_tree[i]);
-		}
 		i++;
 	}
 	close_pipes(shell);

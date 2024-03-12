@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 13:36:20 by okarejok          #+#    #+#             */
-/*   Updated: 2024/03/11 11:57:41 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/12 14:35:15 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ void	cd(t_shell *shell, t_cmd *cmd)
 	{
 		home = find_home_dir(shell);
 		path = ft_strjoin(home, &cmd->args[1][1]);
+		if (path == NULL)
+			error(shell, MALLOC, FATAL, 1);
 		chdir(path);
 		free(path);
 	}
@@ -86,18 +88,18 @@ void	env(t_shell *shell)
 	int	i;
 
 	i = 0;
+	if (!shell->env)
+		return ;
 	while (shell->env[i])
 	{
 		printf("%s\n", shell->env[i]);
 		i++;
 	}
-	exit(0);
 }
 
-void	ft_exit(t_shell *shell, t_cmd *cmd)
+void	ft_exit(t_shell *shell)
 {
-	(void)shell;
-	(void)cmd;
-	//free_all(shell)
+	free_all(shell);
+	free(shell->env);
 	exit(1);
 }

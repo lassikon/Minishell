@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/11 14:44:05 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/12 12:36:50 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,15 @@
 # include <termios.h>
 # include "libft/include/libft.h"
 
-typedef enum e_error
+typedef enum e_status
 {
 	FATAL,
-	SYNTAX
-} t_error;
+	SYNTAX,
+	ERROR,
+	RUNNING
+} t_status;
+
+# define MALLOC "Error: malloc failed\n"
 
 typedef struct s_cmd
 {
@@ -45,17 +49,17 @@ typedef struct s_cmd
 
 typedef struct s_shell
 {
-	char	**env;
-	char	*line;
-	char	**pipe_split;
-	t_cmd	*cmd_tree;
-	char	**paths;
-	int		cmd_count;
-	int		line_len;
-	int		status;
-	int		exit_status;
-	int		pid[1024];
-	int		pipe[1024][2];
+	char		**env;
+	char		*line;
+	char		**pipe_split;
+	t_cmd		*cmd_tree;
+	char		**paths;
+	int			cmd_count;
+	int			line_len;
+	t_status	status;
+	int			exit_status;
+	int			pid[1024];
+	int			pipe[1024][2];
 }	t_shell;
 
 void	parse_line(t_shell *shell);
@@ -65,7 +69,7 @@ void	check_expands(t_shell *shell, t_cmd *cmd);
 int		extract_redirections(t_shell *shell, t_cmd *cmd);
 void	extract_command(t_shell *shell, t_cmd *cmd);
 void	extract_args(t_shell *shell, t_cmd *cmd);
-void	delete_from_line(char *line, int start, int end);
+void	replace_with_spaces(char *line, int start, int end);
 int		check_unclosed_quotes(char *line);
 void	remove_spaces(char *str);
 char	*add_one_space(char *str);
@@ -92,13 +96,17 @@ void	cd(t_shell *shell, t_cmd *cmd);
 void	pwd(t_shell *shell, t_cmd *cmd);
 void	echo(t_shell *shell, t_cmd *cmd);
 void	env(t_shell *shell);
-void	ft_exit(t_shell *shell, t_cmd *cmd);
+void	ft_exit(t_shell *shell);
 char	*find_home_dir(t_shell *shell);
 void	redir_to_pipe(t_shell *shell, t_cmd *cmd_vars);
 void	heredoc(t_shell *shell, t_cmd *cmd);
 char	*join_n_free(char *s1, char *s2);
 void	signal_handler(int signal);
-void    rl_replace_line (const char *text, int clear_undo);
+void	rl_replace_line(const char *text, int clear_undo);
+void	free_all(t_shell *shell);
+void	free_tree(t_shell *shell);
+void	error(t_shell *shell, char *msg, t_status status, int code);
+void	p_error(t_shell *shell, char *msg, t_status status, int code);
 //debug.c
 void	print_tree(t_shell *shell);
 void	print_env(t_shell *shell);

@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 11:11:41 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/11 16:00:48 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/12 11:24:05 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ static char	*fetch_env(t_shell *shell, char *line, int *i)
 	char	*env;
 	char	*value;
 
-	printf("fetch_env\n");
-	(void)shell;
 	start = *i;
 	(*i)++;
 	while (line[*i] && line[*i] != ' ' && line[*i] != '$')
@@ -28,7 +26,7 @@ static char	*fetch_env(t_shell *shell, char *line, int *i)
 	end = *i;
 	env = ft_substr(line, start, end - start);
 	if (!env)
-		exit(1);
+		error(shell, MALLOC, FATAL, 1);
 	value = getenv(env);
 	if (!value)
 		value = "";
@@ -51,17 +49,17 @@ static int	expand_env(t_shell *shell, char **line, int i)
 		i++;
 		end = i;
 		value = ft_itoa(shell->exit_status);
+		if (!value)
+			error(shell, MALLOC, FATAL, 1);
 	}
 	else
 		value = fetch_env(shell, *line, &i);
-	printf("value: %s\n", value);
 	new = join_n_free(ft_substr(*line, 0, start), ft_strdup(value));
 	if (!new)
-		exit(1);
+		error(shell, MALLOC, FATAL, 1);
 	*line = join_n_free(new, ft_strdup(&(*line)[i]));
-	printf("line: %s\n", *line);
 	if (!*line)
-		exit(1);
+		error(shell, MALLOC, FATAL, 1);
 	return (start + ft_strlen(value) - 1);
 }
 
@@ -70,6 +68,8 @@ void	check_expands(t_shell *shell, t_cmd *cmd)
 	int		i;
 	int		inside_doubles;
 
+	if (shell->status == ERROR)
+		return ;
 	i = 0;
 	inside_doubles = 0;
 	while (cmd->line[i])

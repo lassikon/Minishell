@@ -6,18 +6,33 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 14:49:10 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/06 18:17:17 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/12 15:03:46 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-void	error(t_shell *shell, char *msg, t_error status, int code)
+void	error(t_shell *shell, char *msg, t_status status, int code)
 {
-	if (status == FATAL)
+	ft_putstr_fd("minishell: error: ", 2);
+	ft_putendl_fd(msg, 2);
+	free_all(shell);
+	shell->status = status;
+	if (shell->status == FATAL)
 	{
-		printf("Fatal error: %s\n", msg);
-		free_tree(shell);
+		free_array(shell->env);
+		exit(code);
+	}
+}
+
+void	p_error(t_shell *shell, char *msg, t_status status, int code)
+{
+	ft_putstr_fd("minishell: ", 2);
+	perror(msg);
+	free_all(shell);
+	shell->status = status;
+	if (shell->status == FATAL)
+	{
 		free_array(shell->env);
 		exit(code);
 	}

@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 10:46:25 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/11 11:58:14 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/12 14:33:51 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ static void	check_identifier(t_shell *shell, char *arg)
 	int		i;
 
 	identifier = ft_substr(arg, 0, ft_strchr(arg, '=') - arg + 1);
+	if (identifier == NULL)
+		error(shell, MALLOC, FATAL, 1);
 	i = 0;
 	while (shell->env[i])
 	{
@@ -39,7 +41,7 @@ static void	export(t_shell *shell, t_cmd *cmd)
 	if (!cmd->args[1])
 	{
 		env(shell);
-		exit(0);
+		return ;
 	}
 	while (cmd->args[i])
 	{
@@ -47,6 +49,8 @@ static void	export(t_shell *shell, t_cmd *cmd)
 		{
 			check_identifier(shell, cmd->args[i]);
 			shell->env = add_to_array(shell->env, cmd->args[i]);
+			if (shell->env == NULL)
+				error(shell, MALLOC, FATAL, 1);
 		}
 		i++;
 	}
@@ -57,24 +61,19 @@ static void	unset(t_shell *shell, t_cmd *cmd)
 	char	*identifier;
 	int		i;
 
-	if (!cmd->args[1])
+	i = 1;
+	if (!cmd->args[i])
 	{
-		printf("unset: not enough arguments\n");
+		error(shell, "unset: not enough arguments", ERROR, 1);
 		return ;
 	}
-	i = 1;
 	while (cmd->args[i])
 	{
 		identifier = ft_strjoin(cmd->args[i], "=");
 		if (identifier == NULL)
-			exit(1);
+			error(shell, MALLOC, FATAL, 1);
 		if (find_in_array(shell->env, identifier))
-		{
 			remove_from_array(shell->env, identifier);
-			printf("Unset %s\n", identifier);
-		}
-		else
-			printf("unset: %s: not found\n", identifier);
 		free(identifier);
 		i++;
 	}

@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 13:30:24 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/11 12:00:48 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/12 15:18:46 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,12 +66,12 @@ void	m_split(t_shell *shell, t_cmd *cmd)
 	check_expands(shell, cmd);
 	if (check_unclosed_quotes(cmd->line))
 	{
-		printf("Error: Unclosed quotes in cmd[%d]\n", cmd->index);
+		error(shell, "Unclosed quotes", ERROR, 1);
 		return ;
 	}
 	if (extract_redirections(shell, cmd))
 	{
-		printf("Error: Redirections in cmd[%d]\n", cmd->index);
+		error(shell, "Redirection", ERROR, 1);
 		return ;
 	}
 	heredoc(shell, cmd);
@@ -83,16 +83,24 @@ void	parse_line(t_shell *shell)
 {
 	int	i;
 
+	if (shell->status == ERROR)
+		return ;
+	if (ft_strcmp(shell->line, "exit") == 0)
+		ft_exit(shell);
 	shell->pipe_split = ft_split(shell->line, '|');
+	if (!shell->pipe_split)
+		error(shell, MALLOC, ERROR, 1);
 	shell->cmd_count = 0;
 	while (shell->pipe_split[shell->cmd_count])
 		shell->cmd_count++;
 	init_tree(shell);
 	i = 0;
-	while (shell->pipe_split[i])
+	while (shell->status == RUNNING && shell->pipe_split[i])
 	{
 		shell->cmd_tree[i].index = i;
 		shell->cmd_tree[i].line = ft_strdup(shell->pipe_split[i]);
+		if (!shell->cmd_tree[i].line)
+			error(shell, MALLOC, ERROR, 1);
 		m_split(shell, &shell->cmd_tree[i]);
 		free(shell->pipe_split[i]);
 		i++;

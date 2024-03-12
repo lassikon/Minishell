@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 15:19:44 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/04 14:06:52 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/12 12:36:38 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,11 @@ char	*add_one_space(char *str)
 	char *new;
 
 	if (str[0] == '<')
-	{
 		new = ft_strjoin("< ", &str[1]);
-	}
 	else
-	{
 		new = ft_strjoin("> ", &str[1]);
-	}
+	if (!new)
+		return (NULL);
 	free(str);
 	return (new);
 }
@@ -46,7 +44,7 @@ void	remove_spaces(char *str)
 	str[j] = '\0';
 }
 
-void	delete_from_line(char *line, int start, int end)
+void	replace_with_spaces(char *line, int start, int end)
 {
 	while (start < end)
 	{
