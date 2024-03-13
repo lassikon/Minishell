@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 11:11:41 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/12 11:24:05 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/13 11:01:07 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,12 @@ static char	*fetch_env(t_shell *shell, char *line, int *i)
 	char	*env;
 	char	*value;
 
+	// printf("fetch_env from line: %s\n", line);
 	start = *i;
+	if (line[*i] == '\"')
+		return ("$");
 	(*i)++;
-	while (line[*i] && line[*i] != ' ' && line[*i] != '$')
+	while (line[*i] && line[*i] != ' ' && line[*i] != '$' && line[*i] != '\"')
 		(*i)++;
 	end = *i;
 	env = ft_substr(line, start, end - start);
@@ -41,16 +44,16 @@ static int	expand_env(t_shell *shell, char **line, int i)
 	char	*value;
 	char	*new;
 
-	(void)shell;
 	start = i;
 	i++;
 	if ((*line)[i] == '?')
 	{
 		i++;
 		end = i;
-		value = ft_itoa(shell->exit_status);
-		if (!value)
-			error(shell, MALLOC, FATAL, 1);
+		if (WIFEXITED(shell->exit_status))
+			value = "0";
+		else
+			value = "1";
 	}
 	else
 		value = fetch_env(shell, *line, &i);
@@ -80,10 +83,8 @@ void	check_expands(t_shell *shell, t_cmd *cmd)
 			i = skip_quotes(cmd->line, i);
 		if (cmd->line[i + 1] && cmd->line[i] == '$')
 			i = expand_env(shell, &cmd->line, i);
-		if (cmd->line[i] == '*')
-		{
-			// handle wildcard
-		}
 		i++;
 	}
+	// printf("line: %s\n", cmd->line);
 }
+

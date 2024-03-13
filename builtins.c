@@ -6,13 +6,13 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 10:46:25 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/12 14:33:51 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/13 11:28:38 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-static void	check_identifier(t_shell *shell, char *arg)
+static int	check_identifier(t_shell *shell, char *arg)
 {
 	char	*identifier;
 	int		i;
@@ -20,6 +20,13 @@ static void	check_identifier(t_shell *shell, char *arg)
 	identifier = ft_substr(arg, 0, ft_strchr(arg, '=') - arg + 1);
 	if (identifier == NULL)
 		error(shell, MALLOC, FATAL, 1);
+	if (ft_strchr(identifier, '-'))
+	{
+		ft_putstr_fd("minishell: export: `", 2);
+		ft_putstr_fd(identifier, 2);
+		error(shell, "': not a valid identifier", ERROR, 1);
+		return (1);
+	}
 	i = 0;
 	while (shell->env[i])
 	{
@@ -27,10 +34,11 @@ static void	check_identifier(t_shell *shell, char *arg)
 		{
 			remove_from_array(shell->env, identifier);
 			free(identifier);
-			return ;
+			return (0);
 		}
 		i++;
 	}
+	return (0);
 }
 
 static void	export(t_shell *shell, t_cmd *cmd)
@@ -38,16 +46,18 @@ static void	export(t_shell *shell, t_cmd *cmd)
 	int		i;
 
 	i = 1;
-	if (!cmd->args[1])
-	{
-		env(shell);
-		return ;
-	}
 	while (cmd->args[i])
 	{
-		if (ft_strchr(cmd->args[i], '='))
+		if (!ft_strchr(cmd->args[i], '=') || cmd->args[i][0] == '=')
 		{
-			check_identifier(shell, cmd->args[i]);
+			ft_putstr_fd("minishell: export: `", 2);
+			ft_putstr_fd(cmd->args[i], 2);
+			error(shell, "': not a valid identifier", ERROR, 1);
+		}
+		else
+		{
+			if (check_identifier(shell, cmd->args[i]))
+				return ;
 			shell->env = add_to_array(shell->env, cmd->args[i]);
 			if (shell->env == NULL)
 				error(shell, MALLOC, FATAL, 1);
@@ -63,10 +73,7 @@ static void	unset(t_shell *shell, t_cmd *cmd)
 
 	i = 1;
 	if (!cmd->args[i])
-	{
-		error(shell, "unset: not enough arguments", ERROR, 1);
 		return ;
-	}
 	while (cmd->args[i])
 	{
 		identifier = ft_strjoin(cmd->args[i], "=");
@@ -79,18 +86,19 @@ static void	unset(t_shell *shell, t_cmd *cmd)
 	}
 }
 
-void	child_builtin(t_shell *shell, t_cmd *cmd)
+int	child_builtin(t_shell *shell, t_cmd *cmd)
 {
 	if (ft_strncmp(cmd->cmd, "export", 7) == 0 && !cmd->args[1])
-		export(shell, cmd);
+		env(shell, 1);
 	else if (ft_strncmp(cmd->cmd, "env", 4) == 0)
-		env(shell);
+		env(shell, 0);
 	else if (ft_strncmp(cmd->cmd, "pwd", 4) == 0)
 		pwd(shell, cmd);
 	else if (ft_strncmp(cmd->cmd, "echo", 5) == 0)
 		echo(shell, cmd);
 	else
-		return ;
+		return (0);
+	return (1);
 }
 
 int	parent_builtin(t_shell *shell, t_cmd *cmd)

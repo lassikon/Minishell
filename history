@@ -1,8 +1,68 @@
-ls
-pwd
-nano
-ls > wc -l
-ls | wc -l
-ls | grep e | wc
-make re
+$PWD
+$PWD$PWD
+"$PWD"
+$"PWD "
+" $PWD"
+" $PWD "
+"$PWD "
+exit
+env
+export
+exit
+export
+env
+env
+export
+exit
+export
+env
+export
+exit
+export
+$PWD
+'$PWD'
+$PWD'$PWD'
+$PWD echo hello
+exit
+$PWD
+exit
+$PWD
+exit
+$PWD
+$PWD$PWD
+"$PWD"
+"$PWD"'$PWD'"$PWD"
+cat < file | echo hi > file2 another hi | echo “>” $PWD ‘$PWD’ $?
+" $PWD "
+echo "hello" "$PWD"
+cat < file | echo hi > file2 another hi | echo “>” $PWD ‘$PWD’ $?
+cat < file | echo hi > file2 another hi | echo ">" $PWD '$PWD' $?
+exit
+cat < file | echo hi > file2 another hi | echo ">" $PWD '$PWD' $?
+exit
+cat < file | echo hi > file2 another hi | echo ">" $PWD '$PWD' $?
+exit
+echo "$"
+echo "$"
+exit
+echo '$'
+exit
+export 123
+env
+exit
+echo '> >> < * ? [ ] | ; [ ] || && ( ) & # $  <<'
+echo 'hello hello'
+echo 'hello'
+exit
+echo '> >> < * ? [ ] | ; [ ] || && ( ) & # $  <<'
+ls | ls | ls
+exit
+ls | ls | ls
+ls | ls | "ls"
+echo '> >> < * ? [ ] | ; [ ] || && ( ) & # $  <<'
+exit
+echo '> >> < * ? [ ] | ; [ ] || && ( ) & # $  <<'
+exit
+echo hello
+ls | ls | cat
 exit

@@ -6,28 +6,11 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 13:30:24 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/12 15:18:46 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/13 12:29:33 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
-
-/*
-SPLIT IDEA
-
-Extracted parts in the line get replaced with ' '.
-
-1. Extract redirections from the line and store them in the t_cmd struct.
-	- Redirection arrows and filenames are stored in an array.
-	- File is the first word after the redirection arrow.
-
-2. Extract the command from the line and store it in the t_cmd struct.
-	- Command is the first word that is not a filename for a redirection.
-	- After this point, whatever is left of the line should be arguments.
-
-3. Extract the arguments from the line and store them in the t_cmd struct.
-	- Arguments are split into an array of strings.
-*/
 
 char	*join_n_free(char *s1, char *s2)
 {
@@ -61,7 +44,7 @@ int	check_unclosed_quotes(char *line)
 	return (0);
 }
 
-void	m_split(t_shell *shell, t_cmd *cmd)
+void	tokenize(t_shell *shell, t_cmd *cmd)
 {
 	check_expands(shell, cmd);
 	if (check_unclosed_quotes(cmd->line))
@@ -81,30 +64,9 @@ void	m_split(t_shell *shell, t_cmd *cmd)
 
 void	parse_line(t_shell *shell)
 {
-	int	i;
-
 	if (shell->status == ERROR)
 		return ;
 	if (ft_strcmp(shell->line, "exit") == 0)
 		ft_exit(shell);
-	shell->pipe_split = ft_split(shell->line, '|');
-	if (!shell->pipe_split)
-		error(shell, MALLOC, ERROR, 1);
-	shell->cmd_count = 0;
-	while (shell->pipe_split[shell->cmd_count])
-		shell->cmd_count++;
-	init_tree(shell);
-	i = 0;
-	while (shell->status == RUNNING && shell->pipe_split[i])
-	{
-		shell->cmd_tree[i].index = i;
-		shell->cmd_tree[i].line = ft_strdup(shell->pipe_split[i]);
-		if (!shell->cmd_tree[i].line)
-			error(shell, MALLOC, ERROR, 1);
-		m_split(shell, &shell->cmd_tree[i]);
-		free(shell->pipe_split[i]);
-		i++;
-	}
-	shell->cmd_tree[i].line = NULL;
-	free(shell->pipe_split);
+	pipe_split(shell, shell->line);
 }

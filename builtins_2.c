@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 13:36:20 by okarejok          #+#    #+#             */
-/*   Updated: 2024/03/12 14:35:15 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/13 10:41:55 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,16 +83,29 @@ void	echo(t_shell *shell, t_cmd *cmd)
 	exit(1);
 }
 
-void	env(t_shell *shell)
+void	env(t_shell *shell, int export)
 {
 	int	i;
+	int	k;
 
 	i = 0;
 	if (!shell->env)
 		return ;
 	while (shell->env[i])
 	{
-		printf("%s\n", shell->env[i]);
+		if (export)
+		{
+			k = 0;
+			write(1, "declare -x ", 11);
+			while (shell->env[i][k] && shell->env[i][k] != '=')
+			{
+				write(1, &shell->env[i][k], 1);
+				k++;
+			}
+			printf("=\"%s\"\n", &shell->env[i][k + 1]);
+		}
+		else
+			printf("%s\n", shell->env[i]);
 		i++;
 	}
 }

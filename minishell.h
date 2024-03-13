@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/12 15:35:13 by okarejok         ###   ########.fr       */
+/*   Updated: 2024/03/13 12:28:57 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,8 @@ typedef struct s_shell
 void	parse_line(t_shell *shell);
 void	setup_shell(t_shell *shell, char **envp);
 void	init_tree(t_shell *shell);
+void	pipe_split(t_shell *shell, char *s);
+void	tokenize(t_shell *shell, t_cmd *cmd);
 void	check_expands(t_shell *shell, t_cmd *cmd);
 int		extract_redirections(t_shell *shell, t_cmd *cmd);
 void	extract_command(t_shell *shell, t_cmd *cmd);
@@ -85,7 +87,7 @@ void	paths(t_shell *shell, char **envp);
 void 	close_pipes(t_shell *shell);
 void 	open_pipes(t_shell *shell);
 void    run_command(t_shell *shell);
-void	child_builtin(t_shell *shell, t_cmd *cmd);
+int		child_builtin(t_shell *shell, t_cmd *cmd);
 int		parent_builtin(t_shell *shell, t_cmd *cmd);
 char	**add_to_array(char **array, char *new);
 void	remove_from_array(char **array, char *identifier);
@@ -96,7 +98,7 @@ void	free_array(char **array);
 void	cd(t_shell *shell, t_cmd *cmd);
 void	pwd(t_shell *shell, t_cmd *cmd);
 void	echo(t_shell *shell, t_cmd *cmd);
-void	env(t_shell *shell);
+void	env(t_shell *shell, int export);
 void	ft_exit(t_shell *shell);
 char	*find_home_dir(t_shell *shell);
 void	redir_to_pipe(t_shell *shell, t_cmd *cmd_vars);

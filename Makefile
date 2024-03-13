@@ -8,6 +8,7 @@ READLINE	:= -lreadline -L ~/.brew/opt/readline/lib -I ~/.brew/opt/readline/inclu
 LIBFT	:= $(LIBFT_DIR)/libft.a
 SRCS	:= 	minishell.c \
 			init.c \
+			pipe_split.c \
 			parser.c \
 			parse_redirs.c \
 			parse_cmd_n_args.c \
