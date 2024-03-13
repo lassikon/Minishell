@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:19:05 by okarejok          #+#    #+#             */
-/*   Updated: 2024/03/13 10:39:22 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/13 17:09:37 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,24 +68,26 @@ void	do_fork(t_shell *shell)
 
 void	handle_child(t_shell *shell, t_cmd *cmd_vars)
 {
-	if (cmd_vars->redir_count > 0)
-		redir_to_file(shell, cmd_vars);
 	if (shell->cmd_count > 1)
 		redir_to_pipe(shell, cmd_vars);
+	if (cmd_vars->redir_count > 0)
+		redir_to_file(shell, cmd_vars);
 	if (child_builtin(shell, cmd_vars))
 		exit(0);
 	if (ft_strchr(cmd_vars->cmd, '/'))
 	{
 		if (access(cmd_vars->cmd, X_OK) == -1)
-			printf("No access!\n");
+			p_error(shell, cmd_vars->cmd, FATAL, 1);
 		execve(cmd_vars->cmd, cmd_vars->args, shell->env);
 	}
 	else if (shell->paths != NULL)
 	{
 		execve_with_path(shell, cmd_vars, shell->env);
 	}
-	printf("%s failed!\n", cmd_vars->cmd);
-	exit(1);
+	ft_putstr_fd("minishell: ", 2);
+	ft_putstr_fd(cmd_vars->cmd, 2);
+	ft_putstr_fd(": command not found\n", 2);
+	exit(127);
 }
 
 void	wait_children(t_shell *shell)

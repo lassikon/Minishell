@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 13:36:20 by okarejok          #+#    #+#             */
-/*   Updated: 2024/03/13 10:41:55 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/13 16:34:20 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,9 +110,47 @@ void	env(t_shell *shell, int export)
 	}
 }
 
-void	ft_exit(t_shell *shell)
+static int	is_numeric(char *str)
 {
+	int	i;
+
+	i = 0;
+	if (str[i] == '-' || str[i] == '+')
+		i++;
+	while (str[i])
+	{
+		if (!ft_isdigit(str[i]))
+		{
+			ft_putstr_fd("minishell: exit: ", 2);
+			ft_putstr_fd(str, 2);
+			ft_putendl_fd(": numeric argument required", 2);
+			return (1);
+		}
+		i++;
+	}
+	return (0);
+}
+
+void	ft_exit(t_shell *shell, t_cmd *cmd)
+{
+	int	code;
+
+	if (cmd->arg_count > 2)
+	{
+		ft_putendl_fd("minishell: exit: too many arguments", 2);
+		shell->exit_status = 1;
+		return ;
+	}
+	if (cmd->arg_count == 2)
+	{
+		if (is_numeric(cmd->args[1]))
+			code = 255;
+		else
+			code = ft_atoi(cmd->args[1]);
+	}
+	else
+		code = shell->exit_status;
 	free_all(shell);
 	free(shell->env);
-	exit(1);
+	exit(code);
 }

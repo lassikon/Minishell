@@ -66,3 +66,114 @@ exit
 echo hello
 ls | ls | cat
 exit
+echo "hello 'hi' hello"
+echo "hello 'hi' >hello"
+echo "hello 'hi<' >hello"
+echo "hello 'hi<' >hello"
+echo "hello'"
+echo "hello -> '"
+echo "hello '"
+exit
+echo "hello -> '"
+echo 'aspas -> " '
+exit
+echo hello""world
+exit
+echo hello""world
+echo "aspas ->'"
+exit
+echo "> >> < * ? [ ] | ; [ ] || && ( ) & # $  <<"
+exit
+export hello
+exit
+export hello
+exit
+env
+unset PATH
+env
+exit
+cat "a b"
+cat <"a b"
+exit
+cat <"a b"
+exit
+cat <"a b"
+exit
+cat <"a b"
+exit
+cat <"a b"
+exit
+cat <"a b"
+exit
+cat <missing | echo hi
+exit
+cat <missing
+exit
+asdas
+exit
+make
+exit
+asdad
+exit
+exit hello
+exit 2
+exit
+exit 1 2
+exit
+exit 1 2
+exit
+exit 1 2
+exit
+exit 1 2
+exit
+exit
+exit
+exit 1 2
+exit
+exit 1 2
+exit
+exit 1 2
+exit hello
+exit +"100"
+exit -"100"
+exit hello
+exit hello
+exit hello
+exit hello
+export A-
+make
+exit
+export A-
+exit
+exit hello
+exit 1 2
+exit 1
+exit hello
+exit +"10a0"
+assdkad
+man access
+exit
+askdjad
+exit
+askdjad
+man access
+exit
+ls
+exit
+ls
+exit
+asdasda
+exit
+asdasd
+exit
+"aaa"
+$?
+"aaa" | beee
+$?
+exit
+"aaa" | beee
+$?
+exit
+aaa
+$?
+exit

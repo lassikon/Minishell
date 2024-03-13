@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 13:03:52 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/12 12:37:06 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/13 15:31:51 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,8 @@ static void	tidy_format(t_shell *shell, t_cmd *cmd, int i)
 static int	get_redirection(t_shell *shell, t_cmd *cmd, int i, int index)
 {
 	int		len;
+	int		in_quotes;
+	char	quote;
 
 	(void)shell;
 	len = 0;
@@ -90,9 +92,21 @@ static int	get_redirection(t_shell *shell, t_cmd *cmd, int i, int index)
 		len++;
 	while (cmd->line[i + len] == ' ')
 		len++;
+	if (cmd->line[i + len] == '\'' || cmd->line[i + len] == '\"')
+	{
+		quote = cmd->line[i + len];
+		in_quotes = 1;
+		len++;
+		while (cmd->line[i + len] && in_quotes)
+		{
+			if (cmd->line[i + len] == quote)
+				in_quotes = 0;
+			len++;
+		}
+	}
 	while (cmd->line[i + len] && cmd->line[i + len] != ' ')
 		len++;
-	cmd->redir[index] = ft_substr(cmd->line, i, len );
+	cmd->redir[index] = ft_substr(cmd->line, i, len);
 	if (!cmd->redir[index])
 		error(shell, MALLOC, FATAL, 1);
 	tidy_format(shell, cmd, index);

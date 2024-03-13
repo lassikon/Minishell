@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 13:30:24 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/13 12:29:33 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/13 15:59:50 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,5 @@ void	parse_line(t_shell *shell)
 {
 	if (shell->status == ERROR)
 		return ;
-	if (ft_strcmp(shell->line, "exit") == 0)
-		ft_exit(shell);
 	pipe_split(shell, shell->line);
 }
