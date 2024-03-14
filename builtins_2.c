@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   builtins_2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 13:36:20 by okarejok          #+#    #+#             */
-/*   Updated: 2024/03/13 16:34:20 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/14 17:37:39 by okarejok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,24 +17,28 @@ void	cd(t_shell *shell, t_cmd *cmd)
 	char	*home;
 	char	*path;
 
-	home = NULL;
-	path = NULL;
 	if (!cmd->args[1])
-		return ;
-	if (ft_strncmp(&cmd->args[1][0], "~", 1) == 0)
+	{
+		path = ft_strdup(find_home_dir(shell));
+		if (!path)
+			error(shell, MALLOC, FATAL, 1);
+	}
+	else if (ft_strncmp(&cmd->args[1][0], "~", 1) == 0)
 	{
 		home = find_home_dir(shell);
 		path = ft_strjoin(home, &cmd->args[1][1]);
 		if (path == NULL)
 			error(shell, MALLOC, FATAL, 1);
-		chdir(path);
-		free(path);
 	}
 	else
 	{
-		path = cmd->args[1];
-		chdir(path);
+		path = ft_strdup(cmd->args[1]);
+		if (!path)
+			error(shell, MALLOC, FATAL, 1);
 	}
+	if (chdir(path) == -1)
+		error(shell, CD_FAIL, ERROR, 1);
+	free(path);
 }
 
 void	pwd(t_shell *shell, t_cmd *cmd)
@@ -46,7 +50,7 @@ void	pwd(t_shell *shell, t_cmd *cmd)
 	path = getcwd(NULL, 0);
 	printf("%s\n", path);
 	free(path);
-	exit(1);
+	exit(0);
 }
 
 void	echo(t_shell *shell, t_cmd *cmd)
@@ -80,7 +84,7 @@ void	echo(t_shell *shell, t_cmd *cmd)
 			i++;
 		}
 	}
-	exit(1);
+	exit(0);
 }
 
 void	env(t_shell *shell, int export)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 16:15:57 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/12 15:01:20 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/14 17:34:49 by okarejok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,10 @@ void	free_tree(t_shell *shell)
 	}
 	free(shell->cmd_tree);
 	shell->cmd_tree = NULL;
+	free_pipes(shell);
+	free(shell->pid);
+	shell->pid = NULL;
+	shell->cmd_tree = NULL;
 }
 
 void	free_all(t_shell *shell)
@@ -68,4 +72,22 @@ void	free_all(t_shell *shell)
 	if (shell->pipe_split)
 		free_array(shell->pipe_split);
 	free_tree(shell);
+}
+
+void	free_pipes(t_shell *shell)
+{
+	int	i;
+
+	i = 0;
+	if (shell->pipe != NULL)
+	{
+		while (i < shell->cmd_count)
+		{
+			close_pipes(shell);
+			free(shell->pipe[i]);
+			i++;
+		}
+		free(shell->pipe);
+		shell->pipe = NULL;
+	}
 }

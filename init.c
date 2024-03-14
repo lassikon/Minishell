@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 12:19:16 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/12 16:33:58 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/14 16:52:51 by okarejok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,8 @@ void	init_tree(t_shell *shell)
 		i++;
 	}
 	shell->cmd_tree[i].line = NULL;
+	allocate_pipes(shell);
+	shell->pid = malloc(sizeof(shell->pid) * shell->cmd_count);
 }
 
 void	setup_shell(t_shell *shell, char **envp)

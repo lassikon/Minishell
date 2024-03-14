@@ -177,3 +177,61 @@ exit
 aaa
 $?
 exit
+cd sfsdfsd
+cd ..
+cd minihell
+cd lsdm
+cd  asdasd
+cd ~/Documents/
+pwd
+cd a
+cd a
+cd a
+cd a
+cd a
+cd a
+cd a
+cd a
+cd a
+./minishell
+cd a
+<< cat | cat
+<< cat | cat
+ls
+cat
+cat
+ls
+ls | cat | echo hello
+mkdir asd
+cd asd
+chmod 000 .
+cd  ..
+cd ..
+pwd
+cd ../../../../../../../../../../../../../
+ls
+pwd
+cd
+cd minihell
+exit 20 | exit 30 | exit 50
+exit 20 | exit 30 | exit 50
+echo $SHELL
+echo $SHELLs
+echo $SHELL$SHELL
+echo "$SHELL"
+echo '$SHELL'
+echo '"$SHELL"'
+echo "'$SHELL'"
+>>>
+>>>
+>> HERE >> DOC cat
+$SHELL
+$SHELL
+exit
+exit
+bash
+<< HERE << DOC cat
+ls | wc
+make
+make re
+ls | wc

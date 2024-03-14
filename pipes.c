@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   pipes.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 14:52:14 by okarejok          #+#    #+#             */
-/*   Updated: 2024/03/12 14:22:36 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/14 17:08:23 by okarejok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	open_pipes(t_shell *shell)
 	{
 		pipe(shell->pipe[i]);
 		if (shell->pipe[i][0] == -1 || shell->pipe[i][1] == -1)
-			p_error(shell, "pipe", FATAL, 1);
+			p_error(shell, PIPE, FATAL, 1);
 		i++;
 	}
 }
@@ -35,6 +35,23 @@ void	close_pipes(t_shell *shell)
 	{
 		close(shell->pipe[i][0]);
 		close(shell->pipe[i][1]);
+		i++;
+	}
+}
+
+void	allocate_pipes(t_shell *shell)
+{
+	int	i;
+
+	i = 0;
+	shell->pipe = (int **)malloc(shell->cmd_count * sizeof(int *));
+	if (shell->pipe == NULL)
+		error(shell, MALLOC, FATAL, 1);
+	while (i < shell->cmd_count)
+	{
+		shell->pipe[i] = (int *)malloc(2 * sizeof(int));
+		if (!shell->pipe[i])
+			error(shell, MALLOC, FATAL, 1);
 		i++;
 	}
 }

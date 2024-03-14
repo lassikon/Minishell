@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   builtins.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 10:46:25 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/13 16:43:45 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/14 16:57:25 by okarejok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ static void	export(t_shell *shell, t_cmd *cmd)
 	int		i;
 
 	i = 1;
+	if (shell->cmd_count > 1)
+		return ;
 	while (cmd->args[i])
 	{
 		if ((cmd->args[i][0] == '=') || ft_isdigit(cmd->args[i][0]))
