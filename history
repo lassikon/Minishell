@@ -235,3 +235,71 @@ ls | wc
 make
 make re
 ls | wc
+ls
+echo hey hello
+echo "hey 'hello hello"
+exit
+cat missing >out2
+echo $?
+echo $?
+echo $?
+cat missing >out2
+echo $?
+asdasdad
+echo $?
+cat missing >out2
+exit
+cat missing >out2
+exit $?
+exit 42 world
+exit
+exit 10 | exit 20 | exit 30
+exit 10 | exit 20 | exit 30
+exit 10 | exit 20 | exit 30
+exit 10 | exit 20 | exit 30
+exit 10
+exit 10 | exit 20 | exit 30
+exit 10 | exit 20 | exit 30
+asldkad
+exit
+cat missing >out
+exit
+cat missing >out
+exit $?
+exit 1
+exit
+exit $?
+exit
+exit $?
+exit 10 | exit 20 | exit 30
+cat missing >out
+exit
+cat <missing >out
+exit
+cat <missing >out
+exit
+cat <missing >out
+exit
+<<1
+bash
+<<1
+exit
+exit >out
+exit 43 43
+exit
+exit 43 43
+exit 256
+exit
+echo "ls | cat"
+exit
+exit 3948902384092384
+exit
+exit
+env
+exit
+export
+exit
+$PWD
+exit
+$PWD
+env

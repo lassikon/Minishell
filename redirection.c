@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:30:18 by okarejok          #+#    #+#             */
-/*   Updated: 2024/03/13 15:48:42 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/15 12:28:05 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,19 @@ static void	open_file(t_shell *shell, char *redir, int *file, char *mode)
 	{
 		*file = open(redir + 2, O_CREAT | O_RDWR | O_TRUNC, 0644);
 		if (*file == -1)
-			p_error(shell, redir + 2, ERROR, 1);
+			p_error(shell, redir + 2, FATAL, 1);
 	}
 	else if (ft_strncmp(mode, "< ", 2) == 0)
 	{
 		*file = open(redir + 2, O_RDONLY);
 		if (*file == -1)
-			p_error(shell, redir + 2, ERROR, 1);
+			p_error(shell, redir + 2, FATAL, 1);
 	}
 	else if (ft_strncmp(mode, ">>", 2) == 0)
 	{
 		*file = open(redir + 2, O_CREAT | O_APPEND | O_RDWR, 0644);
 		if (*file == -1)
-			p_error(shell, redir + 2, ERROR, 1);
+			p_error(shell, redir + 2, FATAL, 1);
 	}
 }
 

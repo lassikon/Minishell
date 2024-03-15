@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   builtins.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 10:46:25 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/14 16:57:25 by okarejok         ###   ########.fr       */
+/*   Updated: 2024/03/15 12:21:50 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,6 +115,8 @@ int	child_builtin(t_shell *shell, t_cmd *cmd)
 		pwd(shell, cmd);
 	else if (ft_strncmp(cmd->cmd, "echo", 5) == 0)
 		echo(shell, cmd);
+	else if (ft_strncmp(cmd->cmd, "exit", 5) == 0 && shell->cmd_count > 1)
+		ft_exit(shell, cmd);
 	else
 		return (0);
 	return (1);
@@ -128,7 +130,7 @@ int	parent_builtin(t_shell *shell, t_cmd *cmd)
 		unset(shell, cmd);
 	else if (ft_strncmp(cmd->cmd, "cd", 3) == 0)
 		cd(shell, cmd);
-	else if (ft_strncmp(shell->line, "exit", 4) == 0)
+	else if (ft_strncmp(cmd->cmd, "exit", 5) == 0 && shell->cmd_count == 1)
 		ft_exit(shell, cmd);
 	else
 		return (0);

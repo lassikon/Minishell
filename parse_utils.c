@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 15:19:44 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/13 14:23:11 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/15 10:43:44 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,14 +81,14 @@ void	remove_quotes(char *str)
 		{
 			inside_singles = !inside_singles;
 			i++;
-			if (inside_singles)
+			if (inside_singles || str[i] == '\'')
 				continue ;
 		}
 		if (str[i] == '\"' && !inside_singles)
 		{
 			inside_doubles = !inside_doubles;
 			i++;
-			if (inside_doubles)
+			if (inside_doubles || str[i] == '\"')
 				continue ;
 		}
 		str[k] = str[i];

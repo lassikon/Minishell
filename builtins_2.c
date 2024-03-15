@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   builtins_2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 13:36:20 by okarejok          #+#    #+#             */
-/*   Updated: 2024/03/14 17:37:39 by okarejok         ###   ########.fr       */
+/*   Updated: 2024/03/15 16:15:58 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ void	pwd(t_shell *shell, t_cmd *cmd)
 	path = getcwd(NULL, 0);
 	printf("%s\n", path);
 	free(path);
-	exit(0);
 }
 
 void	echo(t_shell *shell, t_cmd *cmd)
@@ -84,7 +83,6 @@ void	echo(t_shell *shell, t_cmd *cmd)
 			i++;
 		}
 	}
-	exit(0);
 }
 
 void	env(t_shell *shell, int export)
@@ -135,10 +133,16 @@ static int	is_numeric(char *str)
 	return (0);
 }
 
+// add overflow handling, such as "exit 23492342039402324"
+// ctrl + d should write exit
+// expand $ in heredoc unless LIMITER is inside quotes
+// clear OLDPWD when shell is started
+
 void	ft_exit(t_shell *shell, t_cmd *cmd)
 {
 	int	code;
 
+	ft_putendl_fd("exit", 1);
 	if (cmd->arg_count > 2)
 	{
 		ft_putendl_fd("minishell: exit: too many arguments", 2);
@@ -153,7 +157,7 @@ void	ft_exit(t_shell *shell, t_cmd *cmd)
 			code = ft_atoi(cmd->args[1]);
 	}
 	else
-		code = shell->exit_status;
+		code = WEXITSTATUS(shell->exit_status);
 	free_all(shell);
 	free(shell->env);
 	exit(code);

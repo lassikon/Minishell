@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:19:05 by okarejok          #+#    #+#             */
-/*   Updated: 2024/03/13 17:09:37 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/15 15:25:22 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static void	execve_with_path(t_shell *shell, t_cmd *cmd_vars, char **envp)
 	i = 0;
 	cmd_one = ft_strjoin("/", cmd_vars->cmd);
 	if (cmd_one == NULL)
-		printf("command is null!\n");
+		error(shell, MALLOC, FATAL, 1);
 	while (shell->paths[i])
 	{
 		cmd_path = ft_strjoin(shell->paths[i], cmd_one);
@@ -47,6 +47,8 @@ void	do_fork(t_shell *shell)
 	i = 0;
 	while (i < shell->cmd_count)
 	{
+		if (shell->status == ERROR)
+			break ;
 		if (parent_builtin(shell, &shell->cmd_tree[i]))
 		{
 			i++;
@@ -98,6 +100,8 @@ void	wait_children(t_shell *shell)
 	while (i < shell->cmd_count)
 	{
 		waitpid(shell->pid[i], &shell->exit_status, 0);
+		if (!WIFEXITED(shell->exit_status))
+			shell->exit_status = 1;
 		i++;
 	}
 }

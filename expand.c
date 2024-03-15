@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 11:11:41 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/13 17:17:53 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/15 16:14:34 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ static char	*fetch_env(t_shell *shell, char *line, int *i)
 static int	expand_env(t_shell *shell, char **line, int i)
 {
 	int		start;
-	int		end;
 	char	*value;
 	char	*new;
 
@@ -48,12 +47,8 @@ static int	expand_env(t_shell *shell, char **line, int i)
 	i++;
 	if ((*line)[i] == '?')
 	{
+		value = ft_itoa(WEXITSTATUS(shell->exit_status));
 		i++;
-		end = i;
-		if (WIFEXITED(shell->exit_status))
-			value = "0";
-		else
-			value = "1";
 	}
 	else
 		value = fetch_env(shell, *line, &i);
@@ -85,6 +80,4 @@ void	check_expands(t_shell *shell, t_cmd *cmd)
 			i = expand_env(shell, &cmd->line, i);
 		i++;
 	}
-	// printf("line: %s\n", cmd->line);
 }
-
