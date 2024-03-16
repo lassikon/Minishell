@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:19:05 by okarejok          #+#    #+#             */
-/*   Updated: 2024/03/16 14:59:04 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/16 17:34:38 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void	handle_child(t_shell *shell, t_cmd *cmd_vars)
 	if (cmd_vars->redir_count > 0)
 		redir_to_file(shell, cmd_vars);
 	if (child_builtin(shell, cmd_vars))
-		exit(0);
+		exit(shell->exit_status);
 	if (ft_strchr(cmd_vars->cmd, '/'))
 	{
 		if (access(cmd_vars->cmd, F_OK) == -1)

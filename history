@@ -367,3 +367,53 @@ exit 43 hello
 exit 43 hello
 $?
 exit
+$PWD
+echo $USER
+exit
+<<"hello"
+cat <<"1"
+exit
+echo $EMPTY
+$EMPTY
+echo <<1
+exit
+cat <<1
+exit
+$EMPTY
+exit
+$EMPTY
+exit
+$EMPTY
+$EMPTY
+$EMPTY
+exit
+exit 42 hello
+$?
+exit
+exit 42 hello
+exit
+exit 42 hello
+$?
+exit
+exit 42 hello
+exit
+exit 42 hello
+$?
+exit
+exit 42 hello
+$?
+exit
+$?
+exit 42 hello
+$?
+exit
+exit 42 hello
+$?
+exit
+exit 42 hello
+$?
+exit
+exit 42 hello
+$?
+exxit
+exit

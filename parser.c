@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 13:30:24 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/15 16:12:46 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/16 16:34:30 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,8 @@ int	check_unclosed_quotes(char *line)
 
 void	tokenize(t_shell *shell, t_cmd *cmd)
 {
-	check_expands(shell, cmd);
+	if (ft_strchr(cmd->line, '$'))
+		check_expands(shell, &cmd->line);
 	if (check_unclosed_quotes(cmd->line))
 	{
 		error(shell, "Unclosed quotes", ERROR, 1);
@@ -67,4 +68,10 @@ void	parse_line(t_shell *shell)
 	if (shell->status == ERROR)
 		return ;
 	pipe_split(shell, shell->line);
+	if (shell->cmd_count == 1 && !shell->cmd_tree[0].cmd[0])
+	{
+		shell->cmd_count = 0;
+		shell->status = ERROR;
+		return ;
+	}
 }

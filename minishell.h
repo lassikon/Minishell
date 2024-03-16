@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/16 13:47:43 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/16 15:30:01 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +86,7 @@ void	allocate_pipes(t_shell *shell);
 void	parse_line(t_shell *shell);
 void	pipe_split(t_shell *shell, char *s);
 void	tokenize(t_shell *shell, t_cmd *cmd);
-void	check_expands(t_shell *shell, t_cmd *cmd);
+void	check_expands(t_shell *shell, char **line);
 int		extract_redirections(t_shell *shell, t_cmd *cmd);
 void	extract_command(t_shell *shell, t_cmd *cmd);
 void	extract_args(t_shell *shell, t_cmd *cmd);

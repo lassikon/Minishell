@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 11:11:41 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/15 16:14:34 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/16 17:36:56 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,10 @@ static int	expand_env(t_shell *shell, char **line, int i)
 	i++;
 	if ((*line)[i] == '?')
 	{
-		value = ft_itoa(WEXITSTATUS(shell->exit_status));
+		if (shell->exit_status > 255)
+			value = ft_itoa(WEXITSTATUS(shell->exit_status));
+		else
+			value = ft_itoa(shell->exit_status);
 		i++;
 	}
 	else
@@ -61,7 +64,7 @@ static int	expand_env(t_shell *shell, char **line, int i)
 	return (start + ft_strlen(value) - 1);
 }
 
-void	check_expands(t_shell *shell, t_cmd *cmd)
+void	check_expands(t_shell *shell, char **line)
 {
 	int		i;
 	int		inside_doubles;
@@ -70,14 +73,15 @@ void	check_expands(t_shell *shell, t_cmd *cmd)
 		return ;
 	i = 0;
 	inside_doubles = 0;
-	while (cmd->line[i])
+	while ((*line)[i])
 	{
-		if (cmd->line[i] == '\"')
+		if ((*line)[i] == '\"')
 			inside_doubles = !inside_doubles;
-		if (cmd->line[i + 1] && cmd->line[i] == '\'' && !inside_doubles)
-			i = skip_quotes(cmd->line, i);
-		if (cmd->line[i + 1] && cmd->line[i] == '$')
-			i = expand_env(shell, &cmd->line, i);
+		if ((*line)[i + 1] && (*line)[i] == '\'' && !inside_doubles)
+			i = skip_quotes(*line, i);
+		if ((*line)[i + 1] && (*line)[i] == '$')
+			i = expand_env(shell, line, i);
 		i++;
 	}
 }
+
