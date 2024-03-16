@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 14:49:10 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/14 17:35:08 by okarejok         ###   ########.fr       */
+/*   Updated: 2024/03/16 13:42:40 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	error(t_shell *shell, char *msg, t_status status, int code)
 {
-	ft_putstr_fd("minishell: error: ", 2);
+	// ft_putstr_fd("minishell: error: ", 2);
 	ft_putendl_fd(msg, 2);
 	//free_all(shell);
 	shell->status = status;

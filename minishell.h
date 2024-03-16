@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/15 16:12:36 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/16 13:47:43 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdlib.h>
 # include <fcntl.h>
 # include <sys/wait.h>
+# include <sys/stat.h>
 # include <readline/readline.h>
 # include <readline/history.h>
 # include <termios.h>
@@ -34,6 +35,7 @@ typedef enum e_status
 # define MALLOC "Error: malloc failed"
 # define CD_FAIL "No such file or directory"
 # define PIPE "Error: error opening a pipe"
+# define IS_DIR ": is a directory"
 
 typedef struct s_cmd
 {

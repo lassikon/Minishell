@@ -303,3 +303,67 @@ $PWD
 exit
 $PWD
 env
+exit -1
+exit -2934892384
+exit 2147483647
+exit 9223372036854775807
+exit 9223372036854775808
+exit -9223372036854775808
+exit -9223372036854775809
+exit -9223372036854775809
+./no_permission
+echo $?
+exit
+./no_permission
+echo $?
+exit
+$PWD
+exit
+$PWD
+echo $?
+exit
+$PWD
+exit
+$PWD
+exit
+$PWD
+exit
+./test_directory/
+exit
+./test_directory/
+exit
+/test_directory/
+exit
+/test_directory/
+ls -a
+/test_directory/
+$?
+exit
+minishell.h
+$?
+exit
+minishell.h
+$?
+/test_directory/
+exit
+/test_directory/
+$?
+exit
+/test_directory/
+$?
+exit
+/test_directory/
+make
+exit
+/test_directory/
+$?
+exit
+$EMPTY
+exit
+exit 43 hello
+$?
+exit
+exit 43 hello
+exit 43 hello
+$?
+exit

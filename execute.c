@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:19:05 by okarejok          #+#    #+#             */
-/*   Updated: 2024/03/15 15:25:22 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/16 14:59:04 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ void	do_fork(t_shell *shell)
 
 void	handle_child(t_shell *shell, t_cmd *cmd_vars)
 {
+	struct stat	buf;
+
 	if (shell->cmd_count > 1)
 		redir_to_pipe(shell, cmd_vars);
 	if (cmd_vars->redir_count > 0)
@@ -78,14 +80,23 @@ void	handle_child(t_shell *shell, t_cmd *cmd_vars)
 		exit(0);
 	if (ft_strchr(cmd_vars->cmd, '/'))
 	{
+		if (access(cmd_vars->cmd, F_OK) == -1)
+			p_error(shell, cmd_vars->cmd, FATAL, 127);
 		if (access(cmd_vars->cmd, X_OK) == -1)
-			p_error(shell, cmd_vars->cmd, FATAL, 1);
+			p_error(shell, cmd_vars->cmd, FATAL, 126);
+		if (stat(cmd_vars->cmd, &buf) == 0)
+		{
+			if (S_ISDIR(buf.st_mode))
+			{
+				ft_putstr_fd("minishell: ", 2);
+				ft_putstr_fd(cmd_vars->cmd, 2);
+				error(shell, IS_DIR, FATAL, 126);
+			}
+		}
 		execve(cmd_vars->cmd, cmd_vars->args, shell->env);
 	}
 	else if (shell->paths != NULL)
-	{
 		execve_with_path(shell, cmd_vars, shell->env);
-	}
 	ft_putstr_fd("minishell: ", 2);
 	ft_putstr_fd(cmd_vars->cmd, 2);
 	ft_putstr_fd(": command not found\n", 2);

@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 13:36:20 by okarejok          #+#    #+#             */
-/*   Updated: 2024/03/15 16:15:58 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/16 15:06:14 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,11 +142,11 @@ void	ft_exit(t_shell *shell, t_cmd *cmd)
 {
 	int	code;
 
-	ft_putendl_fd("exit", 1);
+	if (isatty(STDIN_FILENO))
+		ft_putendl_fd("exit", 2);
 	if (cmd->arg_count > 2)
 	{
-		ft_putendl_fd("minishell: exit: too many arguments", 2);
-		shell->exit_status = 1;
+		error(shell, "minishell: exit: too many arguments", ERROR, 1);
 		return ;
 	}
 	if (cmd->arg_count == 2)
