@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   builtins_2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 13:36:20 by okarejok          #+#    #+#             */
-/*   Updated: 2024/03/16 15:06:14 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/16 18:41:05 by okarejok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ void	cd(t_shell *shell, t_cmd *cmd)
 
 	if (!cmd->args[1])
 	{
-		path = ft_strdup(find_home_dir(shell));
+		path = ft_getenv(shell, "HOME");
 		if (!path)
 			error(shell, MALLOC, FATAL, 1);
 	}
 	else if (ft_strncmp(&cmd->args[1][0], "~", 1) == 0)
 	{
-		home = find_home_dir(shell);
-		path = ft_strjoin(home, &cmd->args[1][1]);
+		home = ft_getenv(shell, "HOME");
+		path = join_n_free(home, &cmd->args[1][1]);
 		if (path == NULL)
 			error(shell, MALLOC, FATAL, 1);
 	}
@@ -45,11 +45,11 @@ void	pwd(t_shell *shell, t_cmd *cmd)
 {
 	char	*path;
 
-	(void)shell;
 	(void)cmd;
-	path = getcwd(NULL, 0);
+	path = ft_getenv(shell, "PWD");
 	printf("%s\n", path);
-	free(path);
+	if (path)
+		free(path);
 }
 
 void	echo(t_shell *shell, t_cmd *cmd)

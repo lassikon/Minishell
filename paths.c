@@ -6,52 +6,55 @@
 /*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:19:45 by okarejok          #+#    #+#             */
-/*   Updated: 2024/03/06 14:57:12 by okarejok         ###   ########.fr       */
+/*   Updated: 2024/03/16 18:47:35 by okarejok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "minishell.h"
 
 #include "minishell.h"
 
 void	paths(t_shell *shell, char **envp)
 {
 	char	**paths;
+	int		i;
 
-	if (envp != NULL)
+	i = 0;
+	while (envp[i])
 	{
-		while (*envp)
+		if (!ft_strncmp(envp[i], "PATH", 4))
 		{
-			if (!ft_strncmp(*envp, "PATH", 4))
-			{
-				paths = ft_split(*envp + 5, ':');
-				if (paths == NULL)
-                    printf("paths is null");
-					//handle_perror(p, ERROR_MALLOC, 1, 1);
-				shell->paths = paths;
-				return ;
-			}
-			envp++;
+			paths = ft_split(envp[i] + 5, ':');
+			if (paths == NULL)
+				error(shell, MALLOC, FATAL, 1);
+			shell->paths = paths;
+			return ;
 		}
+		i++;
 	}
 }
 
-char	*find_home_dir(t_shell *shell)
+char	*ft_getenv(t_shell *shell, char *to_find)
 {
-	char	*home;
+	char	*aux;
+	int		i;
+	int		len;
 
-	home = NULL;
-	if (shell->env != NULL)
+	i = 0;
+	if (!to_find)
+		return (NULL);
+	len = ft_strlen(to_find);
+	while (shell->env[i])
 	{
-		while (*shell->env)
+		if (!ft_strncmp(shell->env[i], to_find, len))
 		{
-			if (!ft_strncmp(*shell->env, "HOME", 4))
+			if (shell->env[i][len] == '=')
 			{
-				home = *shell->env + 5;
-				if (home == NULL)
-                    printf("home not found :(");
-				return (home);
+				aux = ft_strdup(shell->env[i] + len + 1);
+				return (aux);
 			}
-			shell->env++;
 		}
+		i++;
 	}
-	return (home);
+	return (NULL);
 }

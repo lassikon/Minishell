@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/16 15:30:01 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/16 18:41:30 by okarejok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,13 +99,13 @@ void	remove_quotes(char *str);
 
 // BUILTINS
 void	cd(t_shell *shell, t_cmd *cmd);
-char	*find_home_dir(t_shell *shell);
 void	pwd(t_shell *shell, t_cmd *cmd);
 void	echo(t_shell *shell, t_cmd *cmd);
 void	env(t_shell *shell, int export);
 void	ft_exit(t_shell *shell, t_cmd *cmd);
 int		child_builtin(t_shell *shell, t_cmd *cmd);
 int		parent_builtin(t_shell *shell, t_cmd *cmd);
+char	*ft_getenv(t_shell *shell, char *to_find);
 
 // EXECUTION
 void	do_fork(t_shell *shell);

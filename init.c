@@ -6,7 +6,7 @@
 /*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 12:19:16 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/14 16:52:51 by okarejok         ###   ########.fr       */
+/*   Updated: 2024/03/16 18:30:39 by okarejok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,10 @@ void	setup_shell(t_shell *shell, char **envp)
 	shell->exit_status = 0;
 	shell->history_fd = open("history", O_CREAT | O_APPEND | O_RDWR, 0644);
 	ft_read_history(shell);
-	paths(shell, envp);
 	shell->env = malloc(sizeof(char *) * (array_len(envp) + 1));
 	if (!shell->env)
 		error(shell, MALLOC, FATAL, 1);
 	if (copy_array(envp, shell->env) == -1)
 		error(shell, MALLOC, FATAL, 1);
+	paths(shell, envp);
 }

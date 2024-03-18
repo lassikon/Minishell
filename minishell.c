@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:10:31 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/16 17:34:21 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/16 18:23:48 by okarejok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	main(int argc, char **argv, char **envp)
 			add_history(shell.line);
 			ft_putendl_fd(shell.line, shell.history_fd);
 			parse_line(&shell);
-			// print_tree(&shell); // for debugging
+			//print_tree(&shell); // for debugging
 			run_command(&shell);
 			free_tree(&shell);
 			free(shell.line);

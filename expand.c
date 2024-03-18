@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   expand.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 11:11:41 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/16 17:36:56 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/16 18:07:00 by okarejok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static char	*fetch_env(t_shell *shell, char *line, int *i)
 	env = ft_substr(line, start, end - start);
 	if (!env)
 		error(shell, MALLOC, FATAL, 1);
-	value = getenv(env);
+	value = ft_getenv(shell, env);
 	if (!value)
 		value = "";
 	free(env);
