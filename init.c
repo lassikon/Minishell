@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 12:19:16 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/16 18:30:39 by okarejok         ###   ########.fr       */
+/*   Updated: 2024/03/18 14:31:32 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	init_tree(t_shell *shell)
 	int	i;
 
 	i = 0;
-	shell->cmd_tree = malloc(sizeof(t_cmd) * (shell->cmd_count + 1));
+	shell->cmd_tree = (t_cmd *)malloc(sizeof(t_cmd) * (shell->cmd_count + 1));
 	if (!shell->cmd_tree)
 		error(shell, MALLOC, FATAL, 1);
 	while (i < shell->cmd_count)
@@ -50,15 +50,17 @@ void	init_tree(t_shell *shell)
 	}
 	shell->cmd_tree[i].line = NULL;
 	allocate_pipes(shell);
-	shell->pid = malloc(sizeof(shell->pid) * shell->cmd_count);
+	shell->pid = (int *)malloc(sizeof(int) * shell->cmd_count);
+	if (!shell->pid)
+		error(shell, MALLOC, FATAL, 1);
 }
 
 void	setup_shell(t_shell *shell, char **envp)
 {
-	shell->pipe_split = NULL;
 	shell->line = NULL;
 	shell->status = RUNNING;
 	shell->cmd_count = 0;
+	shell->cmd_tree = NULL;
 	shell->line_len = 0;
 	shell->exit_status = 0;
 	shell->history_fd = open("history", O_CREAT | O_APPEND | O_RDWR, 0644);

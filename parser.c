@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 13:30:24 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/16 16:34:30 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/18 15:15:28 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,43 @@ int	check_unclosed_quotes(char *line)
 	return (0);
 }
 
+int	ends_in_pipe(char *line)
+{
+	int	i;
+
+	i = ft_strlen(line) - 1;
+	while (i > 0 && line[i] == ' ')
+		i--;
+	if (line[i] == '|')
+		return (1);
+	return (0);
+}
+
+int	double_pipes(t_shell *shell, char *line)
+{
+	int	i;
+
+	i = 0;
+	while (line[i])
+	{
+		if (line[i] == '\"' || line[i] == '\'')
+			i = skip_quotes(line, i);
+		if (line[i] == '|' && line[i + 1])
+		{
+			i++;
+			while (line[i] == ' ')
+				i++;
+			if (line[i] == '|')
+			{
+				error(shell, SYNTAX_PIPE, ERROR, 258);
+				return (1);
+			}
+		}
+		i++;
+	}
+	return (0);
+}
+
 void	tokenize(t_shell *shell, t_cmd *cmd)
 {
 	if (ft_strchr(cmd->line, '$'))
@@ -63,10 +100,34 @@ void	tokenize(t_shell *shell, t_cmd *cmd)
 	extract_args(shell, cmd);
 }
 
+void	ask_for_input(t_shell *shell)
+{
+	char	*line;
+
+	line = readline("> ");
+	if (!line)
+	{
+		free(line);
+		shell->status = ERROR;
+		return ;
+	}
+	if (double_pipes(shell, line))
+		return ;
+	shell->line = join_n_free(shell->line, line);
+}
+
 void	parse_line(t_shell *shell)
 {
 	if (shell->status == ERROR)
 		return ;
+	if (double_pipes(shell, shell->line))
+		return ;
+	while (ends_in_pipe(shell->line))
+	{
+		ask_for_input(shell);
+		if (shell->status == ERROR)
+			return ;
+	}
 	pipe_split(shell, shell->line);
 	if (shell->cmd_count == 1 && !shell->cmd_tree[0].cmd[0])
 	{

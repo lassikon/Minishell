@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 16:16:29 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/16 14:50:55 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/18 15:36:30 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ void	print_tree(t_shell *shell)
 			j++;
 		}
 		printf("\n");
+		printf("exit_status: %d\n\n", shell->exit_status);
 		i++;
 	}
 }

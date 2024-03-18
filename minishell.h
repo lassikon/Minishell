@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/16 18:41:30 by okarejok         ###   ########.fr       */
+/*   Updated: 2024/03/18 14:14:42 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef enum e_status
 # define CD_FAIL "No such file or directory"
 # define PIPE "Error: error opening a pipe"
 # define IS_DIR ": is a directory"
+# define SYNTAX_PIPE "syntax error near unexpected token `|'"
 
 typedef struct s_cmd
 {
@@ -43,7 +44,6 @@ typedef struct s_cmd
 	char	*cmd;
 	char	**args;
 	char	**redir; // array of <, >, >> or << + filename/LIM
-	// int		heredoc_count;
 	int		redir_count;
 	int		infile;
 	int		outfile;
@@ -55,7 +55,6 @@ typedef struct s_shell
 {
 	char		**env;
 	char		*line;
-	char		**pipe_split;
 	t_cmd		*cmd_tree;
 	char		**paths;
 	int			cmd_count;

@@ -417,3 +417,121 @@ exit 42 hello
 $?
 exxit
 exit
+echo <infile_big | echo <infile
+$?
+echo
+$?
+exit
+cat <infile >out
+cat <"./minishell_tester/test_files/infile" >out2
+cat <"./minishell_tester/test_files/infile" >"./outfiles/out"
+cat <"./minishell_tester/test_files/infile" >"./outfiles2/out"
+ls >./outfiles/out1 >>./outfiles/out1 >./outfiles/out2
+echo $?
+ls >./outfiles/out1 >>./outfiles/out1 >./outfiles/out2
+ls >./outfiles/out1 >>./outfiles/out1 >./outfiles/out2
+ls >./outfiles/out1 >>./outfiles/out1 >./outfiles/out2
+ls >./outfiles/out1 >>./outfiles/out1 >./outfiles/out2
+ls >./outfiles/out1 >>./outfiles/out1 >./outfiles/out2
+ls >./outfiles/out1 >>./outfiles/out1 >./outfiles/out2
+ls >./outfiles/out1 >>./outfiles/out1 >./outfiles/out2
+ls >./outfiles/out1 >>./outfiles/out1 >./outfiles/out2
+ls >./outfiles/out1 >>./outfiles/out1 >./outfiles/out2
+echo $?
+exi
+exit
+alskdad
+exit
+echo hello ||
+echo hello ||
+echo hello ||
+echo hello ||
+exit
+echo hello ||
+exit
+grep hi <./minishell_tester/test_files/infile_big <./minishell_tester/test_files/infile
+$?
+exit
+env
+unset MAIL
+env
+$MAIL
+$?
+env
+exit
+env
+unset MAIL
+env
+exot
+exit
+unset MAIL
+env
+exit
+env
+ls |
+<<1 cat | ls | ls
+<<1 cat | ls | ls
+ls | ls
+exit
+cat <<1
+<<1 | cat
+<<1 cat
+<<1 cat | echo hi
+<<1 cat | cat
+<<1 cat | cat
+<<1 cat | ls | ls
+ls | ls
+ls | ls |
+ls | ls | ls
+ls | ls | ls
+ls | ls | ls
+ls | ls | ls
+echo hi
+ls | ls | ls
+ls | ls | ls
+ls | ls | ls
+ls | ls
+ls | ls | ls
+ls | ls | ls | ls
+ls | ls | ls
+ls | ls | ls
+ls | ls | ls
+echo hi | echo hi | echo hi
+echo hi | echo hi
+exit
+ls
+ls | ls | ls
+ls | ls | ls
+ls | ls | ls
+ls | ls
+ls | ls | ls | ls
+ls | ls | ls | ls | ls
+ls | ls | ls | ls | ls
+ls | ls | ls | ls | ls
+ls | ls | ls | ls | ls
+ls | ls | ls | ls | ls
+ls | ls | ls | ls | ls
+ls | ls | ls | ls | ls
+ls | ls | ls | ls | ls
+ls | echo hi
+ls | ls | ls | ls | ls | echo HELLO
+ls >o1 | ls >o2 | ls >o3 | echo HELLO
+ls >o1 | ls >o2 | ls >o3 | echo HELLO
+ls >o1 | ls >o2 | ls >o3 | echo HELLO
+ls | ls
+ls | ls | ls
+ls | ls | ls
+ls >out1 | ls >out2 | echo hi
+ls >out1 | ls >out2 | echo hi
+ls | ls | ls
+exit
+ls | ls | ls
+cat /dev/urandom | head -1
+exit
+cat /dev/urandom | head -1
+cat /dev/urandom | head -1 | wc
+cat /dev/urandom | head -1 | wc
+exit
+ls | ls | ls
+ls >o1 | ls >o2 | ls >o3 | echo HELLO
+exit
