@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   expand.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 11:11:41 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/16 18:07:00 by okarejok         ###   ########.fr       */
+/*   Updated: 2024/03/19 14:45:07 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,9 +79,8 @@ void	check_expands(t_shell *shell, char **line)
 			inside_doubles = !inside_doubles;
 		if ((*line)[i + 1] && (*line)[i] == '\'' && !inside_doubles)
 			i = skip_quotes(*line, i);
-		if ((*line)[i + 1] && (*line)[i] == '$')
+		if ((*line)[i + 1] && (*line)[i] == '$' && (*line)[i + 1] != ' ')
 			i = expand_env(shell, line, i);
 		i++;
 	}
 }
-

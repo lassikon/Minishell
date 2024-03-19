@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 13:36:20 by okarejok          #+#    #+#             */
-/*   Updated: 2024/03/19 11:25:28 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/19 14:35:17 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,37 +52,48 @@ void	pwd(t_shell *shell, t_cmd *cmd)
 		free(path);
 }
 
+static void	echo_n(t_cmd *cmd)
+{
+	int	i;
+
+	i = 2;
+	while (cmd->args[i])
+	{
+		ft_putstr_fd(cmd->args[i], 1);
+		if (cmd->args[i + 1])
+			ft_putchar_fd(' ', 1);
+		i++;
+	}
+}
+
 void	echo(t_shell *shell, t_cmd *cmd)
 {
 	int	i;
 
 	(void)shell;
-	if (ft_strncmp(cmd->args[1], "-n", 2) == 0)
+	if (!cmd->args[1])
 	{
-		i = 2;
-		while (cmd->args[i])
-		{
-			ft_putstr_fd(cmd->args[i], 1);
-			if (cmd->args[i + 1])
-				ft_putstr_fd(" ", 1);
-			i++;
-		}
+		ft_putchar_fd('\n', 1);
+		if (shell->status != ERROR)
+			shell->exit_status = 0;
+		return ;
 	}
+	if (ft_strncmp(cmd->args[1], "-n", 2) == 0)
+		echo_n(cmd);
 	else
 	{
 		i = 1;
 		while (cmd->args[i])
 		{
-			if (!cmd->args[i + 1])
-			{
-				ft_putendl_fd(cmd->args[i], 1);
-				break ;
-			}
 			ft_putstr_fd(cmd->args[i], 1);
-			ft_putstr_fd(" ", 1);
+			if (cmd->args[i + 1])
+				ft_putchar_fd(' ', 1);
 			i++;
 		}
+		ft_putchar_fd('\n', 1);
 	}
+	if (shell->status != ERROR)
+		shell->exit_status = 0;
 }
 
 void	env(t_shell *shell, int export)
@@ -133,7 +144,6 @@ static int	is_numeric(char *str)
 	return (0);
 }
 
-// add overflow handling, such as "exit 23492342039402324"
 // ctrl + d should write exit
 // expand $ in heredoc unless LIMITER is inside quotes
 // clear OLDPWD when shell is started

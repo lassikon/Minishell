@@ -664,3 +664,64 @@ echo $?
 echo
 echo $?
 exit
+echo hello
+echo $?
+echo -n HELLO
+echo $?
+echo -n
+$?
+echo
+$?
+exit
+echo
+$?
+make clean
+exit
+echo
+$?
+echo | echo
+echo $?
+exit
+echo
+echo hello
+$?
+echo
+echo
+$?
+echo | echo
+echo $?
+exit
+ls
+ls | cat
+exit
+echo -n
+$?
+echo
+$?
+exit
+$?
+echo
+$?
+echo
+$?
+exit
+echo
+$?
+exit
+cd minishell_tester/
+echo <"./test_files/infile" <missing <"./test_files/infile"
+exit
+<"./test_files/infile" <missing <"./test_file
+echo <"./test_files/infile" <missing <"./test_files/infile"
+$?
+echo "> >> < * ? [ ] | ; [ ] || && ( ) & # $  <<"
+exit
+echo "> >> < * ? [ ] | ; [ ] || && ( ) & # $  <<"
+echo $
+echo $ 
+echo "$"
+echo "$ "
+exit
+cd minishell_tester/
+env | sort | grep -v SHLVL | grep -v ^_
+exit
