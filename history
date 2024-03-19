@@ -535,3 +535,132 @@ exit
 ls | ls | ls
 ls >o1 | ls >o2 | ls >o3 | echo HELLO
 exit
+ls
+ls | ls | ls
+exit
+ls
+asdad
+exit
+ls
+exit
+exit
+exit
+ls
+exit
+exit
+exit
+exit
+exit
+echo hello world
+exit
+/test_files
+exit
+/test_files
+$?
+exit
+cat <<HEREDOC
+cat <<HERE <<DOC
+cat <<HERE | ls
+cat <<HERE
+cat <minishell.h <<HERE <missing | ls
+cat <minishell.h <<HERE <missing <<DOC | echo oi
+cat <minishell.h <<HERE <missing <<DOC | echo oi
+cat << $
+<< echo oi
+$?
+askdjakdj | echo oi
+askdjakdj | echo oi
+askdjakdj | echo oi
+askdjakdj | echo oi
+askdjakdj | echo oi
+<< echo oi
+cat <minishell.h <<HERE <missing <<DOC | echo oi
+cat <<HERE <missing <<DOC | echo oi
+cat <valid <<HERE <invalid <<DOC | echo oi
+exit
+env | sort | grep -v SHLVL | grep -v ^_
+$?
+asdkjkajsd
+$?
+cd obj
+echo $PWD $OLDPWD
+$OLDPWD
+$PWD
+echo $PWD
+$PWD
+exit
+$PWD
+exit
+$PWD
+exit
+$PWD
+exit
+$PWD
+exit
+$PWD
+exit
+$PWD
+exit
+$PWD
+exit
+$PWD
+exit
+echo "hi" | cat | cat | cat | cat | cat | cat | cat
+ps -a
+echo - "" "  " hello
+doesnexist
+$EMPTY
+$?
+$EMPTY
+echo $?
+echo $?
+export =
+export =
+export =
+echo $?
+exit
+ls >>out1 out2
+ls >>out1 >>out2
+$?
+bash
+exit
+ls >>./minishell_tester/outfiles/outfile01 >>./minishell_tester/outfiles/outfile02
+exit
+$OLDPWD
+exit
+env
+exit
+cd minishell_tester
+echo <"./test_files/infile_big" | echo <"./test_files/infile"
+echo $?
+echo <"./test_files/infile_big" | echo <"./test_files/infile"
+echo $?
+echo <"./test_files/infile_big" | echo <"./test_files/infile"
+echo $?
+echo <"./test_files/infile_big" | echo <"./test_files/infile"
+echo $?
+echo <"./test_files/infile_big" | echo <"./test_files/infile"
+echo $?
+exit
+printf <"./test_files/infile_big" | printf <"./test_files/infile"
+exit
+cd minishell_tester
+printf <"./test_files/infile_big" | printf <"./test_files/infile"
+echo $?
+echo <"./test_files/infile_big" | echo <"./test_files/infile"
+echo $?
+echo | echo
+echo $?
+cat <minishell.h <<HERE <missing <<DOC | echo oi
+echo <<L
+cat <<L
+exit ""
+exit aslkad
+exit -1
+exit 09324092304923049
+exit +"100"
+echo | echo
+echo $?
+echo
+echo $?
+exit

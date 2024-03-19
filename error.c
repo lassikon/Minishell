@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 14:49:10 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/18 12:38:21 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/19 12:32:38 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 void	error(t_shell *shell, char *msg, t_status status, int code)
 {
-	ft_putstr_fd("minishell: ", 2);
+	/* if (ft_strcmp(msg, IS_DIR))
+		ft_putstr_fd("minishell: ", 2); */
 	ft_putendl_fd(msg, 2);
-	//free_all(shell);
+	// free_all(shell);
 	shell->status = status;
 	shell->exit_status = code;
 	if (shell->status == FATAL)

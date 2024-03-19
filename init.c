@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 12:19:16 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/18 14:31:32 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/19 11:19:56 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ void	setup_shell(t_shell *shell, char **envp)
 	shell->status = RUNNING;
 	shell->cmd_count = 0;
 	shell->cmd_tree = NULL;
+	shell->pid = NULL;
+	shell->pipe = NULL;
 	shell->line_len = 0;
 	shell->exit_status = 0;
 	shell->history_fd = open("history", O_CREAT | O_APPEND | O_RDWR, 0644);

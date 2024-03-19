@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:10:31 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/18 16:28:18 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/19 11:21:48 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@ int	main(int argc, char **argv, char **envp)
 	while (shell.status == RUNNING)
 	{
 		shell.line = readline("minishell$ ");
-		// printf("after readline\n");
 		if (shell.line == NULL)
 		{
-			printf("\n");
-			shell.status = 0;
+			// ft_putstr_fd("exit\n", 2);
+			free_all(&shell);
+			exit(0);
 		}
-		if (shell.line && *shell.line)
+		if (*shell.line)
 		{
 			add_history(shell.line);
 			ft_putendl_fd(shell.line, shell.history_fd);
@@ -41,8 +41,7 @@ int	main(int argc, char **argv, char **envp)
 			free_tree(&shell);
 			free(shell.line);
 		}
-		if (shell.status == ERROR)
-			shell.status = RUNNING;
+		shell.status = RUNNING;
 	}
 	return (0);
 }

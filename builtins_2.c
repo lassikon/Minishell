@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   builtins_2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 13:36:20 by okarejok          #+#    #+#             */
-/*   Updated: 2024/03/16 18:41:05 by okarejok         ###   ########.fr       */
+/*   Updated: 2024/03/19 11:25:28 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -159,6 +159,6 @@ void	ft_exit(t_shell *shell, t_cmd *cmd)
 	else
 		code = WEXITSTATUS(shell->exit_status);
 	free_all(shell);
-	free(shell->env);
+	free_array(shell->env);
 	exit(code);
 }
