@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:10:31 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/20 11:26:40 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/20 15:51:43 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ int	main(int argc, char **argv, char **envp)
 			run_command(&shell);
 			free_tree(&shell);
 			free(shell.line);
+			shell.line = NULL;
 		}
 		shell.status = RUNNING;
 	}

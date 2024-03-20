@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 11:07:09 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/19 15:27:08 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/20 16:51:03 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ void	remove_from_array(char **array, char *identifier)
 	j = 0;
 	while (array[i])
 	{
-		if (!ft_strncmp(array[i], identifier, ft_strlen(identifier)))
+		if (ft_strncmp(array[i], identifier, ft_strlen(identifier)) == 0)
 		{
 			j++;
 			free(array[i]);

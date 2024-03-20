@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 12:19:16 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/19 16:21:46 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/20 16:51:34 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ void	setup_shell(t_shell *shell, char **envp)
 	shell->cmd_tree = NULL;
 	shell->pid = NULL;
 	shell->pipe = NULL;
+	shell->paths = NULL;
 	shell->line_len = 0;
 	shell->exit_status = 0;
 	shell->history_fd = open("history", O_CREAT | O_APPEND | O_RDWR, 0644);
@@ -73,5 +74,5 @@ void	setup_shell(t_shell *shell, char **envp)
 		error(shell, MALLOC, FATAL, 1);
 	if (copy_array(envp, shell->env) == -1)
 		error(shell, MALLOC, FATAL, 1);
-	remove_from_array(shell->env, "OLDPWD");
+	// remove_from_array(shell->env, "OLDPWD");
 }

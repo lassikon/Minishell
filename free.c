@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 16:15:57 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/19 11:24:39 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/20 17:51:03 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,17 +54,19 @@ void	free_tree(t_shell *shell)
 	}
 	free(shell->cmd_tree);
 	shell->cmd_tree = NULL;
-	free_pipes(shell);
+	// free_pipes(shell);
 	if (shell->pid)
 		free(shell->pid);
-	shell->pid = NULL;
-	shell->cmd_tree = NULL;
+	// shell->pid = NULL;
+	/* if (shell->paths)
+		free_array(shell->paths); */
+	// shell->paths = NULL;
 }
 
 void	free_all(t_shell *shell)
 {
-	if (shell->paths)
-		free_array(shell->paths);
+	/* if (shell->paths)
+		free_array(shell->paths); */
 	if (shell->line)
 	{
 		free(shell->line);

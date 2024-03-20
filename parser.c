@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 13:30:24 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/18 15:15:28 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/20 15:45:51 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,7 @@ void	tokenize(t_shell *shell, t_cmd *cmd)
 		check_expands(shell, &cmd->line);
 	if (check_unclosed_quotes(cmd->line))
 	{
-		error(shell, "Unclosed quotes", ERROR, 1);
+		error(shell, QUOTES, ERROR, 1);
 		return ;
 	}
 	if (extract_redirections(shell, cmd))
@@ -118,6 +118,7 @@ void	ask_for_input(t_shell *shell)
 
 void	parse_line(t_shell *shell)
 {
+	shell->cmd_count = 0;
 	if (shell->status == ERROR)
 		return ;
 	if (double_pipes(shell, shell->line))
@@ -129,9 +130,10 @@ void	parse_line(t_shell *shell)
 			return ;
 	}
 	pipe_split(shell, shell->line);
-	if (shell->cmd_count == 1 && !shell->cmd_tree[0].cmd[0])
+	if (shell->cmd_count == 0)
+		return ;
+	if (!shell->cmd_tree[0].cmd[0] && shell->cmd_tree[0].redir_count == 0)
 	{
-		shell->cmd_count = 0;
 		shell->status = ERROR;
 		return ;
 	}

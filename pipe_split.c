@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 11:47:02 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/13 12:38:19 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/20 15:47:43 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static int	validate_syntax(t_shell *shell, char *s)
 	i = 0;
 	if (check_unclosed_quotes(s))
 	{
-		error(shell, "Unclosed quotes", ERROR, 1);
+		error(shell, QUOTES, ERROR, 1);
 		return (1);
 	}
 	while (s[i])

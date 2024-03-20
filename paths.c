@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   paths.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:19:45 by okarejok          #+#    #+#             */
-/*   Updated: 2024/03/16 18:47:35 by okarejok         ###   ########.fr       */
+/*   Updated: 2024/03/20 17:08:30 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ char	*ft_getenv(t_shell *shell, char *to_find)
 			if (shell->env[i][len] == '=')
 			{
 				aux = ft_strdup(shell->env[i] + len + 1);
+				if (aux == NULL)
+					error(shell, MALLOC, FATAL, 1);
 				return (aux);
 			}
 		}
