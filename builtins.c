@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 10:46:25 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/19 14:38:46 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/20 13:47:07 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ static int	check_identifier(t_shell *shell, char *arg)
 	return (0);
 }
 
-static void	check_existing(t_shell *shell, char *arg)
+static void	remove_existing(t_shell *shell, char *arg)
 {
 	char	*identifier;
 	int		i;
@@ -57,6 +57,37 @@ static void	check_existing(t_shell *shell, char *arg)
 	free(identifier);
 }
 
+static int	add_to_existing(t_shell *shell, char *arg)
+{
+	char	*identifier;
+	int		i;
+	int		end;
+
+	end = 0;
+	while (arg[end] && arg[end] != '=')
+		end++;
+	if (arg[end - 1] != '+')
+		return (1);
+	identifier = ft_strjoin(ft_substr(arg, 0, end - 1), "=");
+	if (identifier == NULL)
+		error(shell, MALLOC, FATAL, 1);
+	i = 0;
+	while (shell->env[i])
+	{
+		if (ft_strncmp(shell->env[i], identifier, ft_strlen(identifier)) == 0)
+		{
+			shell->env[i] = join_n_free(shell->env[i], ft_substr(arg, end + 1, ft_strlen(arg) - end));
+			if (shell->env[i] == NULL)
+				error(shell, MALLOC, FATAL, 1);
+			free(identifier);
+			return (0);
+		}
+		i++;
+	}
+	free(identifier);
+	return (0);
+}
+
 static void	export(t_shell *shell, t_cmd *cmd)
 {
 	int		i;
@@ -76,8 +107,11 @@ static void	export(t_shell *shell, t_cmd *cmd)
 		{
 			if (check_identifier(shell, cmd->args[i]))
 				return ;
-			check_existing(shell, cmd->args[i]);
-			shell->env = add_to_array(shell->env, cmd->args[i]);
+			if (add_to_existing(shell, cmd->args[i]))
+			{
+				remove_existing(shell, cmd->args[i]);
+				shell->env = add_to_array(shell->env, cmd->args[i]);
+			}
 			if (shell->env == NULL)
 				error(shell, MALLOC, FATAL, 1);
 		}

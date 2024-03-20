@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 12:19:16 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/19 11:19:56 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/19 16:21:46 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void	init_tree(t_shell *shell)
 	shell->pid = (int *)malloc(sizeof(int) * shell->cmd_count);
 	if (!shell->pid)
 		error(shell, MALLOC, FATAL, 1);
+	paths(shell, shell->env);
 }
 
 void	setup_shell(t_shell *shell, char **envp)
@@ -72,5 +73,5 @@ void	setup_shell(t_shell *shell, char **envp)
 		error(shell, MALLOC, FATAL, 1);
 	if (copy_array(envp, shell->env) == -1)
 		error(shell, MALLOC, FATAL, 1);
-	paths(shell, envp);
+	remove_from_array(shell->env, "OLDPWD");
 }

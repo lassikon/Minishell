@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 11:11:41 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/19 14:45:07 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/19 16:38:05 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ static char	*fetch_env(t_shell *shell, char *line, int *i)
 	char	*env;
 	char	*value;
 
-	// printf("fetch_env from line: %s\n", line);
 	start = *i;
 	if (line[*i] == '\"')
 		return ("$");
 	(*i)++;
-	while (line[*i] && line[*i] != ' ' && line[*i] != '$' && line[*i] != '\"')
+	while (line[*i] && line[*i] != ' ' && line[*i] != '$' && line[*i] != '\"'
+		&& line[*i] != '\'')
 		(*i)++;
 	end = *i;
 	env = ft_substr(line, start, end - start);

@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/18 14:14:42 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/19 15:42:15 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ typedef enum e_status
 } t_status;
 
 # define MALLOC "Error: malloc failed"
-# define CD_FAIL "No such file or directory"
+# define CD_FAIL " No such file or directory"
 # define PIPE "Error: error opening a pipe"
 # define IS_DIR ": is a directory"
 # define SYNTAX_PIPE "syntax error near unexpected token `|'"

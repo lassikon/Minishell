@@ -725,3 +725,150 @@ exit
 cd minishell_tester/
 env | sort | grep -v SHLVL | grep -v ^_
 exit
+echo
+exit
+echo hi >./outfiles/out1
+exit
+cd minishell_tester
+cat <"./test_files/infile" >"./outfiles/outfile01"
+echo $?
+mkdir infile
+mkdir outfile
+cd infile
+touch in1
+ls
+cd ..
+ks
+ls
+cd ..
+pwd
+exit
+exit
+cat <"./test_files/infile" >"./outfiles/outfile01"
+exit
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+exit
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+$?
+echo 'cat <"./test_files/infile" >"./outfiles/outfile01"' ./minishell
+echo 'cat <"./test_files/infile" >"./outfiles/outfile01"' | ./minishell
+cat <"./test_files/infile" >"./outfiles/outfile01"
+exit
+env | sort | grep -v SHLVL | grep -v ^_
+exit
+env | sort | grep -v SHLVL | grep -v ^_
+exit
+ls
+exit
+echo '$PWD'
+echo "$PWD"
+echo "'$PWD'"
+exit
+echo "'$PWD'"
+exit
+echo "'$PWD'"
+exit
+echo "'$PWD'"
+exit
+echo "'$PWD'"
+exit
+echo "'$PWD'"
+exit
+echo 'exit_code ->$? user ->$USER home -> $HOME'
+exit
+echo "'$PWD'"
+exit
+cat <"1""2""3""4""5"
+"."/'m'"ini"s'h''e'"ll"
+exit
+echo "."/'m'"ini"s'h''e'"ll"
+"echo hello > a"
+exit
+"echo hello > a"
+exit
+"echo hello > a"
+"         "
+$?
+"echo hello > a"
+$?
+'>' a grep 's l' << LIM
+'>' a grep 's l' << LIM
+'|' {cmd}
+'|' cat
+< missing echo hi | echo okii
+exit
+< missing
+chmod 000 a
+touch a
+chmod 000 a
+echo hi > a
+rm a
+ls
+<< LIM > a > b > a >> b | << LIM > c
+exit
+<< LIM > a > b > a >> b | << LIM > c
+exit
+<< LIM > a > b > a >> b | << LIM > c
+exit
+<< LIM > a > b > a >> b | << LIM > c
+exit
+<< LIM > a > b > a >> b | << LIM > c
+echo hi > a > b > c
+echo hi > a | grep h > b > a > c < a
+echo hi > a | grep h > b > a > c < a
+cat b < a c
+echo hi >  a helloo oki
+echo | echo | > echo
+< missing no_cmd
+<< 'LIM'
+<< 'LIM'
+sleep 10 | echo hi
+cat | cat | echo hi
+$?
+cat /dev/urandom | base64 | head -c 1000
+$?
+export VAR=echo
+$VAR helloo
+$?
+echo $MISSING
+$?
+cat >
+$?
+ls | ls |<| ls
+ls | ls |<| cat
+echo hi | fdkfjf
+echo $?
+cat /dev/urandom | base64
+cat /dev/urandom | base64
+$?
+exit
+env
+export USER+=hehe
+env
+export NAME=Lassi
+env
+export NAME=Olli
+env
+exit
+env
+export USER+=hehe
+env
+exit
+env
+export USER+=hehe
+env
+exit
+<<EOF | > >
+exit
+env
+ls | ls
+export NAME=Lassi
+env
+export Name+=Olli
+env
+export NAME+=Olli
+env
+unset NAME
+env
+exit
