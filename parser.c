@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 13:30:24 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/20 15:45:51 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/21 12:12:11 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -118,7 +118,7 @@ void	ask_for_input(t_shell *shell)
 
 void	parse_line(t_shell *shell)
 {
-	shell->cmd_count = 0;
+	setup_prompt(shell);
 	if (shell->status == ERROR)
 		return ;
 	if (double_pipes(shell, shell->line))

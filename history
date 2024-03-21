@@ -1129,3 +1129,97 @@ cd 123
 exit
 env
 exit
+cd ..
+pwd
+cd minishell
+cd
+pwd
+cd .. alskd
+pwd
+exit
+cd 30434
+exit
+cd minishell_tester
+grep hi <./test_files/infile_big <./test_files/infile
+echo $?
+grep hi <./test_files/infile_big <./test_files/infile
+echo $?
+grep hi <./test_files/infile_big <./test_files/infile
+echo $?
+grep hi <./test_files/infile_big <./test_files/infile
+echo $?
+grep hi <./test_files/infile_big <./test_files/infile
+echo $?
+grep hi <./test_files/infile_big <./test_files/infile
+echo $?
+grep hi <./test_files/infile_big <./test_files/infile
+echo $?
+grep hi <./test_files/infile_big <./test_files/infile
+echo $?
+grep hi <./test_files/infile_big <./test_files/infile
+echo $?
+grep hi <./test_files/infile_big <./test_files/infile
+echo $?
+grep hi <./test_files/infile_big <./test_files/infile
+echo $?
+grep hi <./test_files/infile_big <./test_files/infile
+echo $?
+grep hi <./test_files/infile_big <./test_files/infile
+echo $?
+grep hi <./test_files/infile_big <./test_files/infile
+echo $?
+exit
+echo hi
+echo "hi
+cd 123
+kajsdkjad
+exit
+echo hi
+echo "hello
+echo "helllo
+exit
+echo "hello
+echo "hello
+echo "hello
+echo hello
+echo "hello
+echo "hello
+echo hello
+echo "hello
+echo "hello
+echo "hello
+exit
+echo "hello
+echo hello
+cd 123
+echo hello
+echo hello
+exit
+echo hello
+echo he"llo
+echo he"llo
+echo hello
+cd 123
+exit
+cd minishell_tester
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+exit
+exit 123
+$OLDPWD
+$?
+exit
+cd 123
+exit
+export NAME=-+-+
+env
+exit
+cd 123
+echo hello
+ls
+exit
+echo hi
+cd 123
+env
+export NAME=Lassi
+ls
+exit

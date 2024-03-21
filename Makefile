@@ -19,6 +19,7 @@ SRCS	:= 	minishell.c \
 			paths.c \
 			expand.c \
 			builtins.c \
+			export.c \
 			array_utils.c \
 			builtins_2.c \
 			pipes.c \

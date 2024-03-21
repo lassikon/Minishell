@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 16:15:57 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/20 17:51:03 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/21 12:15:32 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,6 @@ void	free_tree(t_shell *shell)
 	int	i;
 
 	i = 0;
-	if (!shell->cmd_tree)
-		return ;
 	while (shell->cmd_tree[i].line)
 	{
 		if (shell->cmd_tree[i].line)
@@ -54,25 +52,6 @@ void	free_tree(t_shell *shell)
 	}
 	free(shell->cmd_tree);
 	shell->cmd_tree = NULL;
-	// free_pipes(shell);
-	if (shell->pid)
-		free(shell->pid);
-	// shell->pid = NULL;
-	/* if (shell->paths)
-		free_array(shell->paths); */
-	// shell->paths = NULL;
-}
-
-void	free_all(t_shell *shell)
-{
-	/* if (shell->paths)
-		free_array(shell->paths); */
-	if (shell->line)
-	{
-		free(shell->line);
-		shell->line = NULL;
-	}
-	free_tree(shell);
 }
 
 void	free_pipes(t_shell *shell)
@@ -80,15 +59,28 @@ void	free_pipes(t_shell *shell)
 	int	i;
 
 	i = 0;
-	if (shell->pipe != NULL)
+	while (i < shell->cmd_count)
 	{
-		while (i < shell->cmd_count)
-		{
-			// close_pipes(shell);
-			free(shell->pipe[i]);
-			i++;
-		}
-		free(shell->pipe);
-		shell->pipe = NULL;
+		free(shell->pipe[i]);
+		i++;
+	}
+	free(shell->pipe);
+	shell->pipe = NULL;
+}
+
+void	free_all(t_shell *shell)
+{
+	if (shell->pipe)
+		free_pipes(shell);
+	if (shell->pid)
+		free(shell->pid);
+	if (shell->paths)
+		free_array(shell->paths);
+	if (shell->cmd_tree)
+		free_tree(shell);
+	if (shell->line)
+	{
+		free(shell->line);
+		shell->line = NULL;
 	}
 }

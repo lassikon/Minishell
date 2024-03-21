@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 12:19:16 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/20 16:51:34 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/21 12:11:58 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,15 @@ void	init_tree(t_shell *shell)
 	if (!shell->pid)
 		error(shell, MALLOC, FATAL, 1);
 	paths(shell, shell->env);
+}
+
+void	setup_prompt(t_shell *shell)
+{
+	shell->pipe = NULL;
+	shell->cmd_count = 0;
+	shell->cmd_tree = NULL;
+	shell->pid = NULL;
+	shell->paths = NULL;
 }
 
 void	setup_shell(t_shell *shell, char **envp)

@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/20 15:32:58 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/21 12:44:02 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ typedef enum e_status
 } t_status;
 
 # define MALLOC "Error: malloc failed"
-# define CD_FAIL " No such file or directory"
+# define CD_FAIL ": No such file or directory"
 # define PIPE "Error: error opening a pipe"
 # define IS_DIR ": is a directory"
 # define SYNTAX_PIPE "syntax error near unexpected token `|'"
@@ -78,6 +78,7 @@ char	*join_n_free(char *s1, char *s2);
 
 // INIT
 void	setup_shell(t_shell *shell, char **envp);
+void	setup_prompt(t_shell *shell);
 void	init_tree(t_shell *shell);
 void	allocate_pipes(t_shell *shell);
 
@@ -103,6 +104,7 @@ void	pwd(t_shell *shell, t_cmd *cmd);
 void	echo(t_shell *shell, t_cmd *cmd);
 void	env(t_shell *shell, int export);
 void	ft_exit(t_shell *shell, t_cmd *cmd);
+void	export(t_shell *shell, t_cmd *cmd);
 int		child_builtin(t_shell *shell, t_cmd *cmd);
 int		parent_builtin(t_shell *shell, t_cmd *cmd);
 char	*ft_getenv(t_shell *shell, char *to_find);
