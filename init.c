@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 12:19:16 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/22 12:22:59 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/22 15:54:59 by okarejok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ void	setup_shell(t_shell *shell, char **envp)
 	shell->paths = NULL;
 	shell->line_len = 0;
 	shell->exit_status = 0;
+	sig_global = 0;
 	shell->history_fd = open("history", O_CREAT | O_APPEND | O_RDWR, 0644);
 	ft_read_history(shell);
 	shell->env = malloc(sizeof(char *) * (array_len(envp) + 1));
@@ -84,5 +85,9 @@ void	setup_shell(t_shell *shell, char **envp)
 		error(shell, MALLOC, FATAL, 1);
 	if (copy_array(envp, shell->env) == -1)
 		error(shell, MALLOC, FATAL, 1);
-	// remove_from_array(shell->env, "OLDPWD");
+	if (isatty(STDIN_FILENO))
+	{
+		shlvl_increment(shell);
+		remove_from_array(shell->env, "OLDPWD");
+	}
 }

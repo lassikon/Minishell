@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:10:31 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/22 12:32:32 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/22 16:36:08 by okarejok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 int	main(int argc, char **argv, char **envp)
 {
 	t_shell	shell;
-
 	(void)argc;
 	(void)argv;
 	signal(SIGINT, signal_handler);
@@ -27,9 +26,9 @@ int	main(int argc, char **argv, char **envp)
 		shell.line = readline("minishell$ ");
 		if (shell.line == NULL)
 		{
-			// ft_putstr_fd("exit\n", 2);
-			free_all(&shell);
-			exit(0);
+			if (isatty(STDIN_FILENO))
+				ft_putendl_fd("exit", 2);
+			exit(shell.exit_status);
 		}
 		if (*shell.line)
 		{

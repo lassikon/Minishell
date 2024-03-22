@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   signals.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 15:46:08 by okarejok          #+#    #+#             */
-/*   Updated: 2024/03/11 16:04:11 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/22 16:37:08 by okarejok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,18 @@
 
 static void	ctrl_c_handler(int signum)
 {
-	if (signum == SIGINT)
+	if (sig_global == 1 && signum == SIGINT)
 	{
-		printf("\n");
+		close(STDIN_FILENO);
+		sig_global = 0;
+	}
+	else if (sig_global == 0 && signum == SIGINT)
+	{
+		write(1, "\n", 1);
 		rl_replace_line("", 0);
 		rl_on_new_line();
 		rl_redisplay();
 	}
-	else
-		rl_redisplay();
 }
 
 static void	sigquit_handler(int signum)
@@ -37,7 +40,7 @@ void	signal_handler(int signal)
 {
 	if (signal == SIGINT)
 		ctrl_c_handler(signal);
-	if (signal == SIGQUIT)
+	else if (signal == SIGQUIT)
 		sigquit_handler(signal);
 }
 

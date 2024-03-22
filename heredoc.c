@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   heredoc.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 14:41:04 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/22 12:30:48 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/22 16:33:08 by okarejok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,10 @@ static char	*heredoc_filename(t_shell *shell)
 static void	write_to_heredoc(t_shell *shell, char *limiter, int fd)
 {
 	char	*line;
+	int		tmp_fd;
 
+	sig_global = 1;
+	tmp_fd = dup(STDIN_FILENO);
 	while (1)
 	{
 		line = readline("> ");
@@ -44,6 +47,9 @@ static void	write_to_heredoc(t_shell *shell, char *limiter, int fd)
 		ft_putendl_fd(line, fd);
 		free(line);
 	}
+	dup2(tmp_fd, STDIN_FILENO);
+	close(tmp_fd);
+	sig_global = 0;
 }
 
 void	heredoc(t_shell *shell, t_cmd *cmd)

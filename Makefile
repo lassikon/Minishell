@@ -26,7 +26,8 @@ SRCS	:= 	minishell.c \
 			heredoc.c \
 			signals.c \
 			free.c \
-			error.c
+			error.c \
+			parse_quotes.c
 			
 OBJS	:= ${SRCS:.c=.o}
 

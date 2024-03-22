@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/22 12:22:24 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/22 16:30:17 by okarejok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,8 @@ typedef struct s_shell
 	int			heredoc_index;
 }	t_shell;
 
+int	sig_global;
+
 void	paths(t_shell *shell, char **envp);
 char	**add_to_array(char **array, char *new);
 void	remove_from_array(char **array, char *identifier);
@@ -82,6 +84,7 @@ void	setup_shell(t_shell *shell, char **envp);
 void	setup_prompt(t_shell *shell);
 void	init_tree(t_shell *shell);
 void	allocate_pipes(t_shell *shell);
+void	shlvl_increment(t_shell *shell);
 
 // PARSING
 
@@ -98,6 +101,8 @@ void	remove_spaces(char *str);
 char	*add_one_space(char *str);
 int		skip_quotes(char *line, int i);
 void	remove_quotes(char *str);
+int		ends_in_pipe(char *line);
+int		double_pipes(t_shell *shell, char *line);
 
 // BUILTINS
 void	cd(t_shell *shell, t_cmd *cmd);
