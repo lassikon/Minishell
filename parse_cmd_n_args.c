@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 23:04:07 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/20 11:13:42 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/21 14:46:20 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,7 @@ void	extract_args(t_shell *shell, t_cmd *cmd)
 	cmd->args[0] = ft_strdup(cmd->cmd);
 	if (!cmd->args[0])
 		error(shell, MALLOC, FATAL, 1);
-	fetch_args(shell, cmd);
+	if (cmd->arg_count > 1)
+		fetch_args(shell, cmd);
 	cmd->args[cmd->arg_count] = NULL;
 }

@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 13:30:24 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/21 12:12:11 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/22 12:34:28 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,65 +20,6 @@ char	*join_n_free(char *s1, char *s2)
 	free(s1);
 	free(s2);
 	return (new);
-}
-
-int	check_unclosed_quotes(char *line)
-{
-	int		i;
-	char	quote;
-
-	i = 0;
-	while (line[i])
-	{
-		if (line[i] == '\'' || line[i] == '\"')
-		{
-			quote = line[i];
-			i++;
-			while (line[i] && line[i] != quote)
-				i++;
-			if (!line[i])
-				return (1);
-		}
-		i++;
-	}
-	return (0);
-}
-
-int	ends_in_pipe(char *line)
-{
-	int	i;
-
-	i = ft_strlen(line) - 1;
-	while (i > 0 && line[i] == ' ')
-		i--;
-	if (line[i] == '|')
-		return (1);
-	return (0);
-}
-
-int	double_pipes(t_shell *shell, char *line)
-{
-	int	i;
-
-	i = 0;
-	while (line[i])
-	{
-		if (line[i] == '\"' || line[i] == '\'')
-			i = skip_quotes(line, i);
-		if (line[i] == '|' && line[i + 1])
-		{
-			i++;
-			while (line[i] == ' ')
-				i++;
-			if (line[i] == '|')
-			{
-				error(shell, SYNTAX_PIPE, ERROR, 258);
-				return (1);
-			}
-		}
-		i++;
-	}
-	return (0);
 }
 
 void	tokenize(t_shell *shell, t_cmd *cmd)
@@ -95,7 +36,8 @@ void	tokenize(t_shell *shell, t_cmd *cmd)
 		error(shell, "Redirection", ERROR, 1);
 		return ;
 	}
-	heredoc(shell, cmd);
+	if (cmd->redir_count > 0 && shell->status != ERROR)
+		heredoc(shell, cmd);
 	extract_command(shell, cmd);
 	extract_args(shell, cmd);
 }

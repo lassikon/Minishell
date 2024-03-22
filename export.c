@@ -6,27 +6,23 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 12:43:33 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/21 13:09:14 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/22 10:54:49 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-static int	invalid_identifier(t_shell *shell, char *arg)
+static int	invalid_identifier(char *arg)
 {
 	int	i;
 
 	i = 0;
-	while (arg[i])
+	if (!ft_isalpha(arg[0]))
+		return (1);
+	while (arg[i] && arg[i] != '=')
 	{
-		if (arg[0] == '=' || (arg[i] != '_' && !ft_isalnum(arg[i])))
-		{
-			ft_putstr_fd("minishell: export: `", 2);
-			ft_putstr_fd(arg, 2);
-			ft_putendl_fd("': not a valid identifier", 2);
-			shell->exit_status = 1;
+		if (arg[i] != '_' && !ft_isalnum(arg[i]))
 			return (1);
-		}
 		i++;
 	}
 	return (0);
@@ -94,7 +90,7 @@ void	export(t_shell *shell, t_cmd *cmd)
 		return ;
 	while (cmd->args[i])
 	{
-		if (invalid_identifier(shell, cmd->args[i]))
+		if (invalid_identifier(cmd->args[i]))
 		{
 			ft_putstr_fd("minishell: export: `", 2);
 			ft_putstr_fd(cmd->args[i], 2);

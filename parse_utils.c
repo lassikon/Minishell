@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 15:19:44 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/15 10:43:44 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/22 12:34:44 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*add_one_space(char *str)
 {
-	char *new;
+	char	*new;
 
 	if (str[0] == '<')
 		new = ft_strjoin("< ", &str[1]);
@@ -53,73 +53,39 @@ void	replace_with_spaces(char *line, int start, int end)
 	}
 }
 
-int	skip_quotes(char *line, int i)
+int	ends_in_pipe(char *line)
 {
-	char	quote;
+	int	i;
 
-	quote = line[i];
-	i++;
-	while (line[i] && line[i] != quote)
-		i++;
-	return (i + 1);
+	i = ft_strlen(line) - 1;
+	while (i > 0 && line[i] == ' ')
+		i--;
+	if (line[i] == '|')
+		return (1);
+	return (0);
 }
 
-void	remove_quotes(char *str)
+int	double_pipes(t_shell *shell, char *line)
 {
-	int		i;
-	int		k;
-	int		inside_singles;
-	int		inside_doubles;
+	int	i;
 
 	i = 0;
-	k = 0;
-	inside_singles = 0;
-	inside_doubles = 0;
-	while (str[i])
+	while (line[i])
 	{
-		if (str[i] == '\'' && !inside_doubles)
+		if (line[i] == '\"' || line[i] == '\'')
+			i = skip_quotes(line, i);
+		if (line[i] == '|' && line[i + 1])
 		{
-			inside_singles = !inside_singles;
 			i++;
-			if (inside_singles || str[i] == '\'')
-				continue ;
+			while (line[i] == ' ')
+				i++;
+			if (line[i] == '|')
+			{
+				error(shell, SYNTAX_PIPE, ERROR, 258);
+				return (1);
+			}
 		}
-		if (str[i] == '\"' && !inside_singles)
-		{
-			inside_doubles = !inside_doubles;
-			i++;
-			if (inside_doubles || str[i] == '\"')
-				continue ;
-		}
-		str[k] = str[i];
 		i++;
-		k++;
 	}
-	while (str[k])
-	{
-		str[k] = '\0';
-		k++;
-	}
+	return (0);
 }
-
-/* void	remove_quotes(char *str)
-{
-	int		i;
-	int		j;
-
-	i = 0;
-	j = 0;
-	while (str[i])
-	{
-		while (str[i] && (str[i] == '\'' || str[i] == '\"'))
-			i++;
-		str[j] = str[i];
-		i++;
-		j++;
-	}
-	while (str[j])
-	{
-		str[j] = '\0';
-		j++;
-	}
-} */

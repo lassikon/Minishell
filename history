@@ -1223,3 +1223,27 @@ env
 export NAME=Lassi
 ls
 exit
+ls
+ls
+exit
+ls
+ls
+exit
+echo hello
+echo hello
+echo hello
+exit
+exit
+exit
+<<L
+exit
+cat <<1 >out | <<2
+exit
+cat <<1 >out | <<2
+exit
+cat <<1 >out | <<2
+exit
+cat <<1 >out | <<2
+exit
+cat <<1 >out | <<2
+exit

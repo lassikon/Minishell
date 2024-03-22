@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 13:03:52 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/13 15:31:51 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/22 12:35:06 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,6 @@ static int	count_redirections(char *line)
 	}
 	return (count);
 }
-
 
 static void	tidy_format(t_shell *shell, t_cmd *cmd, int i)
 {

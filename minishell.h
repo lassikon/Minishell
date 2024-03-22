@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/21 12:44:02 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/22 12:22:24 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ typedef struct s_shell
 	int			*pid;
 	int			**pipe;
 	int			history_fd;
+	int			heredoc_index;
 }	t_shell;
 
 void	paths(t_shell *shell, char **envp);
