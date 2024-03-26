@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:10:31 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/22 16:36:08 by okarejok         ###   ########.fr       */
+/*   Updated: 2024/03/26 15:51:03 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,7 @@ int	main(int argc, char **argv, char **envp)
 		}
 		shell.status = RUNNING;
 	}
+	toggle_carret(1);
+	close(shell.history_fd);
 	return (0);
 }

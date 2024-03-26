@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 13:30:24 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/22 12:34:28 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/26 15:32:49 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,36 +26,16 @@ void	tokenize(t_shell *shell, t_cmd *cmd)
 {
 	if (ft_strchr(cmd->line, '$'))
 		check_expands(shell, &cmd->line);
-	if (check_unclosed_quotes(cmd->line))
+	if (unclosed_quotes(cmd->line))
 	{
-		error(shell, QUOTES, ERROR, 1);
+		error(shell, SYNTAX_QUOTES, ERROR, 1);
 		return ;
 	}
-	if (extract_redirections(shell, cmd))
-	{
-		error(shell, "Redirection", ERROR, 1);
-		return ;
-	}
+	extract_redirections(shell, cmd);
 	if (cmd->redir_count > 0 && shell->status != ERROR)
 		heredoc(shell, cmd);
 	extract_command(shell, cmd);
 	extract_args(shell, cmd);
-}
-
-void	ask_for_input(t_shell *shell)
-{
-	char	*line;
-
-	line = readline("> ");
-	if (!line)
-	{
-		free(line);
-		shell->status = ERROR;
-		return ;
-	}
-	if (double_pipes(shell, line))
-		return ;
-	shell->line = join_n_free(shell->line, line);
 }
 
 void	parse_line(t_shell *shell)
@@ -63,16 +43,10 @@ void	parse_line(t_shell *shell)
 	setup_prompt(shell);
 	if (shell->status == ERROR)
 		return ;
-	if (double_pipes(shell, shell->line))
+	if (invalid_pipes(shell, shell->line))
 		return ;
-	while (ends_in_pipe(shell->line))
-	{
-		ask_for_input(shell);
-		if (shell->status == ERROR)
-			return ;
-	}
 	pipe_split(shell, shell->line);
-	if (shell->cmd_count == 0)
+	if (shell->status == ERROR || shell->cmd_count == 0)
 		return ;
 	if (!shell->cmd_tree[0].cmd[0] && shell->cmd_tree[0].redir_count == 0)
 	{

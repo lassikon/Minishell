@@ -1,1249 +1,245 @@
-$PWD
-$PWD$PWD
-"$PWD"
-$"PWD "
-" $PWD"
-" $PWD "
-"$PWD "
-exit
-env
-export
-exit
-export
-env
-env
-export
-exit
-export
-env
-export
-exit
-export
-$PWD
-'$PWD'
-$PWD'$PWD'
-$PWD echo hello
-exit
-$PWD
-exit
-$PWD
-exit
-$PWD
-$PWD$PWD
-"$PWD"
-"$PWD"'$PWD'"$PWD"
-cat < file | echo hi > file2 another hi | echo “>” $PWD ‘$PWD’ $?
-" $PWD "
-echo "hello" "$PWD"
-cat < file | echo hi > file2 another hi | echo “>” $PWD ‘$PWD’ $?
-cat < file | echo hi > file2 another hi | echo ">" $PWD '$PWD' $?
-exit
-cat < file | echo hi > file2 another hi | echo ">" $PWD '$PWD' $?
-exit
-cat < file | echo hi > file2 another hi | echo ">" $PWD '$PWD' $?
-exit
-echo "$"
-echo "$"
-exit
-echo '$'
-exit
-export 123
-env
-exit
-echo '> >> < * ? [ ] | ; [ ] || && ( ) & # $  <<'
-echo 'hello hello'
-echo 'hello'
-exit
-echo '> >> < * ? [ ] | ; [ ] || && ( ) & # $  <<'
-ls | ls | ls
-exit
-ls | ls | ls
-ls | ls | "ls"
-echo '> >> < * ? [ ] | ; [ ] || && ( ) & # $  <<'
-exit
-echo '> >> < * ? [ ] | ; [ ] || && ( ) & # $  <<'
-exit
 echo hello
-ls | ls | cat
 exit
-echo "hello 'hi' hello"
-echo "hello 'hi' >hello"
-echo "hello 'hi<' >hello"
-echo "hello 'hi<' >hello"
-echo "hello'"
-echo "hello -> '"
-echo "hello '"
 exit
-echo "hello -> '"
-echo 'aspas -> " '
+ls >out
 exit
-echo hello""world
+echo hehe
 exit
-echo hello""world
-echo "aspas ->'"
-exit
-echo "> >> < * ? [ ] | ; [ ] || && ( ) & # $  <<"
-exit
-export hello
-exit
-export hello
 exit
 env
-unset PATH
-env
-exit
-cat "a b"
-cat <"a b"
-exit
-cat <"a b"
-exit
-cat <"a b"
-exit
-cat <"a b"
-exit
-cat <"a b"
-exit
-cat <"a b"
-exit
-cat <missing | echo hi
-exit
-cat <missing
-exit
-asdas
-exit
-make
-exit
-asdad
-exit
-exit hello
-exit 2
-exit
-exit 1 2
-exit
-exit 1 2
-exit
-exit 1 2
-exit
-exit 1 2
-exit
-exit
-exit
-exit 1 2
-exit
-exit 1 2
-exit
-exit 1 2
-exit hello
-exit +"100"
-exit -"100"
-exit hello
-exit hello
-exit hello
-exit hello
-export A-
-make
-exit
-export A-
-exit
-exit hello
-exit 1 2
-exit 1
-exit hello
-exit +"10a0"
-assdkad
-man access
-exit
-askdjad
-exit
-askdjad
-man access
-exit
-ls
-exit
-ls
-exit
-asdasda
-exit
-asdasd
-exit
-"aaa"
-$?
-"aaa" | beee
-$?
-exit
-"aaa" | beee
-$?
-exit
-aaa
-$?
-exit
-cd sfsdfsd
-cd ..
-cd minihell
-cd lsdm
-cd  asdasd
-cd ~/Documents/
-pwd
-cd a
-cd a
-cd a
-cd a
-cd a
-cd a
-cd a
-cd a
-cd a
 ./minishell
-cd a
-<< cat | cat
-<< cat | cat
-ls
-cat
-cat
-ls
-ls | cat | echo hello
-mkdir asd
-cd asd
-chmod 000 .
-cd  ..
-cd ..
-pwd
-cd ../../../../../../../../../../../../../
-ls
-pwd
-cd
-cd minihell
-exit 20 | exit 30 | exit 50
-exit 20 | exit 30 | exit 50
-echo $SHELL
-echo $SHELLs
-echo $SHELL$SHELL
-echo "$SHELL"
-echo '$SHELL'
-echo '"$SHELL"'
-echo "'$SHELL'"
->>>
->>>
->> HERE >> DOC cat
-$SHELL
-$SHELL
-exit
-exit
-bash
-<< HERE << DOC cat
-ls | wc
-make
-make re
-ls | wc
-ls
-echo hey hello
-echo "hey 'hello hello"
-exit
-cat missing >out2
-echo $?
-echo $?
-echo $?
-cat missing >out2
-echo $?
-asdasdad
-echo $?
-cat missing >out2
-exit
-cat missing >out2
-exit $?
-exit 42 world
-exit
-exit 10 | exit 20 | exit 30
-exit 10 | exit 20 | exit 30
-exit 10 | exit 20 | exit 30
-exit 10 | exit 20 | exit 30
-exit 10
-exit 10 | exit 20 | exit 30
-exit 10 | exit 20 | exit 30
-asldkad
-exit
-cat missing >out
-exit
-cat missing >out
-exit $?
-exit 1
-exit
-exit $?
-exit
-exit $?
-exit 10 | exit 20 | exit 30
-cat missing >out
-exit
-cat <missing >out
-exit
-cat <missing >out
-exit
-cat <missing >out
-exit
-<<1
-bash
-<<1
-exit
-exit >out
-exit 43 43
-exit
-exit 43 43
-exit 256
-exit
-echo "ls | cat"
-exit
-exit 3948902384092384
-exit
+env
 exit
 env
 exit
+env
+exit
+ls
+echo hi | cd 123 | echo hi
+echo hi | export NAME=Lassi | echo hi
+env
+ls | export NAME=Lassi | wc
+env
 export
-exit
-$PWD
-exit
-$PWD
+export | wc
+export | sort
 env
-exit -1
-exit -2934892384
-exit 2147483647
-exit 9223372036854775807
-exit 9223372036854775808
-exit -9223372036854775808
-exit -9223372036854775809
-exit -9223372036854775809
-./no_permission
-echo $?
-exit
-./no_permission
-echo $?
-exit
-$PWD
-exit
-$PWD
-echo $?
-exit
-$PWD
-exit
-$PWD
-exit
-$PWD
-exit
-./test_directory/
-exit
-./test_directory/
-exit
-/test_directory/
-exit
-/test_directory/
-ls -a
-/test_directory/
-$?
-exit
-minishell.h
-$?
-exit
-minishell.h
-$?
-/test_directory/
-exit
-/test_directory/
-$?
-exit
-/test_directory/
-$?
-exit
-/test_directory/
-make
-exit
-/test_directory/
-$?
-exit
-$EMPTY
-exit
-exit 43 hello
-$?
-exit
-exit 43 hello
-exit 43 hello
-$?
-exit
-$PWD
-echo $USER
-exit
-<<"hello"
-cat <<"1"
-exit
-echo $EMPTY
-$EMPTY
-echo <<1
-exit
-cat <<1
-exit
-$EMPTY
-exit
-$EMPTY
-exit
-$EMPTY
-$EMPTY
-$EMPTY
-exit
-exit 42 hello
-$?
-exit
-exit 42 hello
-exit
-exit 42 hello
-$?
-exit
-exit 42 hello
-exit
-exit 42 hello
-$?
-exit
-exit 42 hello
-$?
-exit
-$?
-exit 42 hello
-$?
-exit
-exit 42 hello
-$?
-exit
-exit 42 hello
-$?
-exit
-exit 42 hello
-$?
-exxit
-exit
-echo <infile_big | echo <infile
-$?
-echo
-$?
-exit
-cat <infile >out
-cat <"./minishell_tester/test_files/infile" >out2
-cat <"./minishell_tester/test_files/infile" >"./outfiles/out"
-cat <"./minishell_tester/test_files/infile" >"./outfiles2/out"
-ls >./outfiles/out1 >>./outfiles/out1 >./outfiles/out2
-echo $?
-ls >./outfiles/out1 >>./outfiles/out1 >./outfiles/out2
-ls >./outfiles/out1 >>./outfiles/out1 >./outfiles/out2
-ls >./outfiles/out1 >>./outfiles/out1 >./outfiles/out2
-ls >./outfiles/out1 >>./outfiles/out1 >./outfiles/out2
-ls >./outfiles/out1 >>./outfiles/out1 >./outfiles/out2
-ls >./outfiles/out1 >>./outfiles/out1 >./outfiles/out2
-ls >./outfiles/out1 >>./outfiles/out1 >./outfiles/out2
-ls >./outfiles/out1 >>./outfiles/out1 >./outfiles/out2
-ls >./outfiles/out1 >>./outfiles/out1 >./outfiles/out2
-echo $?
-exi
-exit
-alskdad
-exit
-echo hello ||
-echo hello ||
-echo hello ||
-echo hello ||
-exit
-echo hello ||
-exit
-grep hi <./minishell_tester/test_files/infile_big <./minishell_tester/test_files/infile
-$?
-exit
-env
-unset MAIL
-env
-$MAIL
-$?
+cd ..
 env
 exit
 env
-unset MAIL
-env
-exot
-exit
-unset MAIL
-env
-exit
-env
-ls |
-<<1 cat | ls | ls
-<<1 cat | ls | ls
-ls | ls
-exit
-cat <<1
-<<1 | cat
-<<1 cat
-<<1 cat | echo hi
-<<1 cat | cat
-<<1 cat | cat
-<<1 cat | ls | ls
-ls | ls
-ls | ls |
-ls | ls | ls
-ls | ls | ls
-ls | ls | ls
-ls | ls | ls
-echo hi
-ls | ls | ls
-ls | ls | ls
-ls | ls | ls
-ls | ls
-ls | ls | ls
-ls | ls | ls | ls
-ls | ls | ls
-ls | ls | ls
-ls | ls | ls
-echo hi | echo hi | echo hi
-echo hi | echo hi
-exit
-ls
-ls | ls | ls
-ls | ls | ls
-ls | ls | ls
-ls | ls
-ls | ls | ls | ls
-ls | ls | ls | ls | ls
-ls | ls | ls | ls | ls
-ls | ls | ls | ls | ls
-ls | ls | ls | ls | ls
-ls | ls | ls | ls | ls
-ls | ls | ls | ls | ls
-ls | ls | ls | ls | ls
-ls | ls | ls | ls | ls
-ls | echo hi
-ls | ls | ls | ls | ls | echo HELLO
-ls >o1 | ls >o2 | ls >o3 | echo HELLO
-ls >o1 | ls >o2 | ls >o3 | echo HELLO
-ls >o1 | ls >o2 | ls >o3 | echo HELLO
-ls | ls
-ls | ls | ls
-ls | ls | ls
-ls >out1 | ls >out2 | echo hi
-ls >out1 | ls >out2 | echo hi
-ls | ls | ls
-exit
-ls | ls | ls
-cat /dev/urandom | head -1
-exit
-cat /dev/urandom | head -1
-cat /dev/urandom | head -1 | wc
-cat /dev/urandom | head -1 | wc
-exit
-ls | ls | ls
-ls >o1 | ls >o2 | ls >o3 | echo HELLO
-exit
-ls
-ls | ls | ls
-exit
-ls
-asdad
-exit
-ls
-exit
-exit
-exit
-ls
-exit
-exit
-exit
-exit
-exit
-echo hello world
-exit
-/test_files
-exit
-/test_files
-$?
-exit
-cat <<HEREDOC
-cat <<HERE <<DOC
-cat <<HERE | ls
-cat <<HERE
-cat <minishell.h <<HERE <missing | ls
-cat <minishell.h <<HERE <missing <<DOC | echo oi
-cat <minishell.h <<HERE <missing <<DOC | echo oi
-cat << $
-<< echo oi
-$?
-askdjakdj | echo oi
-askdjakdj | echo oi
-askdjakdj | echo oi
-askdjakdj | echo oi
-askdjakdj | echo oi
-<< echo oi
-cat <minishell.h <<HERE <missing <<DOC | echo oi
-cat <<HERE <missing <<DOC | echo oi
-cat <valid <<HERE <invalid <<DOC | echo oi
-exit
-env | sort | grep -v SHLVL | grep -v ^_
-$?
-asdkjkajsd
-$?
-cd obj
-echo $PWD $OLDPWD
-$OLDPWD
-$PWD
-echo $PWD
-$PWD
-exit
-$PWD
-exit
-$PWD
-exit
-$PWD
-exit
-$PWD
-exit
-$PWD
-exit
-$PWD
-exit
-$PWD
-exit
-$PWD
-exit
-echo "hi" | cat | cat | cat | cat | cat | cat | cat
-ps -a
-echo - "" "  " hello
-doesnexist
-$EMPTY
-$?
-$EMPTY
-echo $?
-echo $?
-export =
-export =
-export =
-echo $?
-exit
-ls >>out1 out2
-ls >>out1 >>out2
-$?
-bash
-exit
-ls >>./minishell_tester/outfiles/outfile01 >>./minishell_tester/outfiles/outfile02
-exit
-$OLDPWD
-exit
-env
-exit
-cd minishell_tester
-echo <"./test_files/infile_big" | echo <"./test_files/infile"
-echo $?
-echo <"./test_files/infile_big" | echo <"./test_files/infile"
-echo $?
-echo <"./test_files/infile_big" | echo <"./test_files/infile"
-echo $?
-echo <"./test_files/infile_big" | echo <"./test_files/infile"
-echo $?
-echo <"./test_files/infile_big" | echo <"./test_files/infile"
-echo $?
-exit
-printf <"./test_files/infile_big" | printf <"./test_files/infile"
-exit
-cd minishell_tester
-printf <"./test_files/infile_big" | printf <"./test_files/infile"
-echo $?
-echo <"./test_files/infile_big" | echo <"./test_files/infile"
-echo $?
-echo | echo
-echo $?
-cat <minishell.h <<HERE <missing <<DOC | echo oi
-echo <<L
-cat <<L
-exit ""
-exit aslkad
-exit -1
-exit 09324092304923049
-exit +"100"
-echo | echo
-echo $?
-echo
-echo $?
-exit
-echo hello
-echo $?
-echo -n HELLO
-echo $?
-echo -n
-$?
-echo
-$?
-exit
-echo
-$?
+env | sort
 make clean
 exit
-echo
-$?
-echo | echo
-echo $?
+echo $HOME
+echo $HOME/Docs
+make clean
 exit
-echo
-echo hello
-$?
-echo
-echo
-$?
-echo | echo
-echo $?
+echo hi >>>out
+echo hi >>>out
+echo hi > >out
+cat > >
+cat > >out
+cat < <
+cat < <
+cat < <
+cat < <
+cat <"<"
+ls | echo hi
+asdad | echo "hi
 exit
-ls
-ls | cat
+asdad | echo "hi
+asdasd
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
 exit
-echo -n
-$?
-echo
-$?
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
+asfaf | asdad
 exit
-$?
-echo
-$?
-echo
-$?
+fhdi | thgitdhgioersoihgoershooeshdpoojetdpeh
+fhdi | thgitdhgioersoihgoershooeshdpoojetdpeh
+hbdfiobdjfzo;jbgdofhboidxghbo;hd | i
+hbdfiobdjfzo;jbgdofhboidxghbo;hd | i | askjdkasjdlk | alskkdlakdl;kad;lka;ldk
+hbdfiobdjfzo;jbgdofhboidxghbo;hd | i | askjdkasjdlk | alskkdlakdl;kad;lka;ldk
+hbdfiobdjfzo;jbgdofhboidxghbo;hd | i | askjdkasjdlk | alskkdlakdl;kad;lka;ldk
 exit
-echo
-$?
-exit
-cd minishell_tester/
-echo <"./test_files/infile" <missing <"./test_files/infile"
-exit
-<"./test_files/infile" <missing <"./test_file
-echo <"./test_files/infile" <missing <"./test_files/infile"
-$?
-echo "> >> < * ? [ ] | ; [ ] || && ( ) & # $  <<"
-exit
-echo "> >> < * ? [ ] | ; [ ] || && ( ) & # $  <<"
-echo $
-echo $ 
-echo "$"
-echo "$ "
-exit
-cd minishell_tester/
-env | sort | grep -v SHLVL | grep -v ^_
-exit
-echo
-exit
-echo hi >./outfiles/out1
-exit
-cd minishell_tester
-cat <"./test_files/infile" >"./outfiles/outfile01"
-echo $?
-mkdir infile
-mkdir outfile
-cd infile
-touch in1
-ls
-cd ..
-ks
-ls
-cd ..
-pwd
-exit
-exit
-cat <"./test_files/infile" >"./outfiles/outfile01"
-exit
-cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
-cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
-exit
-cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
-$?
-echo 'cat <"./test_files/infile" >"./outfiles/outfile01"' ./minishell
-echo 'cat <"./test_files/infile" >"./outfiles/outfile01"' | ./minishell
-cat <"./test_files/infile" >"./outfiles/outfile01"
-exit
-env | sort | grep -v SHLVL | grep -v ^_
-exit
-env | sort | grep -v SHLVL | grep -v ^_
-exit
-ls
-exit
-echo '$PWD'
-echo "$PWD"
-echo "'$PWD'"
-exit
-echo "'$PWD'"
-exit
-echo "'$PWD'"
-exit
-echo "'$PWD'"
-exit
-echo "'$PWD'"
-exit
-echo "'$PWD'"
-exit
-echo 'exit_code ->$? user ->$USER home -> $HOME'
-exit
-echo "'$PWD'"
-exit
-cat <"1""2""3""4""5"
-"."/'m'"ini"s'h''e'"ll"
-exit
-echo "."/'m'"ini"s'h''e'"ll"
-"echo hello > a"
-exit
-"echo hello > a"
-exit
-"echo hello > a"
-"         "
-$?
-"echo hello > a"
-$?
-'>' a grep 's l' << LIM
-'>' a grep 's l' << LIM
-'|' {cmd}
-'|' cat
-< missing echo hi | echo okii
-exit
-< missing
-chmod 000 a
-touch a
-chmod 000 a
-echo hi > a
-rm a
-ls
-<< LIM > a > b > a >> b | << LIM > c
-exit
-<< LIM > a > b > a >> b | << LIM > c
-exit
-<< LIM > a > b > a >> b | << LIM > c
-exit
-<< LIM > a > b > a >> b | << LIM > c
-exit
-<< LIM > a > b > a >> b | << LIM > c
-echo hi > a > b > c
-echo hi > a | grep h > b > a > c < a
-echo hi > a | grep h > b > a > c < a
-cat b < a c
-echo hi >  a helloo oki
-echo | echo | > echo
-< missing no_cmd
-<< 'LIM'
-<< 'LIM'
-sleep 10 | echo hi
-cat | cat | echo hi
-$?
-cat /dev/urandom | base64 | head -c 1000
-$?
-export VAR=echo
-$VAR helloo
-$?
-echo $MISSING
-$?
-cat >
-$?
-ls | ls |<| ls
-ls | ls |<| cat
-echo hi | fdkfjf
-echo $?
-cat /dev/urandom | base64
-cat /dev/urandom | base64
-$?
-exit
-env
-export USER+=hehe
-env
-export NAME=Lassi
-env
-export NAME=Olli
-env
-exit
-env
-export USER+=hehe
-env
-exit
-env
-export USER+=hehe
-env
-exit
-<<EOF | > >
-exit
-env
-ls | ls
-export NAME=Lassi
-env
-export Name+=Olli
-env
-export NAME+=Olli
-env
-unset NAME
-env
-exit
-<hello
-ls
-exit
-<hello
-exit
-<hello
-exit
-<missing
-exit
-<missing
-exit
-<missing
-$?
-exit
-<missing
-$?
 ls
 ls | ls
-exit
-Apple_PubSub_Socket_Render=/private/tmp/com.apple.launchd.5hbu36WfNM/Render
-COLORFGBG='7;0'
-COLORTERM=truecolor
-COMMAND_MODE=unix2003
-HOME=/Users/lkonttin
-ITERM_PROFILE=Default
-ITERM_SESSION_ID=w1t0p0:A8BC2343-1E8C-416C-9D10-7BA8D85FF5B2
-LANG=en_US.UTF-8
-LC_TERMINAL=iTerm2
-LC_TERMINAL_VERSION=3.4.16
-LOGNAME=lkonttin
-MAIL=lkonttin@student.hive.fi
-OLDPWD=/Users/lkonttin/minishell/minishell_tester
-PATH=/Users/lkonttin/.brew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/munki
-PROMPT='%S%B%F{yellow}[%m]% %f %c/%b %{%F{green}%}$(parse_git_branch) %{%f%s%} $>'
-PWD=/Users/lkonttin/minishell
-SECURITYSESSIONID=186a8
-SHELL=/bin/zsh
-SHLVL=1
-SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.CkclN6jxWc/Listeners
-TERM=xterm-256color
-TERM_PROGRAM=iTerm.app
-TERM_PROGRAM_VERSION=3.4.16
-TERM_SESSION_ID=w1t0p0:A8BC2343-1E8C-416C-9D10-7BA8D85FF5B2
-TMPDIR=/var/folders/zz/zyxvpxvq6csfxvn_n0000p_w0005kq/T/
-USER=lkonttin
-XPC_FLAGS=0x0
-XPC_SERVICE_NAME=0
-__CF_USER_TEXT_ENCODING=0x0:0:0
-Makefile
-array_utils.c
-array_utils.o
-builtins.c
-builtins.o
-builtins_2.c
-builtins_2.o
-debug.c
-debug.o
-error.c
-error.o
-execute.c
-execute.o
-expand.c
-expand.o
-free.c
-free.o
-heredoc.c
-heredoc.o
-history
-init.c
-init.o
-libft
-minishell
-minishell.c
-minishell.h
-minishell.o
-minishell_tester
-parse_cmd_n_args.c
-parse_cmd_n_args.o
-parse_redirs.c
-parse_redirs.o
-parse_utils.c
-parse_utils.o
-parser.c
-parser.o
-paths.c
-paths.o
-pipe_split.c
-pipe_split.o
-pipes.c
-pipes.o
-redirection.c
-redirection.o
-signals.c
-signals.o
-hi
-echo hi
-echo ls | ./minishell
-ls
-exit
-echo ls | ./minishell
-ls
-exit
-ls
-export NAME=Lassi
-askldklasd
-echo "hello
-echo "h
-echo "h
-echo "h
-echo "h
-echo "h
-echo "h
-cat
-ls |
+cat < <
+cat < <
+cat < <
+cat < <
+echo hi | cat < <
+echo hi | cat < <
+|
+||
+|
+echo bonjour > $test w/ t
+mkdir w
+echo bonjour > $test w/ t
+echo bonjour > $test w/t
+make clean
 ls |
 exit
-cat <<eof
+ls |
+|
 exit
-$EMPTY
-$?
-"$EMPTY
+|
 echo "hi
 exit
-"$EMPTY
-exit
-"$EMPTY
-"$EMPTY
-"$EMPTY
-"$EMPTY
-"$EMPTY
-"$EMPTY
-"$EMPTY
-"$EMPTY
-"$EMPTY
-"$EMPTY
-"$EMPTY
-"
-"
-"
-""
-""
-'
-'
-'
-'
-'
-'
-"
-""
-"
-"
-"
-'
-'
-ls
-'
-"
-"
-ls
-"
-ls
-"
-"
-ls
-"
-"
-ls
-"
-"
-"
-"
-"
-ls
-"
-"
-echo hi
-"
-"
-echo hi
-"
-"
-echo hi
-"
-"
-echo hi
-"
-"
-echi hi
-"
-"
-echo hi
-"
-"
-ls
-"
-"
-ls
-"
-"
-ls
-"
-"
-ls
-"
-"
-"
-"
-"
-exit
-exit
-exit
-exit
-exit
-export 123
-env
-export NAME=Lassi
-env
-unset Name
-env
-unset NAME
-env
-export 123
-cd 123123
-cd  1232
-cd minishell_tester
-cd ..
-cd askd
-cd 1233
-cd 23232
-cd 2342424
-exit
-cd 24244
-cc 2424
-cd 343434
-cd 242424
-cd 353535
-cd 353535
-cd 353535
-cd 353535
-cd 353535
-cd 353535
-cd 353535
-cd 5353535
-cd 5353535
-cd 124
-cd 124
-cd 124
-cd 123123
-cd 123123
-exit
-cd 123123
-cd 123
-exit
-cd 123
-exit
-env
-exit
-cd ..
-pwd
-cd minishell
-cd
-pwd
-cd .. alskd
-pwd
-exit
-cd 30434
-exit
-cd minishell_tester
-grep hi <./test_files/infile_big <./test_files/infile
-echo $?
-grep hi <./test_files/infile_big <./test_files/infile
-echo $?
-grep hi <./test_files/infile_big <./test_files/infile
-echo $?
-grep hi <./test_files/infile_big <./test_files/infile
-echo $?
-grep hi <./test_files/infile_big <./test_files/infile
-echo $?
-grep hi <./test_files/infile_big <./test_files/infile
-echo $?
-grep hi <./test_files/infile_big <./test_files/infile
-echo $?
-grep hi <./test_files/infile_big <./test_files/infile
-echo $?
-grep hi <./test_files/infile_big <./test_files/infile
-echo $?
-grep hi <./test_files/infile_big <./test_files/infile
-echo $?
-grep hi <./test_files/infile_big <./test_files/infile
-echo $?
-grep hi <./test_files/infile_big <./test_files/infile
-echo $?
-grep hi <./test_files/infile_big <./test_files/infile
-echo $?
-grep hi <./test_files/infile_big <./test_files/infile
-echo $?
-exit
-echo hi
 echo "hi
-cd 123
-kajsdkjad
 exit
-echo hi
-echo "hello
-echo "helllo
+echo "hi
+ls |
+|
+<<<cat
+<<<cat
+<<<cat
+<<<cat
+<<<cat
 exit
-echo "hello
-echo "hello
-echo "hello
-echo hello
-echo "hello
-echo "hello
-echo hello
-echo "hello
-echo "hello
-echo "hello
+echo "hi
+make clean
 exit
-echo "hello
-echo hello
-cd 123
-echo hello
-echo hello
+echo "hi
+<<<cat
+<>< cat
+< < cat
+echo hi >out
+echo hi >>out
+echo hi >>out
+echo hi >>>
+echo hi >>>out
 exit
-echo hello
-echo he"llo
-echo he"llo
-echo hello
-cd 123
+cat <
 exit
-cd minishell_tester
-ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >out
+cat <
+cat < <
+cat >>>
+cat >>>out
+cat ><out
+cat ><
+cat <>
 exit
-exit 123
-$OLDPWD
-$?
+ls >>out
 exit
-cd 123
+ls >>out
 exit
-export NAME=-+-+
-env
-exit
-cd 123
-echo hello
+echo $PWD
 ls
+echo hey
+echo $PWD
+cat >>>
+cat ><>
+cat ><><><>>
 exit
-echo hi
-cd 123
-env
-export NAME=Lassi
-ls
+echo $PWD
+echo $PWD
 exit
-ls
-ls
+cat >in
+cat < in
+grep hi <in
 exit
-ls
-ls
+grep hi <in
 exit
-echo hello
-echo hello
-echo hello
+grep hi <in
 exit
+grep hi <in
+grep hi <in
+grep hi <in
+grep hi <in
+grep hi <in
+grep hi <in
+grep hi <in
 exit
+grep hi <in
 exit
-<<L
+grep hi <in
+grep hi <in
+grep hi <in <in2
 exit
-cat <<1 >out | <<2
+grep hi <in <in2
 exit
-cat <<1 >out | <<2
+grep hi <in <in2
 exit
-cat <<1 >out | <<2
+grep hi <in
 exit
-cat <<1 >out | <<2
+echo "hello     42"
+echo <in "hello     42"
+echo <"in" "hello     42"
 exit
-cat <<1 >out | <<2
+echo <"in" "hello     42"
+exit
+echo <"in" "hello     42"
+exit
+echo <"in" "hello     42"
+exit
+echo <"in" "hello     42"
+exit
+echo <"in" "hello     42"
+exit
+cat < <
+cat <<<
+cat >>>
+cat <<<
+cat >>>
+cat >> >
+exit
+cat >> >
+cat >> >>
+cat >>>
+cat > >
+cat >   >
+cat ><
+cat <<<
 exit

@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 11:11:41 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/20 14:56:10 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/26 11:21:23 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ static char	*fetch_env(t_shell *shell, char *line, int *i)
 	if (line[*i] == '\"')
 		return ("$");
 	(*i)++;
-	while (line[*i] && line[*i] != ' ' && line[*i] != '$' && line[*i] != '\"'
-		&& line[*i] != '\'')
+	while (line[*i] && line[*i] != ' ' && line[*i] != '/' && line[*i] != '$'
+		&& line[*i] != '\"' && line[*i] != '\'')
 		(*i)++;
 	end = *i;
 	env = ft_substr(line, start, end - start);
@@ -51,6 +51,8 @@ static int	expand_env(t_shell *shell, char **line, int i)
 			value = ft_itoa(WEXITSTATUS(shell->exit_status));
 		else
 			value = ft_itoa(shell->exit_status);
+		if (!value)
+			error(shell, MALLOC, FATAL, 1);
 		i++;
 	}
 	else

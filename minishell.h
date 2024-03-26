@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/22 16:30:17 by okarejok         ###   ########.fr       */
+/*   Updated: 2024/03/26 12:24:24 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,11 @@ typedef enum e_status
 # define CD_FAIL ": No such file or directory"
 # define PIPE "Error: error opening a pipe"
 # define IS_DIR ": is a directory"
-# define SYNTAX_PIPE "syntax error near unexpected token `|'"
-# define QUOTES "Error: unclosed quotes"
+# define SYNTAX_PIPE "minishell: syntax error near unexpected token `|'"
+# define SYNTAX_INFILE "minishell: syntax error near unexpected token `<'"
+# define SYNTAX_OUTFILE "minishell: syntax error near unexpected token `>'"
+# define SYNTAX_NEWLINE "minishell: syntax error near unexpected token `newline'"
+# define SYNTAX_QUOTES "minishell: syntax error with unclosed quotes"
 
 typedef struct s_cmd
 {
@@ -68,6 +71,17 @@ typedef struct s_shell
 	int			heredoc_index;
 }	t_shell;
 
+typedef struct s_parse
+{
+	int		i;
+	int		j;
+	int		k;
+	char	quote;
+	int		in_quotes;
+	int		inside_singles;
+	int		inside_doubles;
+}	t_parse;
+
 int	sig_global;
 
 void	paths(t_shell *shell, char **envp);
@@ -85,6 +99,7 @@ void	setup_prompt(t_shell *shell);
 void	init_tree(t_shell *shell);
 void	allocate_pipes(t_shell *shell);
 void	shlvl_increment(t_shell *shell);
+void	init_t_parse(t_parse *p);
 
 // PARSING
 
@@ -92,17 +107,19 @@ void	parse_line(t_shell *shell);
 void	pipe_split(t_shell *shell, char *s);
 void	tokenize(t_shell *shell, t_cmd *cmd);
 void	check_expands(t_shell *shell, char **line);
-int		extract_redirections(t_shell *shell, t_cmd *cmd);
+void	extract_redirections(t_shell *shell, t_cmd *cmd);
 void	extract_command(t_shell *shell, t_cmd *cmd);
 void	extract_args(t_shell *shell, t_cmd *cmd);
 void	replace_with_spaces(char *line, int start, int end);
-int		check_unclosed_quotes(char *line);
+int		unclosed_quotes(char *line);
 void	remove_spaces(char *str);
 char	*add_one_space(char *str);
 int		skip_quotes(char *line, int i);
 void	remove_quotes(char *str);
 int		ends_in_pipe(char *line);
-int		double_pipes(t_shell *shell, char *line);
+int		invalid_pipes(t_shell *shell, char *line);
+int		validate_syntax(t_shell *shell, char *s);
+int		illegal_arrows(t_shell *shell, char *line, char arrow, int i);
 
 // BUILTINS
 void	cd(t_shell *shell, t_cmd *cmd);
@@ -126,8 +143,8 @@ void	free_pipes(t_shell *shell);
 void	free_all(t_shell *shell);
 void	free_tree(t_shell *shell);
 void	free_array(char **array);
-void	error(t_shell *shell, char *msg, t_status status, int code);
-void	p_error(t_shell *shell, char *msg, t_status status, int code);
+int		error(t_shell *shell, char *msg, t_status status, int code);
+int		p_error(t_shell *shell, char *msg, t_status status, int code);
 
 // REDIRECTION
 void	redir_to_file(t_shell *shell, t_cmd *cmd_vars);

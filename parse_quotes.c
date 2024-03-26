@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 12:32:14 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/22 12:33:36 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/26 12:25:07 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	skip_quotes(char *line, int i)
 	return (i + 1);
 }
 
-int	check_unclosed_quotes(char *line)
+int	unclosed_quotes(char *line)
 {
 	int		i;
 	char	quote;
@@ -45,7 +45,54 @@ int	check_unclosed_quotes(char *line)
 	return (0);
 }
 
+void	init_t_parse(t_parse *p)
+{
+	p->i = 0;
+	p->k = 0;
+	p->inside_singles = 0;
+	p->inside_doubles = 0;
+	p->in_quotes = 0;
+	p->quote = 0;
+}
+
+void	null_terminate(char *str, int k)
+{
+	while (str[k])
+	{
+		str[k] = '\0';
+		k++;
+	}
+}
+
 void	remove_quotes(char *str)
+{
+	t_parse	p;
+
+	init_t_parse(&p);
+	while (str[p.i])
+	{
+		if (str[p.i] == '\'' && !p.inside_doubles)
+		{
+			p.inside_singles = !p.inside_singles;
+			p.i++;
+			if (p.inside_singles || str[p.i] == '\'')
+				continue ;
+		}
+		if (str[p.i] == '\"' && !p.inside_singles)
+		{
+			p.inside_doubles = !p.inside_doubles;
+			p.i++;
+			if (p.inside_doubles || str[p.i] == '\"')
+				continue ;
+		}
+		str[p.k] = str[p.i];
+		p.i++;
+		p.k++;
+	}
+	null_terminate(str, p.k);
+}
+
+/* void	remove_quotes(char *str)
 {
 	int		i;
 	int		k;
@@ -81,4 +128,6 @@ void	remove_quotes(char *str)
 		str[k] = '\0';
 		k++;
 	}
-}
+} */
+
+

@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 15:19:44 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/22 12:34:44 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/25 15:46:54 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,27 +65,3 @@ int	ends_in_pipe(char *line)
 	return (0);
 }
 
-int	double_pipes(t_shell *shell, char *line)
-{
-	int	i;
-
-	i = 0;
-	while (line[i])
-	{
-		if (line[i] == '\"' || line[i] == '\'')
-			i = skip_quotes(line, i);
-		if (line[i] == '|' && line[i + 1])
-		{
-			i++;
-			while (line[i] == ' ')
-				i++;
-			if (line[i] == '|')
-			{
-				error(shell, SYNTAX_PIPE, ERROR, 258);
-				return (1);
-			}
-		}
-		i++;
-	}
-	return (0);
-}
