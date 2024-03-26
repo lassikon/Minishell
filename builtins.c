@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 10:46:25 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/21 13:07:48 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/26 17:20:54 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,15 @@ static void	unset(t_shell *shell, t_cmd *cmd)
 
 int	child_builtin(t_shell *shell, t_cmd *cmd)
 {
-	if (ft_strncmp(cmd->cmd, "export", 7) == 0 && !cmd->args[1])
+	if (ft_strncmp(cmd->args[0], "export", 7) == 0 && !cmd->args[1])
 		env(shell, 1);
-	else if (ft_strncmp(cmd->cmd, "env", 4) == 0)
+	else if (ft_strncmp(cmd->args[0], "env", 4) == 0)
 		env(shell, 0);
-	else if (ft_strncmp(cmd->cmd, "pwd", 4) == 0)
+	else if (ft_strncmp(cmd->args[0], "pwd", 4) == 0)
 		pwd(shell, cmd);
-	else if (ft_strncmp(cmd->cmd, "echo", 5) == 0)
+	else if (ft_strncmp(cmd->args[0], "echo", 5) == 0)
 		echo(shell, cmd);
-	else if (ft_strncmp(cmd->cmd, "exit", 5) == 0 && shell->cmd_count > 1)
+	else if (ft_strncmp(cmd->args[0], "exit", 5) == 0 && shell->cmd_count > 1)
 		ft_exit(shell, cmd);
 	else
 		return (0);

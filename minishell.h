@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/26 12:24:24 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/26 17:34:34 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ typedef enum e_status
 # define CD_FAIL ": No such file or directory"
 # define PIPE "Error: error opening a pipe"
 # define IS_DIR ": is a directory"
+# define NO_CMD ": command not found"
 # define SYNTAX_PIPE "minishell: syntax error near unexpected token `|'"
 # define SYNTAX_INFILE "minishell: syntax error near unexpected token `<'"
 # define SYNTAX_OUTFILE "minishell: syntax error near unexpected token `>'"
@@ -135,7 +136,7 @@ char	*ft_getenv(t_shell *shell, char *to_find);
 // EXECUTION
 void	do_fork(t_shell *shell);
 void	handle_child(t_shell *shell, t_cmd *cmd_vars);
-void	wait_children(t_shell *shell);
+void	wait_children(t_shell *shell, int pids);
 void	run_command(t_shell *shell);
 
 // FREEING & ERROR HANDLING

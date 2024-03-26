@@ -243,3 +243,26 @@ cat >   >
 cat ><
 cat <<<
 exit
+$?
+kjslkdjf
+exit
+aslkdad
+exit
+aslkdad
+exit
+aslkdad
+exit
+aslkdad
+exit
+aslkdad
+exit
+aslkdad
+echo $?
+exit
+aslkdad
+exit
+aslkdad
+exit
+<<1
+ls
+exit

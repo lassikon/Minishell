@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:19:05 by okarejok          #+#    #+#             */
-/*   Updated: 2024/03/20 17:33:10 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/26 17:34:06 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	run_command(t_shell *shell)
 	do_fork(shell);
 }
 
-static void	execve_with_path(t_shell *shell, t_cmd *cmd_vars, char **envp)
+static int check_cmd_path(t_shell *shell, t_cmd *cmd_vars)
 {
 	int		i;
 	char	*cmd_path;
@@ -33,11 +33,48 @@ static void	execve_with_path(t_shell *shell, t_cmd *cmd_vars, char **envp)
 	while (shell->paths[i])
 	{
 		cmd_path = ft_strjoin(shell->paths[i], cmd_one);
-		execve(cmd_path, cmd_vars->args, envp);
+		if (!cmd_path)
+			error(shell, MALLOC, FATAL, 1);
+		if (access(cmd_path, 0) == 0)
+		{
+			cmd_vars->cmd = cmd_path;
+			return (0);
+		}
 		free(cmd_path);
 		i++;
 	}
 	free(cmd_one);
+	ft_putstr_fd("minishell: ", 2);
+	ft_putstr_fd(cmd_vars->cmd, 2);
+	return (error(shell, NO_CMD, ERROR, 127));
+}
+
+static int	validate_command(t_shell *shell, t_cmd *cmd_vars)
+{
+	struct stat	buf;
+
+	if (ft_strchr(cmd_vars->cmd, '/'))
+	{
+		if (access(cmd_vars->cmd, F_OK) == -1)
+			return (p_error(shell, cmd_vars->cmd, ERROR, 127));
+		else if (access(cmd_vars->cmd, X_OK) == -1)
+			return (p_error(shell, cmd_vars->cmd, ERROR, 126));
+		if (stat(cmd_vars->cmd, &buf) == 0)
+		{
+			if (S_ISDIR(buf.st_mode))
+			{
+				ft_putstr_fd("minishell: ", 2);
+				ft_putstr_fd(cmd_vars->cmd, 2);
+				return (error(shell, IS_DIR, ERROR, 126));
+			}
+		}
+	}
+	else
+	{
+		if (shell->paths != NULL)
+			return (check_cmd_path(shell, cmd_vars));
+	}
+	return (0);
 }
 
 void	do_fork(t_shell *shell)
@@ -47,9 +84,8 @@ void	do_fork(t_shell *shell)
 	i = 0;
 	while (i < shell->cmd_count)
 	{
-		if (shell->status == ERROR)
-			break ;
-		if (parent_builtin(shell, &shell->cmd_tree[i]))
+		if (parent_builtin(shell, &shell->cmd_tree[i])
+			|| validate_command(shell, &shell->cmd_tree[i]))
 		{
 			i++;
 			continue ;
@@ -57,7 +93,7 @@ void	do_fork(t_shell *shell)
 		shell->pid[i] = fork();
 		if (shell->pid[i] == -1)
 		{
-			waitpid(shell->pid[i -1], 0, 0);
+			wait_children(shell, i);
 			p_error(shell, "fork", FATAL, 1);
 		}
 		if (shell->pid[i] == 0)
@@ -65,13 +101,11 @@ void	do_fork(t_shell *shell)
 		i++;
 	}
 	close_pipes(shell);
-	wait_children(shell);
+	wait_children(shell, shell->cmd_count);
 }
 
 void	handle_child(t_shell *shell, t_cmd *cmd_vars)
 {
-	struct stat	buf;
-
 	if (shell->cmd_count > 1)
 		redir_to_pipe(shell, cmd_vars);
 	if (cmd_vars->redir_count > 0)
@@ -80,37 +114,27 @@ void	handle_child(t_shell *shell, t_cmd *cmd_vars)
 		exit(shell->exit_status);
 	if (child_builtin(shell, cmd_vars))
 		exit(shell->exit_status);
-	if (ft_strchr(cmd_vars->cmd, '/'))
-	{
-		if (access(cmd_vars->cmd, F_OK) == -1)
-			p_error(shell, cmd_vars->cmd, FATAL, 127);
-		if (access(cmd_vars->cmd, X_OK) == -1)
-			p_error(shell, cmd_vars->cmd, FATAL, 126);
-		if (stat(cmd_vars->cmd, &buf) == 0)
-		{
-			if (S_ISDIR(buf.st_mode))
-			{
-				ft_putstr_fd("minishell: ", 2);
-				ft_putstr_fd(cmd_vars->cmd, 2);
-				error(shell, IS_DIR, FATAL, 126);
-			}
-		}
-		execve(cmd_vars->cmd, cmd_vars->args, shell->env);
-	}
-	else if (shell->paths != NULL)
-		execve_with_path(shell, cmd_vars, shell->env);
-	ft_putstr_fd("minishell: ", 2);
-	ft_putstr_fd(cmd_vars->cmd, 2);
-	ft_putstr_fd(": command not found\n", 2);
+	execve(cmd_vars->cmd, cmd_vars->args, shell->env);
 	exit(127);
 }
 
-void	wait_children(t_shell *shell)
+void	wait_children(t_shell *shell, int pids)
 {
 	int	i;
+	int	children;
 
 	i = 0;
+	children = 0;
 	while (i < shell->cmd_count)
+	{
+		if (shell->pid[i] > 0)
+			children++;
+		i++;
+	}
+	if (children == 0)
+		return ;
+	i = 0;
+	while (i < pids)
 	{
 		waitpid(shell->pid[i], &shell->exit_status, 0);
 		if (!WIFEXITED(shell->exit_status))
