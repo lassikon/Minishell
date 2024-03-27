@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:19:05 by okarejok          #+#    #+#             */
-/*   Updated: 2024/03/26 17:34:06 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/27 12:16:02 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,18 @@ void	run_command(t_shell *shell)
 		return ;
 	open_pipes(shell);
 	do_fork(shell);
+}
+
+int	absolute_path_to_directory(char *cmd)
+{
+	struct stat	buf;
+
+	if (stat(cmd, &buf) == 0)
+	{
+		if (S_ISDIR(buf.st_mode))
+			return (1);
+	}
+	return (0);
 }
 
 static int check_cmd_path(t_shell *shell, t_cmd *cmd_vars)
@@ -35,8 +47,16 @@ static int check_cmd_path(t_shell *shell, t_cmd *cmd_vars)
 		cmd_path = ft_strjoin(shell->paths[i], cmd_one);
 		if (!cmd_path)
 			error(shell, MALLOC, FATAL, 1);
+		if (absolute_path_to_directory(cmd_path))
+		{
+			free(cmd_path);
+			i++;
+			continue ;
+		}
 		if (access(cmd_path, 0) == 0)
 		{
+			if (access(cmd_path, X_OK) == -1)
+				return (p_error(shell, cmd_path, ERROR, 126));
 			cmd_vars->cmd = cmd_path;
 			return (0);
 		}
@@ -51,22 +71,21 @@ static int check_cmd_path(t_shell *shell, t_cmd *cmd_vars)
 
 static int	validate_command(t_shell *shell, t_cmd *cmd_vars)
 {
-	struct stat	buf;
-
+	if (cmd_vars->cmd[0] == '\0')
+		return (0);
+	if (child_builtin(shell, cmd_vars, CHECK))
+		return (0);
 	if (ft_strchr(cmd_vars->cmd, '/'))
 	{
 		if (access(cmd_vars->cmd, F_OK) == -1)
 			return (p_error(shell, cmd_vars->cmd, ERROR, 127));
 		else if (access(cmd_vars->cmd, X_OK) == -1)
 			return (p_error(shell, cmd_vars->cmd, ERROR, 126));
-		if (stat(cmd_vars->cmd, &buf) == 0)
+		if (absolute_path_to_directory(cmd_vars->cmd))
 		{
-			if (S_ISDIR(buf.st_mode))
-			{
-				ft_putstr_fd("minishell: ", 2);
-				ft_putstr_fd(cmd_vars->cmd, 2);
-				return (error(shell, IS_DIR, ERROR, 126));
-			}
+			ft_putstr_fd("minishell: ", 2);
+			ft_putstr_fd(cmd_vars->cmd, 2);
+			return (error(shell, IS_DIR, ERROR, 126));
 		}
 	}
 	else
@@ -112,9 +131,10 @@ void	handle_child(t_shell *shell, t_cmd *cmd_vars)
 		redir_to_file(shell, cmd_vars);
 	if (!cmd_vars->cmd[0])
 		exit(shell->exit_status);
-	if (child_builtin(shell, cmd_vars))
+	if (child_builtin(shell, cmd_vars, EXECUTE))
 		exit(shell->exit_status);
 	execve(cmd_vars->cmd, cmd_vars->args, shell->env);
+	write(2, "minishell: execve failed\n", 25);
 	exit(127);
 }
 
@@ -137,6 +157,13 @@ void	wait_children(t_shell *shell, int pids)
 	while (i < pids)
 	{
 		waitpid(shell->pid[i], &shell->exit_status, 0);
+		if (WIFSIGNALED(shell->exit_status))
+		{
+			if (WTERMSIG(shell->exit_status) == SIGQUIT)
+				ft_putstr_fd("Quit: 3\n", STDERR_FILENO);
+			else if (WTERMSIG(shell->exit_status) == SIGINT)
+				ft_putstr_fd("\n", STDERR_FILENO);
+		}
 		if (!WIFEXITED(shell->exit_status))
 			shell->exit_status = 1;
 		i++;

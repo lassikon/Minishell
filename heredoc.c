@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 14:41:04 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/25 11:38:20 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/27 12:28:26 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ static void	write_to_heredoc(t_shell *shell, char *limiter, int fd)
 
 	sig_global = 1;
 	tmp_fd = dup(STDIN_FILENO);
+	toggle_carret(0);
 	while (1)
 	{
 		line = readline("> ");
@@ -47,6 +48,7 @@ static void	write_to_heredoc(t_shell *shell, char *limiter, int fd)
 		ft_putendl_fd(line, fd);
 		free(line);
 	}
+	toggle_carret(1);
 	dup2(tmp_fd, STDIN_FILENO);
 	close(tmp_fd);
 	sig_global = 0;
@@ -59,7 +61,7 @@ void	heredoc(t_shell *shell, t_cmd *cmd)
 	char	*file;
 
 	i = 0;
-	while (cmd->redir[i])
+	while (i < cmd->redir_count)
 	{
 		if (ft_strncmp(cmd->redir[i], "<<", 2) == 0)
 		{

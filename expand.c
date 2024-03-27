@@ -6,11 +6,19 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 11:11:41 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/26 11:21:23 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/27 12:43:53 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
+
+static int	end_character(char c)
+{
+	if (c == ' ' || c == '/' || c == '$' || c == '\"'
+		|| c == '\'' || c == '=' || c == ':')
+		return (1);
+	return (0);
+}
 
 static char	*fetch_env(t_shell *shell, char *line, int *i)
 {
@@ -23,8 +31,7 @@ static char	*fetch_env(t_shell *shell, char *line, int *i)
 	if (line[*i] == '\"')
 		return ("$");
 	(*i)++;
-	while (line[*i] && line[*i] != ' ' && line[*i] != '/' && line[*i] != '$'
-		&& line[*i] != '\"' && line[*i] != '\'')
+	while (!end_character(line[*i]))
 		(*i)++;
 	end = *i;
 	env = ft_substr(line, start, end - start);

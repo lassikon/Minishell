@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/26 17:34:34 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/27 11:28:08 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,9 @@ typedef enum e_status
 	FATAL,
 	SYNTAX,
 	ERROR,
-	RUNNING
+	RUNNING,
+	EXECUTE,
+	CHECK
 } t_status;
 
 # define MALLOC "Error: malloc failed"
@@ -129,7 +131,7 @@ void	echo(t_shell *shell, t_cmd *cmd);
 void	env(t_shell *shell, int export);
 void	ft_exit(t_shell *shell, t_cmd *cmd);
 void	export(t_shell *shell, t_cmd *cmd);
-int		child_builtin(t_shell *shell, t_cmd *cmd);
+int		child_builtin(t_shell *shell, t_cmd *cmd, t_status mode);
 int		parent_builtin(t_shell *shell, t_cmd *cmd);
 char	*ft_getenv(t_shell *shell, char *to_find);
 

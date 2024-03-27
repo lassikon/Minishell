@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 13:03:52 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/26 15:49:19 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/27 12:30:05 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,4 +106,5 @@ void	extract_redirections(t_shell *shell, t_cmd *cmd)
 		else
 			p.i++;
 	}
+	cmd->redir[p.k] = NULL;
 }

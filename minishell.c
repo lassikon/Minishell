@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:10:31 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/26 15:51:03 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/27 12:44:35 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@ int	main(int argc, char **argv, char **envp)
 	signal(SIGINT, signal_handler);
 	signal(SIGQUIT, signal_handler);
 	setup_shell(&shell, envp);
-	toggle_carret(0);
 	while (shell.status == RUNNING)
 	{
+		toggle_carret(0);
 		shell.line = readline("minishell$ ");
 		if (shell.line == NULL)
 		{
@@ -30,6 +30,7 @@ int	main(int argc, char **argv, char **envp)
 				ft_putendl_fd("exit", 2);
 			exit(shell.exit_status);
 		}
+		toggle_carret(1);
 		if (*shell.line)
 		{
 			add_history(shell.line);
@@ -41,7 +42,6 @@ int	main(int argc, char **argv, char **envp)
 		}
 		shell.status = RUNNING;
 	}
-	toggle_carret(1);
 	close(shell.history_fd);
 	return (0);
 }

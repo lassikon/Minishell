@@ -266,3 +266,265 @@ exit
 <<1
 ls
 exit
+ls
+exit > out
+exit
+exit 5857 57
+exit 364
+exit
+export
+exit
+ls
+export +hello=1
+export hello+=1
+cat
+cat
+$?
+<< EOF cat
+g
+<< EOF cat
+<< EOF cat
+ls
+<< EOF cat
+<< EOF cat
+<< EOF cat
+<< EOF cat
+ls
+<< EOF cat
+<< EOF cat
+<< EOF cat
+<< EOF cat
+cat
+cat
+ls
+pwd
+export PATH=$PATH:/Users/lkonttin/minishell
+export
+export
+exit
+export
+exit
+exit
+export
+exit
+export
+export hello1=hi
+env
+export PATH=$PATH:/Users/lkonttin/minishell
+env
+env
+export
+minishell
+export
+env
+exit
+ls
+ls
+ls
+exit
+export PATH=$PATH:/Users/lkonttin/minishell
+minishell
+exit
+ls
+cp
+exit
+./copyshell 
+export PATH=$PATH:/Users/lkonttin/minishell
+copyshell
+copyshell
+copyshell
+copyshell
+copyshell
+copyshell
+copyshell
+exit
+exit
+mkdir test
+export PATH=$PATH:/Users/lkonttin/minishell
+test
+test
+test
+test
+test
+exit
+exit
+ls
+export PATH=$PATH:/Users/lkonttin/minishell
+libft
+minishell.c
+<<EOF
+<<E
+ls
+<<E
+<<E
+<<E
+<<E
+<<E
+<<E
+<<E
+<<E
+<<E
+ls
+<<E
+<<E
+env
+exit
+test
+exit
+env
+export PATH=$PATH:$(pwd)
+env
+exit
+env
+test
+$?
+exit >
+exit < out
+exit > <
+echo >
+exit
+exit < >
+exit <EOF
+exit <<EOF
+$HOME$PWD
+export PATH=$PATH:$(pwd)
+env
+exit
+env
+exit 4545 23434
+exit > out
+exit > out
+exit < in
+export +hello=1
+exit
+exit > out
+exit > out
+export PATH=$PATH:$(pwd)
+env
+env
+exit
+env
+exit
+env
+exit
+env
+exit
+env
+exit
+env
+exit
+env
+export PATH=$PATH:$(pwd)
+env
+exit
+<<1
+ls
+<<1
+exit <<1
+<<1
+<<1
+exit
+<<1
+exit
+<<1
+exit
+<<1
+ls
+<<1
+<<1
+exit > out
+cat
+echo $?
+exit
+cat
+cat
+cat
+exit
+cat
+cat
+cat
+cat
+<<1
+<<1
+exit
+<<1
+<<1
+ls
+sleep 4
+sleep 4
+sleep 4 > out2
+sleep 4 > out2
+sleep 4 > out2
+sleep 4 > out2
+sleep 4 > out2
+sleep 4 > out2
+sleep 2 > out2
+sleep 2 > out2
+sleep 2 > out2
+sleep 2 > out2
+sleep 2 > out2
+sleep 2 > out2
+sleep 2 > out2
+sleep 2 > out2
+sleep 2 > out2
+sleep 2 > out2
+sleep 1 > out2
+sleep 1 > out2
+sleep 1 > out2
+sleep 1 > out2
+sleep 1 > out2
+exit
+sleep 1 > out2
+sleep 1 > out2
+sleep 1 > out2
+sleep 1 > out2
+sleep 1 > out2
+sleep 1 > out2
+sleep 1 > out2
+sleep 1 > out2
+sleep 1 > out2
+sleep 1 > out2
+sleep 1 > out2
+sleep 1 > out2
+sleep 1 > out2
+sleep 1 > out2
+sleep 1 > out2
+sleep 1 > out2
+sleep 1 > out2
+sleep 1 > out2
+sleep 1 > out2
+sleep 1 > out2
+sleep 1 > out2
+sleep 1 > out2
+sleep 1 > out2
+sleep 1 > out2
+sleep 1 > out2
+exit > out
+export NAME=HELLO
+env
+export $NAME=hey
+env
+exit
+ls
+exit
+test
+echo $?
+test
+test
+echo $?
+mkdir test1
+test1
+exit
+libft
+export +hello=1
+exit < in
+cat <in
+mdkir in
+mkdir in
+rm -rf in
+touch in
+exit <in
+exit >out2
+exit <in2
+cat
+exit

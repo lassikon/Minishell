@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 13:36:20 by okarejok          #+#    #+#             */
-/*   Updated: 2024/03/25 12:13:36 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/27 11:35:37 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,6 +139,7 @@ void	env(t_shell *shell, int export)
 	int	k;
 
 	i = 0;
+	printf("executing env\n");
 	if (!shell->env)
 		return ;
 	while (shell->env[i])
@@ -180,11 +181,6 @@ static int	is_numeric(char *str)
 	}
 	return (0);
 }
-
-// add overflow handling, such as "exit 23492342039402324"
-// ctrl + d should write exit
-// expand $ in heredoc unless LIMITER is inside quotes
-// clear OLDPWD when shell is started
 
 void	ft_exit(t_shell *shell, t_cmd *cmd)
 {
