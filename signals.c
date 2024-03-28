@@ -6,42 +6,47 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 15:46:08 by okarejok          #+#    #+#             */
-/*   Updated: 2024/03/25 11:32:37 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/28 14:50:51 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-static void	ctrl_c_handler(int signum)
+static void	signal_handler(int signal)
 {
-	if (sig_global == 1 && signum == SIGINT)
-	{
-		close(STDIN_FILENO);
-		sig_global = 0;
-	}
-	else if (sig_global == 0 && signum == SIGINT)
+	if (signal == SIGINT)
 	{
 		write(1, "\n", 1);
-		rl_replace_line("", 0);
 		rl_on_new_line();
+		rl_replace_line("", 0);
 		rl_redisplay();
 	}
 }
 
-static void	sigquit_handler(int signum)
+void	toggle_signal(t_signal mode)
 {
-	(void)signum;
-	rl_replace_line("", 0);
-	rl_on_new_line();
-	rl_redisplay();
-}
-
-void	signal_handler(int signal)
-{
-	if (signal == SIGINT)
-		ctrl_c_handler(signal);
-	else if (signal == SIGQUIT)
-		sigquit_handler(signal);
+	if (mode == DEFAULT)
+	{
+		toggle_carret(1);
+		signal(SIGQUIT, SIG_DFL);
+		signal(SIGINT, SIG_DFL);
+	}
+	else if (mode == HANDLER)
+	{
+		toggle_carret(0);
+		signal(SIGQUIT, SIG_IGN);
+		signal(SIGINT, signal_handler);
+	}
+	else if (mode == HEREDOC)
+	{
+		signal(SIGQUIT, SIG_IGN);
+		signal(SIGINT, SIG_DFL);
+	}
+	else
+	{
+		signal(SIGQUIT, SIG_IGN);
+		signal(SIGINT, SIG_IGN);
+	}
 }
 
 void	toggle_carret(int is_on)

@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/28 12:19:15 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/28 14:37:36 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,13 @@ typedef enum e_status
 	EXECUTE,
 	CHECK
 } t_status;
+
+typedef enum e_signal
+{
+	DEFAULT,
+	HANDLER,
+	HEREDOC
+} t_signal;
 
 # define MALLOC "Error: malloc failed"
 # define CD_FAIL ": No such file or directory"
@@ -159,9 +166,9 @@ void	open_pipes(t_shell *shell);
 void	redir_to_pipe(t_shell *shell, t_cmd *cmd_vars);
 
 // SIGNALS
-void	signal_handler(int signal);
 void	rl_replace_line(const char *text, int clear_undo);
 void	toggle_carret(int is_on);
+void	toggle_signal(t_signal mode);
 
 //debug.c
 void	print_tree(t_shell *shell);

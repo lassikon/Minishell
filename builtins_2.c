@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 13:36:20 by okarejok          #+#    #+#             */
-/*   Updated: 2024/03/28 12:18:34 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/28 14:56:13 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,7 @@ void	cd(t_shell *shell, t_cmd *cmd)
 	if (chdir(path) == -1)
 	{
 		ft_putstr_fd("minishell: cd: ", 2);
-		ft_putstr_fd(path, 2);
-		error(shell, CD_FAIL, ERROR, 1);
+		p_error(shell, path, ERROR, 1);
 	}
 	else
 		update_wd(shell);
@@ -205,5 +204,6 @@ void	ft_exit(t_shell *shell, t_cmd *cmd)
 	free_all(shell);
 	free_array(shell->env);
 	close(shell->history_fd);
+	toggle_signal(DEFAULT);
 	exit(code);
 }

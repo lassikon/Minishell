@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:19:05 by okarejok          #+#    #+#             */
-/*   Updated: 2024/03/27 12:16:02 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/28 14:53:50 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,6 +125,7 @@ void	do_fork(t_shell *shell)
 
 void	handle_child(t_shell *shell, t_cmd *cmd_vars)
 {
+	toggle_signal(DEFAULT);
 	if (shell->cmd_count > 1)
 		redir_to_pipe(shell, cmd_vars);
 	if (cmd_vars->redir_count > 0)
