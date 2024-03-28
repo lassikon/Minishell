@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   builtins_2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 13:36:20 by okarejok          #+#    #+#             */
-/*   Updated: 2024/03/28 14:56:13 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/28 16:09:37 by okarejok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-void	update_wd(t_shell *shell)
+static void	update_wd(t_shell *shell)
 {
 	char	*oldpwd_path;
 	char	*pwd_path;
@@ -44,6 +44,15 @@ void	update_wd(t_shell *shell)
 	free(pwd_entry);
 }
 
+static void	cd_error(t_shell *shell, char *path)
+{
+	char	*error_msg;
+
+	error_msg = ft_strjoin("cd: ", path);
+	p_error(shell, error_msg, ERROR, 1);
+	free(error_msg);
+}
+
 void	cd(t_shell *shell, t_cmd *cmd)
 {
 	char	*home;
@@ -64,10 +73,7 @@ void	cd(t_shell *shell, t_cmd *cmd)
 	if (!path)
 		error(shell, MALLOC, FATAL, 1);
 	if (chdir(path) == -1)
-	{
-		ft_putstr_fd("minishell: cd: ", 2);
-		p_error(shell, path, ERROR, 1);
-	}
+		cd_error(shell, path);
 	else
 		update_wd(shell);
 	free(path);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/28 14:37:36 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/28 16:11:10 by okarejok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,9 @@
 # include <readline/readline.h>
 # include <readline/history.h>
 # include <termios.h>
+# include <string.h>
+# include <errno.h>
 # include "libft/include/libft.h"
-
 
 typedef enum e_status
 {
