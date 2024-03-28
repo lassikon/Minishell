@@ -28,6 +28,7 @@ SRCS	:= 	minishell.c \
 			free.c \
 			error.c \
 			parse_quotes.c \
+			parse_spaces.c \
 			syntax.c
 			
 OBJS	:= ${SRCS:.c=.o}

@@ -528,3 +528,207 @@ exit >out2
 exit <in2
 cat
 exit
+env
+echo $SHELL
+echo hi
+echo $PWD
+askdjkajsd
+cat | cat | ls
+cat | cat | ls
+echo Type a command line, then use ctrl-C and press "Enter". The buffer should be clean and there should be nothing left to execute.
+Can we navigate through history using Up and Down? Can we retry some command?
+Execute commands that should not work like 'dsbksdgbksdghsd'. Ensure minishell doesn't crash and prints an error.
+'cat | cat | ls' should behave in a "normal way".
+Try to execute a long command with a ton of arguments.
+Have fun with that beautiful minishell and enjoy it!
+echo Type a command line, then use ctrl-C and press "Enter". The buffer should be clean and there should be nothing left to execute.
+Can we navigate through history using Up and Down? Can we retry some command?
+Execute commands that should not work like 'dsbksdgbksdghsd'. Ensure minishell doesn't crash and prints an error.
+'cat | cat | ls' should behave in a "normal way".
+Try to execute a long command with a ton of arguments.
+Have fun with that beautiful minishell and enjoy it!
+echo Evaluate the bonus part if, and only if, the mandatory part has been entirely and perfectly done, and the error management handles unexpected or bad usage. In case all the mandatory points were not passed during the defense, bonus points must be totally ignored.
+echo Evaluate the bonus part if, and only if, the mandatory part has been entirely and perfectly done, and the error management handles unexpected or bad usage. In case all the mandatory points were not passed during the defense, bonus points "must be totally" ignored.
+cat file | grep bla | more
+ls >out <in <in <out >out
+ls >out <in <in <out >>out
+ls >out <out >>out
+ls >out <out >>out
+ls >out <out >>out
+ls >out <out >>out
+ls >out <out >>out
+ls >out <out >>out
+ls >out <out >>out
+ls >out <out >>out
+ls >out <out >>out
+ls >out <out >>out
+ls
+awk
+unset PATH
+ls
+export PATH=test1:test2
+env
+ls
+exit
+cd ../..
+pwd
+cd ..
+pwd
+cd ..
+pwd
+exit
+pwd
+cd ..
+pwd
+cd .
+pwd
+cd ksadlkad
+pwd
+/bin/ls
+cd minishell
+/bin/ls
+$OLDPWD
+env
+unset COLORTERM
+env
+unset HOME=
+env
+unset ajsdkjad
+unset 2332
+exit >out
+exit <in5
+$PWD
+$PWD
+echo $PWD
+echo $PWD
+echo $PWD
+env
+echo $PWD
+echo $ PWD
+echo $"PWD"
+echo $'PWD'
+echo $"PWD"
+echo $?
+echo
+exit
+$PWD
+echo $PWD
+echo $PWD
+echo $PWD
+$PWD
+echo $PWD
+echo $'PWD'
+echo $"PWD"
+echo $PWD=
+make
+exit
+echo $PWD
+exit
+echo $
+echo "$"
+echo '$'
+exit
+echo $?
+echo $
+echo "$"
+echo '$'
+exit
+echo $PWD$USER
+env
+echo $PWD:$SHELL
+echo $PWD:$Shell
+exit
+"l"'s'
+exit
+"l"'s'
+"l s"
+exit
+"l s"
+"l"'s'
+"."/'m'"ini"s'h''e'"ll"
+"."/'m'"ini"s'h'e'"ll"
+exit
+cat <minishell.h>./outfiles/outfile
+cat <minishell.h>./outfiles/outfile
+exit
+cat <"./test_files/infile" >"./outfiles/outfile01"
+cat <"./test_files/infile" >"./outfiles/outfile01"
+cat <"./test_files/infile" >"./outfiles/outfile01"
+cat <"./test_files/infile" >"./outfiles/outfile01"
+cat <"./test_files/infile" >"./outfiles/outfile01"
+cat <"./test_files/infile" >"./outfiles/outfile01"
+cat <"./test_files/infile" >"./outfiles/outfile01"
+cat <"./test_files/infile" >"./outfiles/outfile01"
+clear
+cat <"./test_files/infile" >"./outfiles/outfile01"
+cat <"./test_files/infile" >"./outfiles/outfile01"
+cat <"./test_files/infile" >"./outfiles/outfile01"
+cat <"./test_files/infile" >"./outfiles/outfile01"
+clear
+cat <"./test_files/infile" >"./outfiles/outfile01"
+cat <"./test_files/infile" >"./outfiles/outfile01"
+cat <"./test_files/infile" >"./outfiles/outfile01"
+cat <"./test_files/infile" >"./outfiles/outfile01"
+exit
+cat <minishell.h>./outfiles/outfile
+cat <minishell.h>outfile
+echo $?
+exit
+env
+echo $PWD
+$PWD
+"$PWD"
+env
+echo "$USER"
+export USER+=okarejok
+touch a
+echo			hi
+echo
+hello
+hello
+echo	hello
+ext
+exit
+echo	hello
+echo "tab	tab"	"tab	tab"
+echo "tab	tab""tab		tab"
+echo "tab	tab""tab		tab"
+exit
+hello
+hey
+exit
+$EMPTY echo hi
+echo $EMPTY hi
+export IN="<in"
+env
+$IN cat
+env
+touch in
+$IN cat
+$IN cat
+$IN cat
+export QUOTE='"'
+env
+echo "hello $QUOTE
+echo $QUOTE hello"
+exit
+export QUOTE='"'
+echo $QUOTE hello"
+exit
+export QUOTE='"'
+echo $QUOTE hello"
+ls | echo $QUOTE hello"
+exit
+export IN="<in"
+cat $IN
+exit
+export LS=ls
+$LS
+exit
+exit <in
+exit <aksjddkaf
+exit <aksjddkaf
+exit <aksjddkaf
+exit
+exit <aksjddkaf | exit <asdad
+exit

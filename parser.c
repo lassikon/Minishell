@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 13:30:24 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/27 12:31:23 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/28 11:50:20 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,15 @@ char	*join_n_free(char *s1, char *s2)
 
 void	tokenize(t_shell *shell, t_cmd *cmd)
 {
-	if (ft_strchr(cmd->line, '$'))
-		check_expands(shell, &cmd->line);
 	if (unclosed_quotes(cmd->line))
 	{
 		error(shell, SYNTAX_QUOTES, ERROR, 1);
 		return ;
 	}
+	convert_tabs_to_spaces(cmd->line);
 	extract_redirections(shell, cmd);
+	if (ft_strchr(cmd->line, '$'))
+		check_expands(shell, &cmd->line);
 	if (cmd->redir_count > 0 && shell->status != ERROR)
 		heredoc(shell, cmd);
 	extract_command(shell, cmd);

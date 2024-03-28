@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:10:31 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/27 12:44:35 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/28 11:47:50 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,3 +45,7 @@ int	main(int argc, char **argv, char **envp)
 	close(shell.history_fd);
 	return (0);
 }
+// fix quotes handling (like "l""s" etc) (arg count is wrong too)
+// exit <in (check redirection in parent process)
+// naked expands can lead to segfault
+// unset needs to check identifier validity

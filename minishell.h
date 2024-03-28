@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/27 11:28:08 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/28 12:19:15 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 # include <readline/history.h>
 # include <termios.h>
 # include "libft/include/libft.h"
+
 
 typedef enum e_status
 {
@@ -114,6 +115,7 @@ void	extract_redirections(t_shell *shell, t_cmd *cmd);
 void	extract_command(t_shell *shell, t_cmd *cmd);
 void	extract_args(t_shell *shell, t_cmd *cmd);
 void	replace_with_spaces(char *line, int start, int end);
+void	convert_tabs_to_spaces(char *line);
 int		unclosed_quotes(char *line);
 void	remove_spaces(char *str);
 char	*add_one_space(char *str);

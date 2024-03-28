@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 13:03:52 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/27 12:30:05 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/28 10:55:40 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ static char *get_redirection(char *line, int *i)
 		(*i)++;
 	if (line[*i] == '\'' || line[*i] == '\"')
 		*i = skip_quotes(line, *i);
-	while (line[*i] && line[*i] != ' ')
+	while (line[*i] && line[*i] != ' ' && line[*i] != '>' && line[*i] != '<')
 		(*i)++;
 	return (ft_substr(line, p.k, *i - p.k));
 }

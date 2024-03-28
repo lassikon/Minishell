@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 23:04:07 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/21 14:46:20 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/28 10:45:00 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,15 @@ void	extract_command(t_shell *shell, t_cmd *cmd)
 	start = 0;
 	while (cmd->line[start] && cmd->line[start] == ' ')
 		start++;
-	if (cmd->line[start] == '\"' || cmd->line[start] == '\'')
-		end = skip_quotes(cmd->line, start);
-	else
+	end = start;
+	while (cmd->line[end] && cmd->line[end] != ' ')
 	{
-		end = start;
-		while (cmd->line[end] && cmd->line[end] != ' ')
-			end++;
+		if (cmd->line[end] == '\'' || cmd->line[end] == '\"')
+		{
+			end = skip_quotes(cmd->line, end);
+			continue ;
+		}
+		end++;
 	}
 	cmd->cmd = ft_substr(cmd->line, start, end - start);
 	if (!cmd->cmd)

@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 12:32:14 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/26 12:25:07 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/28 10:51:39 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,15 +75,13 @@ void	remove_quotes(char *str)
 		{
 			p.inside_singles = !p.inside_singles;
 			p.i++;
-			if (p.inside_singles || str[p.i] == '\'')
-				continue ;
+			continue ;
 		}
 		if (str[p.i] == '\"' && !p.inside_singles)
 		{
 			p.inside_doubles = !p.inside_doubles;
 			p.i++;
-			if (p.inside_doubles || str[p.i] == '\"')
-				continue ;
+			continue ;
 		}
 		str[p.k] = str[p.i];
 		p.i++;
@@ -92,42 +90,5 @@ void	remove_quotes(char *str)
 	null_terminate(str, p.k);
 }
 
-/* void	remove_quotes(char *str)
-{
-	int		i;
-	int		k;
-	int		inside_singles;
-	int		inside_doubles;
-
-	i = 0;
-	k = 0;
-	inside_singles = 0;
-	inside_doubles = 0;
-	while (str[i])
-	{
-		if (str[i] == '\'' && !inside_doubles)
-		{
-			inside_singles = !inside_singles;
-			i++;
-			if (inside_singles || str[i] == '\'')
-				continue ;
-		}
-		if (str[i] == '\"' && !inside_singles)
-		{
-			inside_doubles = !inside_doubles;
-			i++;
-			if (inside_doubles || str[i] == '\"')
-				continue ;
-		}
-		str[k] = str[i];
-		i++;
-		k++;
-	}
-	while (str[k])
-	{
-		str[k] = '\0';
-		k++;
-	}
-} */
 
 

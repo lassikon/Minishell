@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 11:11:41 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/27 12:43:53 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/27 17:39:18 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,33 +14,53 @@
 
 static int	end_character(char c)
 {
-	if (c == ' ' || c == '/' || c == '$' || c == '\"'
-		|| c == '\'' || c == '=' || c == ':')
+	if (c == '\0' || c == ' ' || c == '/' || c == '$'
+		|| c == '\"' || c == '\'' || c == '=' || c == ':')
 		return (1);
 	return (0);
 }
 
-static char	*fetch_env(t_shell *shell, char *line, int *i)
+char	*dup_empty_str(t_shell *shell)
+{
+	char	*str;
+
+	str = ft_strdup("");
+	if (!str)
+		error(shell, MALLOC, FATAL, 1);
+	return (str);
+}
+
+static char	*get_expand(t_shell *shell, char *line, int *i)
 {
 	int		start;
-	int		end;
 	char	*env;
 	char	*value;
 
 	start = *i;
-	if (line[*i] == '\"')
-		return ("$");
-	(*i)++;
 	while (!end_character(line[*i]))
 		(*i)++;
-	end = *i;
-	env = ft_substr(line, start, end - start);
+	if (*i == start)
+		return (dup_empty_str(shell));
+	env = ft_substr(line, start, *i - start);
 	if (!env)
 		error(shell, MALLOC, FATAL, 1);
 	value = ft_getenv(shell, env);
 	if (!value)
-		value = "";
+		value = dup_empty_str(shell);
 	free(env);
+	return (value);
+}
+
+static char	*get_exit_status(t_shell *shell)
+{
+	char	*value;
+
+	if (shell->exit_status > 255)
+		value = ft_itoa(WEXITSTATUS(shell->exit_status));
+	else
+		value = ft_itoa(shell->exit_status);
+	if (!value)
+		error(shell, MALLOC, FATAL, 1);
 	return (value);
 }
 
@@ -52,24 +72,23 @@ static int	expand_env(t_shell *shell, char **line, int i)
 
 	start = i;
 	i++;
+	if (end_character((*line)[i]) && (*line)[i + 1] == '\0')
+		return (i);
 	if ((*line)[i] == '?')
 	{
-		if (shell->exit_status > 255)
-			value = ft_itoa(WEXITSTATUS(shell->exit_status));
-		else
-			value = ft_itoa(shell->exit_status);
-		if (!value)
-			error(shell, MALLOC, FATAL, 1);
+		value = get_exit_status(shell);
 		i++;
 	}
 	else
-		value = fetch_env(shell, *line, &i);
-	new = join_n_free(ft_substr(*line, 0, start), ft_strdup(value));
+		value = get_expand(shell, *line, &i);
+	new = join_n_free(ft_substr(*line, 0, start), value);
 	if (!new)
 		error(shell, MALLOC, FATAL, 1);
-	*line = join_n_free(new, ft_strdup(&(*line)[i]));
-	if (!*line)
+	new = join_n_free(new, ft_strdup(&(*line)[i]));
+	if (!new)
 		error(shell, MALLOC, FATAL, 1);
+	free(*line);
+	*line = new;
 	return (start + ft_strlen(value) - 1);
 }
 
@@ -87,9 +106,15 @@ void	check_expands(t_shell *shell, char **line)
 		if ((*line)[i] == '\"')
 			inside_doubles = !inside_doubles;
 		if ((*line)[i + 1] && (*line)[i] == '\'' && !inside_doubles)
+		{
 			i = skip_quotes(*line, i);
+			continue ;
+		}
 		if ((*line)[i + 1] && (*line)[i] == '$' && (*line)[i + 1] != ' ')
+		{
 			i = expand_env(shell, line, i);
+			continue ;
+		}
 		i++;
 	}
 }
