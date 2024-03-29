@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:19:05 by okarejok          #+#    #+#             */
-/*   Updated: 2024/03/29 11:44:28 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/29 15:28:35 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 void	run_command(t_shell *shell)
 {
 	if (shell->status == ERROR)
+		return ;
+	if (shell->cmd_count == 1 && builtin(shell, &shell->cmd_tree[0]))
 		return ;
 	open_pipes(shell);
 	do_fork(shell);
@@ -32,7 +34,22 @@ int	absolute_path_to_directory(char *cmd)
 	return (0);
 }
 
-static int check_cmd_path(t_shell *shell, t_cmd *cmd_vars)
+static int	check_access(t_shell *shell, t_cmd *cmd_vars, char *path, char **cmd)
+{
+	if (access(path, 0) == 0)
+	{
+		if (access(path, X_OK) == -1)
+			p_error(shell, path, FATAL, 126);
+		free(cmd_vars->cmd);
+		cmd_vars->cmd = path;
+		free(*cmd);
+		*cmd = NULL;
+		return (1);
+	}
+	return (0);
+}
+
+static void check_cmd_path(t_shell *shell, t_cmd *cmd_vars)
 {
 	int		i;
 	char	*cmd_path;
@@ -53,47 +70,40 @@ static int check_cmd_path(t_shell *shell, t_cmd *cmd_vars)
 			i++;
 			continue ;
 		}
-		if (access(cmd_path, 0) == 0)
-		{
-			if (access(cmd_path, X_OK) == -1)
-				return (p_error(shell, cmd_path, ERROR, 126));
-			cmd_vars->cmd = cmd_path;
-			return (0);
-		}
+		if (check_access(shell, cmd_vars, cmd_path, &cmd_one))
+			return ;
 		free(cmd_path);
 		i++;
 	}
 	free(cmd_one);
 	ft_putstr_fd("minishell: ", 2);
 	ft_putstr_fd(cmd_vars->cmd, 2);
-	return (error(shell, NO_CMD, ERROR, 127));
+	error(shell, NO_CMD, FATAL, 127);
 }
 
-static int	validate_command(t_shell *shell, t_cmd *cmd_vars)
+static void	validate_command(t_shell *shell, t_cmd *cmd_vars)
 {
 	if (cmd_vars->cmd[0] == '\0')
-		return (0);
-	if (child_builtin(shell, cmd_vars, CHECK))
-		return (0);
+		return ;
 	if (ft_strchr(cmd_vars->cmd, '/'))
 	{
 		if (access(cmd_vars->cmd, F_OK) == -1)
-			return (p_error(shell, cmd_vars->cmd, ERROR, 127));
+			p_error(shell, cmd_vars->cmd, FATAL, 127);
 		else if (access(cmd_vars->cmd, X_OK) == -1)
-			return (p_error(shell, cmd_vars->cmd, ERROR, 126));
+			p_error(shell, cmd_vars->cmd, FATAL, 126);
 		if (absolute_path_to_directory(cmd_vars->cmd))
 		{
 			ft_putstr_fd("minishell: ", 2);
 			ft_putstr_fd(cmd_vars->cmd, 2);
-			return (error(shell, IS_DIR, ERROR, 126));
+			error(shell, IS_DIR, FATAL, 126);
 		}
 	}
 	else
 	{
 		if (shell->paths != NULL)
-			return (check_cmd_path(shell, cmd_vars));
+			check_cmd_path(shell, cmd_vars);
 	}
-	return (0);
+	return ;
 }
 
 void	do_fork(t_shell *shell)
@@ -104,12 +114,6 @@ void	do_fork(t_shell *shell)
 	toggle_signal(NO_SIGNALS);
 	while (i < shell->cmd_count)
 	{
-		if (parent_builtin(shell, &shell->cmd_tree[i])
-			|| validate_command(shell, &shell->cmd_tree[i]))
-		{
-			i++;
-			continue ;
-		}
 		shell->pid[i] = fork();
 		if (shell->pid[i] == -1)
 		{
@@ -134,8 +138,9 @@ void	handle_child(t_shell *shell, t_cmd *cmd_vars)
 		redir_to_file(shell, cmd_vars);
 	if (!cmd_vars->cmd[0])
 		exit(shell->exit_status);
-	if (child_builtin(shell, cmd_vars, EXECUTE))
+	if (builtin(shell, cmd_vars))
 		exit(shell->exit_status);
+	validate_command(shell, cmd_vars);
 	execve(cmd_vars->cmd, cmd_vars->args, shell->env);
 	write(2, "minishell: execve failed\n", 25);
 	exit(127);

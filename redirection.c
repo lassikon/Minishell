@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:30:18 by okarejok          #+#    #+#             */
-/*   Updated: 2024/03/28 12:08:20 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/29 14:33:23 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ static void	open_file(t_shell *shell, char *redir, int *file, char *mode)
 			p_error(shell, redir + 2, FATAL, 1);
 	}
 }
-
 
 void	redir_to_pipe(t_shell *shell, t_cmd *cmd_vars)
 {

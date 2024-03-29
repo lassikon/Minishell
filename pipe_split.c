@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 11:47:02 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/27 12:45:18 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/29 14:32:33 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ void	pipe_split(t_shell *shell, char *s)
 
 	i = 0;
 	k = 0;
-
 	mark_actual_pipes(s);
 	if (validate_syntax(shell, s))
 		return ;

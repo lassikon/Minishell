@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 12:32:14 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/28 10:51:39 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/29 14:32:19 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,3 @@ void	remove_quotes(char *str)
 	}
 	null_terminate(str, p.k);
 }
-
-
-

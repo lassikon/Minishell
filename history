@@ -1000,3 +1000,36 @@ exit 9223372036854775808
 exit 922337203685477580435353555555555553453355
 exit -9223372036854775809
 exit -9223372036854775709
+<<1
+cat
+cat cat
+cat <<1 <<2 <<3
+cat <<1
+cat
+cat <<1 <<2 << 3
+ls
+exit
+ls
+exit
+ls
+exit
+ls
+exit
+ls
+ls
+ls
+cat
+asd
+cat <<l
+exit
+ls
+cat <<l
+asdkljad
+asdlklajld | akdjkajd
+haha | ok
+exit
+cat
+cat
+cat
+<<1
+exit

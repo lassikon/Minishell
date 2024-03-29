@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/29 12:08:14 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/29 15:06:06 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ typedef enum e_status
 	RUNNING,
 	EXECUTE,
 	CHECK
-} t_status;
+}	t_status;
 
 typedef enum e_signal
 {
@@ -42,7 +42,7 @@ typedef enum e_signal
 	HANDLER,
 	HEREDOC,
 	NO_SIGNALS
-} t_signal;
+}	t_signal;
 
 # define MALLOC "Error: malloc failed"
 # define CD_FAIL ": No such file or directory"
@@ -95,8 +95,6 @@ typedef struct s_parse
 	int		inside_doubles;
 }	t_parse;
 
-int	sig_global;
-
 void	paths(t_shell *shell, char **envp);
 char	**add_to_array(char **array, char *new);
 void	remove_from_array(char **array, char *identifier);
@@ -143,8 +141,7 @@ void	echo(t_shell *shell, t_cmd *cmd);
 void	env(t_shell *shell, int export);
 void	ft_exit(t_shell *shell, t_cmd *cmd);
 void	export(t_shell *shell, t_cmd *cmd);
-int		child_builtin(t_shell *shell, t_cmd *cmd, t_status mode);
-int		parent_builtin(t_shell *shell, t_cmd *cmd);
+int		builtin(t_shell *shell, t_cmd *cmd);
 char	*ft_getenv(t_shell *shell, char *to_find);
 
 // EXECUTION
@@ -170,7 +167,6 @@ void	redir_to_pipe(t_shell *shell, t_cmd *cmd_vars);
 
 // SIGNALS
 void	rl_replace_line(const char *text, int clear_undo);
-void	toggle_carret(int is_on);
 void	toggle_signal(t_signal mode);
 
 //debug.c

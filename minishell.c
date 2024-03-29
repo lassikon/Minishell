@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:10:31 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/28 14:51:25 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/29 14:31:58 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,13 @@
 int	main(int argc, char **argv, char **envp)
 {
 	t_shell	shell;
+	
 	(void)argc;
 	(void)argv;
 	setup_shell(&shell, envp);
+	toggle_signal(HANDLER);
 	while (shell.status == RUNNING)
 	{
-		toggle_signal(HANDLER);
 		shell.line = readline("minishell$ ");
 		if (shell.line == NULL)
 		{
