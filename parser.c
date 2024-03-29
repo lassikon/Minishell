@@ -6,21 +6,11 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 13:30:24 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/28 11:50:20 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/29 10:36:46 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
-
-char	*join_n_free(char *s1, char *s2)
-{
-	char	*new;
-
-	new = ft_strjoin(s1, s2);
-	free(s1);
-	free(s2);
-	return (new);
-}
 
 void	tokenize(t_shell *shell, t_cmd *cmd)
 {

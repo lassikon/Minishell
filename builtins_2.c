@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   builtins_2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 13:36:20 by okarejok          #+#    #+#             */
-/*   Updated: 2024/03/28 16:09:37 by okarejok         ###   ########.fr       */
+/*   Updated: 2024/03/29 12:02:30 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -166,50 +166,3 @@ void	env(t_shell *shell, int export)
 	}
 }
 
-static int	is_numeric(char *str)
-{
-	int	i;
-
-	i = 0;
-	if (str[i] == '-' || str[i] == '+')
-		i++;
-	while (str[i])
-	{
-		if (!ft_isdigit(str[i]))
-		{
-			ft_putstr_fd("minishell: exit: ", 2);
-			ft_putstr_fd(str, 2);
-			ft_putendl_fd(": numeric argument required", 2);
-			return (1);
-		}
-		i++;
-	}
-	return (0);
-}
-
-void	ft_exit(t_shell *shell, t_cmd *cmd)
-{
-	int	code;
-
-	if (isatty(STDIN_FILENO))
-		ft_putendl_fd("exit", 2);
-	if (cmd->arg_count > 2)
-	{
-		error(shell, "minishell: exit: too many arguments", ERROR, 1);
-		return ;
-	}
-	if (cmd->arg_count == 2)
-	{
-		if (is_numeric(cmd->args[1]))
-			code = 255;
-		else
-			code = ft_atoi(cmd->args[1]);
-	}
-	else
-		code = WEXITSTATUS(shell->exit_status);
-	free_all(shell);
-	free_array(shell->env);
-	close(shell->history_fd);
-	toggle_signal(DEFAULT);
-	exit(code);
-}

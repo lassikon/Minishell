@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 13:03:52 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/28 10:55:40 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/29 10:35:56 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,10 @@ static void	tidy_format(t_shell *shell, t_cmd *cmd, int k)
 	remove_quotes(cmd->redir[k]);
 }
 
-static char *get_redirection(char *line, int *i)
+static char	*get_redirection(t_shell *shell, char *line, int *i)
 {
 	t_parse	p;
+	char	*str;
 
 	init_t_parse(&p);
 	p.k = *i;
@@ -76,7 +77,10 @@ static char *get_redirection(char *line, int *i)
 		*i = skip_quotes(line, *i);
 	while (line[*i] && line[*i] != ' ' && line[*i] != '>' && line[*i] != '<')
 		(*i)++;
-	return (ft_substr(line, p.k, *i - p.k));
+	str = ft_substr(line, p.k, *i - p.k);
+	if (!str)
+		error(shell, MALLOC, FATAL, 1);
+	return (str);
 }
 
 void	extract_redirections(t_shell *shell, t_cmd *cmd)
@@ -96,9 +100,7 @@ void	extract_redirections(t_shell *shell, t_cmd *cmd)
 		else if (cmd->line[p.i] == '>' || cmd->line[p.i] == '<')
 		{
 			p.j = p.i;
-			cmd->redir[p.k] = get_redirection(cmd->line, &p.i);
-			if (!cmd->redir[p.k])
-				error(shell, MALLOC, FATAL, 1);
+			cmd->redir[p.k] = get_redirection(shell, cmd->line, &p.i);
 			tidy_format(shell, cmd, p.k);
 			replace_with_spaces(cmd->line, p.j, p.i);
 			p.k++;

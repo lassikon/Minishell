@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 14:41:04 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/28 15:48:44 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/29 11:54:27 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,8 +59,25 @@ void	heredoc_child(t_shell *shell, t_cmd *cmd, char *file, int i)
 	free_all(shell);
 	free_array(shell->env);
 	close(shell->history_fd);
-	toggle_signal(DEFAULT);
+	// toggle_signal(DEFAULT);
 	exit(0);
+}
+
+int	add_heredoc_to_array(t_shell *shell, char **redir, char **file)
+{
+	if (WTERMSIG(shell->exit_status) == SIGINT)
+	{
+		shell->status = ERROR;
+		shell->exit_status = 1;
+		free(*file);
+		return (1);
+	}
+	free(*redir);
+	*redir = ft_strjoin("< ", *file);
+	free(*file);
+	if (!*redir)
+		error(shell, MALLOC, FATAL, 1);
+	return (0);
 }
 
 void	heredoc(t_shell *shell, t_cmd *cmd)
@@ -80,18 +97,9 @@ void	heredoc(t_shell *shell, t_cmd *cmd)
 				p_error(shell, "fork", FATAL, 1);
 			if (pid == 0)
 				heredoc_child(shell, cmd, file, i);
-			else
-				waitpid(pid, &shell->exit_status, 0);
-			if (WTERMSIG(shell->exit_status) != SIGINT)
-			{
-				free(cmd->redir[i]);
-				cmd->redir[i] = ft_strjoin("< ", file);
-				if (!cmd->redir[i])
-					error(shell, MALLOC, FATAL, 1);
-			}
-			else
-				shell->status = ERROR;
-			free(file);
+			waitpid(pid, &shell->exit_status, 0);
+			if (add_heredoc_to_array(shell, &cmd->redir[i], &file))
+				return ;
 			shell->heredoc_index++;
 		}
 		i++;

@@ -847,3 +847,156 @@ cat <<a
 <<a
 cat <<a
 exit
+<<1
+<<1
+<<1
+cat
+cat
+cat <<a
+cat <<a
+cat <<a
+cat<<a
+cat <<a | cat <<b
+cat <<a | cat <<b
+cat <<a | cat <<b
+exit <<a
+exit <<a
+cat <<1
+cat <<1
+cat <<1 <<2
+exit
+<<1
+<<1
+<<1
+<<1
+<<1 <<2
+<<1 <<2
+exit
+<<1 <<2
+exit
+<<1 <<2
+cat <<1 <<2
+cat <<1
+cat
+exit
+<<cat
+cat <<1
+<<1 <<2
+cat>>1
+cat <<1
+echo <<1
+cat <<1
+cat <<1
+cat <<1 <<2
+<<1
+exit
+<<1
+<<1
+cat
+cat
+exit
+<<1
+<<1 <<2
+<<1 <<2
+exit
+cat
+cat
+cat
+exit <in
+cat <<1
+echo $?
+cat <<1 | echo hello
+ls | echo hello
+cat <<1 | cat <<2 | cat <<3
+echo $?
+echo $?
+cat <<1 | cat <<2 | cat <<3
+cat
+cat <<1 | cat <<2 | cat <<3
+cat
+cat <<1 | cat<<2 | ls >out
+ls >out | cat <<1
+cat out
+echo $?
+exit
+cat <<1 | cat<<2 | ls >out
+cat <<1 | cat <<2 | cat <<3
+cat <<1 <<2
+exit
+cat <<1
+cat <<1
+exit
+cat <<1
+cat <<1
+cat <<1 <<2
+cat <<1 <<2
+cat <<1 | cat <<2 | cat <<3
+cat <<1
+cat <<1 | cat <<2 | cat <<3
+echo $?
+exit
+cat <<1
+echo $?
+exit
+cat <<1
+echo $?
+./minishell
+./minishell
+./minishell
+cat <<1 <<2
+echo $?
+env
+env
+cat
+cat
+cat
+echo
+echo "
+echo '
+echo '''
+echo '"'
+echo "'"
+echo "'"''"'"
+echo "'"''""
+echo "'"''"
+exit 8
+exit INT_MAX
+exit -9223372036854775809
+exit -9223372036854775809
+exit -9223372036854775807
+exit -9223372036854775807
+exit -922337203685477580
+grep something
+cat
+cat
+cat ''
+cat '
+echo ""
+echo '$USER'
+echo "$USER"
+ls filethatdoesntexist | grep bla | more
+ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls
+ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls
+ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls
+ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls
+ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls
+ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls
+ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls
+ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls
+ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls
+ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls
+ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls
+ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls
+ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls | ls
+echo $?
+exit
+exit 943859348598345
+exit 943859348598345
+exit 9223372036854775807
+exit -9223372036854775808
+exit -9223372036854775808
+exit 9223372036854775807
+exit 9223372036854775808
+exit 922337203685477580435353555555555553453355
+exit -9223372036854775809
+exit -9223372036854775709

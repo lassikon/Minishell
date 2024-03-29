@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   execute.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:19:05 by okarejok          #+#    #+#             */
-/*   Updated: 2024/03/28 16:22:36 by okarejok         ###   ########.fr       */
+/*   Updated: 2024/03/29 11:44:28 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,7 @@ void	do_fork(t_shell *shell)
 	int	i;
 
 	i = 0;
+	toggle_signal(NO_SIGNALS);
 	while (i < shell->cmd_count)
 	{
 		if (parent_builtin(shell, &shell->cmd_tree[i])
@@ -121,6 +122,7 @@ void	do_fork(t_shell *shell)
 	}
 	close_pipes(shell);
 	wait_children(shell, shell->cmd_count);
+	toggle_signal(HANDLER);
 }
 
 void	handle_child(t_shell *shell, t_cmd *cmd_vars)
@@ -139,20 +141,25 @@ void	handle_child(t_shell *shell, t_cmd *cmd_vars)
 	exit(127);
 }
 
-void	wait_children(t_shell *shell, int pids)
+int	no_children(t_shell *shell)
 {
 	int	i;
-	int	children;
 
 	i = 0;
-	children = 0;
 	while (i < shell->cmd_count)
 	{
 		if (shell->pid[i] > 0)
-			children++;
+			return (0);
 		i++;
 	}
-	if (children == 0)
+	return (1);
+}
+
+void	wait_children(t_shell *shell, int pids)
+{
+	int	i;
+
+	if (no_children(shell))
 		return ;
 	i = 0;
 	while (i < pids)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/28 16:11:10 by okarejok         ###   ########.fr       */
+/*   Updated: 2024/03/29 12:08:14 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,8 @@ typedef enum e_signal
 {
 	DEFAULT,
 	HANDLER,
-	HEREDOC
+	HEREDOC,
+	NO_SIGNALS
 } t_signal;
 
 # define MALLOC "Error: malloc failed"
@@ -51,7 +52,7 @@ typedef enum e_signal
 # define SYNTAX_PIPE "minishell: syntax error near unexpected token `|'"
 # define SYNTAX_INFILE "minishell: syntax error near unexpected token `<'"
 # define SYNTAX_OUTFILE "minishell: syntax error near unexpected token `>'"
-# define SYNTAX_NEWLINE "minishell: syntax error near unexpected token `newline'"
+# define SYNTAX_NL "minishell: syntax error near unexpected token `newline'"
 # define SYNTAX_QUOTES "minishell: syntax error with unclosed quotes"
 
 typedef struct s_cmd
@@ -104,6 +105,7 @@ int		find_in_array(char **array, char *identifier);
 int		array_len(char **array);
 void	heredoc(t_shell *shell, t_cmd *cmd);
 char	*join_n_free(char *s1, char *s2);
+char	*dup_empty_str(t_shell *shell);
 
 // INIT
 void	setup_shell(t_shell *shell, char **envp);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 14:49:10 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/28 16:25:10 by okarejok         ###   ########.fr       */
+/*   Updated: 2024/03/29 11:24:52 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ int	error(t_shell *shell, char *msg, t_status status, int code)
 		free_all(shell);
 		free_array(shell->env);
 		close(shell->history_fd);
+		toggle_signal(DEFAULT);
 		exit(code);
 	}
 	return (1);
@@ -80,6 +81,7 @@ int	p_error(t_shell *shell, char *msg, t_status status, int code)
 		free_all(shell);
 		free_array(shell->env);
 		close(shell->history_fd);
+		toggle_signal(DEFAULT);
 		exit(code);
 	}
 	return (1);

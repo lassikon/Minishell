@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 15:46:31 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/27 11:04:50 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/29 10:38:22 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	validate_syntax(t_shell *shell, char *s)
 int	illegal_arrows(t_shell *shell, char *line, char arrow, int i)
 {
 	if (line[i] == '\0')
-		return (error(shell, SYNTAX_NEWLINE, ERROR, 258));
+		return (error(shell, SYNTAX_NL, ERROR, 258));
 	else if (line[i] == '<' && arrow == '>')
 		return (error(shell, SYNTAX_OUTFILE, ERROR, 258));
 	else if (line[i] == '>' && arrow == '<')
@@ -72,7 +72,7 @@ int	illegal_arrows(t_shell *shell, char *line, char arrow, int i)
 	while (line[i] == ' ')
 		i++;
 	if (!line)
-		return (error(shell, SYNTAX_NEWLINE, ERROR, 258));
+		return (error(shell, SYNTAX_NL, ERROR, 258));
 	if (line[i] == '>')
 		return (error(shell, SYNTAX_OUTFILE, ERROR, 258));
 	if (line[i] == '<')

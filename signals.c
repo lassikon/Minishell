@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 15:46:08 by okarejok          #+#    #+#             */
-/*   Updated: 2024/03/28 14:50:51 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/29 11:45:33 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	toggle_signal(t_signal mode)
 		signal(SIGQUIT, SIG_IGN);
 		signal(SIGINT, SIG_DFL);
 	}
-	else
+	else if (mode == NO_SIGNALS)
 	{
 		signal(SIGQUIT, SIG_IGN);
 		signal(SIGINT, SIG_IGN);

@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 11:11:41 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/27 17:39:18 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/29 12:08:07 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,6 @@ static int	end_character(char c)
 		|| c == '\"' || c == '\'' || c == '=' || c == ':')
 		return (1);
 	return (0);
-}
-
-char	*dup_empty_str(t_shell *shell)
-{
-	char	*str;
-
-	str = ft_strdup("");
-	if (!str)
-		error(shell, MALLOC, FATAL, 1);
-	return (str);
 }
 
 static char	*get_expand(t_shell *shell, char *line, int *i)
