@@ -1956,3 +1956,14 @@ echo $?
 "" | echo hi
 ""
 exit
+echo hi "|
+exit
+$haha
+$haha
+$haha
+$haha
+exit
+$haha
+echo $?
+""
+exit

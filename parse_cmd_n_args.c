@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 23:04:07 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/01 11:37:56 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/01 14:12:04 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,7 @@ void	extract_command(t_shell *shell, t_cmd *cmd)
 	while (cmd->line[end] && cmd->line[end] != ' ')
 	{
 		if (cmd->line[end] == '\'' || cmd->line[end] == '\"')
-		{
 			end = skip_quotes(cmd->line, end);
-			continue ;
-		}
 		end++;
 	}
 	cmd->cmd = ft_substr(cmd->line, start, end - start);
@@ -51,7 +48,7 @@ static int	count_args(char *line)
 		if (line[i] == '\'' || line[i] == '\"')
 		{
 			count++;
-			i = skip_quotes(line, i);
+			i = skip_quotes(line, i) + 1;
 			continue ;
 		}
 		if (line[i] != ' ')
@@ -82,7 +79,7 @@ void	fetch_args(t_shell *shell, t_cmd *cmd)
 		while (cmd->line[i] && cmd->line[i] != ' ')
 		{
 			if (cmd->line[i] == '\'' || cmd->line[i] == '\"')
-				i = skip_quotes(cmd->line, i) - 1;
+				i = skip_quotes(cmd->line, i);
 			i++;
 		}
 		cmd->args[k] = ft_substr(cmd->line, start, i - start);

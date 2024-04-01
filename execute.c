@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:19:05 by okarejok          #+#    #+#             */
-/*   Updated: 2024/04/01 13:39:25 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/01 14:14:34 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,8 +127,8 @@ void	handle_child(t_shell *shell, t_cmd *cmd_vars)
 		redir_to_pipe(shell, cmd_vars);
 	if (cmd_vars->redir_count > 0)
 		redir_to_file(shell, cmd_vars);
-	/* if (!cmd_vars->cmd[0])
-		exit(shell->exit_status); */
+	if (!cmd_vars->cmd[0])
+		exit(shell->exit_status);
 	if (builtin(shell, cmd_vars))
 		exit(shell->exit_status);
 	validate_command(shell, cmd_vars);

@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 13:03:52 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/29 16:57:26 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/01 14:10:19 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,7 @@ static int	check_redirections(t_shell *shell, t_cmd *cmd)
 	while (cmd->line[i])
 	{
 		if (cmd->line[i] == '\'' || cmd->line[i] == '\"')
-		{
 			i = skip_quotes(cmd->line, i);
-			continue ;
-		}
 		if (cmd->line[i] == '>' || cmd->line[i] == '<')
 		{
 			if (illegal_arrows(shell, cmd->line, cmd->line[i], i + 1))
@@ -77,7 +74,7 @@ static char	*get_redirection(t_shell *shell, char *line, int *i)
 	while (line[*i] == ' ')
 		(*i)++;
 	if (line[*i] == '\'' || line[*i] == '\"')
-		*i = skip_quotes(line, *i);
+		*i = skip_quotes(line, *i) + 1;
 	while (line[*i] && line[*i] != ' ' && line[*i] != '>' && line[*i] != '<')
 		(*i)++;
 	str = ft_substr(line, p.k, *i - p.k);
@@ -99,7 +96,7 @@ void	extract_redirections(t_shell *shell, t_cmd *cmd)
 	while (cmd->line[p.i])
 	{
 		if (cmd->line[p.i] == '\'' || cmd->line[p.i] == '\"')
-			p.i = skip_quotes(cmd->line, p.i);
+			p.i = skip_quotes(cmd->line, p.i) + 1;
 		else if (cmd->line[p.i] == '>' || cmd->line[p.i] == '<')
 		{
 			p.j = p.i;

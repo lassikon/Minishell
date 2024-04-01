@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 11:13:42 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/01 11:44:16 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/01 14:08:22 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,7 @@ void	convert_tabs_to_spaces(char *line)
 	while (line[i])
 	{
 		if (line[i] == '\"' || line[i] == '\'')
-		{
 			i = skip_quotes(line, i);
-			continue ;
-		}
 		if (line[i] == '\t')
 			line[i] = ' ';
 		i++;

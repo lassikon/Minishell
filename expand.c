@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 11:11:41 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/01 13:50:30 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/01 14:12:59 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,10 +98,7 @@ void	check_expands(t_shell *shell, char **line)
 		if ((*line)[i] == '\"')
 			inside_doubles = !inside_doubles;
 		if ((*line)[i + 1] && (*line)[i] == '\'' && !inside_doubles)
-		{
 			i = skip_quotes(*line, i);
-			continue ;
-		}
 		if ((*line)[i + 1] && (*line)[i] == '$' && (*line)[i + 1] != ' ')
 		{
 			i = expand_env(shell, line, i);

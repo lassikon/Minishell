@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 12:32:14 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/29 14:32:19 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/01 14:04:48 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	skip_quotes(char *line, int i)
 	i++;
 	while (line[i] && line[i] != quote)
 		i++;
-	return (i + 1);
+	return (i);
 }
 
 int	unclosed_quotes(char *line)
