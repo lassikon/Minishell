@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:10:31 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/29 14:31:58 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/01 13:52:59 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	main(int argc, char **argv, char **envp)
 {
 	t_shell	shell;
-	
+
 	(void)argc;
 	(void)argv;
 	setup_shell(&shell, envp);
@@ -47,5 +47,4 @@ int	main(int argc, char **argv, char **envp)
 }
 // fix quotes handling (like "l""s" etc) (arg count is wrong too)
 // exit <in (check redirection in parent process)
-// naked expands can lead to segfault
 // unset needs to check identifier validity

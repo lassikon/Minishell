@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 11:13:42 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/29 10:36:26 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/01 11:44:16 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,4 +69,18 @@ void	replace_with_spaces(char *line, int start, int end)
 		line[start] = ' ';
 		start++;
 	}
+}
+
+int	only_spaces(char *line)
+{
+	int		i;
+
+	i = 0;
+	while (line[i])
+	{
+		if (line[i] != ' ')
+			return (0);
+		i++;
+	}
+	return (1);
 }

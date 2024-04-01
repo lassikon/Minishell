@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 12:19:16 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/29 14:30:55 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/01 12:02:48 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ void	init_tree(t_shell *shell)
 		i++;
 	}
 	shell->cmd_tree[i].line = NULL;
-	allocate_pipes(shell);
 	shell->pid = (int *)malloc(sizeof(int) * shell->cmd_count);
 	if (!shell->pid)
 		error(shell, MALLOC, FATAL, 1);

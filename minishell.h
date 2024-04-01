@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/29 15:06:06 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/01 13:24:36 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,9 +130,11 @@ char	*add_one_space(char *str);
 int		skip_quotes(char *line, int i);
 void	remove_quotes(char *str);
 int		ends_in_pipe(char *line);
+int		starts_with_pipe(char *line);
 int		invalid_pipes(t_shell *shell, char *line);
 int		validate_syntax(t_shell *shell, char *s);
 int		illegal_arrows(t_shell *shell, char *line, char arrow, int i);
+int		only_spaces(char *line);
 
 // BUILTINS
 void	cd(t_shell *shell, t_cmd *cmd);
@@ -141,6 +143,7 @@ void	echo(t_shell *shell, t_cmd *cmd);
 void	env(t_shell *shell, int export);
 void	ft_exit(t_shell *shell, t_cmd *cmd);
 void	export(t_shell *shell, t_cmd *cmd);
+void	unset(t_shell *shell, t_cmd *cmd);
 int		builtin(t_shell *shell, t_cmd *cmd);
 char	*ft_getenv(t_shell *shell, char *to_find);
 

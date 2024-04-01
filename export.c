@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 12:43:33 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/28 11:09:07 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/01 13:24:24 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,26 @@ void	export(t_shell *shell, t_cmd *cmd)
 			if (shell->env == NULL)
 				error(shell, MALLOC, FATAL, 1);
 		}
+		i++;
+	}
+}
+
+void	unset(t_shell *shell, t_cmd *cmd)
+{
+	char	*identifier;
+	int		i;
+
+	i = 1;
+	if (!cmd->args[i])
+		return ;
+	while (cmd->args[i])
+	{
+		identifier = ft_strjoin(cmd->args[i], "=");
+		if (identifier == NULL)
+			error(shell, MALLOC, FATAL, 1);
+		if (find_in_array(shell->env, identifier))
+			remove_from_array(shell->env, identifier);
+		free(identifier);
 		i++;
 	}
 }

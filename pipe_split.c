@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 11:47:02 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/29 14:32:33 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/29 17:03:05 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,10 @@ static void	mark_actual_pipes(char *s)
 	while (s[i])
 	{
 		if (s[i] == '\"' || s[i] == '\'')
+		{
 			i = skip_quotes(s, i);
+			continue ;
+		}
 		if (s[i] == '|')
 			s[i] = 31;
 		i++;

@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 15:46:31 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/29 10:38:22 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/01 12:20:18 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	invalid_pipes(t_shell *shell, char *line)
 	int	i;
 
 	i = 0;
-	if (ends_in_pipe(line))
+	if (starts_with_pipe(line) || ends_in_pipe(line))
 		return (error(shell, SYNTAX_PIPE, ERROR, 258));
 	while (line[i])
 	{

@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 13:03:52 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/29 10:35:56 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/03/29 16:57:26 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ static int	check_redirections(t_shell *shell, t_cmd *cmd)
 	while (cmd->line[i])
 	{
 		if (cmd->line[i] == '\'' || cmd->line[i] == '\"')
+		{
 			i = skip_quotes(cmd->line, i);
+			continue ;
+		}
 		if (cmd->line[i] == '>' || cmd->line[i] == '<')
 		{
 			if (illegal_arrows(shell, cmd->line, cmd->line[i], i + 1))

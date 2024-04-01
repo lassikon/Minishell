@@ -6,21 +6,11 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:19:05 by okarejok          #+#    #+#             */
-/*   Updated: 2024/03/29 15:28:35 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/01 13:39:25 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
-
-void	run_command(t_shell *shell)
-{
-	if (shell->status == ERROR)
-		return ;
-	if (shell->cmd_count == 1 && builtin(shell, &shell->cmd_tree[0]))
-		return ;
-	open_pipes(shell);
-	do_fork(shell);
-}
 
 int	absolute_path_to_directory(char *cmd)
 {
@@ -49,7 +39,7 @@ static int	check_access(t_shell *shell, t_cmd *cmd_vars, char *path, char **cmd)
 	return (0);
 }
 
-static void check_cmd_path(t_shell *shell, t_cmd *cmd_vars)
+static void	check_cmd_path(t_shell *shell, t_cmd *cmd_vars)
 {
 	int		i;
 	char	*cmd_path;
@@ -124,7 +114,8 @@ void	do_fork(t_shell *shell)
 			handle_child(shell, &shell->cmd_tree[i]);
 		i++;
 	}
-	close_pipes(shell);
+	if (shell->cmd_count > 1)
+		close_pipes(shell);
 	wait_children(shell, shell->cmd_count);
 	toggle_signal(HANDLER);
 }
@@ -136,8 +127,8 @@ void	handle_child(t_shell *shell, t_cmd *cmd_vars)
 		redir_to_pipe(shell, cmd_vars);
 	if (cmd_vars->redir_count > 0)
 		redir_to_file(shell, cmd_vars);
-	if (!cmd_vars->cmd[0])
-		exit(shell->exit_status);
+	/* if (!cmd_vars->cmd[0])
+		exit(shell->exit_status); */
 	if (builtin(shell, cmd_vars))
 		exit(shell->exit_status);
 	validate_command(shell, cmd_vars);
@@ -181,4 +172,18 @@ void	wait_children(t_shell *shell, int pids)
 			shell->exit_status = 1;
 		i++;
 	}
+}
+
+void	run_command(t_shell *shell)
+{
+	if (shell->status == ERROR)
+		return ;
+	if (shell->cmd_count == 1 && shell->cmd_tree[0].redir_count == 0)
+	{
+		if (builtin(shell, &shell->cmd_tree[0]))
+			return ;
+	}
+	if (shell->cmd_count > 1)
+		open_pipes(shell);
+	do_fork(shell);
 }

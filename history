@@ -1033,3 +1033,926 @@ cat
 cat
 <<1
 exit
+ls >>out1 >>out2
+echo $?
+cd minishell_tester
+grep hi <./test_files/infile_big <./test_files/infile
+echo $?
+echo <"./test_files/infile_big" | cat <"./test_files/infile"
+echo <"./test_files/infile_big" | cat <"./test_files/infile"
+cd minishell_tester
+echo <"./test_files/infile_big" | cat <"./test_files/infile"
+echo <"./test_files/infile_big" | cat <"./test_files/infile"
+echo <"./test_files/infile_big" | cat <"./test_files/infile"
+echo <"./test_files/infile_big" | cat <"./test_files/infile"
+echo <"./test_files/infile_big" | cat <"./test_files/infile"
+echo <"./test_files/infile_big" | cat <"./test_files/infile"
+echo <"./test_files/infile_big" | cat <"./test_files/infile"
+echo <"./test_files/infile_big" | cat <"./test_files/infile"
+echo <"./test_files/infile_big" | cat <"./test_files/infile"
+echo <"./test_files/infile_big" | cat <"./test_files/infile"
+
+minishell$ echo <"./test_files/infile_big" | cat <".
+echo <"./test_files/infile_big" | cat <".
+echo <"./test_files/infile_big"
+echo <"./test_files/infile_big"
+cd minishell_tester
+echo <"./test_files/infile_big"
+echo <"./test_files/infile_big"
+echo <"./test_files/infile_big"
+echo <"./test_files/infile_big"
+echo <"./test_files/infile_big"
+echo <"./test_files/infile_big"
+echo <"./test_files/infile_big"
+echo <"./test_files/infile_big"
+echo <"./test_files/infile_big"
+cat <"./test_files/infile_big"
+cat <"./test_files/infile_big"
+cat <"./test_files/infile_big"
+cat <"./test_files/infile_big"
+cat <"./test_files/infile_big"
+cat <"./test_files/infile_big"
+cat <"./test_files/infile_big"
+cat <"./test_files/infile_big"
+cat <"./test_files/infile_big"
+cat <"./test_files/infile_big"
+cat <"./test_files/infile_big"
+cat <"./test_files/infile_big"
+cat <"./test_files/infile_big"
+cat <"./test_files/infile_big"
+cat <"./test_files/infile_big"
+cat <"./test_files/infile_big"
+cat <"./test_files/infile_big"
+cat <"./test_files/infile_big"
+cat <"./test_files/infile_big"
+cat <"./test_files/infile_big"
+cat <"./test_files/infile_big"
+cat <"./test_files/infile_big"
+cat <"./test_files/infile_big"
+cat <"./test_files/infile_big"
+cat <"./test_files/infile_big"
+cat <"./test_files/infile_big"
+cat <"./test_files/infile_big"
+cat <"./test_files/infile_big"
+cat <"./test_files/infile_big"
+cat <"./test_files/infile_big"
+cat <"./test_files/infile_big"
+cat <"./test_files/infile_big"
+cat <"./test_files/infile_big"
+cat <"./test_files/infile_big"
+cat <"./test_files/infile_big"
+cat <"./test_files/infile_big"
+cat <"./test_files/infile_big"
+cat <"./test_files/infile_big"
+cat <"./test_files/infile_big"
+cat <"./test_files/infile_big"
+cat <"./test_files/infile_big"
+exit
+cd minishell_tester
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat <"./test_files/infile"
+cat <"./test_files/infile"
+cat <"./test_files/infile"
+cat <"./test_files/infile"
+cat <"./test_files/infile"
+cat <"./test_files/infile"
+cat <"./test_files/infile"
+cd minishell_tester
+cd minishell_tester
+cat <"./test_files/infile"
+cat <"./test_files/infile"
+cat <"./test_files/infile"
+cat <"./test_files/infile"
+cat <"./test_files/infile"
+cat <"./test_files/infile"
+cat <"./test_files/infile"
+cat <"./test_files/infile"
+cat <"./test_files/infile"
+cat <"./test_files/infile"
+cat <"./test_files/infile"
+cat <"./test_files/infile"
+cat <"./test_files/infile"
+cat <"./test_files/infile"
+cat <"./test_files/infile"
+cat <"./test_files/infile"
+cat <"./test_files/infile"
+cat <"./test_files/infile"
+cat <"./test_files/infile"
+cat <"./test_files/infile"
+cat <"./test_files/infile"
+cat <"./test_files/infile"
+exit
+cd minishell_tester
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat >o1 | cat >o2
+ls >o1 | cat >o2
+ls >o1 | cat >o2
+ls >o1 | cat >o2
+ls >o1 | cat >o2
+ls >o1 | cat >o2
+ls >o1 | cat >o2
+ls >o1 | cat >o2
+ls >o1 | cat >o2
+ls >o1 | cat >o2
+ls >o1 | cat >o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+exit
+cat <./infiles/in1 | cat <./infiles/in2
+cat <./infiles/in1 | cat <./infiles/in2
+cat <./infiles/in1 | cat <./infiles/in2
+cat <./infiles/in1 | cat <./infiles/in2
+cat <./infiles/in1 | cat <./infiles/in2
+cat <./infiles/in1 | cat <./infiles/in2
+cat <./infiles/in1 | cat <./infiles/in2
+cat <./infiles/in1 | cat <./infiles/in2
+cat <./infiles/in1 | cat <./infiles/in2
+cat <./infiles/in1 | cat <./infiles/in2
+cat <./infiles/in1 | cat <./infiles/in2
+cat <./infiles/in1 | cat <./infiles/in2
+cat <./infiles/in1 | cat <./infiles/in2
+cat <./infiles/in1 | cat <./infiles/in2
+cat <./infiles/in1 | cat <./infiles/in2
+cat <"./infiles/in1" | cat <./infiles/in2
+cat <"./infiles/in1" | cat <./infiles/in2
+cat <"./infiles/in1" | cat <./infiles/in2
+cat <"./infiles/in1" | cat <"./infiles/in2"
+cat <"./infiles/in1" | cat <"./infiles/in2"
+cat <"./infiles/in1" | cat <"./infiles/in2"
+cat <"./infiles/in1" | cat <"./infiles/in2"
+cat <"./infiles/in1" | cat <"./infiles/in2"
+cat <"./infiles/in1" | cat <"./infiles/in2"
+cat <"./infiles/in1" | cat <"./infiles/in2"
+cat <"./infiles/in1" | cat <"./infiles/in2"
+cat <"./infiles/in1" | cat <"./infiles/in2"
+cat <"./infiles/in1" | cat <"./infiles/in2"
+cat <"./infiles/in1" | cat <"./infiles/in2"
+cat <"./infiles/in1" | cat <"./infiles/in2"
+cat <"./infiles/in1" | cat <"./infiles/in2"
+exit
+exit
+cd minishell_tester
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat <./test_files/infile | cat <"./test_files/infile"
+cat <./test_files/infile | cat <./test_files/infile
+cat <./test_files/infile | cat <./test_files/infile
+cat <./test_files/infile | cat <./test_files/infile
+cat <./test_files/infile | cat <./test_files/infile
+cat <./test_files/infile | cat <./test_files/infile
+cat <./test_files/infile | cat <./test_files/infile
+cat <./test_files/infile | cat <./test_files/infile
+cat <./test_files/infile | cat <./test_files/infile
+cat <./test_files/infile | cat <./test_files/infile
+cat <./test_files/infile | cat <./test_files/infile
+cat <./test_files/infile | cat <./test_files/infile
+cat <./test_files/infile | cat <./test_files/infile
+cat <./test_files/infile | cat <./test_files/infile
+cat <"./test_files/infile" | cat <./test_files/infile
+cat <"./test_files/infile" | cat <./test_files/infile
+cat <"./test_files/infile" | cat <./test_files/infile
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat <"./test_files/infile" | cat <"./test_files/infile"
+exit
+cd minishell_tester
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cd minishell_tester
+cat <./test_files/infile | cat <./test_files/infile
+cat <./test_files/infile | cat <./test_files/infile
+cat <./test_files/infile | cat <./test_files/infile
+cat <./test_files/infile | cat <./test_files/infile
+cat <./test_files/infile | cat <./test_files/infile
+cat <./test_files/infile | cat <./test_files/infile
+cat <./test_files/infile | cat <./test_files/infile
+cat <./test_files/infile | cat <./test_files/infile
+cat <./test_files/infile | cat <./test_files/infile
+cat <./test_files/infile | cat <./test_files/infile
+cat <./test_files/infile | cat <./test_files/infile
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cd minishell_tester
+cat <./test_files/infile | cat <"./test_files/infile"
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat <"./test_files/infile" | cat <"./test_files/infile"
+exit
+cd minishell_tester
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat <"./test_files/infile" | cat <./test_files/infile
+cat <"./test_files/infile" | cat <./test_files/infile
+cat <"./test_files/infile" | cat <./test_files/infile
+exit
+cd minishell_tester
+cat <./test_files/infile | cat <./test_files/infile
+cat <./test_files/infile | cat <./test_files/infile
+cat <./test_files/infile | cat <./test_files/infile
+cat <./test_files/infile | cat <./test_files/infile
+cat <./test_files/infile | cat <./test_files/infile
+cat <./test_files/infile | cat <./test_files/infile
+cat <./test_files/infile | cat <./test_files/infile
+cat <./test_files/infile | cat <./test_files/infile
+cat <./test_files/infile | cat <./test_files/infile
+cat <./test_files/infile | cat <./test_files/infile
+cat <./test_files/infile | cat <./test_files/infile
+cat <./test_files/infile | cat <./test_files/infile
+cat <./test_files/infile | cat <./test_files/infile
+cat <./test_files/infile | cat <./test_files/infile
+cat <./test_files/infile | cat <./test_files/infile
+cat <./test_files/infile | cat <./test_files/infile
+cat <./test_files/infile | cat <./test_files/infile
+cat <./test_files/infile | cat <./test_files/infile
+exit
+cd minishell_tester
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cd minishell_tester
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cd minishell_tester
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat <"./test_files/infile"  cat <"./test_files/infile"
+cat <"./test_files/infile"  cat <"./test_files/infile"
+cat <"./test_files/infile"  cat <"./test_files/infile"
+cat <"./test_files/infile"  cat <"./test_files/infile"
+cat <"./test_files/infile"  cat <"./test_files/infile"
+cat <"./test_files/infile"  cat <"./test_files/infile"
+cat <"./test_files/infile"  cat <"./test_files/infile"
+cat <"./test_files/infile"  cat <"./test_files/infile"
+cat <"./test_files/infile"  cat <"./test_files/infile"
+cat <"./test_files/infile"  cat <"./test_files/infile"
+cat <"./test_files/infile"  cat <"./test_files/infile"
+cat <"./test_files/infile"  cat <"./test_files/infile"
+cat <"./test_files/infile"  cat <"./test_files/infile"
+cat <"./test_files/infile"  cat <"./test_files/infile"
+cat <"./test_files/infile"  cat <"./test_files/infile"
+cat <"./test_files/infile"  cat <"./test_files/infile"
+cat <"./test_files/infile"  cat <"./test_files/infile"
+cat <"./test_files/infile"  cat <"./test_files/infile"
+cat <"./test_files/infile"  cat <"./test_files/infile"
+cat <"./test_files/infile"  cat <"./test_files/infile"
+cat <"./test_files/infile"  cat <"./test_files/infile"
+cat <"./test_files/infile"  cat <"./test_files/infile"
+cat <"./test_files/infile"  cat <"./test_files/infile"
+cat <"./test_files/infile"  cat <"./test_files/infile"
+cat <"./test_files/infile"  cat <"./test_files/infile"
+cat <"./test_files/infile"  cat <"./test_files/infile"
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cd minishell_tester
+cat <"./test_files/infile" | cat <"./test_files/infile"
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <o1 | cat <o2
+cat <"o1" | cat <"o2"
+cat <"o1" | cat <"o2"
+cat <"o1" | cat <"o2"
+cat <"o1" | cat <"o2"
+cat <"o1" | cat <"o2"
+cat <"o1" | cat <"o2"
+cat <"o1" | cat <"o2"
+cat <"o1" | cat <"o2"
+cat <"o1" | cat <"o2"
+cat <"o1" | cat <"o2"
+cat <"o1" | cat <"o2"
+cat <"o1" | cat <"o2"
+cat <"o1" | cat <"o2"
+cat <"o1" | cat <"o2"
+cat <"o1" | cat <"o2"
+cat <"o1" | cat <"o2"
+cat <"o1" | cat <"o2"
+cat <"o1" | cat <"o2"
+cat <"o1" | cat <"o2"
+cat <"o1" | cat <"o2"
+cat <"o1" | cat <"o2"
+cat <"o1" | cat <"o2"
+cat <"o1" | cat <"o2"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+exit
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+env
+exit
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+exit
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1" | cat <"./infiles/in1"
+exit
+ls
+exit
+ls
+exit
+ls
+exit
+cd minishell_tester
+grep hi <./test_files/infile_big <./test_files/infile
+echo $?
+exit
+grep hi <./test_files/infile_big <./test_files/infile
+mkdir outfiles
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02a
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02a
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02a
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02a
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02a
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02a
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02a
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02a
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02a
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02a
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02a
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02a
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02a
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02a
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02a
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02a
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+echo $?
+exit
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+/bin/ls
+cat
+cat
+cat
+""
+make clean
+exit
+exit
+""
+exit
+""
+exit
+""
+exit
+""
+exit
+""
+exit
+""
+exit
+""
+exit
+""
+echo $?
+     
+		
+      
+		
+exit
+""
+""
+ 
+exit
+""
+  
+     
+		
+    |   
+		|   		
+|   
+|
+|
+|
+|
+|
+|
+|
+|
+echo 		hello		hey
+exit
+cat <"1""2""3""4""5"
+"aaa"
+"aaa"
+"aaa"
+"aaa"
+"aaa"
+""
+aaa
+"aaa"
+aaa
+echo $?
+exit
+aaa
+echo $?
+exit
+asdad
+"aaaa"
+echo $?
+exit
+$EMPTY
+"" | echo hi
+exit
+""
+     
+$EMPTY
+"" | echo hi
+exit
+"" | echo hi
+$EMPTY | echo hi
+exit
+""
+$EMPTY
+exit
+""
+echo $?
+exit
+""
+echo $?
+$EMPTY
+exit
+$EMPTY | echo hi
+| echo hi
+| echo hi
+|
+exit
+| aa
+aa |
+|
+$EMPTY | ehco hi
+$EMPTY | echo hi
+$haha | echo hi
+exit
+echo $laksd
+exit
+cat <""""<""""
+ls >"">out
+ls
+exit
+ls >"" >haha
+$haha
+ 
+$PWD
+echo ""
+"" | echo hi
+ | echo hi
+exit
+$EMPTY
+exit
+$EMPTY
+ 
+make
+$EMPTY
+""
+   
+""
+echo $?
+exit
+""
+exit
+$EMP ls
+$haha
+$EMPTY
+echo $?
+$EMPTY | echo hi
+exit
+<<EOF
+<<EOF
+cat
+exit
+exit haha
+"l""s"
+"l"s"
+"l""'s'"
+  
+""
+echo hi | ""
+echo $?
+"" | echo hi
+""
+exit

@@ -21,7 +21,7 @@ SRCS	:= 	minishell.c \
 			builtins.c \
 			export.c \
 			array_utils.c \
-			builtins_2.c \
+			cd.c \
 			pipes.c \
 			heredoc.c \
 			signals.c \

@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 14:52:14 by okarejok          #+#    #+#             */
-/*   Updated: 2024/03/20 17:51:25 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/01 12:03:14 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	open_pipes(t_shell *shell)
 	int	i;
 
 	i = 0;
+	allocate_pipes(shell);
 	while (i < shell->cmd_count)
 	{
 		pipe(shell->pipe[i]);
