@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/01 13:24:36 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/01 14:29:25 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,7 @@ typedef struct s_cmd
 	int		outfile;
 	int		index;
 	int		arg_count;
+	int		expands;
 }	t_cmd;
 
 typedef struct s_shell
@@ -82,6 +83,7 @@ typedef struct s_shell
 	int			**pipe;
 	int			history_fd;
 	int			heredoc_index;
+	int			expand_count;
 }	t_shell;
 
 typedef struct s_parse
@@ -118,7 +120,7 @@ void	init_t_parse(t_parse *p);
 void	parse_line(t_shell *shell);
 void	pipe_split(t_shell *shell, char *s);
 void	tokenize(t_shell *shell, t_cmd *cmd);
-void	check_expands(t_shell *shell, char **line);
+int		expand(t_shell *shell, char **line);
 void	extract_redirections(t_shell *shell, t_cmd *cmd);
 void	extract_command(t_shell *shell, t_cmd *cmd);
 void	extract_args(t_shell *shell, t_cmd *cmd);

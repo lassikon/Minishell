@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 14:41:04 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/29 16:08:42 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/01 14:27:47 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static void	write_to_heredoc(t_shell *shell, char *limiter, int fd)
 			break ;
 		}
 		if (ft_strchr(line, '$'))
-			check_expands(shell, &line);
+			expand(shell, &line);
 		ft_putendl_fd(line, fd);
 		free(line);
 	}

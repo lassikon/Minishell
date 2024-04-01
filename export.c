@@ -6,20 +6,36 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 12:43:33 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/01 13:24:24 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/01 14:44:35 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-static int	invalid_identifier(char *arg)
+static int	invalid_export_identifier(char *arg)
 {
 	int	i;
 
 	i = 0;
-	if (!ft_isalpha(arg[0]))
+	if (!ft_isalpha(arg[0]) && arg[0] != '_')
 		return (1);
 	while (arg[i] && arg[i] != '=')
+	{
+		if (arg[i] != '_' && !ft_isalnum(arg[i]))
+			return (1);
+		i++;
+	}
+	return (0);
+}
+
+static int	invalid_unset_identifier(char *arg)
+{
+	int	i;
+
+	i = 0;
+	if (!ft_isalpha(arg[0]) && arg[0] != '_')
+		return (1);
+	while (arg[i])
 	{
 		if (arg[i] != '_' && !ft_isalnum(arg[i]))
 			return (1);
@@ -59,7 +75,7 @@ void	export(t_shell *shell, t_cmd *cmd)
 		return ;
 	while (cmd->args[i])
 	{
-		if (invalid_identifier(cmd->args[i]))
+		if (invalid_export_identifier(cmd->args[i]))
 		{
 			ft_putstr_fd("minishell: export: `", 2);
 			ft_putstr_fd(cmd->args[i], 2);
@@ -86,12 +102,21 @@ void	unset(t_shell *shell, t_cmd *cmd)
 		return ;
 	while (cmd->args[i])
 	{
-		identifier = ft_strjoin(cmd->args[i], "=");
-		if (identifier == NULL)
-			error(shell, MALLOC, FATAL, 1);
-		if (find_in_array(shell->env, identifier))
-			remove_from_array(shell->env, identifier);
-		free(identifier);
+		if (invalid_unset_identifier(cmd->args[i]))
+		{
+			ft_putstr_fd("minishell: unset: `", 2);
+			ft_putstr_fd(cmd->args[i], 2);
+			error(shell, "': not a valid identifier", ERROR, 1);
+		}
+		else
+		{
+			identifier = ft_strjoin(cmd->args[i], "=");
+			if (identifier == NULL)
+				error(shell, MALLOC, FATAL, 1);
+			if (find_in_array(shell->env, identifier))
+				remove_from_array(shell->env, identifier);
+			free(identifier);
+		}
 		i++;
 	}
 }

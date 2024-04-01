@@ -1967,3 +1967,30 @@ $haha
 echo $?
 ""
 exit
+$PWD
+""
+$haha
+exit
+$haha
+$haha | echo hi
+exit
+$haha | echo hi
+$haha
+exit
+$haha
+$haha | echo hi
+echo hi | $haha
+unset 123
+exit
+export _aa=haha
+exit
+env
+unset 123
+unset 123 HOME
+env
+exit
+""
+$EMPTY | haha
+haha | hehe
+$?
+exit
