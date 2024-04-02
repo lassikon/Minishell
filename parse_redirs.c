@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_redirs.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 13:03:52 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/01 14:10:19 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/02 15:15:45 by okarejok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,8 @@
 
 static int	check_redirections(t_shell *shell, t_cmd *cmd)
 {
-	int		count;
-	int		i;
+	int	i;
 
-	count = 0;
 	i = 0;
 	while (cmd->line[i])
 	{
@@ -25,16 +23,18 @@ static int	check_redirections(t_shell *shell, t_cmd *cmd)
 			i = skip_quotes(cmd->line, i);
 		if (cmd->line[i] == '>' || cmd->line[i] == '<')
 		{
-			if (illegal_arrows(shell, cmd->line, cmd->line[i], i + 1))
-				return (1);
+			if (cmd->line[i + 1] != '\"' && cmd->line[i + 1] != '\'')
+			{
+				if (illegal_arrows(shell, cmd->line, cmd->line[i], i + 1))
+					return (1);
+			}
 			if (cmd->line[i + 1] == '>' || cmd->line[i + 1] == '<')
 				i++;
-			count++;
+			cmd->redir_count++;
 		}
 		i++;
 	}
-	cmd->redir_count = count;
-	if (count == 0)
+	if (cmd->redir_count == 0)
 		return (1);
 	return (0);
 }

@@ -3,97 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   execute.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:19:05 by okarejok          #+#    #+#             */
-/*   Updated: 2024/04/01 14:32:48 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/02 15:36:33 by okarejok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-int	absolute_path_to_directory(char *cmd)
+void	run_command(t_shell *shell)
 {
-	struct stat	buf;
-
-	if (stat(cmd, &buf) == 0)
-	{
-		if (S_ISDIR(buf.st_mode))
-			return (1);
-	}
-	return (0);
-}
-
-static int	check_access(t_shell *shell, t_cmd *cmd_vars, char *path, char **cmd)
-{
-	if (access(path, 0) == 0)
-	{
-		if (access(path, X_OK) == -1)
-			p_error(shell, path, FATAL, 126);
-		free(cmd_vars->cmd);
-		cmd_vars->cmd = path;
-		free(*cmd);
-		*cmd = NULL;
-		return (1);
-	}
-	return (0);
-}
-
-static void	check_cmd_path(t_shell *shell, t_cmd *cmd_vars)
-{
-	int		i;
-	char	*cmd_path;
-	char	*cmd_one;
-
-	i = 0;
-	cmd_one = ft_strjoin("/", cmd_vars->cmd);
-	if (cmd_one == NULL)
-		error(shell, MALLOC, FATAL, 1);
-	while (shell->paths[i])
-	{
-		cmd_path = ft_strjoin(shell->paths[i], cmd_one);
-		if (!cmd_path)
-			error(shell, MALLOC, FATAL, 1);
-		if (absolute_path_to_directory(cmd_path))
-		{
-			free(cmd_path);
-			i++;
-			continue ;
-		}
-		if (check_access(shell, cmd_vars, cmd_path, &cmd_one))
-			return ;
-		free(cmd_path);
-		i++;
-	}
-	free(cmd_one);
-	ft_putstr_fd("minishell: ", 2);
-	ft_putstr_fd(cmd_vars->cmd, 2);
-	error(shell, NO_CMD, FATAL, 127);
-}
-
-static void	validate_command(t_shell *shell, t_cmd *cmd_vars)
-{
-	if (cmd_vars->cmd[0] == '\0')
+	if (shell->status == ERROR)
 		return ;
-	if (ft_strchr(cmd_vars->cmd, '/'))
+	if (shell->cmd_count == 1 && shell->cmd_tree[0].redir_count == 0)
 	{
-		if (access(cmd_vars->cmd, F_OK) == -1)
-			p_error(shell, cmd_vars->cmd, FATAL, 127);
-		else if (access(cmd_vars->cmd, X_OK) == -1)
-			p_error(shell, cmd_vars->cmd, FATAL, 126);
-		if (absolute_path_to_directory(cmd_vars->cmd))
-		{
-			ft_putstr_fd("minishell: ", 2);
-			ft_putstr_fd(cmd_vars->cmd, 2);
-			error(shell, IS_DIR, FATAL, 126);
-		}
+		if (builtin(shell, &shell->cmd_tree[0]))
+			return ;
 	}
-	else
-	{
-		if (shell->paths != NULL)
-			check_cmd_path(shell, cmd_vars);
-	}
-	return ;
+	if (shell->cmd_count > 1)
+		open_pipes(shell);
+	do_fork(shell);
 }
 
 void	do_fork(t_shell *shell)
@@ -122,7 +52,10 @@ void	do_fork(t_shell *shell)
 
 void	handle_child(t_shell *shell, t_cmd *cmd_vars)
 {
-	toggle_signal(DEFAULT);
+	if (cmd_vars->index > 0)
+		toggle_signal(NO_SIGNALS);
+	else
+		toggle_signal(DEFAULT);
 	if (shell->cmd_count > 1)
 		redir_to_pipe(shell, cmd_vars);
 	if (cmd_vars->redir_count > 0)
@@ -133,8 +66,7 @@ void	handle_child(t_shell *shell, t_cmd *cmd_vars)
 		exit(shell->exit_status);
 	validate_command(shell, cmd_vars);
 	execve(cmd_vars->cmd, cmd_vars->args, shell->env);
-	write(2, "minishell: execve failed\n", 25);
-	exit(127);
+	error(shell, ft_strjoin(cmd_vars->cmd, NO_CMD), FATAL, 127);
 }
 
 int	no_children(t_shell *shell)
@@ -172,18 +104,4 @@ void	wait_children(t_shell *shell, int pids)
 			shell->exit_status = 1;
 		i++;
 	}
-}
-
-void	run_command(t_shell *shell)
-{
-	if (shell->status == ERROR)
-		return ;
-	if (shell->cmd_count == 1 && shell->cmd_tree[0].redir_count == 0)
-	{
-		if (builtin(shell, &shell->cmd_tree[0]))
-			return ;
-	}
-	if (shell->cmd_count > 1)
-		open_pipes(shell);
-	do_fork(shell);
 }

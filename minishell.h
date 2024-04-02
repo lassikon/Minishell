@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/01 14:29:25 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/02 13:57:32 by okarejok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -154,6 +154,7 @@ void	do_fork(t_shell *shell);
 void	handle_child(t_shell *shell, t_cmd *cmd_vars);
 void	wait_children(t_shell *shell, int pids);
 void	run_command(t_shell *shell);
+void	validate_command(t_shell *shell, t_cmd *cmd_vars);
 
 // FREEING & ERROR HANDLING
 void	free_pipes(t_shell *shell);

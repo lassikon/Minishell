@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   redirection.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:30:18 by okarejok          #+#    #+#             */
-/*   Updated: 2024/03/29 14:33:23 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/02 14:07:48 by okarejok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

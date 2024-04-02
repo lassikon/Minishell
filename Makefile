@@ -31,7 +31,8 @@ SRCS	:= 	minishell.c \
 			parse_spaces.c \
 			syntax.c \
 			exit.c \
-			
+			validate_cmd.c
+
 OBJS	:= ${SRCS:.c=.o}
 
 all: $(NAME)

@@ -3,45 +3,60 @@
 /*                                                        :::      ::::::::   */
 /*   cd.c                                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 13:36:20 by okarejok          #+#    #+#             */
-/*   Updated: 2024/04/01 11:06:25 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/02 15:40:29 by okarejok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-static void	update_wd(t_shell *shell)
+static char	*create_env_entrie(t_shell *shell, char *pwd_type)
 {
-	char	*oldpwd_path;
 	char	*pwd_path;
-	char	*oldpwd_entry;
 	char	*pwd_entry;
 
-	pwd_path = getcwd(NULL, 0);
+	pwd_path = NULL;
+	pwd_entry = NULL;
+	if (ft_strcmp(pwd_type, "PWD") == 0)
+		pwd_path = getcwd(NULL, 0);
+	else if (ft_strcmp(pwd_type, "OLDPWD") == 0)
+		pwd_path = ft_getenv(shell, "PWD");
 	if (!pwd_path)
-		return ;
-	oldpwd_path = ft_getenv(shell, "PWD");
-	if (!oldpwd_path)
+		return (NULL);
+	remove_from_array(shell->env, pwd_type);
+	if (ft_strcmp(pwd_type, "PWD") == 0)
+		pwd_entry = ft_strjoin("PWD=", pwd_path);
+	else if (ft_strcmp(pwd_type, "OLDPWD") == 0)
+		pwd_entry = ft_strjoin("OLDPWD=", pwd_path);
+	if (!pwd_entry)
 	{
 		free(pwd_path);
+		error(shell, MALLOC, FATAL, 1);
+	}
+	free(pwd_path);
+	return (pwd_entry);
+}
+
+static void	update_wd(t_shell *shell)
+{
+	char	*oldpwd;
+	char	*pwd;
+
+	oldpwd = create_env_entrie(shell, "OLDPWD");
+	if (!oldpwd)
+		return ;
+	pwd = create_env_entrie(shell, "PWD");
+	if (!pwd)
+	{
+		free(oldpwd);
 		return ;
 	}
-	remove_from_array(shell->env, "OLDPWD");
-	remove_from_array(shell->env, "PWD");
-	pwd_entry = ft_strjoin("PWD=", pwd_path);
-	if (!pwd_entry)
-		error(shell, MALLOC, FATAL, 1);
-	oldpwd_entry = ft_strjoin("OLDPWD=", oldpwd_path);
-	if (!oldpwd_entry)
-		error(shell, MALLOC, FATAL, 1);
-	shell->env = add_to_array(shell->env, pwd_entry);
-	shell->env = add_to_array(shell->env, oldpwd_entry);
-	free(oldpwd_path);
-	free(pwd_path);
-	free(oldpwd_entry);
-	free(pwd_entry);
+	shell->env = add_to_array(shell->env, pwd);
+	shell->env = add_to_array(shell->env, oldpwd);
+	free(oldpwd);
+	free(pwd);
 }
 
 static void	cd_error(t_shell *shell, char *path)
