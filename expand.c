@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   expand.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 11:11:41 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/02 15:39:51 by okarejok         ###   ########.fr       */
+/*   Updated: 2024/04/03 12:38:31 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ static int	expand_env(t_shell *shell, char **line, int i)
 		error(shell, MALLOC, FATAL, 1);
 	free(*line);
 	*line = new;
-	return (start + ft_strlen(value) - 1);
+	return (start + ft_strlen(value));
 }
 
 int	expand(t_shell *shell, char **line)

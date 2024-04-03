@@ -1994,3 +1994,198 @@ $EMPTY | haha
 haha | hehe
 $?
 exit
+$
+$$
+$$$
+$$$$
+$?$CMD
+echo $?$PWD
+echo $?$asdad
+exit
+exit >out
+exit <iasjd
+exit <asdad
+exit <asdad
+echo hello >aha
+exit >aha
+exit <asdad
+ls | echo hi >aha
+""
+$EMPTY
+$EMPTY echo hi
+"" $EMPTY
+echo hi >out2
+exit
+echo hi >out2
+exit
+cat | cat | cat
+exit
+cat | cat | cat
+cat | cat | cat
+cat | cat | cat
+exit
+cat | cat | cat
+cat | cat | cat
+cat | sleep 10 | cat
+exit
+cat | sleep 10 | cat
+ls >out
+exit
+cat | sleep 10 | cat
+cat | cat | cat
+exit
+cat <asdad
+echo $?
+exit
+echo hi >out
+exit
+echo hi >out
+exit
+export M="echo hi"
+$M
+cd 123123
+exit
+export M="echo hi"
+env
+$M
+exit
+""
+$EMPTY
+exit
+echo hi >out
+ls >out | echo hi >out2
+exit
+""
+$EMPTY
+<out
+>out9
+exit
+echo hi >out
+echo hi >out
+echo hi
+exit <hello
+exit >hello
+ls
+ls
+cat
+exit
+ls
+ls
+exit
+echo hi
+echo -n hi
+echo -i hi
+exit
+ls
+exit
+ls
+exit
+ls
+""
+$EMPTY
+"" $EMPTY
+exit
+$EMPTY
+exit
+$EMPTY
+""
+$EMPTY
+exit
+""
+exit
+""
+exit
+""
+exit
+$EMPTY
+$EMPTY
+$EMPTY
+$EMPTY
+$EMPTY
+$EMPTY
+$EMPTY
+""
+exit
+ls
+""
+$EMPTY
+$EMPTY ""
+"" | ""
+$EMPTY | $EMPTY
+echo $?
+exit
+cat <missing | cat
+exit
+ls >out
+ls <kajdkdja
+cat <missing | cat
+exit
+cat <missing | cat
+exit
+cat <in
+exit
+cat < in
+exit
+cat <in
+exit
+$EMPTY
+$EMPTY
+$EMPTY
+$EMPTY
+exit
+""
+$EMPTY ""
+$EMPTY$EMPTY
+$USER$PWD
+$USER $PWD
+$EMPTY
+$EMPTY$EMPTY
+$EMPTY:$EMPTY
+$EMPTY $EMPTY
+$EMPTY/$EMPTY
+exit
+$haha
+$EMPTY$EMPTY
+exit
+$EMPTY$EMPTY
+exit
+$EMPTY$EMPTY
+$$$
+exit
+$EMPTY$EMPTY
+exit
+$EMPTY$EMPTY
+exit
+$EMPTY
+$EMPTY$EMPTY
+$USER$PWD
+$USR$PWD
+exit
+ls
+""
+$EMPTY
+exit
+$EMPTY
+exit aalsdk asd
+exit
+export GHOST=123 | env | grep GHOST
+exit
+export GHOST=123 | env | grep GHOST
+exit
+export GHOST=123 | env | grep GHOST
+exit
+cd minishell_tester
+echo hi >./test_files/invalid_permission >./outfiles/outfile01 | echo bye
+echo hi >./test_files/invalid_permission >./outfiles/outfile01 | echo bye
+exit
+echo hi >./test_files/invalid_permission >./outfiles/outfile01 | echo bye
+echo $?
+exit
+echo hi >./test_files/invalid_permission >./outfiles/outfile01 | echo bye
+exit
+$EMPTY
+echo $?
+exit
+$EMPTY
+echo $?
+exit

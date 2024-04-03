@@ -3,23 +3,41 @@
 /*                                                        :::      ::::::::   */
 /*   execute.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:19:05 by okarejok          #+#    #+#             */
-/*   Updated: 2024/04/02 15:36:33 by okarejok         ###   ########.fr       */
+/*   Updated: 2024/04/03 14:47:12 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
+void	restore_std(t_shell *shell)
+{
+	dup2(shell->std_in, STDIN_FILENO);
+	dup2(shell->std_out, STDOUT_FILENO);
+	close(shell->std_in);
+	close(shell->std_out);
+}
+
 void	run_command(t_shell *shell)
 {
 	if (shell->status == ERROR)
 		return ;
-	if (shell->cmd_count == 1 && shell->cmd_tree[0].redir_count == 0)
+	if (shell->cmd_count == 1 && check_builtin(&shell->cmd_tree[0]))
 	{
-		if (builtin(shell, &shell->cmd_tree[0]))
+		shell->std_in = dup(STDIN_FILENO);
+		shell->std_out = dup(STDOUT_FILENO);
+		if (shell->cmd_tree[0].redir_count > 0)
+			redir_to_file(shell, &shell->cmd_tree[0]);
+		if (shell->status == ERROR || shell->cmd_tree[0].cmd == NULL)
+		{
+			restore_std(shell);
 			return ;
+		}
+		run_builtin(shell, &shell->cmd_tree[0]);
+		restore_std(shell);
+		return ;
 	}
 	if (shell->cmd_count > 1)
 		open_pipes(shell);
@@ -52,19 +70,17 @@ void	do_fork(t_shell *shell)
 
 void	handle_child(t_shell *shell, t_cmd *cmd_vars)
 {
-	if (cmd_vars->index > 0)
-		toggle_signal(NO_SIGNALS);
-	else
-		toggle_signal(DEFAULT);
+	toggle_signal(DEFAULT);
 	if (shell->cmd_count > 1)
 		redir_to_pipe(shell, cmd_vars);
 	if (cmd_vars->redir_count > 0)
 		redir_to_file(shell, cmd_vars);
-	if (!cmd_vars->cmd[0] && cmd_vars->expands > 0)
+	if (cmd_vars->cmd == NULL)
 		exit(shell->exit_status);
-	if (builtin(shell, cmd_vars))
+	if (run_builtin(shell, cmd_vars))
 		exit(shell->exit_status);
-	validate_command(shell, cmd_vars);
+	if (cmd_vars->cmd[0])
+		validate_command(shell, cmd_vars);
 	execve(cmd_vars->cmd, cmd_vars->args, shell->env);
 	error(shell, ft_strjoin(cmd_vars->cmd, NO_CMD), FATAL, 127);
 }

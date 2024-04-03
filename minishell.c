@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:10:31 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/01 14:33:02 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/03 12:22:03 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,4 @@ int	main(int argc, char **argv, char **envp)
 	toggle_signal(DEFAULT);
 	return (0);
 }
-// fix quotes handling (like "l""s" etc) (arg count is wrong too)
 // exit <in (check redirection in parent process)
-// unset needs to check identifier validity

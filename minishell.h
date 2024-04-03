@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minishell.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/02 13:57:32 by okarejok         ###   ########.fr       */
+/*   Updated: 2024/04/03 14:38:57 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,7 @@ typedef enum e_status
 	SYNTAX,
 	ERROR,
 	RUNNING,
-	EXECUTE,
-	CHECK
+	EXECUTE
 }	t_status;
 
 typedef enum e_signal
@@ -84,6 +83,8 @@ typedef struct s_shell
 	int			history_fd;
 	int			heredoc_index;
 	int			expand_count;
+	int			std_in;
+	int			std_out;
 }	t_shell;
 
 typedef struct s_parse
@@ -146,7 +147,8 @@ void	env(t_shell *shell, int export);
 void	ft_exit(t_shell *shell, t_cmd *cmd);
 void	export(t_shell *shell, t_cmd *cmd);
 void	unset(t_shell *shell, t_cmd *cmd);
-int		builtin(t_shell *shell, t_cmd *cmd);
+int		run_builtin(t_shell *shell, t_cmd *cmd);
+int		check_builtin(t_cmd *cmd);
 char	*ft_getenv(t_shell *shell, char *to_find);
 
 // EXECUTION
@@ -163,6 +165,7 @@ void	free_tree(t_shell *shell);
 void	free_array(char **array);
 int		error(t_shell *shell, char *msg, t_status status, int code);
 int		p_error(t_shell *shell, char *msg, t_status status, int code);
+void	free_and_exit(t_shell *shell);
 
 // REDIRECTION
 void	redir_to_file(t_shell *shell, t_cmd *cmd_vars);

@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 12:02:39 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/29 12:45:28 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/03 14:44:22 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,4 +85,16 @@ void	ft_exit(t_shell *shell, t_cmd *cmd)
 	close(shell->history_fd);
 	toggle_signal(DEFAULT);
 	exit(code);
+}
+
+void	free_and_exit(t_shell *shell)
+{
+	/* int	code;
+
+	code = WEXITSTATUS(shell->exit_status); */
+	free_all(shell);
+	free_array(shell->env);
+	close(shell->history_fd);
+	toggle_signal(DEFAULT);
+	exit(shell->exit_status);
 }

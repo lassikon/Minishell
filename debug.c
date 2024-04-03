@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 16:16:29 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/20 15:44:08 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/03 11:49:54 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,15 @@ void	print_tree(t_shell *shell)
 		j = 0;
 		printf("cmd[%d]: %s\n", i, shell->cmd_tree[i].cmd);
 		printf("arg_count: %d\n", shell->cmd_tree[i].arg_count);
-		while (shell->cmd_tree[i].args[j])
+		if (shell->cmd_tree[i].arg_count > 0)
 		{
+			while (shell->cmd_tree[i].args[j])
+			{
+				printf("args[%d]: %s\n", j, shell->cmd_tree[i].args[j]);
+				j++;
+			}
 			printf("args[%d]: %s\n", j, shell->cmd_tree[i].args[j]);
-			j++;
 		}
-		printf("args[%d]: %s\n", j, shell->cmd_tree[i].args[j]);
 		j = 0;
 		printf("redir_count: %d\n", shell->cmd_tree[i].redir_count);
 		while (j < shell->cmd_tree[i].redir_count)

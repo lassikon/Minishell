@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   redirection.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:30:18 by okarejok          #+#    #+#             */
-/*   Updated: 2024/04/02 14:07:48 by okarejok         ###   ########.fr       */
+/*   Updated: 2024/04/03 12:06:30 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,25 +18,20 @@ static void	dup_and_close(int file, int fd)
 	close(file);
 }
 
-static void	open_file(t_shell *shell, char *redir, int *file, char *mode)
+static void	open_file(t_shell *shell, char *redir, t_cmd *cmd, char *mode)
 {
 	if (ft_strncmp(mode, "> ", 2) == 0)
-	{
-		*file = open(redir + 2, O_CREAT | O_RDWR | O_TRUNC, 0644);
-		if (*file == -1)
-			p_error(shell, redir + 2, FATAL, 1);
-	}
+		cmd->outfile = open(redir + 2, O_CREAT | O_RDWR | O_TRUNC, 0644);
 	else if (ft_strncmp(mode, "< ", 2) == 0)
-	{
-		*file = open(redir + 2, O_RDONLY);
-		if (*file == -1)
-			p_error(shell, redir + 2, FATAL, 1);
-	}
+		cmd->infile = open(redir + 2, O_RDONLY);
 	else if (ft_strncmp(mode, ">>", 2) == 0)
+		cmd->outfile = open(redir + 2, O_CREAT | O_APPEND | O_RDWR, 0644);
+	if (cmd->infile == -1 || cmd->outfile == -1)
 	{
-		*file = open(redir + 2, O_CREAT | O_APPEND | O_RDWR, 0644);
-		if (*file == -1)
+		if (shell->pid[cmd->index] == 0)
 			p_error(shell, redir + 2, FATAL, 1);
+		else
+			p_error(shell, redir + 2, ERROR, 1);
 	}
 }
 
@@ -65,22 +60,21 @@ void	redir_to_file(t_shell *shell, t_cmd *cmd_vars)
 	int	i;
 
 	i = 0;
-	(void)shell;
-	while (cmd_vars->redir[i])
+	while (cmd_vars->redir[i] && shell->status != ERROR)
 	{
 		if (ft_strncmp(&cmd_vars->redir[i][0], "< ", 2) == 0)
 		{
-			open_file(shell, cmd_vars->redir[i], &cmd_vars->infile, "< ");
+			open_file(shell, cmd_vars->redir[i], cmd_vars, "< ");
 			dup_and_close(cmd_vars->infile, STDIN_FILENO);
 		}
 		else if (ft_strncmp(&cmd_vars->redir[i][0], "> ", 2) == 0)
 		{
-			open_file(shell, cmd_vars->redir[i], &cmd_vars->outfile, "> ");
+			open_file(shell, cmd_vars->redir[i], cmd_vars, "> ");
 			dup_and_close(cmd_vars->outfile, STDOUT_FILENO);
 		}
 		else if (ft_strncmp(&cmd_vars->redir[i][0], ">>", 2) == 0)
 		{
-			open_file(shell, cmd_vars->redir[i], &cmd_vars->outfile, ">>");
+			open_file(shell, cmd_vars->redir[i], cmd_vars, ">>");
 			dup_and_close(cmd_vars->outfile, STDOUT_FILENO);
 		}
 		i++;

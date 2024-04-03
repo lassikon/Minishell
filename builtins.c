@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 10:46:25 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/01 13:25:44 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/03 14:35:46 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,9 +99,34 @@ void	pwd(t_shell *shell, t_cmd *cmd)
 		free(path);
 }
 
-int	builtin(t_shell *shell, t_cmd *cmd)
+int	check_builtin(t_cmd *cmd)
 {
-	if (ft_strncmp(cmd->cmd, "export", 7) == 0 && cmd->args[1])
+	if (cmd->cmd == NULL)
+		return (0);
+	else if (ft_strncmp(cmd->cmd, "export", 7) == 0)
+		return (1);
+	else if (ft_strncmp(cmd->cmd, "unset", 6) == 0)
+		return (1);
+	else if (ft_strncmp(cmd->cmd, "cd", 3) == 0)
+		return (1);
+	else if (ft_strncmp(cmd->cmd, "exit", 5) == 0)
+		return (1);
+	else if (ft_strncmp(cmd->cmd, "env", 4) == 0)
+		return (1);
+	else if (ft_strncmp(cmd->cmd, "pwd", 4) == 0)
+		return (1);
+	else if (ft_strncmp(cmd->cmd, "echo", 5) == 0)
+		return (1);
+	else
+		return (0);
+
+}
+
+int	run_builtin(t_shell *shell, t_cmd *cmd)
+{
+	if (cmd->cmd == NULL)
+		return (0);
+	else if (ft_strncmp(cmd->cmd, "export", 7) == 0 && cmd->args[1])
 		export(shell, cmd);
 	else if (ft_strncmp(cmd->cmd, "export", 7) == 0 && !cmd->args[1])
 		env(shell, 1);
