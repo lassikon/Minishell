@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:19:05 by okarejok          #+#    #+#             */
-/*   Updated: 2024/04/03 14:47:12 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/03 14:53:41 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,8 @@ void	run_command(t_shell *shell)
 		shell->std_out = dup(STDOUT_FILENO);
 		if (shell->cmd_tree[0].redir_count > 0)
 			redir_to_file(shell, &shell->cmd_tree[0]);
-		if (shell->status == ERROR || shell->cmd_tree[0].cmd == NULL)
-		{
-			restore_std(shell);
-			return ;
-		}
-		run_builtin(shell, &shell->cmd_tree[0]);
+		if (shell->status != ERROR)
+			run_builtin(shell, &shell->cmd_tree[0]);
 		restore_std(shell);
 		return ;
 	}
