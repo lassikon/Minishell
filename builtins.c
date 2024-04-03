@@ -3,58 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   builtins.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 10:46:25 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/03 14:35:46 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/03 17:36:19 by okarejok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
-
-static void	echo_n(t_cmd *cmd)
-{
-	int	i;
-
-	i = 2;
-	while (cmd->args[i])
-	{
-		ft_putstr_fd(cmd->args[i], 1);
-		if (cmd->args[i + 1])
-			ft_putchar_fd(' ', 1);
-		i++;
-	}
-}
-
-void	echo(t_shell *shell, t_cmd *cmd)
-{
-	int	i;
-
-	(void)shell;
-	if (!cmd->args[1])
-	{
-		ft_putchar_fd('\n', 1);
-		if (shell->status != ERROR)
-			shell->exit_status = 0;
-		return ;
-	}
-	if (ft_strncmp(cmd->args[1], "-n", 2) == 0)
-		echo_n(cmd);
-	else
-	{
-		i = 1;
-		while (cmd->args[i])
-		{
-			ft_putstr_fd(cmd->args[i], 1);
-			if (cmd->args[i + 1])
-				ft_putchar_fd(' ', 1);
-			i++;
-		}
-		ft_putchar_fd('\n', 1);
-	}
-	if (shell->status != ERROR)
-		shell->exit_status = 0;
-}
 
 void	env(t_shell *shell, int export)
 {

@@ -6,7 +6,7 @@
 /*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 15:40:34 by okarejok          #+#    #+#             */
-/*   Updated: 2024/04/02 14:35:29 by okarejok         ###   ########.fr       */
+/*   Updated: 2024/04/03 17:35:43 by okarejok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,9 +81,7 @@ void	validate_command(t_shell *shell, t_cmd *cmd_vars)
 			p_error(shell, cmd_vars->cmd, FATAL, 126);
 		if (absolute_path_to_directory(cmd_vars->cmd))
 		{
-			ft_putstr_fd("minishell: ", 2);
-			ft_putstr_fd(cmd_vars->cmd, 2);
-			error(shell, IS_DIR, FATAL, 126);
+			error(shell, ft_strjoin(cmd_vars->cmd, IS_DIR), FATAL, 126);
 		}
 	}
 	else
