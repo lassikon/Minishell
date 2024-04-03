@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 17:03:43 by lkonttin          #+#    #+#             */
-/*   Updated: 2023/11/06 12:13:34 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/03 15:22:55 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	s;
 	char	*str;
 
+	if (!s1 || !s2)
+		return (NULL);
 	str = (char *) malloc(sizeof(char) * (ft_strlen(s1) + ft_strlen(s2) + 1));
 	if (!str)
 		return (NULL);

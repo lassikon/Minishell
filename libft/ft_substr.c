@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 16:19:13 by lkonttin          #+#    #+#             */
-/*   Updated: 2023/11/06 12:09:37 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/03 15:41:27 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*str;
 	size_t	i;
 
+	if (s == NULL)
+		return (NULL);
 	if (start >= ft_strlen(s))
 		len = 0;
 	if (len >= ft_strlen(s) - start)

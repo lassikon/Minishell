@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 14:49:10 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/02 15:39:40 by okarejok         ###   ########.fr       */
+/*   Updated: 2024/04/03 17:26:10 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,8 @@ int	error(t_shell *shell, char *msg, t_status status, int code)
 {
 	char	*error_msg;
 
+	if (shell->parent_redir)
+		restore_std(shell);
 	if (!msg)
 		error(shell, MALLOC, FATAL, 1);
 	error_msg = create_error_msg(msg);
@@ -92,6 +94,8 @@ int	p_error(t_shell *shell, char *msg, t_status status, int code)
 {
 	char	*error_msg;
 
+	if (shell->parent_redir)
+		restore_std(shell);
 	error_msg = create_error_msg_strerr(msg);
 	if (!error_msg)
 		shell->status = FATAL;

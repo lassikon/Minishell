@@ -2189,3 +2189,64 @@ exit
 $EMPTY
 echo $?
 exit
+$EMPTY
+""
+exit
+exit <haha
+exit <haha
+exit <haha
+exit <haha
+cat <haha
+exit >hehe
+exit <hehe
+exit <hehe
+exit <hehe
+exit <asdasdad
+exit
+exit <asdasdad
+exit <hehe
+exit <hehe
+exit <hehe
+exit 1 a
+exit a 1
+exit
+exit <hehe
+exit <hehe
+exit
+exit 1 2
+exit 1 a
+exit a 1
+exit
+exit 1 a
+echo $?
+exit a 1
+exit <hehe
+exit <askldjalkdj
+cat <akjdjalkdj
+ls >hehe
+cat <hehe
+<kasjdlkajd
+<aslkdjalkdj | < aksdklaljd
+cat <aslkdjalkdj | cat < aksdklaljd
+exit
+cat <asdad
+cat <aslkdjalkdj | cat < aksdklaljd
+exit
+cat <aslkdjalkdj | cat < aksdklaljd
+cat <asdad
+exit <aksjdlkajd
+echo $?
+exit <ajdkljlkad >outfile
+exit >outfile <jaksldjlakd
+exit >outfile
+exit 42 world
+echo $?
+exit 1 | exit 2 | exit 3
+echo $?
+exit
+exit 1 | exit 2 | exit 3
+echo $?
+exit
+exit 42 world
+exit
+exit 42 world

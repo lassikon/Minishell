@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/03 14:38:57 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/03 17:22:45 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,9 @@ typedef enum e_signal
 # define SYNTAX_NL "minishell: syntax error near unexpected token `newline'"
 # define SYNTAX_QUOTES "minishell: syntax error with unclosed quotes"
 
+# define OPEN_OUT O_CREAT | O_RDWR | O_TRUNC
+# define OPEN_APPEND O_CREAT | O_APPEND | O_RDWR
+
 typedef struct s_cmd
 {
 	char	*line; // raw input string to be parsed
@@ -85,6 +88,7 @@ typedef struct s_shell
 	int			expand_count;
 	int			std_in;
 	int			std_out;
+	int			parent_redir;
 }	t_shell;
 
 typedef struct s_parse
@@ -168,11 +172,12 @@ int		p_error(t_shell *shell, char *msg, t_status status, int code);
 void	free_and_exit(t_shell *shell);
 
 // REDIRECTION
-void	redir_to_file(t_shell *shell, t_cmd *cmd_vars);
+void	redir_to_file(t_shell *shell, t_cmd *cmd_vars, t_status mode);
 void	redir_to_pipe(t_shell *shell, t_cmd *cmd_vars);
 void	close_pipes(t_shell *shell);
 void	open_pipes(t_shell *shell);
 void	redir_to_pipe(t_shell *shell, t_cmd *cmd_vars);
+void	restore_std(t_shell *shell);
 
 // SIGNALS
 void	rl_replace_line(const char *text, int clear_undo);

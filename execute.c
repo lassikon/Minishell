@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:19:05 by okarejok          #+#    #+#             */
-/*   Updated: 2024/04/03 14:53:41 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/03 17:27:27 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@ void	restore_std(t_shell *shell)
 	dup2(shell->std_out, STDOUT_FILENO);
 	close(shell->std_in);
 	close(shell->std_out);
+	shell->parent_redir = 0;
 }
 
 void	run_command(t_shell *shell)
@@ -26,13 +27,17 @@ void	run_command(t_shell *shell)
 		return ;
 	if (shell->cmd_count == 1 && check_builtin(&shell->cmd_tree[0]))
 	{
-		shell->std_in = dup(STDIN_FILENO);
-		shell->std_out = dup(STDOUT_FILENO);
 		if (shell->cmd_tree[0].redir_count > 0)
-			redir_to_file(shell, &shell->cmd_tree[0]);
+		{
+			shell->parent_redir = 1;
+			shell->std_in = dup(STDIN_FILENO);
+			shell->std_out = dup(STDOUT_FILENO);
+			redir_to_file(shell, &shell->cmd_tree[0], ERROR);
+		}
 		if (shell->status != ERROR)
 			run_builtin(shell, &shell->cmd_tree[0]);
-		restore_std(shell);
+		if (shell->parent_redir)
+			restore_std(shell);
 		return ;
 	}
 	if (shell->cmd_count > 1)
@@ -70,7 +75,7 @@ void	handle_child(t_shell *shell, t_cmd *cmd_vars)
 	if (shell->cmd_count > 1)
 		redir_to_pipe(shell, cmd_vars);
 	if (cmd_vars->redir_count > 0)
-		redir_to_file(shell, cmd_vars);
+		redir_to_file(shell, cmd_vars, FATAL);
 	if (cmd_vars->cmd == NULL)
 		exit(shell->exit_status);
 	if (run_builtin(shell, cmd_vars))
