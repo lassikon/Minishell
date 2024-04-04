@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   builtins.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 10:46:25 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/03 17:36:19 by okarejok         ###   ########.fr       */
+/*   Updated: 2024/04/04 14:36:47 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	env(t_shell *shell, int export)
 	int	k;
 
 	i = 0;
-	printf("executing env\n");
 	if (!shell->env)
 		return ;
 	while (shell->env[i])
@@ -75,7 +74,6 @@ int	check_builtin(t_cmd *cmd)
 		return (1);
 	else
 		return (0);
-
 }
 
 int	run_builtin(t_shell *shell, t_cmd *cmd)

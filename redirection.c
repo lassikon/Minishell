@@ -6,11 +6,20 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:30:18 by okarejok          #+#    #+#             */
-/*   Updated: 2024/04/03 17:04:44 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/04 12:28:57 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
+
+void	restore_std(t_shell *shell)
+{
+	dup2(shell->std_in, STDIN_FILENO);
+	dup2(shell->std_out, STDOUT_FILENO);
+	close(shell->std_in);
+	close(shell->std_out);
+	shell->parent_redir = 0;
+}
 
 static void	dup_and_close(int file, int fd)
 {
@@ -40,30 +49,30 @@ void	redir_to_pipe(t_shell *shell, t_cmd *cmd_vars)
 	}
 }
 
-void	redir_to_file(t_shell *shell, t_cmd *cmd, t_status mode)
+void	redir_to_file(t_shell *shell, t_cmd *c, t_status mode)
 {
 	int	i;
 
 	i = 0;
-	while (cmd->redir[i] && shell->status != ERROR)
+	while (c->redir[i] && shell->status != ERROR)
 	{
-		if (ft_strncmp(&cmd->redir[i][0], "< ", 2) == 0)
+		if (ft_strncmp(&c->redir[i][0], "< ", 2) == 0)
 		{
-			cmd->infile = open(cmd->redir[i] + 2, O_RDONLY);
-			dup_and_close(cmd->infile, STDIN_FILENO);
+			c->infile = open(c->redir[i] + 2, O_RDONLY);
+			dup_and_close(c->infile, STDIN_FILENO);
 		}
-		else if (ft_strncmp(&cmd->redir[i][0], "> ", 2) == 0)
+		else if (ft_strncmp(&c->redir[i][0], "> ", 2) == 0)
 		{
-			cmd->outfile = open(cmd->redir[i] + 2, OPEN_OUT, 0644);
-			dup_and_close(cmd->outfile, STDOUT_FILENO);
+			c->out = open(c->redir[i] + 2, O_CREAT | O_RDWR | O_TRUNC, 0644);
+			dup_and_close(c->out, STDOUT_FILENO);
 		}
-		else if (ft_strncmp(&cmd->redir[i][0], ">>", 2) == 0)
+		else if (ft_strncmp(&c->redir[i][0], ">>", 2) == 0)
 		{
-			cmd->outfile = open(cmd->redir[i] + 2, OPEN_APPEND, 0644);
-			dup_and_close(cmd->outfile, STDOUT_FILENO);
+			c->out = open(c->redir[i] + 2, O_CREAT | O_APPEND | O_RDWR, 0644);
+			dup_and_close(c->out, STDOUT_FILENO);
 		}
-		if (cmd->infile == -1 || cmd->outfile == -1)
-			p_error(shell, cmd->redir[i] + 2, mode, 1);
+		if (c->infile == -1 || c->out == -1)
+			p_error(shell, c->redir[i] + 2, mode, 1);
 		i++;
 	}
 }

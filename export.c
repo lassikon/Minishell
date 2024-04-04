@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 12:43:33 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/01 14:44:35 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/04 15:36:29 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,16 +71,10 @@ void	export(t_shell *shell, t_cmd *cmd)
 	int		i;
 
 	i = 1;
-	if (shell->cmd_count > 1)
-		return ;
 	while (cmd->args[i])
 	{
 		if (invalid_export_identifier(cmd->args[i]))
-		{
-			ft_putstr_fd("minishell: export: `", 2);
-			ft_putstr_fd(cmd->args[i], 2);
-			error(shell, "': not a valid identifier", ERROR, 1);
-		}
+			export_error_msg(shell, cmd->args[i], EXPORT);
 		else
 		{
 			remove_existing(shell, cmd->args[i]);
@@ -103,11 +97,7 @@ void	unset(t_shell *shell, t_cmd *cmd)
 	while (cmd->args[i])
 	{
 		if (invalid_unset_identifier(cmd->args[i]))
-		{
-			ft_putstr_fd("minishell: unset: `", 2);
-			ft_putstr_fd(cmd->args[i], 2);
-			error(shell, "': not a valid identifier", ERROR, 1);
-		}
+			export_error_msg(shell, cmd->args[i], UNSET);
 		else
 		{
 			identifier = ft_strjoin(cmd->args[i], "=");

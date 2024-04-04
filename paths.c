@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   paths.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:19:45 by okarejok          #+#    #+#             */
-/*   Updated: 2024/03/22 15:13:23 by okarejok         ###   ########.fr       */
+/*   Updated: 2024/04/04 12:52:44 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void	shlvl_increment(t_shell *shell)
 	else
 	{
 		shlvl = ft_atoi(shlvl_str);
+		if (shlvl < 0)
+			shlvl = 0;
 		shlvl = shlvl + 1;
 		free(shlvl_str);
 	}

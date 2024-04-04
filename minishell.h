@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/03 17:22:45 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/04 14:58:19 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,9 @@ typedef enum e_status
 	SYNTAX,
 	ERROR,
 	RUNNING,
-	EXECUTE
+	EXECUTE,
+	EXPORT,
+	UNSET
 }	t_status;
 
 typedef enum e_signal
@@ -54,9 +56,6 @@ typedef enum e_signal
 # define SYNTAX_NL "minishell: syntax error near unexpected token `newline'"
 # define SYNTAX_QUOTES "minishell: syntax error with unclosed quotes"
 
-# define OPEN_OUT O_CREAT | O_RDWR | O_TRUNC
-# define OPEN_APPEND O_CREAT | O_APPEND | O_RDWR
-
 typedef struct s_cmd
 {
 	char	*line; // raw input string to be parsed
@@ -65,7 +64,7 @@ typedef struct s_cmd
 	char	**redir; // array of <, >, >> or << + filename/LIM
 	int		redir_count;
 	int		infile;
-	int		outfile;
+	int		out;
 	int		index;
 	int		arg_count;
 	int		expands;
@@ -167,9 +166,10 @@ void	free_pipes(t_shell *shell);
 void	free_all(t_shell *shell);
 void	free_tree(t_shell *shell);
 void	free_array(char **array);
+void	export_error_msg(t_shell *shell, char *arg, t_status type);
 int		error(t_shell *shell, char *msg, t_status status, int code);
 int		p_error(t_shell *shell, char *msg, t_status status, int code);
-void	free_and_exit(t_shell *shell);
+void	free_and_exit(t_shell *shell, int status);
 
 // REDIRECTION
 void	redir_to_file(t_shell *shell, t_cmd *cmd_vars, t_status mode);

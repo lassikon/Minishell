@@ -6,11 +6,30 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 14:49:10 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/03 17:26:10 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/04 14:34:26 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
+
+void	export_error_msg(t_shell *shell, char *arg, t_status type)
+{
+	char	*error_msg;
+
+	if (type == EXPORT)
+		error_msg = ft_strjoin("export: `", arg);
+	else if (type == UNSET)
+		error_msg = ft_strjoin("unset: `", arg);
+	else
+		return ;
+	if (error_msg == NULL)
+		error(shell, MALLOC, FATAL, 1);
+	error_msg = ft_strjoin(error_msg, "': not a valid identifier");
+	if (error_msg == NULL)
+		error(shell, MALLOC, FATAL, 1);
+	error(shell, error_msg, ERROR, 1);
+	free(error_msg);
+}
 
 static char	*create_error_msg_strerr(char *filename)
 {

@@ -6,7 +6,7 @@
 /*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 16:17:51 by okarejok          #+#    #+#             */
-/*   Updated: 2024/04/03 16:23:10 by okarejok         ###   ########.fr       */
+/*   Updated: 2024/04/04 14:47:19 by okarejok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,28 @@ static char	*create_output(t_shell *shell, t_cmd *cmd, int i)
 	return (output);
 }
 
+static int	check_flag(t_cmd *cmd)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (cmd->args[i])
+	{
+		j = 0;
+		if (ft_strncmp(cmd->args[i], "-n", 2) == 0)
+		{
+			j = 1;
+			while (cmd->args[i][j] && cmd->args[i][j] == 'n')
+				j++;
+			if (cmd->args[i][j])
+				return (i);
+		}
+		i++;
+	}
+	return (i - 1);
+}
+
 void	echo(t_shell *shell, t_cmd *cmd)
 {
 	char	*output;
@@ -71,7 +93,9 @@ void	echo(t_shell *shell, t_cmd *cmd)
 		return ;
 	}
 	if (ft_strncmp(cmd->args[1], "-n", 2) == 0)
-		output = create_output(shell, cmd, 2);
+	{
+		output = create_output(shell, cmd, check_flag(cmd));
+	}
 	else
 	{
 		output = create_output(shell, cmd, 1);

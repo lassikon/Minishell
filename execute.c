@@ -6,20 +6,11 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:19:05 by okarejok          #+#    #+#             */
-/*   Updated: 2024/04/03 17:27:27 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/04 15:14:01 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
-
-void	restore_std(t_shell *shell)
-{
-	dup2(shell->std_in, STDIN_FILENO);
-	dup2(shell->std_out, STDOUT_FILENO);
-	close(shell->std_in);
-	close(shell->std_out);
-	shell->parent_redir = 0;
-}
 
 void	run_command(t_shell *shell)
 {
@@ -77,9 +68,9 @@ void	handle_child(t_shell *shell, t_cmd *cmd_vars)
 	if (cmd_vars->redir_count > 0)
 		redir_to_file(shell, cmd_vars, FATAL);
 	if (cmd_vars->cmd == NULL)
-		exit(shell->exit_status);
+		free_and_exit(shell, 0);
 	if (run_builtin(shell, cmd_vars))
-		exit(shell->exit_status);
+		free_and_exit(shell, 0);
 	if (cmd_vars->cmd[0])
 		validate_command(shell, cmd_vars);
 	execve(cmd_vars->cmd, cmd_vars->args, shell->env);

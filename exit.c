@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 12:02:39 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/03 17:25:36 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/04 15:12:19 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,18 @@
 
 static void	exit_error(t_shell *shell, char *str)
 {
-	ft_putstr_fd("minishell: exit: ", 2);
-	ft_putstr_fd(str, 2);
-	ft_putendl_fd(": numeric argument required", 2);
+	char	*error_msg;
+	char	*tmp;
+
+	tmp = ft_strjoin("minishell: exit: ", str);
+	if (!tmp)
+		error(shell, MALLOC, FATAL, 1);
+	error_msg = ft_strjoin(tmp, ": numeric argument required\n");
+	free(tmp);
+	if (!error_msg)
+		error(shell, MALLOC, FATAL, 1);
+	write(2, error_msg, ft_strlen(error_msg));
+	free(error_msg);
 	free_all(shell);
 	free_array(shell->env);
 	close(shell->history_fd);
@@ -67,8 +76,6 @@ static int	convert_to_int(t_shell *shell, char *str)
 
 void	ft_exit(t_shell *shell, t_cmd *cmd)
 {
-	int	code;
-
 	if (shell->parent_redir)
 		restore_std(shell);
 	if (isatty(STDIN_FILENO) && shell->cmd_count == 1)
@@ -76,9 +83,9 @@ void	ft_exit(t_shell *shell, t_cmd *cmd)
 	if (cmd->args[1])
 	{
 		if (non_numeric(shell, cmd->args[1]))
-			code = 255;
+			shell->exit_status = 255;
 		else
-			code = convert_to_int(shell, cmd->args[1]);
+			shell->exit_status = convert_to_int(shell, cmd->args[1]);
 		if (cmd->args[2])
 		{
 			write(2, "minishell: exit: too many arguments\n", 37);
@@ -87,22 +94,21 @@ void	ft_exit(t_shell *shell, t_cmd *cmd)
 		}
 	}
 	else
-		code = WEXITSTATUS(shell->exit_status);
-	free_all(shell);
-	free_array(shell->env);
-	close(shell->history_fd);
-	toggle_signal(DEFAULT);
-	exit(code);
-}
-
-void	free_and_exit(t_shell *shell)
-{
-	/* int	code;
-
-	code = WEXITSTATUS(shell->exit_status); */
+		shell->exit_status = WEXITSTATUS(shell->exit_status);
 	free_all(shell);
 	free_array(shell->env);
 	close(shell->history_fd);
 	toggle_signal(DEFAULT);
 	exit(shell->exit_status);
+}
+
+void	free_and_exit(t_shell *shell, int status)
+{
+	if (shell->parent_redir)
+		restore_std(shell);
+	free_all(shell);
+	free_array(shell->env);
+	close(shell->history_fd);
+	toggle_signal(DEFAULT);
+	exit(status);
 }

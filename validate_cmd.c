@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validate_cmd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 15:40:34 by okarejok          #+#    #+#             */
-/*   Updated: 2024/04/03 17:35:43 by okarejok         ###   ########.fr       */
+/*   Updated: 2024/04/04 12:47:45 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,16 +24,16 @@ static int	absolute_path_to_directory(char *cmd)
 	return (0);
 }
 
-static int	check_access(t_shell *shell, t_cmd *cmd_vars, char *path, char **cmd)
+static int	check_access(t_shell *shell, t_cmd *cmd, char *path, char **c)
 {
 	if (access(path, 0) == 0)
 	{
 		if (access(path, X_OK) == -1)
 			p_error(shell, path, FATAL, 126);
-		free(cmd_vars->cmd);
-		cmd_vars->cmd = path;
-		free(*cmd);
-		*cmd = NULL;
+		free(cmd->cmd);
+		cmd->cmd = path;
+		free(*c);
+		*c = NULL;
 		return (1);
 	}
 	return (0);
@@ -45,11 +45,11 @@ static void	check_cmd_path(t_shell *shell, t_cmd *cmd_vars)
 	char	*cmd_path;
 	char	*cmd_one;
 
-	i = 0;
+	i = -1;
 	cmd_one = ft_strjoin("/", cmd_vars->cmd);
 	if (cmd_one == NULL)
 		error(shell, MALLOC, FATAL, 1);
-	while (shell->paths[i])
+	while (shell->paths[++i])
 	{
 		cmd_path = ft_strjoin(shell->paths[i], cmd_one);
 		if (!cmd_path)
@@ -57,13 +57,11 @@ static void	check_cmd_path(t_shell *shell, t_cmd *cmd_vars)
 		if (absolute_path_to_directory(cmd_path))
 		{
 			free(cmd_path);
-			i++;
 			continue ;
 		}
 		if (check_access(shell, cmd_vars, cmd_path, &cmd_one))
 			return ;
 		free(cmd_path);
-		i++;
 	}
 	free(cmd_one);
 	error(shell, ft_strjoin(cmd_vars->cmd, NO_CMD), FATAL, 127);

@@ -2250,3 +2250,671 @@ exit
 exit 42 world
 exit
 exit 42 world
+echo "$SHLVL@"
+echo $PATH@
+exit
+echo $PATH@
+echo "$SHLVL@"
+env
+exit
+echo $=aa;ldkl
+echo $=aaldkl
+echo $EMPTY hello
+echo $EMPTYhello
+$$$$$$
+$$$$$$$$$
+$$
+$
+$$$$
+echo $123
+exit
+exit 42 world
+exit 1 a
+exit a 1
+export ""
+export "" | export adad | export NAME=Lassi
+exit
+export "" | export adad | export NAME=Lassi
+exit 1 | exit 1 2 | exit 3
+echo $?
+exit 1 | exit adad | exit 3
+exit 42 world | exit | exit 2 | exit haha | exit 3
+echo $?
+exit
+exit 1 2
+exit a 1
+exit a 1
+exit 1 a
+exit
+mkdir outfiles
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+echo $?
+echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+echo $?
+echo $?
+echo $?
+echo $?
+echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo $?
+exit
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02 | echo 0
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01"
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01" | sleep 2 | rm ./outfiles/outfile01
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01" | sleep 2 | rm ./outfiles/outfile01
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01" | sleep 2 | rm ./outfiles/outfile01
+cat <"./minishell_tester/test_files/infile" >"./outfiles/outfile01" | sleep 5 | rm ./outfiles/outfile01
+unset PATH
+env
+echo -i
+echo -aksdad
+echo -
+echo -n
+echo -n kajdad
+cd
+pwd
+cd ~
+pwd
+cd minishell
+cd ~
+pwd
+mkdir test
+exit
+mkdir test
+test
+mkdir a
+a
+mkdir ab
+ab
+ab
+rm test
+rm -rf test
+cat test
+test
+man open
+man va_arg
+exit
+ls
+which ls
+cp /bin/ls .
+ls
+unset PATH
+env
+ls
+a
+mkdir test
+exit
+mkdir test
+test
+a
+b
+ls
+a
+/b
+exit
+a
+exit
+a
+exit
+a
+exit
+a
+exit
+a
+exit
+a
+ls
+cat
+exit
+a
+ls
+cat
+exit
+a
+ls
+env
+export SHLVL=aaaa
+echo $SHLVL
+export SHLVL=-10
+echo $SHLVL
+./minishell
+echo $SHLVL
+echo |
+echo | || |
+export SHLVL=-10
+env
+./minishell
+env
+exit
+exit
+exit
+$SHLVL
+export SHLVL=-10
+./minishell
+$SHLVL
+echo $SHLVL
+unset HOME
+cd
+exit
+unset HOME
+cd
+unset HOME
+cd ~
+mkdir kansio
+cd kansio
+chmod 000 .
+cd ..
+exit
+chmod 777 kansio
+cd kansio
+chmod 000 .
+cd -
+pwd
+cd ..
+unset OLDPWD
+cd -
+env
+unset PWD
+cd minishell_tester
+ls
+cd libft
+pwd
+env
+pwd
+env
+pwd
+cd ..
+env
+cd -
+exit
+unset HOME
+cd
+cd --
+cd libft
+pwd
+cd -
+exit
+cd libft
+cd -
+exit
+cd -
+env
+cd libft
+cd -
+pwd
+env
+exit
+cd libft
+cd -
+exit
+cd -
+env
+cd ~
+pwd
+cd -
+pwd
+cd ~/minishell
+pwd
+exit
+cd ~/minishell
+pwd
+cd libft
+pwd
+cd ~/minishell
+pwd
+cd
+cd
+cd
+cd
+pwd
+cd -
+pwd
+cd libft
+pwd
+cd ~
+cd -adad
+make re
+./minishell
+cd libft
+pwd
+cd ~
+pwd
+cd -
+pwd
+cd ~/minishell
+pwd
+cd -aaa
+cd --
+cd ~/akdjakd
+exit
+unset HOME
+cd -
+pwd
+env
+cd ..
+env
+cd -
+pwd
+exit
+export 1=1
+echo "hello
+exit
+export 1=1
+exit
+pwd
+unset PWD
+pwd
+exit
+export SHLVL=999999999999999999999
+env
+./minishell
+env
+exit
+env
+exit
+echo -nnnnnnnnn -nnnnnnn
+echo -nnnnnnnnn -nnnnnnn
+exit
+echo hi >>test | echo bye
+echo $?
+echo 2 >> out1 > out2
+mkdir outfiles
+echo hi >>test >./outfiles/out1 | echo bye
+echo $?
+echo hi >>./test/nopermission >./outfiles/out1 | echo bye
+echo $?
+export "test=ici"=coucou
+env
+cd libft
+echo $OLDPWD
+unset OLDPWD
+cd ..
+echo $OLDPWD
+exit
+export "test=ici"=coucou
+echo coucou | ;
+exit
