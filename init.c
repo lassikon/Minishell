@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 12:19:16 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/04 12:31:18 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/05 17:37:45 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	init_tree(t_shell *shell)
 	int	i;
 
 	i = 0;
-	shell->cmd_tree = (t_cmd *)malloc(sizeof(t_cmd) * (shell->cmd_count + 1));
+	shell->cmd_tree = (t_cmd *)malloc(sizeof(t_cmd) * (shell->cmd_count));
 	if (!shell->cmd_tree)
 		error(shell, MALLOC, FATAL, 1);
 	while (i < shell->cmd_count)

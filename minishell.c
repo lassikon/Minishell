@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:10:31 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/05 12:38:58 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/05 17:17:20 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	main(int argc, char **argv, char **envp)
 			add_history(shell.line);
 			ft_putendl_fd(shell.line, shell.history_fd);
 			parse_line(&shell);
-			print_tree(&shell); // for debugging
+			// print_tree(&shell); // for debugging
 			run_command(&shell);
 			free_all(&shell);
 		}
@@ -45,4 +45,3 @@ int	main(int argc, char **argv, char **envp)
 	toggle_signal(DEFAULT);
 	return (0);
 }
-// exit <in (check redirection in parent process)

@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 11:47:02 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/01 14:05:39 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/05 17:37:17 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,17 +43,20 @@ static int	count_commands(char *s)
 	return (count + 1);
 }
 
-static int	get_substr(t_shell *shell, char *s, int i, int k)
+static char	*get_substr(t_shell *shell, char *s, int *i)
 {
-	int	start;
+	int		start;
+	char	*substr;
 
-	start = i;
-	while (s[i] && s[i] != 31)
-		i++;
-	shell->cmd_tree[k].line = ft_substr(s, start, i - start);
-	if (!shell->cmd_tree[k].line)
+	start = *i;
+	while (s[*i] && s[*i] != 31)
+		(*i)++;
+	substr = ft_substr(s, start, *i - start);
+	if (!substr)
 		error(shell, MALLOC, FATAL, 1);
-	return (i + 1);
+	if (s[*i])
+		(*i)++;
+	return (substr);
 }
 
 void	pipe_split(t_shell *shell, char *s)
@@ -71,11 +74,10 @@ void	pipe_split(t_shell *shell, char *s)
 	while (s[i] && k < shell->cmd_count && shell->status != ERROR)
 	{
 		shell->cmd_tree[k].index = k;
-		i = get_substr(shell, s, i, k);
-		if (!shell->cmd_tree[k].line)
-			error(shell, MALLOC, FATAL, 1);
+		shell->cmd_tree[k].line = get_substr(shell, s, &i);
 		tokenize(shell, &shell->cmd_tree[k]);
 		k++;
 	}
-	shell->cmd_tree[k].line = NULL;
+	// shell->cmd_tree[k].line = NULL;
+	// shell->cmd_tree[k] = NULL;
 }

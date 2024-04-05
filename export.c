@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 12:43:33 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/05 10:53:24 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/05 16:41:15 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,28 @@ static int	invalid_export_identifier(char *arg)
 	return (0);
 }
 
-static int	invalid_unset_identifier(char *arg)
+static int	exists_in_env(char **env, char *identifier)
 {
 	int	i;
+	int	k;
 
 	i = 0;
-	if (!ft_isalpha(arg[0]) && arg[0] != '_')
-		return (1);
-	while (arg[i])
+	while (env[i])
 	{
-		if (arg[i] != '_' && !ft_isalnum(arg[i]))
-			return (1);
+		if (env[i][k] == identifier[k])
+		{
+			k = 0;
+			while (env[i][k] && env[i][k] == identifier[k] && env[i][k] != '=')
+				k++;
+			if (identifier[k] == '\0' && env[i][k] == '=')
+				return (-1);
+			if (env[i][k] == '\0' && identifier[k] == '=')
+				return (1);
+			if (env[i][k] == '\0' && identifier[k] == '\0')
+				return (1);
+			if (env[i][k] == '=' && identifier[k] == '=')
+				return (1);
+		}
 		i++;
 	}
 	return (0);
@@ -47,28 +58,23 @@ static int	invalid_unset_identifier(char *arg)
 static void	remove_existing(t_shell *shell, char *arg)
 {
 	char	*identifier;
-	int		i;
+	int		len;
 
-	identifier = ft_substr(arg, 0, ft_strchr(arg, '=') - arg + 1);
+	len = 0;
+	while (arg[len] && arg[len] != '=')
+		len++;
+	identifier = ft_substr(arg, 0, len);
 	if (identifier == NULL)
 		error(shell, MALLOC, FATAL, 1);
-	i = 0;
-	while (shell->env[i])
-	{
-		if (ft_strncmp(shell->env[i], identifier, ft_strlen(identifier)) == 0)
-		{
-			remove_from_array(shell->env, identifier);
-			free(identifier);
-			return ;
-		}
-		i++;
-	}
+	remove_from_array(shell->env, identifier);
 	free(identifier);
+	return ;
 }
 
 void	export(t_shell *shell, t_cmd *cmd)
 {
 	int		i;
+	int		ret;
 
 	i = 1;
 	while (cmd->args[i])
@@ -77,8 +83,11 @@ void	export(t_shell *shell, t_cmd *cmd)
 			export_error_msg(shell, cmd->args[i], EXPORT);
 		else
 		{
-			remove_existing(shell, cmd->args[i]);
-			shell->env = add_to_array(shell->env, cmd->args[i]);
+			ret = exists_in_env(shell->env, cmd->args[i]);
+			if (ret == 1)
+				remove_existing(shell, cmd->args[i]);
+			if (ret >= 0)
+				shell->env = add_to_array(shell->env, cmd->args[i]);
 			if (shell->env == NULL)
 				error(shell, MALLOC, FATAL, 1);
 		}
@@ -86,27 +95,3 @@ void	export(t_shell *shell, t_cmd *cmd)
 	}
 }
 
-void	unset(t_shell *shell, t_cmd *cmd)
-{
-	char	*identifier;
-	int		i;
-
-	i = 1;
-	if (!cmd->args[i])
-		return ;
-	while (cmd->args[i])
-	{
-		if (invalid_unset_identifier(cmd->args[i]))
-			export_error_msg(shell, cmd->args[i], UNSET);
-		else
-		{
-			identifier = ft_strjoin(cmd->args[i], "=");
-			if (identifier == NULL)
-				error(shell, MALLOC, FATAL, 1);
-			if (find_in_array(shell->env, identifier))
-				remove_from_array(shell->env, identifier);
-			free(identifier);
-		}
-		i++;
-	}
-}

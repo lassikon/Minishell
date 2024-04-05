@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 16:15:57 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/05 12:45:58 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/05 17:26:39 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	free_tree(t_shell *shell)
 	int	i;
 
 	i = 0;
-	while (shell->cmd_tree[i].line)
+	while (i < shell->cmd_count)
 	{
 		if (shell->cmd_tree[i].line)
 		{
@@ -59,7 +59,6 @@ void	free_pipes(t_shell *shell)
 	int	i;
 
 	i = 0;
-	printf("cmd_count: %d\n", shell->cmd_count);
 	while (i < shell->cmd_count)
 	{
 		free(shell->pipe[i]);

@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 23:04:07 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/05 10:52:48 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/05 18:12:04 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,18 @@ static int	count_args(char *line)
 			i++;
 	}
 	return (count);
+}
 
+char	*fetch_substr(t_shell *shell, char *line, int start, int len)
+{
+	char	*substr;
+
+	if (len == 0)
+		return (NULL);
+	substr = ft_substr(line, start, len);
+	if (!substr)
+		error(shell, MALLOC, FATAL, 1);
+	return (substr);
 }
 
 void	fetch_args(t_shell *shell, t_cmd *cmd)
@@ -81,9 +92,9 @@ void	fetch_args(t_shell *shell, t_cmd *cmd)
 				i = skip_quotes(cmd->line, i);
 			i++;
 		}
-		cmd->args[k] = ft_substr(cmd->line, start, i - start);
+		cmd->args[k] = fetch_substr(shell, cmd->line, start, i - start);
 		if (!cmd->args[k])
-			error(shell, MALLOC, FATAL, 1);
+			break ;
 		remove_quotes(cmd->args[k]);
 		k++;
 	}
@@ -91,13 +102,10 @@ void	fetch_args(t_shell *shell, t_cmd *cmd)
 
 void	extract_args(t_shell *shell, t_cmd *cmd)
 {
-	int		count;
-
 	if (shell->status == ERROR)
 		return ;
-	count = count_args(cmd->line);
-	cmd->arg_count = count + 1;
-	cmd->args = malloc(sizeof(char *) * (count + 2));
+	cmd->arg_count = count_args(cmd->line) + 1;
+	cmd->args = malloc(sizeof(char *) * (cmd->arg_count + 1));
 	if (!cmd->args)
 		error(shell, MALLOC, FATAL, 1);
 	cmd->args[0] = ft_strdup(cmd->cmd);

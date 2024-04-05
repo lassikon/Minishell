@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/04 14:58:19 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/05 14:34:18 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,7 +146,7 @@ int		only_spaces(char *line);
 void	cd(t_shell *shell, t_cmd *cmd);
 void	pwd(t_shell *shell, t_cmd *cmd);
 void	echo(t_shell *shell, t_cmd *cmd);
-void	env(t_shell *shell, int export);
+void	env(t_shell *shell);
 void	ft_exit(t_shell *shell, t_cmd *cmd);
 void	export(t_shell *shell, t_cmd *cmd);
 void	unset(t_shell *shell, t_cmd *cmd);

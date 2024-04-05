@@ -20,6 +20,7 @@ SRCS	:= 	minishell.c \
 			expand.c \
 			builtins.c \
 			export.c \
+			unset.c \
 			array_utils.c \
 			cd.c \
 			pipes.c \
