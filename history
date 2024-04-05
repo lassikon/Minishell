@@ -2918,3 +2918,171 @@ exit
 export "test=ici"=coucou
 echo coucou | ;
 exit
+export "test=ici"=coucou
+env
+echo $test
+export "test=ici"=coucou
+export "test=ici"=coucou
+export "test=ici"=coucou
+exit
+export "test=ici"=coucou
+export "test=ici"=coucou
+export "test=ici"=coucou
+export "test=ici"=coucou
+export "test=ici"=coucou
+export "test=ici"=coucou
+export "test=ici"=coucou
+export "test=ici"=coucou
+export "test=ici"=coucou
+export "test=ici"=coucou
+export "test=ici"=coucou
+export "test=ici"=coucou
+export "test=ici"=coucou
+export "test=ici"=coucou
+export "test=ici"=coucou
+export "test=ici"=coucou
+export "test=ici"=coucou
+export "test=ici"=coucou
+export "test=ici"=coucou
+export "test=ici"=coucou
+export "test=ici"=coucou
+export "test=ici"=coucou
+export NAME=Lassi
+export NAME=Lassi
+export NAME=Lassi
+export NAME=Lassi
+export NAME=Lassi
+export NAME=Lassi
+export NAME=Lassi
+export NAME=Lassi
+export NAME=Lassi
+export NAME=Lassi
+export NAME=Lassi
+export NAME=Lassi
+export NAME=Lassi
+export NAME=Lassi
+exit
+export "test=ici"=coucou
+export "test=ici"=coucou
+echo "hello"hello
+echo hello
+echo "hello"hello
+exit
+echo "hello"hello
+echo "hello"hello
+export "test=ici"=coucou
+export "test=ici"=coucou
+export "test=ici"=coucou
+export "test=ici"=coucou
+export "test=ici"=coucou
+export "test=ici"=coucou
+export "test=ici"=coucou
+export "test=ici"=coucou
+export "test=ici"=coucou
+export "test=ici"=coucou
+export "test=ici"=coucou
+export "test=ici"=coucou
+export "test=ici"=coucou
+export "test=ici"=coucou
+export "test=ici"=coucou
+export "test=ici"=coucou
+export "test=ici"=coucou
+export "test=ici"=coucou
+export "test=ici"=coucou
+export "test=ici"=coucou
+export "test=ici"=coucou
+export "test=ici"=coucou
+export "test=ici"=coucou
+export "test=ici"=coucou
+export "test=ici"=coucou
+export "test=ici"=coucou
+export "test=ici"=coucou
+exit
+echo $@
+echo $@asasdf
+echo $123
+echo $123
+echo $asldkal;d
+echo $:hello
+exit
+cd
+cd ~
+cd ~
+pwd
+exit
+cd libft
+pwd
+cd --
+cd -
+pwd
+$OLDPWD
+pwd
+cd -
+pwd
+exit
+cd libft
+cd -
+pwd
+exit
+cd libft
+cd -
+pwd
+cd
+pwd
+cd ~/minishell/minishell_tester
+pwd
+cd ..
+pwd
+cd
+pwd
+cd askjdlkajd
+cd --
+cd -aksjdlkajdl
+pwd
+cd minishell
+cd - -
+pwd
+echo $USER
+echo $PWD
+</Users////lkonttin///minishell////libft////ft_itoa.c cat
+exit 1 | exit 2 | exit 3
+exit 1 | exit 2 | exit 3
+exit 1 | exit 2
+exit
+exit | exit
+exit | exit 1
+exit 1 | exit 1
+exit
+exit 1 2 | exit 2 1
+exit | exit
+exit
+exit 1 a
+exit 1 a | exit 1 a
+exit
+ls | ls
+ls | exit 1
+exit 1 | ls
+exit
+echo hi | echo hey
+exit
+echo hi | cat
+exit
+cat | echo hi
+ls | echo hi
+echo hi | echo hi | ls
+ls | ls | ls
+exit
+exit | env | ls
+exit
+echo hi | echo hi | ls
+exit
+echo hi hi hi hi hi | echo hi hi hi hi hi
+echo hey hey hey | exit
+exit
+echo hi | echo hi | echo hi
+exit
+ls | ls | ls | ls
+exit
+echo hi | echo hi
+echo hello"hello"
+exit

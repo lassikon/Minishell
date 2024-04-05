@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 12:02:39 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/04 15:12:19 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/05 12:29:05 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,15 +62,9 @@ static int	convert_to_int(t_shell *shell, char *str)
 		return (0);
 	num = ft_atoi(str);
 	if (num == -1 && ft_strcmp(str, "-1"))
-	{
 		exit_error(shell, str);
-		return (255);
-	}
 	if (num == 0 && ft_strcmp(str, "0"))
-	{
 		exit_error(shell, str);
-		return (255);
-	}
 	return (num);
 }
 

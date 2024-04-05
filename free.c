@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 16:15:57 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/21 12:15:32 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/05 12:45:58 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ void	free_pipes(t_shell *shell)
 	int	i;
 
 	i = 0;
+	printf("cmd_count: %d\n", shell->cmd_count);
 	while (i < shell->cmd_count)
 	{
 		free(shell->pipe[i]);

@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 13:36:20 by okarejok          #+#    #+#             */
-/*   Updated: 2024/04/04 14:09:29 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/05 12:01:09 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,31 +68,35 @@ static void	cd_error(t_shell *shell, char *path)
 	free(error_msg);
 }
 
-int	cd_home(t_shell *shell, char *arg, char **path)
+static int	cd_oldpwd(t_shell *shell, char **path)
 {
-	if (!arg)
-	{
-		*path = ft_getenv(shell, "HOME");
-		if (!*path)
-			return (error(shell, "cd: HOME not set", ERROR, 1));
-	}
-	else if (arg[0] == '-' && !arg[1])
-	{
-		*path = ft_getenv(shell, "OLDPWD");
-		if (!*path)
-			return (error(shell, "cd: OLDPWD not set", ERROR, 1));
-	}
-	else if (arg[0] == '~' && !arg[1])
-	{
-		*path = ft_getenv(shell, "HOME");
-		if (!*path)
-			return (error(shell, "cd: HOME not set", ERROR, 1));
-	}
+	char	*oldpwd;
+
+	oldpwd = ft_getenv(shell, "OLDPWD");
+	if (!oldpwd)
+		return (error(shell, "cd: OLDPWD not set", ERROR, 1));
+	*path = oldpwd;
+	return (0);
+}
+
+static int	cd_home(t_shell *shell, char *arg, char **path)
+{
+	char	*home;
+
+	home = ft_getenv(shell, "HOME");
+	if (!home)
+		return (error(shell, "cd: HOME not set", ERROR, 1));
+	if (!arg || (arg[0] == '~' && !arg[1]))
+		*path = home;
 	else if (arg[0] == '~' && arg[1])
 	{
-		*path = ft_strjoin(ft_getenv(shell, "HOME"), &arg[1]);
+		*path = ft_strjoin(home, &arg[1]);
+		free(home);
 		if (!*path)
-			error(shell, MALLOC, FATAL, 1);
+		{
+			free(home);
+			return (error(shell, MALLOC, FATAL, 1));
+		}
 	}
 	return (0);
 }
@@ -101,21 +105,22 @@ void	cd(t_shell *shell, t_cmd *cmd)
 {
 	char	*path;
 
-	if (!cmd->args[1])
-	{
-		if (cd_home(shell, NULL, &path))
-			return ;
-	}
-	else if (cmd->args[1][0] == '~'
-	|| (cmd->args[1][0] == '-' && !cmd->args[1][1]))
+	if (!cmd->args[1] || cmd->args[1][0] == '~')
 	{
 		if (cd_home(shell, cmd->args[1], &path))
 			return ;
 	}
+	else if (cmd->args[1][0] == '-' && !cmd->args[1][1])
+	{
+		if (cd_oldpwd(shell, &path))
+			return ;
+	}
 	else
+	{
 		path = ft_strdup(cmd->args[1]);
-	if (!path)
-		error(shell, MALLOC, FATAL, 1);
+		if (!path)
+			error(shell, MALLOC, FATAL, 1);
+	}
 	if (chdir(path) == -1)
 		cd_error(shell, path);
 	else

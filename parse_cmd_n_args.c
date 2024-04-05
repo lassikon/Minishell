@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 23:04:07 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/03 11:46:48 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/05 10:52:48 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,22 +45,21 @@ static int	count_args(char *line)
 	count = 0;
 	while (line[i])
 	{
-		if (line[i] == '\'' || line[i] == '\"')
-		{
-			count++;
-			i = skip_quotes(line, i) + 1;
-			continue ;
-		}
 		if (line[i] != ' ')
 		{
 			count++;
 			while (line[i] && line[i] != ' ')
+			{
+				if (line[i] == '\'' || line[i] == '\"')
+					i = skip_quotes(line, i);
 				i++;
+			}
 		}
 		else
 			i++;
 	}
 	return (count);
+
 }
 
 void	fetch_args(t_shell *shell, t_cmd *cmd)
