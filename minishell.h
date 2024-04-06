@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/06 11:55:43 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/06 12:19:14 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,8 +113,7 @@ void	toggle_signal(t_signal mode);
 
 // PARSING
 void	parse_line(t_shell *shell);
-void	pipe_split(t_shell *shell, char *s);
-void	tokenize(t_shell *shell, t_cmd *cmd);
+void	mark_actual_pipes(char *s);
 void	expand(t_shell *shell, char **line);
 void	extract_redirections(t_shell *shell, t_cmd *cmd);
 void	extract_command(t_shell *shell, t_cmd *cmd);
@@ -122,11 +121,8 @@ void	extract_args(t_shell *shell, t_cmd *cmd);
 int		ends_in_pipe(char *line);
 int		starts_with_pipe(char *line);
 int		invalid_pipes(t_shell *shell, char *line);
-int		validate_syntax(t_shell *shell, char *s);
 int		illegal_arrows(t_shell *shell, char *line, char arrow, int i);
 int		only_spaces(char *line);
-
-// PARSING UTILS
 void	replace_with_spaces(char *line, int start, int end);
 void	convert_tabs_to_spaces(char *line);
 int		unclosed_quotes(char *line);

@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/22 12:32:14 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/01 14:04:48 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/06 12:07:42 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,16 +43,6 @@ int	unclosed_quotes(char *line)
 		i++;
 	}
 	return (0);
-}
-
-void	init_t_parse(t_parse *p)
-{
-	p->i = 0;
-	p->k = 0;
-	p->inside_singles = 0;
-	p->inside_doubles = 0;
-	p->in_quotes = 0;
-	p->quote = 0;
 }
 
 void	null_terminate(char *str, int k)

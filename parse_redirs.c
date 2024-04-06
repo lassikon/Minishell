@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 13:03:52 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/06 11:35:35 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/06 12:20:49 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,11 @@ static void	tidy_format(t_shell *shell, t_cmd *cmd, int k)
 			remove_spaces(&str[2]);
 	}
 	else
+	{
 		str = add_one_space(str);
-	if (!str)
-		error(shell, MALLOC, FATAL, 1);
+		if (!str)
+			error(shell, MALLOC, FATAL, 1);
+	}
 	cmd->redir[k] = str;
 	expand(shell, &cmd->redir[k]);
 	remove_quotes(cmd->redir[k]);

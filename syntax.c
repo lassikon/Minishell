@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 15:46:31 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/01 12:20:18 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/06 12:17:17 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,20 +36,19 @@ int	invalid_pipes(t_shell *shell, char *line)
 	return (0);
 }
 
-int	validate_syntax(t_shell *shell, char *s)
+void	mark_actual_pipes(char *s)
 {
 	int	i;
 
 	i = 0;
-	if (unclosed_quotes(s))
-		return (error(shell, SYNTAX_QUOTES, ERROR, 1));
 	while (s[i])
 	{
-		if (s[i] == 31 && s[i + 1] == 31)
-			return (error(shell, SYNTAX_PIPE, ERROR, 258));
+		if (s[i] == '\"' || s[i] == '\'')
+			i = skip_quotes(s, i);
+		if (s[i] == '|')
+			s[i] = 31;
 		i++;
 	}
-	return (0);
 }
 
 int	illegal_arrows(t_shell *shell, char *line, char arrow, int i)
