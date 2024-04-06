@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 14:41:04 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/01 14:27:47 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/06 18:21:19 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void	heredoc_child(t_shell *shell, t_cmd *cmd, char *file, int i)
 	write_to_heredoc(shell, cmd->redir[i] + 2, fd);
 	close(fd);
 	free_all(shell);
-	free_array(shell->env);
+	free_array(&shell->env);
 	close(shell->history_fd);
 	exit(0);
 }

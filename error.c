@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 14:49:10 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/06 16:29:45 by okarejok         ###   ########.fr       */
+/*   Updated: 2024/04/06 18:22:04 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,7 @@ int	error(t_shell *shell, char *msg, t_status status, int code)
 	if (shell->status == FATAL)
 	{
 		free_all(shell);
-		free_array(shell->env);
+		free_array(&shell->env);
 		close(shell->history_fd);
 		toggle_signal(DEFAULT);
 		exit(code);
@@ -130,7 +130,7 @@ int	p_error(t_shell *shell, char *msg, t_status status, int code)
 	if (shell->status == FATAL)
 	{
 		free_all(shell);
-		free_array(shell->env);
+		free_array(&shell->env);
 		close(shell->history_fd);
 		toggle_signal(DEFAULT);
 		exit(code);

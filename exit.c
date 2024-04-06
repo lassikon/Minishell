@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 12:02:39 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/05 12:29:05 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/06 18:22:23 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void	exit_error(t_shell *shell, char *str)
 	write(2, error_msg, ft_strlen(error_msg));
 	free(error_msg);
 	free_all(shell);
-	free_array(shell->env);
+	free_array(&shell->env);
 	close(shell->history_fd);
 	toggle_signal(DEFAULT);
 	exit(255);
@@ -90,7 +90,7 @@ void	ft_exit(t_shell *shell, t_cmd *cmd)
 	else
 		shell->exit_status = WEXITSTATUS(shell->exit_status);
 	free_all(shell);
-	free_array(shell->env);
+	free_array(&shell->env);
 	close(shell->history_fd);
 	toggle_signal(DEFAULT);
 	exit(shell->exit_status);
@@ -101,7 +101,7 @@ void	free_and_exit(t_shell *shell, int status)
 	if (shell->parent_redir)
 		restore_std(shell);
 	free_all(shell);
-	free_array(shell->env);
+	free_array(&shell->env);
 	close(shell->history_fd);
 	toggle_signal(DEFAULT);
 	exit(status);

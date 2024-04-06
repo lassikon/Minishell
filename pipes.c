@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 14:52:14 by okarejok          #+#    #+#             */
-/*   Updated: 2024/04/01 12:03:14 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/06 19:15:19 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ void	allocate_pipes(t_shell *shell)
 		shell->pipe[i] = (int *)malloc(2 * sizeof(int));
 		if (!shell->pipe[i])
 			error(shell, MALLOC, FATAL, 1);
+		shell->pipes_allocated++;
 		i++;
 	}
 }

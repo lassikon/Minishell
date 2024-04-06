@@ -6,25 +6,25 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 16:15:57 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/05 17:26:39 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/06 19:21:42 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-void	free_array(char **array)
+void	free_array(char ***array)
 {
 	int	i;
 
 	i = 0;
-	while (array[i])
+	while ((*array)[i])
 	{
-		free(array[i]);
-		array[i] = NULL;
+		free((*array)[i]);
+		(*array)[i] = NULL;
 		i++;
 	}
-	free(array);
-	array = NULL;
+	free(*array);
+	*array = NULL;
 }
 
 void	free_tree(t_shell *shell)
@@ -45,9 +45,9 @@ void	free_tree(t_shell *shell)
 			shell->cmd_tree[i].cmd = NULL;
 		}
 		if (shell->cmd_tree[i].args)
-			free_array(shell->cmd_tree[i].args);
+			free_array(&shell->cmd_tree[i].args);
 		if (shell->cmd_tree[i].redir)
-			free_array(shell->cmd_tree[i].redir);
+			free_array(&shell->cmd_tree[i].redir);
 		i++;
 	}
 	free(shell->cmd_tree);
@@ -59,23 +59,28 @@ void	free_pipes(t_shell *shell)
 	int	i;
 
 	i = 0;
-	while (i < shell->cmd_count)
+	while (i < shell->pipes_allocated)
 	{
 		free(shell->pipe[i]);
+		// shell->pipe[i] = NULL;
 		i++;
 	}
 	free(shell->pipe);
-	shell->pipe = NULL;
+	// shell->pipe = NULL;
+	shell->pipes_allocated = 0;
 }
 
 void	free_all(t_shell *shell)
 {
-	if (shell->pipe)
+	if (shell->pipes_allocated > 0)
 		free_pipes(shell);
-	if (shell->pid)
+	if (shell->pid_allocated)
+	{
 		free(shell->pid);
+		shell->pid_allocated = 0;
+	}
 	if (shell->paths)
-		free_array(shell->paths);
+		free_array(&shell->paths);
 	if (shell->cmd_tree)
 		free_tree(shell);
 	if (shell->line)

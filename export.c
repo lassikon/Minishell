@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 12:43:33 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/06 11:46:36 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/06 19:01:02 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ void	export(t_shell *shell, t_cmd *cmd)
 		export_without_args(shell);
 		return ;
 	}
-	while (cmd->args[i])
+	while (cmd->args[i] && shell->status != ERROR)
 	{
 		if (invalid_export_identifier(cmd->args[i]))
 			export_error_msg(shell, cmd->args[i], EXPORT);

@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 16:16:29 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/03 11:49:54 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/06 19:24:38 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	print_tree(t_shell *shell)
 	i = 0;
 	printf("\n");
 	write(1, "Printing tree\n", 14);
+	printf("cmd_count: %d\n", shell->cmd_count);
 	while (i < shell->cmd_count)
 	{
 		j = 0;

@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 12:19:16 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/06 11:38:00 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/06 19:14:08 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ static void	init_command(t_cmd *cmd)
 	cmd->redir_count = 0;
 	cmd->infile = -2;
 	cmd->out = -2;
+	cmd->arg_count = 0;
+	cmd->index = 0;
 }
 
 void	init_tree(t_shell *shell)
@@ -54,15 +56,18 @@ void	init_tree(t_shell *shell)
 	shell->pid = (int *)malloc(sizeof(int) * shell->cmd_count);
 	if (!shell->pid)
 		error(shell, MALLOC, FATAL, 1);
+	shell->pid_allocated = 1;
 	paths(shell, shell->env);
 }
 
 void	setup_prompt(t_shell *shell)
 {
 	shell->pipe = NULL;
+	shell->pipes_allocated = 0;
 	shell->cmd_count = 0;
 	shell->cmd_tree = NULL;
 	shell->pid = NULL;
+	shell->pid_allocated = 0;
 	shell->paths = NULL;
 	shell->heredoc_index = 0;
 	shell->parent_redir = 0;
@@ -75,10 +80,13 @@ void	setup_shell(t_shell *shell, char **envp)
 	shell->cmd_count = 0;
 	shell->cmd_tree = NULL;
 	shell->pid = NULL;
+	shell->pid_allocated = 0;
 	shell->pipe = NULL;
+	shell->pipes_allocated = 0;
 	shell->paths = NULL;
-	shell->line_len = 0;
 	shell->exit_status = 0;
+	shell->cmd_count = 0;
+	shell->paths = NULL;
 	shell->history_fd = open("history", O_CREAT | O_APPEND | O_RDWR, 0644);
 	ft_read_history(shell);
 	shell->env = malloc(sizeof(char *) * (array_len(envp) + 1));

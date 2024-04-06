@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/06 12:19:14 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/06 19:13:53 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,11 +76,12 @@ typedef struct s_shell
 	t_cmd		*cmd_tree;
 	char		**paths;
 	int			cmd_count;
-	int			line_len;
 	t_status	status;
 	int			exit_status;
 	int			*pid;
+	int			pid_allocated;
 	int			**pipe;
+	int			pipes_allocated;
 	int			history_fd;
 	int			heredoc_index;
 	int			std_in;
@@ -163,7 +164,7 @@ void	heredoc(t_shell *shell, t_cmd *cmd);
 void	free_pipes(t_shell *shell);
 void	free_all(t_shell *shell);
 void	free_tree(t_shell *shell);
-void	free_array(char **array);
+void	free_array(char ***array);
 void	export_error_msg(t_shell *shell, char *arg, t_status type);
 int		error(t_shell *shell, char *msg, t_status status, int code);
 int		p_error(t_shell *shell, char *msg, t_status status, int code);

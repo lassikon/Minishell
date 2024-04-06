@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 11:07:09 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/03/20 16:51:03 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/06 18:21:01 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	copy_array(char **src, char **dst)
 		dst[i] = ft_strdup(src[i]);
 		if (!dst[i])
 		{
-			free_array(dst);
+			free_array(&dst);
 			return (-1);
 		}
 		i++;
@@ -91,10 +91,10 @@ char	**add_to_array(char **array, char *new)
 	new_array[i] = ft_strdup(new);
 	if (!new_array[i])
 	{
-		free_array(new_array);
+		free_array(&new_array);
 		return (NULL);
 	}
 	new_array[i + 1] = NULL;
-	free_array(array);
+	free_array(&array);
 	return (new_array);
 }

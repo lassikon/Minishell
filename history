@@ -16,3 +16,2122 @@ export FILE="out"
 echo hi >'$FILE'
 echo haha >"$FILE"
 exit
+export "" et unset ""
+export var; export var=test
+export "" et unset ""
+export 1a
+export 1a 2b
+export 1a2b
+export ""
+export "" a1
+unset "" a1
+kajdlkjad
+<<EOF
+<<EOF <<EOF <<LIM <<LIM2
+<<EOF
+cat
+<<EOF
+<<EOF
+<<EOF
+<<EOF
+<<EOF
+asdad
+<<EOF
+<<EOF
+<<EOF
+<<EOF
+<<EOF
+<<EOF
+<<EOF
+<<EOF
+<<EOF
+<<EOF
+<<EOF
+<<EOF
+<<EOF
+<<EOF
+<<EOF
+<<EOF
+mkdir outfiles
+echo hi >./outfiles/outfile01 | echo bye >./outfiles/outfile02
+echo $?
+echo hi >./outfiles/outfile01 | echo bye >./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+ls
+ls
+ls
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+exit
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+exit
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+exit
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+ls
+ls
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+echo hi >>./outfiles/outfile01 | echo bye >>./outfiles/outfile02
+exit
+ls
+echo hi
+exit
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+ls >./outfiles/outfile01 >>./outfiles/outfile01 >./outfiles/outfile02
+export "" et unset ""
+export "" et unset ""
+export "" et unset ""
+export "" et unset ""
+export "" et unset ""
+export "" et unset ""
+export "" et unset ""
+export "" et unset ""
+export "" et unset ""
+export "" et unset ""
+export "" et unset ""
+export var; export var=test
+export var; export var=test
+export var; export var=test
+export var; export var=test
+export var; export var=test
+export var; export var=test
+export var; export var=test
+export var; export var=test
+export var; export var=test
+export var; export var=test
+export var; export var=test
+exit
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+exit
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+exit
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls
+ls
+ls
+ls
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+exit
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+exit
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+exit
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+exit
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+exit
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+exit
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+exit
+exit
+exit
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+ls >>./outfiles/outfile01 >>./outfiles/outfile02 | echo $?
+exit
+exit
+env asdlk asdlk ad
+export FILE="<out"
+env
+echo hello $FILE
+echo hello >$FILE
+export FILE2=">out2"
+echo hello >$FILE2
+export QUOTE="'"
+env
+echo $QUOTE hello hello '
+echo $QUOTE hello hello
+exit
