@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 14:49:10 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/05 10:54:02 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/06 16:29:45 by okarejok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,18 @@
 void	export_error_msg(t_shell *shell, char *arg, t_status type)
 {
 	char	*error_msg;
+	char	*temp;
 
 	if (type == EXPORT)
-		error_msg = ft_strjoin("export: `", arg);
+		temp = ft_strjoin("export: `", arg);
 	else if (type == UNSET)
-		error_msg = ft_strjoin("unset: `", arg);
+		temp = ft_strjoin("unset: `", arg);
 	else
 		return ;
-	if (error_msg == NULL)
+	if (temp == NULL)
 		error(shell, MALLOC, FATAL, 1);
-	error_msg = ft_strjoin(error_msg, "': not a valid identifier");
+	error_msg = ft_strjoin(temp, "': not a valid identifier");
+	free(temp);
 	if (error_msg == NULL)
 		error(shell, MALLOC, FATAL, 1);
 	error(shell, error_msg, ERROR, 1);
