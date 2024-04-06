@@ -6,25 +6,11 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 10:46:25 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/05 14:33:52 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/06 11:53:42 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
-
-void	export_without_args(t_shell *shell)
-{
-	int	i;
-
-	i = 0;
-	if (!shell->env)
-		return ;
-	while (shell->env[i])
-	{
-		printf("declare -x %s\n", shell->env[i]);
-		i++;
-	}
-}
 
 void	env(t_shell *shell)
 {
@@ -56,6 +42,15 @@ void	pwd(t_shell *shell, t_cmd *cmd)
 		free(path);
 }
 
+void	cd_error(t_shell *shell, char *path)
+{
+	char	*error_msg;
+
+	error_msg = ft_strjoin("cd: ", path);
+	p_error(shell, error_msg, ERROR, 1);
+	free(error_msg);
+}
+
 int	check_builtin(t_cmd *cmd)
 {
 	if (cmd->cmd == NULL)
@@ -82,10 +77,8 @@ int	run_builtin(t_shell *shell, t_cmd *cmd)
 {
 	if (cmd->cmd == NULL)
 		return (0);
-	else if (ft_strncmp(cmd->cmd, "export", 7) == 0 && cmd->args[1])
+	else if (ft_strncmp(cmd->cmd, "export", 7) == 0)
 		export(shell, cmd);
-	else if (ft_strncmp(cmd->cmd, "export", 7) == 0 && !cmd->args[1])
-		export_without_args(shell);
 	else if (ft_strncmp(cmd->cmd, "unset", 6) == 0)
 		unset(shell, cmd);
 	else if (ft_strncmp(cmd->cmd, "cd", 3) == 0)

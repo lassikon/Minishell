@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 11:11:41 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/04 11:42:43 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/06 11:36:59 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,17 +85,15 @@ static int	expand_env(t_shell *shell, char **line, int i)
 	return (start + ft_strlen(value));
 }
 
-int	expand(t_shell *shell, char **line)
+void	expand(t_shell *shell, char **line)
 {
 	int		i;
 	int		inside_doubles;
-	int		expands;
 
 	if (shell->status == ERROR)
-		return (0);
+		return ;
 	i = 0;
 	inside_doubles = 0;
-	expands = 0;
 	while ((*line)[i])
 	{
 		if ((*line)[i] == '\"')
@@ -104,11 +102,9 @@ int	expand(t_shell *shell, char **line)
 			i = skip_quotes(*line, i);
 		if ((*line)[i + 1] && (*line)[i] == '$' && (*line)[i + 1] != ' ')
 		{
-			expands++;
 			i = expand_env(shell, line, i);
 			continue ;
 		}
 		i++;
 	}
-	return (expands);
 }

@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 13:36:20 by okarejok          #+#    #+#             */
-/*   Updated: 2024/04/05 12:01:09 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/06 11:49:24 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static char	*create_env_entrie(t_shell *shell, char *pwd_type)
 	return (pwd_entry);
 }
 
-static void	update_wd(t_shell *shell)
+void	update_wd(t_shell *shell)
 {
 	char	*oldpwd;
 	char	*pwd;
@@ -57,15 +57,6 @@ static void	update_wd(t_shell *shell)
 	shell->env = add_to_array(shell->env, oldpwd);
 	free(oldpwd);
 	free(pwd);
-}
-
-static void	cd_error(t_shell *shell, char *path)
-{
-	char	*error_msg;
-
-	error_msg = ft_strjoin("cd: ", path);
-	p_error(shell, error_msg, ERROR, 1);
-	free(error_msg);
 }
 
 static int	cd_oldpwd(t_shell *shell, char **path)

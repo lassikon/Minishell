@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 12:19:16 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/05 17:37:45 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/06 11:38:00 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,6 @@ void	setup_prompt(t_shell *shell)
 	shell->pid = NULL;
 	shell->paths = NULL;
 	shell->heredoc_index = 0;
-	shell->expand_count = 0;
 	shell->parent_redir = 0;
 }
 

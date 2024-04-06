@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 11:47:02 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/05 17:37:17 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/06 11:44:24 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,4 @@ void	pipe_split(t_shell *shell, char *s)
 		tokenize(shell, &shell->cmd_tree[k]);
 		k++;
 	}
-	// shell->cmd_tree[k].line = NULL;
-	// shell->cmd_tree[k] = NULL;
 }

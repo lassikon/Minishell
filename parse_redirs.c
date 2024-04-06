@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_redirs.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 13:03:52 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/02 15:15:45 by okarejok         ###   ########.fr       */
+/*   Updated: 2024/04/06 11:35:35 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,7 @@ static void	tidy_format(t_shell *shell, t_cmd *cmd, int k)
 	if (!str)
 		error(shell, MALLOC, FATAL, 1);
 	cmd->redir[k] = str;
+	expand(shell, &cmd->redir[k]);
 	remove_quotes(cmd->redir[k]);
 }
 

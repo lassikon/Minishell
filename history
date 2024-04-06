@@ -1,0 +1,18 @@
+export QUOTE="'"
+echo $QUOTE
+echo $QUOTEhello'
+exit
+export FILE=outfile
+ls >$FILE
+export FILE1=">outfile"
+echo hi >outfile
+echo hello >$FILE1
+exit
+cat << LIM > file | cat << LIM2
+cat <<1
+cat <<$USER
+exit
+export FILE="out"
+echo hi >'$FILE'
+echo haha >"$FILE"
+exit

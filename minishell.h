@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/05 14:34:18 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/06 11:55:43 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,16 +58,15 @@ typedef enum e_signal
 
 typedef struct s_cmd
 {
-	char	*line; // raw input string to be parsed
+	char	*line;
 	char	*cmd;
 	char	**args;
-	char	**redir; // array of <, >, >> or << + filename/LIM
+	char	**redir;
 	int		redir_count;
 	int		infile;
 	int		out;
 	int		index;
 	int		arg_count;
-	int		expands;
 }	t_cmd;
 
 typedef struct s_shell
@@ -84,7 +83,6 @@ typedef struct s_shell
 	int			**pipe;
 	int			history_fd;
 	int			heredoc_index;
-	int			expand_count;
 	int			std_in;
 	int			std_out;
 	int			parent_redir;
@@ -101,16 +99,6 @@ typedef struct s_parse
 	int		inside_doubles;
 }	t_parse;
 
-void	paths(t_shell *shell, char **envp);
-char	**add_to_array(char **array, char *new);
-void	remove_from_array(char **array, char *identifier);
-int		copy_array(char **src, char **dst);
-int		find_in_array(char **array, char *identifier);
-int		array_len(char **array);
-void	heredoc(t_shell *shell, t_cmd *cmd);
-char	*join_n_free(char *s1, char *s2);
-char	*dup_empty_str(t_shell *shell);
-
 // INIT
 void	setup_shell(t_shell *shell, char **envp);
 void	setup_prompt(t_shell *shell);
@@ -119,15 +107,26 @@ void	allocate_pipes(t_shell *shell);
 void	shlvl_increment(t_shell *shell);
 void	init_t_parse(t_parse *p);
 
-// PARSING
+// SIGNALS
+void	rl_replace_line(const char *text, int clear_undo);
+void	toggle_signal(t_signal mode);
 
+// PARSING
 void	parse_line(t_shell *shell);
 void	pipe_split(t_shell *shell, char *s);
 void	tokenize(t_shell *shell, t_cmd *cmd);
-int		expand(t_shell *shell, char **line);
+void	expand(t_shell *shell, char **line);
 void	extract_redirections(t_shell *shell, t_cmd *cmd);
 void	extract_command(t_shell *shell, t_cmd *cmd);
 void	extract_args(t_shell *shell, t_cmd *cmd);
+int		ends_in_pipe(char *line);
+int		starts_with_pipe(char *line);
+int		invalid_pipes(t_shell *shell, char *line);
+int		validate_syntax(t_shell *shell, char *s);
+int		illegal_arrows(t_shell *shell, char *line, char arrow, int i);
+int		only_spaces(char *line);
+
+// PARSING UTILS
 void	replace_with_spaces(char *line, int start, int end);
 void	convert_tabs_to_spaces(char *line);
 int		unclosed_quotes(char *line);
@@ -135,12 +134,6 @@ void	remove_spaces(char *str);
 char	*add_one_space(char *str);
 int		skip_quotes(char *line, int i);
 void	remove_quotes(char *str);
-int		ends_in_pipe(char *line);
-int		starts_with_pipe(char *line);
-int		invalid_pipes(t_shell *shell, char *line);
-int		validate_syntax(t_shell *shell, char *s);
-int		illegal_arrows(t_shell *shell, char *line, char arrow, int i);
-int		only_spaces(char *line);
 
 // BUILTINS
 void	cd(t_shell *shell, t_cmd *cmd);
@@ -161,6 +154,15 @@ void	wait_children(t_shell *shell, int pids);
 void	run_command(t_shell *shell);
 void	validate_command(t_shell *shell, t_cmd *cmd_vars);
 
+// REDIRECTION
+void	redir_to_file(t_shell *shell, t_cmd *cmd_vars, t_status mode);
+void	redir_to_pipe(t_shell *shell, t_cmd *cmd_vars);
+void	close_pipes(t_shell *shell);
+void	open_pipes(t_shell *shell);
+void	redir_to_pipe(t_shell *shell, t_cmd *cmd_vars);
+void	restore_std(t_shell *shell);
+void	heredoc(t_shell *shell, t_cmd *cmd);
+
 // FREEING & ERROR HANDLING
 void	free_pipes(t_shell *shell);
 void	free_all(t_shell *shell);
@@ -170,18 +172,17 @@ void	export_error_msg(t_shell *shell, char *arg, t_status type);
 int		error(t_shell *shell, char *msg, t_status status, int code);
 int		p_error(t_shell *shell, char *msg, t_status status, int code);
 void	free_and_exit(t_shell *shell, int status);
+void	cd_error(t_shell *shell, char *path);
 
-// REDIRECTION
-void	redir_to_file(t_shell *shell, t_cmd *cmd_vars, t_status mode);
-void	redir_to_pipe(t_shell *shell, t_cmd *cmd_vars);
-void	close_pipes(t_shell *shell);
-void	open_pipes(t_shell *shell);
-void	redir_to_pipe(t_shell *shell, t_cmd *cmd_vars);
-void	restore_std(t_shell *shell);
-
-// SIGNALS
-void	rl_replace_line(const char *text, int clear_undo);
-void	toggle_signal(t_signal mode);
+// GENERAL UTILS
+void	paths(t_shell *shell, char **envp);
+char	**add_to_array(char **array, char *new);
+void	remove_from_array(char **array, char *identifier);
+int		copy_array(char **src, char **dst);
+int		find_in_array(char **array, char *identifier);
+int		array_len(char **array);
+char	*join_n_free(char *s1, char *s2);
+char	*dup_empty_str(t_shell *shell);
 
 //debug.c
 void	print_tree(t_shell *shell);

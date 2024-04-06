@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 13:30:24 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/03 11:46:37 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/06 11:37:33 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	tokenize(t_shell *shell, t_cmd *cmd)
 	if (cmd->redir_count > 0 && shell->status != ERROR)
 		heredoc(shell, cmd);
 	if (ft_strchr(cmd->line, '$'))
-		cmd->expands = expand(shell, &cmd->line);
+		expand(shell, &cmd->line);
 	if (only_spaces(cmd->line))
 	{
 		cmd->cmd = NULL;
