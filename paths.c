@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:19:45 by okarejok          #+#    #+#             */
-/*   Updated: 2024/04/08 13:58:11 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/08 18:51:06 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ void	shlvl_increment(t_shell *shell)
 	shlvl_prompt = ft_strjoin("SHLVL=", shlvl_str);
 	if (!shlvl_prompt)
 		error(shell, MALLOC, FATAL, 1);
-	shell->env = add_to_array(shell->env, shlvl_prompt);
+	shell->env = add_to_array(shell, shell->env, shlvl_prompt);
 	free(shlvl_str);
 	free(shlvl_prompt);
 }

@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 12:02:39 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/06 18:22:23 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/08 17:31:03 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ static void	exit_error(t_shell *shell, char *str)
 	free(error_msg);
 	free_all(shell);
 	free_array(&shell->env);
-	close(shell->history_fd);
 	toggle_signal(DEFAULT);
 	exit(255);
 }
@@ -91,7 +90,6 @@ void	ft_exit(t_shell *shell, t_cmd *cmd)
 		shell->exit_status = WEXITSTATUS(shell->exit_status);
 	free_all(shell);
 	free_array(&shell->env);
-	close(shell->history_fd);
 	toggle_signal(DEFAULT);
 	exit(shell->exit_status);
 }
@@ -102,7 +100,6 @@ void	free_and_exit(t_shell *shell, int status)
 		restore_std(shell);
 	free_all(shell);
 	free_array(&shell->env);
-	close(shell->history_fd);
 	toggle_signal(DEFAULT);
 	exit(status);
 }

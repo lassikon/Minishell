@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 12:43:33 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/06 19:01:02 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/08 16:07:27 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,7 @@ static int	exists_in_env(char **env, char *identifier)
 	int	k;
 
 	i = 0;
+	k = 0;
 	while (env[i])
 	{
 		if (env[i][k] == identifier[k])
@@ -106,9 +107,7 @@ void	export(t_shell *shell, t_cmd *cmd)
 			if (ret == 1)
 				remove_existing(shell, cmd->args[i]);
 			if (ret >= 0)
-				shell->env = add_to_array(shell->env, cmd->args[i]);
-			if (shell->env == NULL)
-				error(shell, MALLOC, FATAL, 1);
+				shell->env = add_to_array(shell, shell->env, cmd->args[i]);
 		}
 		i++;
 	}

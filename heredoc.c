@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 14:41:04 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/06 18:21:19 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/08 18:09:52 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,13 +58,13 @@ void	heredoc_child(t_shell *shell, t_cmd *cmd, char *file, int i)
 	close(fd);
 	free_all(shell);
 	free_array(&shell->env);
-	close(shell->history_fd);
+	toggle_signal(DEFAULT);
 	exit(0);
 }
 
 int	add_heredoc_to_array(t_shell *shell, char **redir, char **file)
 {
-	if (WTERMSIG(shell->exit_status) == SIGINT)
+	if (shell->exit_status != 0)
 	{
 		shell->status = ERROR;
 		shell->exit_status = 1;
@@ -94,9 +94,11 @@ void	heredoc(t_shell *shell, t_cmd *cmd)
 			pid = fork();
 			if (pid == -1)
 				p_error(shell, "fork", FATAL, 1);
+			toggle_signal(NO_SIGNALS);
 			if (pid == 0)
 				heredoc_child(shell, cmd, file, i);
 			waitpid(pid, &shell->exit_status, 0);
+			toggle_signal(HANDLER);
 			if (add_heredoc_to_array(shell, &cmd->redir[i], &file))
 				return ;
 			shell->heredoc_index++;

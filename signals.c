@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 15:46:08 by okarejok          #+#    #+#             */
-/*   Updated: 2024/03/29 14:33:17 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/08 18:07:55 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,15 @@ static void	signal_handler(int signal)
 		rl_on_new_line();
 		rl_replace_line("", 0);
 		rl_redisplay();
+	}
+}
+
+static void	heredoc_handler(int signal)
+{
+	if (signal == SIGINT)
+	{
+		write(1, "\n", 1);
+		exit(1);
 	}
 }
 
@@ -52,7 +61,7 @@ void	toggle_signal(t_signal mode)
 	else if (mode == HEREDOC)
 	{
 		signal(SIGQUIT, SIG_IGN);
-		signal(SIGINT, SIG_DFL);
+		signal(SIGINT, heredoc_handler);
 	}
 	else if (mode == NO_SIGNALS)
 	{

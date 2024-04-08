@@ -1,6 +1,6 @@
 NAME		:= minishell
 CC			:= cc
-CFLAGS		:= -Wall -Wextra -Werror
+CFLAGS		:= -Wall -Wextra -Werror -fsanitize=address -g -static-libsan
 LIBFT_DIR	:= ./libft
 
 HEADERS	:= -I $(LIBFT)/include
@@ -26,6 +26,7 @@ SRCS	:= 	minishell.c \
 			signals.c \
 			free.c \
 			error.c \
+			error_helper.c \
 			parse_quotes.c \
 			parse_spaces.c \
 			syntax.c \

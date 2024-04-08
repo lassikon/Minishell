@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/02 15:19:44 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/06 12:07:50 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/08 15:35:37 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,19 @@ char	*join_n_free(char *s1, char *s2)
 {
 	char	*new;
 
+	if (!s1)
+	{
+		s1 = ft_calloc(1, 1);
+		if (!s1)
+			return (NULL);
+	}
 	new = ft_strjoin(s1, s2);
+	if (!new)
+	{
+		free(s1);
+		free(s2);
+		return (NULL);
+	}
 	free(s1);
 	free(s2);
 	return (new);

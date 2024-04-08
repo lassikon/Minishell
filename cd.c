@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 13:36:20 by okarejok          #+#    #+#             */
-/*   Updated: 2024/04/06 11:49:24 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/08 14:55:43 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,8 @@ void	update_wd(t_shell *shell)
 		free(oldpwd);
 		return ;
 	}
-	shell->env = add_to_array(shell->env, pwd);
-	shell->env = add_to_array(shell->env, oldpwd);
+	shell->env = add_to_array(shell, shell->env, pwd);
+	shell->env = add_to_array(shell, shell->env, oldpwd);
 	free(oldpwd);
 	free(pwd);
 }

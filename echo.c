@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   echo.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 16:17:51 by okarejok          #+#    #+#             */
-/*   Updated: 2024/04/04 14:47:19 by okarejok         ###   ########.fr       */
+/*   Updated: 2024/04/08 15:52:07 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,9 +37,7 @@ static char	*create_output(t_shell *shell, t_cmd *cmd, int i)
 	char	*temp;
 	char	*output;
 
-	output = ft_calloc(1, 1);
-	if (!output)
-		error(shell, MALLOC, FATAL, 1);
+	output = NULL;
 	while (cmd->args[i])
 	{
 		temp = ft_strdup(cmd->args[i]);

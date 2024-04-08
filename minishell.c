@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:10:31 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/08 13:56:40 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/08 17:30:25 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 void	exit_shell(t_shell *shell)
 {
+	if (isatty(STDIN_FILENO))
+		ft_putendl_fd("exit", 2);
 	free_array(&shell->env);
 	free_all(shell);
-	close(shell->history_fd);
 	toggle_signal(DEFAULT);
 	exit(shell->exit_status);
 }
@@ -37,7 +38,6 @@ int	main(int argc, char **argv, char **envp)
 		if (*shell.line)
 		{
 			add_history(shell.line);
-			ft_putendl_fd(shell.line, shell.history_fd);
 			parse_line(&shell);
 			run_command(&shell);
 			free_all(&shell);

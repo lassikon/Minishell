@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 11:07:09 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/06 18:21:01 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/08 16:55:19 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ void	remove_from_array(char **array, char *identifier)
 	array[i] = NULL;
 }
 
-char	**add_to_array(char **array, char *new)
+char	**add_to_array(t_shell *shell, char **array, char *new)
 {
 	int		i;
 	char	**new_array;
@@ -84,7 +84,7 @@ char	**add_to_array(char **array, char *new)
 	i = array_len(array);
 	new_array = malloc(sizeof(char *) * (i + 2));
 	if (!new_array)
-		return (NULL);
+		error(shell, MALLOC, FATAL, 1);
 	i = copy_array(array, new_array);
 	if (i == -1)
 		return (NULL);
@@ -92,7 +92,7 @@ char	**add_to_array(char **array, char *new)
 	if (!new_array[i])
 	{
 		free_array(&new_array);
-		return (NULL);
+		error(shell, MALLOC, FATAL, 1);
 	}
 	new_array[i + 1] = NULL;
 	free_array(&array);

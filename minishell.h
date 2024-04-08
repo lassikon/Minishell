@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/08 13:57:20 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/08 17:30:00 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,6 @@ typedef struct s_shell
 	int			pid_allocated;
 	int			**pipe;
 	int			pipes_allocated;
-	int			history_fd;
 	int			heredoc_index;
 	int			std_in;
 	int			std_out;
@@ -168,12 +167,15 @@ void	free_array(char ***array);
 void	export_error_msg(t_shell *shell, char *arg, t_status type);
 int		error(t_shell *shell, char *msg, t_status status, int code);
 int		p_error(t_shell *shell, char *msg, t_status status, int code);
+int		child_error(t_shell *shell, char *msg, t_status status, int code);
 void	free_and_exit(t_shell *shell, int status);
 void	cd_error(t_shell *shell, char *path);
+char	*create_error_msg_strerr(char *filename);
+char	*create_error_msg(char *msg);
 
 // GENERAL UTILS
 void	paths(t_shell *shell, char **envp);
-char	**add_to_array(char **array, char *new);
+char	**add_to_array(t_shell *shell, char **array, char *new);
 void	remove_from_array(char **array, char *identifier);
 int		copy_array(char **src, char **dst);
 int		find_in_array(char **array, char *identifier);

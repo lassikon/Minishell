@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 15:40:34 by okarejok          #+#    #+#             */
-/*   Updated: 2024/04/04 12:47:45 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/08 15:23:11 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ static void	check_cmd_path(t_shell *shell, t_cmd *cmd_vars)
 		free(cmd_path);
 	}
 	free(cmd_one);
-	error(shell, ft_strjoin(cmd_vars->cmd, NO_CMD), FATAL, 127);
+	child_error(shell, ft_strjoin(cmd_vars->cmd, NO_CMD), FATAL, 127);
 }
 
 void	validate_command(t_shell *shell, t_cmd *cmd_vars)
@@ -78,9 +78,7 @@ void	validate_command(t_shell *shell, t_cmd *cmd_vars)
 		else if (access(cmd_vars->cmd, X_OK) == -1)
 			p_error(shell, cmd_vars->cmd, FATAL, 126);
 		if (absolute_path_to_directory(cmd_vars->cmd))
-		{
-			error(shell, ft_strjoin(cmd_vars->cmd, IS_DIR), FATAL, 126);
-		}
+			child_error(shell, ft_strjoin(cmd_vars->cmd, IS_DIR), FATAL, 126);
 	}
 	else
 	{

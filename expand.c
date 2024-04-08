@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 11:11:41 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/06 11:36:59 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/08 14:30:45 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,6 @@ static char	*get_expand(t_shell *shell, char *line, int *i)
 	value = ft_getenv(shell, env);
 	if (!value)
 		value = dup_empty_str(shell);
-	if (!value)
-		value = ft_strdup(" ");
 	free(env);
 	return (value);
 }

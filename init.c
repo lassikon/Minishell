@@ -6,25 +6,11 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 12:19:16 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/08 12:11:05 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/08 18:51:21 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
-
-static void	ft_read_history(t_shell *shell)
-{
-	char	*line;
-
-	line = get_next_line(shell->history_fd);
-	while (line)
-	{
-		line[ft_strlen(line) - 1] = '\0';
-		add_history(line);
-		free(line);
-		line = get_next_line(shell->history_fd);
-	}
-}
 
 static void	init_command(t_cmd *cmd)
 {
@@ -87,8 +73,6 @@ void	setup_shell(t_shell *shell, char **envp)
 	shell->exit_status = 0;
 	shell->cmd_count = 0;
 	shell->paths = NULL;
-	shell->history_fd = open("history", O_CREAT | O_APPEND | O_RDWR, 0644);
-	ft_read_history(shell);
 	shell->env = malloc(sizeof(char *) * (array_len(envp) + 1));
 	if (!shell->env)
 		error(shell, MALLOC, FATAL, 1);
