@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:19:45 by okarejok          #+#    #+#             */
-/*   Updated: 2024/04/06 18:12:49 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/08 13:58:11 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ void	shlvl_increment(t_shell *shell)
 
 void	paths(t_shell *shell, char **envp)
 {
-	// char	**paths;
 	int		i;
 
 	i = 0;
@@ -54,7 +53,6 @@ void	paths(t_shell *shell, char **envp)
 			shell->paths = ft_split(envp[i] + 5, ':');
 			if (shell->paths == NULL)
 				error(shell, MALLOC, FATAL, 1);
-			// shell->paths = paths;
 			return ;
 		}
 		i++;

@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 13:03:52 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/06 12:20:49 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/08 11:47:34 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,10 @@ static void	tidy_format(t_shell *shell, t_cmd *cmd, int k)
 			error(shell, MALLOC, FATAL, 1);
 	}
 	cmd->redir[k] = str;
-	expand(shell, &cmd->redir[k]);
 	remove_quotes(cmd->redir[k]);
+	if (str[0] == '<' && str[1] == '<')
+		return ;
+	expand(shell, &cmd->redir[k]);
 }
 
 static char	*get_redirection(t_shell *shell, char *line, int *i)

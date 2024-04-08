@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 16:15:57 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/06 19:21:42 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/08 13:57:53 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,11 +62,9 @@ void	free_pipes(t_shell *shell)
 	while (i < shell->pipes_allocated)
 	{
 		free(shell->pipe[i]);
-		// shell->pipe[i] = NULL;
 		i++;
 	}
 	free(shell->pipe);
-	// shell->pipe = NULL;
 	shell->pipes_allocated = 0;
 }
 

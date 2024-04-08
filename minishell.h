@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/06 19:13:53 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/08 13:57:20 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,11 @@ typedef enum e_signal
 # define PIPE "Error: error opening a pipe"
 # define IS_DIR ": is a directory"
 # define NO_CMD ": command not found"
-# define SYNTAX_PIPE "minishell: syntax error near unexpected token `|'"
-# define SYNTAX_INFILE "minishell: syntax error near unexpected token `<'"
-# define SYNTAX_OUTFILE "minishell: syntax error near unexpected token `>'"
-# define SYNTAX_NL "minishell: syntax error near unexpected token `newline'"
-# define SYNTAX_QUOTES "minishell: syntax error with unclosed quotes"
+# define SYNTAX_PIPE "syntax error near unexpected token `|'"
+# define SYNTAX_INFILE "syntax error near unexpected token `<'"
+# define SYNTAX_OUTFILE "syntax error near unexpected token `>'"
+# define SYNTAX_NL "syntax error near unexpected token `newline'"
+# define SYNTAX_QUOTES "syntax error with unclosed quotes"
 
 typedef struct s_cmd
 {
@@ -180,9 +180,5 @@ int		find_in_array(char **array, char *identifier);
 int		array_len(char **array);
 char	*join_n_free(char *s1, char *s2);
 char	*dup_empty_str(t_shell *shell);
-
-//debug.c
-void	print_tree(t_shell *shell);
-void	print_env(t_shell *shell);
 
 #endif

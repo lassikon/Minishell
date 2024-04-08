@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 13:30:24 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/06 12:18:29 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/08 13:48:00 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,7 @@ static void	tokenize(t_shell *shell, t_cmd *cmd)
 	if (ft_strchr(cmd->line, '$'))
 		expand(shell, &cmd->line);
 	if (only_spaces(cmd->line))
-	{
-		cmd->cmd = NULL;
 		return ;
-	}
 	extract_command(shell, cmd);
 	extract_args(shell, cmd);
 }
