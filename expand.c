@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 11:11:41 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/09 12:23:07 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/09 16:36:34 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,27 +19,6 @@ static int	end_character(char c)
 		|| c == '@')
 		return (1);
 	return (0);
-}
-
-static char	*get_expand(t_shell *shell, char *line, int *i)
-{
-	int		start;
-	char	*env;
-	char	*value;
-
-	start = *i;
-	while (!end_character(line[*i]))
-		(*i)++;
-	if (*i == start)
-		return (dup_empty_str(shell));
-	env = ft_substr(line, start, *i - start);
-	if (!env)
-		error(shell, MALLOC, FATAL, 1);
-	value = ft_getenv(shell, env);
-	if (!value)
-		value = dup_empty_str(shell);
-	free(env);
-	return (value);
 }
 
 static char	*get_exit_status(t_shell *shell)
@@ -55,32 +34,55 @@ static char	*get_exit_status(t_shell *shell)
 	return (value);
 }
 
-static int	expand_env(t_shell *shell, char **line, int i)
+static char	*get_expand(t_shell *shell, char *line)
+{
+	int		len;
+	char	*env;
+	char	*value;
+
+	len = 0;
+	if (line[len] == '?')
+		return (get_exit_status(shell));
+	while (!end_character(line[len]))
+		len++;
+	if (len == 0)
+		return (dup_empty_str(shell));
+	env = ft_substr(line, 0, len);
+	if (!env)
+		error(shell, MALLOC, FATAL, 1);
+	value = ft_getenv(shell, env);
+	if (!value)
+		value = dup_empty_str(shell);
+	free(env);
+	return (value);
+}
+
+static void	expand_env(t_shell *shell, char **line, int *i)
 {
 	int		start;
 	char	*value;
 	char	*new;
 
-	start = i;
-	i++;
-	if (end_character((*line)[i]) && (*line)[i + 1] == '\0')
-		return (i);
-	if ((*line)[i] == '?')
-	{
-		value = get_exit_status(shell);
-		i++;
-	}
-	else
-		value = get_expand(shell, *line, &i);
-	new = join_n_free(ft_substr(*line, 0, start), value);
+	(*i)++;
+	start = *i;
+	if (end_character((*line)[start]) && (*line)[start + 1] == '\0')
+		return ;
+	value = get_expand(shell, &(*line)[start]);
+	(*i) = start + ft_strlen(value) - 1;
+	new = join_n_free(ft_substr(*line, 0, start - 1), value);
 	if (!new)
 		error(shell, MALLOC, FATAL, 1);
-	new = join_n_free(new, ft_strdup(&(*line)[i]));
+	if ((*line)[start] != '?')
+		while (!end_character((*line)[start]))
+			start++;
+	else
+		start++;
+	if ((*line)[start])
+		new = join_n_free(new, ft_strdup(&(*line)[start]));
 	if (!new)
 		error(shell, MALLOC, FATAL, 1);
 	free(*line);
 	*line = new;
-	return (start + ft_strlen(value));
 }
 
 void	expand(t_shell *shell, char **line)
@@ -100,7 +102,7 @@ void	expand(t_shell *shell, char **line)
 			i = skip_quotes(*line, i);
 		if ((*line)[i + 1] && (*line)[i] == '$' && (*line)[i + 1] != ' ')
 		{
-			expand_env(shell, line, i);
+			expand_env(shell, line, &i);
 			continue ;
 		}
 		i++;
