@@ -6,11 +6,18 @@
 /*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:19:45 by okarejok          #+#    #+#             */
-/*   Updated: 2024/04/09 15:14:10 by okarejok         ###   ########.fr       */
+/*   Updated: 2024/04/09 16:10:05 by okarejok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
+
+static void	shlvl_warning(int shlvl)
+{
+	ft_putstr_fd("minishell: warning: shell level (", 2);
+	ft_putnbr_fd(shlvl, 2);
+	ft_putendl_fd(") too high, resetting to 1", 2);
+}
 
 static void	export_shlvl(t_shell *shell, char **shlvl_str)
 {
@@ -44,6 +51,11 @@ void	shlvl_increment(t_shell *shell)
 			shlvl = 0;
 		else
 			shlvl = shlvl + 1;
+		if (shlvl > 1000)
+		{
+			shlvl_warning(shlvl);
+			shlvl = 1;
+		}
 		free(shlvl_str);
 	}
 	shlvl_str = ft_itoa(shlvl);
