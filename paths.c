@@ -3,20 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   paths.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:19:45 by okarejok          #+#    #+#             */
-/*   Updated: 2024/04/09 11:52:11 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/09 15:14:10 by okarejok         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
+static void	export_shlvl(t_shell *shell, char **shlvl_str)
+{
+	char	*output;
+
+	remove_from_array(shell->env, "SHLVL=");
+	output = ft_strjoin("SHLVL=", *shlvl_str);
+	if (!output)
+	{
+		free(*shlvl_str);
+		*shlvl_str = NULL;
+		error(shell, MALLOC, FATAL, 1);
+	}
+	shell->env = add_to_array(shell, shell->env, output);
+	free(*shlvl_str);
+	free(output);
+}
+
 void	shlvl_increment(t_shell *shell)
 {
 	int		shlvl;
 	char	*shlvl_str;
-	char	*shlvl_prompt;
 
 	shlvl_str = ft_getenv(shell, "SHLVL");
 	if (!shlvl_str)
@@ -26,19 +42,14 @@ void	shlvl_increment(t_shell *shell)
 		shlvl = ft_atoi(shlvl_str);
 		if (shlvl < 0)
 			shlvl = 0;
-		shlvl = shlvl + 1;
+		else
+			shlvl = shlvl + 1;
 		free(shlvl_str);
 	}
 	shlvl_str = ft_itoa(shlvl);
 	if (!shlvl_str)
 		error(shell, MALLOC, FATAL, 1);
-	remove_from_array(shell->env, "SHLVL=");
-	shlvl_prompt = ft_strjoin("SHLVL=", shlvl_str);
-	if (!shlvl_prompt)
-		error(shell, MALLOC, FATAL, 1);
-	shell->env = add_to_array(shell, shell->env, shlvl_prompt);
-	free(shlvl_str);
-	free(shlvl_prompt);
+	export_shlvl(shell, &shlvl_str);
 }
 
 void	paths(t_shell *shell, char **envp)
