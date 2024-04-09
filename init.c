@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 12:19:16 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/08 18:51:21 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/09 12:03:17 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	init_tree(t_shell *shell)
 	int	i;
 
 	i = 0;
-	shell->cmd_tree = (t_cmd *)malloc(sizeof(t_cmd) * (shell->cmd_count));
+	shell->cmd_tree = (t_cmd *)malloc(sizeof(t_cmd) * (shell->cmd_count + 1));
 	if (!shell->cmd_tree)
 		error(shell, MALLOC, FATAL, 1);
 	while (i < shell->cmd_count)
@@ -73,11 +73,7 @@ void	setup_shell(t_shell *shell, char **envp)
 	shell->exit_status = 0;
 	shell->cmd_count = 0;
 	shell->paths = NULL;
-	shell->env = malloc(sizeof(char *) * (array_len(envp) + 1));
-	if (!shell->env)
-		error(shell, MALLOC, FATAL, 1);
-	if (copy_array(envp, shell->env) == -1)
-		error(shell, MALLOC, FATAL, 1);
+	shell->env = copy_array(shell, envp);
 	if (isatty(STDIN_FILENO))
 	{
 		shlvl_increment(shell);

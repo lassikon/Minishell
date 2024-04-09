@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 12:43:33 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/08 16:07:27 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/09 12:00:02 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,10 +104,12 @@ void	export(t_shell *shell, t_cmd *cmd)
 		else
 		{
 			ret = exists_in_env(shell->env, cmd->args[i]);
-			if (ret == 1)
-				remove_existing(shell, cmd->args[i]);
 			if (ret >= 0)
+			{
+				if (ret == 1)
+					remove_existing(shell, cmd->args[i]);
 				shell->env = add_to_array(shell, shell->env, cmd->args[i]);
+			}
 		}
 		i++;
 	}

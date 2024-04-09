@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 11:07:09 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/08 16:55:19 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/09 12:01:50 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	array_len(char **array)
 	return (i);
 }
 
-int	copy_array(char **src, char **dst)
+/* int	copy_array(char **src, char **dst)
 {
 	int	i;
 
@@ -38,6 +38,29 @@ int	copy_array(char **src, char **dst)
 		i++;
 	}
 	return (i);
+} */
+
+char	**copy_array(t_shell *shell, char **array)
+{
+	int		i;
+	char	**new_array;
+
+	i = 0;
+	new_array = malloc(sizeof(char *) * (array_len(array) + 1));
+	if (!new_array)
+		error(shell, MALLOC, FATAL, 1);
+	while (array[i])
+	{
+		new_array[i] = ft_strdup(array[i]);
+		if (!new_array[i])
+		{
+			free_array(&new_array);
+			error(shell, MALLOC, FATAL, 1);
+		}
+		i++;
+	}
+	new_array[i] = NULL;
+	return (new_array);
 }
 
 int	find_in_array(char **array, char *identifier)
@@ -54,25 +77,57 @@ int	find_in_array(char **array, char *identifier)
 	return (0);
 }
 
-void	remove_from_array(char **array, char *identifier)
+/* char	**remove_from_array(t_shell *shell, char **array, char *identifier)
 {
 	int		i;
-	int		j;
+	int		k;
+	char	**new_array;
 
 	i = 0;
-	j = 0;
+	k = 0;
+	new_array = malloc(sizeof(char *) * (array_len(array) + 1));
+	if (!new_array)
+		error(shell, MALLOC, FATAL, 1);
 	while (array[i])
 	{
 		if (ft_strncmp(array[i], identifier, ft_strlen(identifier)) == 0)
 		{
-			j++;
-			free(array[i]);
+			free (array[i]);
+			i++;
+			continue ;
 		}
-		array[i] = array[i + j];
+		new_array[k] = array[i];
+		free(array[i]);
+		i++;
+		k++;
+	}
+	new_array[k] = NULL;
+	free(array);
+	return (new_array);
+} */
+
+void	remove_from_array(char **array, char *identifier)
+{
+	int	i;
+
+	i = 0;
+	if (!find_in_array(array, identifier))
+		return ;
+	while (array[i])
+	{
+		if (ft_strncmp(array[i], identifier, ft_strlen(identifier)) == 0)
+		{
+			free(array[i]);
+			array[i] = NULL;
+			break ;
+		}
 		i++;
 	}
-	if (array[i])
-		free(array[i]);
+	while (array[i + 1])
+	{
+		array[i] = array[i + 1];
+		i++;
+	}
 	array[i] = NULL;
 }
 
@@ -81,13 +136,19 @@ char	**add_to_array(t_shell *shell, char **array, char *new)
 	int		i;
 	char	**new_array;
 
-	i = array_len(array);
-	new_array = malloc(sizeof(char *) * (i + 2));
+	i = -1;
+	new_array = malloc(sizeof(char *) * (array_len(array) + 2));
 	if (!new_array)
 		error(shell, MALLOC, FATAL, 1);
-	i = copy_array(array, new_array);
-	if (i == -1)
-		return (NULL);
+	while (array[++i])
+	{
+		new_array[i] = ft_strdup(array[i]);
+		if (!new_array[i])
+		{
+			free_array(&new_array);
+			error(shell, MALLOC, FATAL, 1);
+		}
+	}
 	new_array[i] = ft_strdup(new);
 	if (!new_array[i])
 	{
@@ -98,3 +159,29 @@ char	**add_to_array(t_shell *shell, char **array, char *new)
 	free_array(&array);
 	return (new_array);
 }
+
+/* char	**add_to_array(t_shell *shell, char **array, char *new)
+{
+	int		i;
+	char	**new_array;
+
+	i = 0;
+	new_array = malloc(sizeof(char *) * (array_len(array) + 2));
+	if (!new_array)
+		error(shell, MALLOC, FATAL, 1);
+	while (array[i])
+	{
+		new_array[i] = array[i];
+		free(array[i]);
+		i++;
+	}
+	free(array);
+	new_array[i] = ft_strdup(new);
+	if (!new_array[i])
+	{
+		free_array(&new_array);
+		error(shell, MALLOC, FATAL, 1);
+	}
+	new_array[i + 1] = NULL;
+	return (new_array);
+} */

@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/05 11:11:41 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/08 14:30:45 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/09 12:23:07 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,7 +100,7 @@ void	expand(t_shell *shell, char **line)
 			i = skip_quotes(*line, i);
 		if ((*line)[i + 1] && (*line)[i] == '$' && (*line)[i + 1] != ' ')
 		{
-			i = expand_env(shell, line, i);
+			expand_env(shell, line, i);
 			continue ;
 		}
 		i++;

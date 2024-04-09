@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/08 17:30:00 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/09 11:50:56 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -177,7 +177,7 @@ char	*create_error_msg(char *msg);
 void	paths(t_shell *shell, char **envp);
 char	**add_to_array(t_shell *shell, char **array, char *new);
 void	remove_from_array(char **array, char *identifier);
-int		copy_array(char **src, char **dst);
+char	**copy_array(t_shell *shell, char **array);
 int		find_in_array(char **array, char *identifier);
 int		array_len(char **array);
 char	*join_n_free(char *s1, char *s2);
