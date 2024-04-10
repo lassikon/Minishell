@@ -32,7 +32,8 @@ SRCS	:= 	minishell.c \
 			syntax.c \
 			exit.c \
 			validate_cmd.c \
-			echo.c
+			echo.c \
+			pwd.c
 
 OBJS	:= ${SRCS:.c=.o}
 

@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/10 14:34:50 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/10 15:08:02 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,6 +147,7 @@ int		run_builtin(t_shell *shell, t_cmd *cmd);
 int		check_builtin(t_cmd *cmd);
 char	*ft_getenv(t_shell *shell, char *to_find);
 int		exists_in_env(char **env, char *identifier);
+void	update_wd(t_shell *shell);
 
 // EXECUTION
 void	do_fork(t_shell *shell);

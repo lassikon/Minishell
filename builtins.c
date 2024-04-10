@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 10:46:25 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/10 12:50:10 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/10 15:05:12 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,25 +26,6 @@ void	env(t_shell *shell)
 		i++;
 	}
 }
-
-void	pwd(t_shell *shell, t_cmd *cmd)
-{
-	(void)cmd;
-	ft_putendl_fd(shell->pwd, 1);
-}
-
-/* void	pwd(t_shell *shell, t_cmd *cmd)
-{
-	char	*path;
-
-	(void)cmd;
-	path = ft_getenv(shell, "PWD");
-	if (!path)
-		path = getcwd(NULL, 0);
-	printf("%s\n", path);
-	if (path)
-		free(path);
-} */
 
 void	cd_error(t_shell *shell, char *path)
 {
