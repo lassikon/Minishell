@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 12:43:33 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/10 14:44:31 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/10 16:34:51 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,27 +28,26 @@ static int	invalid_export_identifier(char *arg)
 	return (0);
 }
 
-int	exists_in_env(char **env, char *identifier)
+int	exists_in_env(char **env, char *id)
 {
 	int	i;
 	int	k;
 
 	i = 0;
-	k = 0;
 	while (env[i])
 	{
-		if (env[i][k] == identifier[k])
+		k = 0;
+		if (env[i][k] == id[k])
 		{
-			k = 0;
-			while (env[i][k] && env[i][k] == identifier[k] && env[i][k] != '=')
+			while (env[i][k] && id[k] && env[i][k] == id[k] && env[i][k] != '=')
 				k++;
-			if (identifier[k] == '\0' && env[i][k] == '=')
+			if (id[k] == '\0' && env[i][k] == '=')
 				return (-1);
-			if (env[i][k] == '\0' && identifier[k] == '=')
+			if (env[i][k] == '\0' && id[k] == '=')
 				return (1);
-			if (env[i][k] == '\0' && identifier[k] == '\0')
+			if (env[i][k] == '\0' && id[k] == '\0')
 				return (1);
-			if (env[i][k] == '=' && identifier[k] == '=')
+			if (env[i][k] == '=' && id[k] == '=')
 				return (1);
 		}
 		i++;

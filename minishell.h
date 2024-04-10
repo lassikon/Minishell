@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/10 15:08:02 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/10 16:59:59 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ typedef enum e_signal
 # define PIPE "Error: error opening a pipe"
 # define IS_DIR ": is a directory"
 # define NO_CMD ": command not found"
-# define GETCWD "Error: getcwd failed"
+# define GETCWD "Warning: getcwd failed"
 # define SYNTAX_PIPE "syntax error near unexpected token `|'"
 # define SYNTAX_INFILE "syntax error near unexpected token `<'"
 # define SYNTAX_OUTFILE "syntax error near unexpected token `>'"
@@ -161,7 +161,6 @@ void	redir_to_file(t_shell *shell, t_cmd *cmd_vars, t_status mode);
 void	redir_to_pipe(t_shell *shell, t_cmd *cmd_vars);
 void	close_pipes(t_shell *shell);
 void	open_pipes(t_shell *shell);
-void	redir_to_pipe(t_shell *shell, t_cmd *cmd_vars);
 void	restore_std(t_shell *shell);
 void	heredoc(t_shell *shell, t_cmd *cmd);
 

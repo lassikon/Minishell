@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 12:02:39 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/08 17:31:03 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/10 16:48:19 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,7 @@ static void	exit_error(t_shell *shell, char *str)
 		error(shell, MALLOC, FATAL, 1);
 	write(2, error_msg, ft_strlen(error_msg));
 	free(error_msg);
-	free_all(shell);
-	free_array(&shell->env);
-	toggle_signal(DEFAULT);
-	exit(255);
+	free_and_exit(shell, 255);
 }
 
 static int	non_numeric(t_shell *shell, char *str)
@@ -88,10 +85,7 @@ void	ft_exit(t_shell *shell, t_cmd *cmd)
 	}
 	else
 		shell->exit_status = WEXITSTATUS(shell->exit_status);
-	free_all(shell);
-	free_array(&shell->env);
-	toggle_signal(DEFAULT);
-	exit(shell->exit_status);
+	free_and_exit(shell, shell->exit_status);
 }
 
 void	free_and_exit(t_shell *shell, int status)
@@ -100,6 +94,10 @@ void	free_and_exit(t_shell *shell, int status)
 		restore_std(shell);
 	free_all(shell);
 	free_array(&shell->env);
+	if (shell->pwd)
+		free(shell->pwd);
+	if (shell->old_pwd)
+		free(shell->old_pwd);
 	toggle_signal(DEFAULT);
 	exit(status);
 }

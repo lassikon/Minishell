@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/10 15:05:13 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/10 15:08:21 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/10 16:51:27 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,9 @@ static void	update_wd_env(t_shell *shell)
 
 	if (find_in_array(shell->env, "OLDPWD"))
 	{
-		oldpwd = create_env_entrie(shell, "OLDPWD=", ft_getenv(shell, "PWD"));
+		pwd = ft_getenv(shell, "PWD");
+		oldpwd = create_env_entrie(shell, "OLDPWD=", pwd);
+		free(pwd);
 		if (!oldpwd)
 			return ;
 		remove_from_array(shell->env, "OLDPWD");
