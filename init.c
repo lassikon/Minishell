@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/01 12:19:16 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/09 12:03:17 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/10 14:19:24 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,10 +73,16 @@ void	setup_shell(t_shell *shell, char **envp)
 	shell->exit_status = 0;
 	shell->cmd_count = 0;
 	shell->paths = NULL;
+	shell->old_pwd = NULL;
+	shell->pwd = NULL;
 	shell->env = copy_array(shell, envp);
+	shell->pwd = getcwd(NULL, 0);
+	if (!shell->pwd)
+		ft_putendl_fd(GETCWD, 2);
 	if (isatty(STDIN_FILENO))
 	{
 		shlvl_increment(shell);
 		remove_from_array(shell->env, "OLDPWD");
+		shell->env = add_to_array(shell, shell->env, "OLDPWD", 0);
 	}
 }

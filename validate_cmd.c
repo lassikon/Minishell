@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 15:40:34 by okarejok          #+#    #+#             */
-/*   Updated: 2024/04/08 15:23:11 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/10 11:14:46 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,11 @@ static int	check_access(t_shell *shell, t_cmd *cmd, char *path, char **c)
 	if (access(path, 0) == 0)
 	{
 		if (access(path, X_OK) == -1)
+		{
+			free(*c);
+			free(path);
 			p_error(shell, path, FATAL, 126);
+		}
 		free(cmd->cmd);
 		cmd->cmd = path;
 		free(*c);

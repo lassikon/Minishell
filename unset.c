@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 16:40:22 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/09 11:52:53 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/10 14:58:08 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,27 @@ static int	invalid_unset_identifier(char *arg)
 	return (0);
 }
 
+static int	find_in_env(char **env, char *identifier)
+{
+	int	i;
+	int	len;
+
+	i = 0;
+	len = ft_strlen(identifier);
+	while (env[i])
+	{
+		if (ft_strncmp(env[i], identifier, len) == 0)
+		{
+			if (env[i][len] == '\0' || env[i][len] == '=')
+				return (1);
+		}
+		i++;
+	}
+	return (0);
+}
+
 void	unset(t_shell *shell, t_cmd *cmd)
 {
-	char	*identifier;
 	int		i;
 
 	i = 1;
@@ -42,12 +60,8 @@ void	unset(t_shell *shell, t_cmd *cmd)
 			export_error_msg(shell, cmd->args[i], UNSET);
 		else
 		{
-			identifier = ft_strjoin(cmd->args[i], "=");
-			if (identifier == NULL)
-				error(shell, MALLOC, FATAL, 1);
-			if (find_in_array(shell->env, identifier))
-				remove_from_array(shell->env, identifier);
-			free(identifier);
+			if (find_in_env(shell->env, cmd->args[i]))
+				remove_from_array(shell->env, cmd->args[i]);
 		}
 		i++;
 	}

@@ -6,57 +6,70 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 13:36:20 by okarejok          #+#    #+#             */
-/*   Updated: 2024/04/09 11:53:28 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/10 14:22:05 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minishell.h"
 
-static char	*create_env_entrie(t_shell *shell, char *pwd_type)
+static char	*create_env_entrie(t_shell *shell, char *pwd_type, char *pwd_path)
 {
-	char	*pwd_path;
 	char	*pwd_entry;
 
-	pwd_path = NULL;
-	pwd_entry = NULL;
-	if (ft_strcmp(pwd_type, "PWD") == 0)
-		pwd_path = getcwd(NULL, 0);
-	else if (ft_strcmp(pwd_type, "OLDPWD") == 0)
-		pwd_path = ft_getenv(shell, "PWD");
 	if (!pwd_path)
-		return (NULL);
-	remove_from_array(shell->env, pwd_type);
-	if (ft_strcmp(pwd_type, "PWD") == 0)
-		pwd_entry = ft_strjoin("PWD=", pwd_path);
-	else if (ft_strcmp(pwd_type, "OLDPWD") == 0)
-		pwd_entry = ft_strjoin("OLDPWD=", pwd_path);
-	if (!pwd_entry)
 	{
-		free(pwd_path);
-		error(shell, MALLOC, FATAL, 1);
+		if (!shell->old_pwd)
+			return (NULL);
+		pwd_path = shell->old_pwd;
 	}
-	free(pwd_path);
+	pwd_entry = ft_strjoin(pwd_type, pwd_path);
+	if (!pwd_entry)
+		error(shell, MALLOC, FATAL, 1);
 	return (pwd_entry);
 }
 
-void	update_wd(t_shell *shell)
+static void	update_wd_env(t_shell *shell)
 {
-	char	*oldpwd;
-	char	*pwd;
+	char		*oldpwd;
+	char		*pwd;
+	// static int	i = 0;
 
-	oldpwd = create_env_entrie(shell, "OLDPWD");
-	if (!oldpwd)
-		return ;
-	pwd = create_env_entrie(shell, "PWD");
-	if (!pwd)
+	if (find_in_array(shell->env, "OLDPWD"))
 	{
+		oldpwd = create_env_entrie(shell, "OLDPWD=", ft_getenv(shell, "PWD"));
+		if (!oldpwd)
+			return ;
+		remove_from_array(shell->env, "OLDPWD");
+		shell->env = add_to_array(shell, shell->env, oldpwd, FREEABLE);
 		free(oldpwd);
-		return ;
 	}
-	shell->env = add_to_array(shell, shell->env, pwd);
-	shell->env = add_to_array(shell, shell->env, oldpwd);
-	free(oldpwd);
-	free(pwd);
+	if (find_in_array(shell->env, "PWD="))
+	{
+		pwd = create_env_entrie(shell, "PWD=", shell->pwd);
+		if (!pwd)
+			return ;
+		remove_from_array(shell->env, "PWD");
+		shell->env = add_to_array(shell, shell->env, pwd, FREEABLE);
+		free(pwd);
+	}
+}
+
+static void	update_wd(t_shell *shell)
+{
+	if (shell->old_pwd)
+		free(shell->old_pwd);
+	if (shell->pwd)
+	{
+		shell->old_pwd = ft_strdup(shell->pwd);
+		if (!shell->old_pwd)
+			error(shell, MALLOC, FATAL, 1);
+	}
+	if (shell->pwd)
+		free(shell->pwd);
+	shell->pwd = getcwd(NULL, 0);
+	if (!shell->pwd)
+		error(shell, GETCWD, ERROR, 1);
+	update_wd_env(shell);
 }
 
 static int	cd_oldpwd(t_shell *shell, char **path)

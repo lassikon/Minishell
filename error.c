@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 14:49:10 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/08 15:22:04 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/10 11:50:12 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,4 +104,11 @@ int	child_error(t_shell *shell, char *msg, t_status status, int code)
 	if (shell->status == FATAL)
 		free_and_exit(shell, code);
 	return (1);
+}
+
+void	malloc_error(t_shell *shell, char *str, t_status status)
+{
+	if (status == FREEABLE)
+		free(str);
+	error(shell, MALLOC, FATAL, 1);
 }

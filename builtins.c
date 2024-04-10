@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 10:46:25 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/08 14:19:10 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/10 12:50:10 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,12 @@ void	env(t_shell *shell)
 
 void	pwd(t_shell *shell, t_cmd *cmd)
 {
+	(void)cmd;
+	ft_putendl_fd(shell->pwd, 1);
+}
+
+/* void	pwd(t_shell *shell, t_cmd *cmd)
+{
 	char	*path;
 
 	(void)cmd;
@@ -38,7 +44,7 @@ void	pwd(t_shell *shell, t_cmd *cmd)
 	printf("%s\n", path);
 	if (path)
 		free(path);
-}
+} */
 
 void	cd_error(t_shell *shell, char *path)
 {
@@ -46,7 +52,7 @@ void	cd_error(t_shell *shell, char *path)
 
 	error_msg = ft_strjoin("cd: ", path);
 	if (!error_msg)
-		error(shell, MALLOC, FATAL, 1);
+		malloc_error(shell, path, FREEABLE);
 	p_error(shell, error_msg, ERROR, 1);
 	free(error_msg);
 }

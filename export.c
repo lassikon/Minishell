@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/21 12:43:33 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/09 12:00:02 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/10 14:44:31 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static int	invalid_export_identifier(char *arg)
 	return (0);
 }
 
-static int	exists_in_env(char **env, char *identifier)
+int	exists_in_env(char **env, char *identifier)
 {
 	int	i;
 	int	k;
@@ -108,7 +108,7 @@ void	export(t_shell *shell, t_cmd *cmd)
 			{
 				if (ret == 1)
 					remove_existing(shell, cmd->args[i]);
-				shell->env = add_to_array(shell, shell->env, cmd->args[i]);
+				shell->env = add_to_array(shell, shell->env, cmd->args[i], 0);
 			}
 		}
 		i++;

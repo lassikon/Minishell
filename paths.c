@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   paths.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: okarejok <okarejok@student.hive.fi>        +#+  +:+       +#+        */
+/*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:19:45 by okarejok          #+#    #+#             */
-/*   Updated: 2024/04/09 16:10:05 by okarejok         ###   ########.fr       */
+/*   Updated: 2024/04/10 11:52:30 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static void	export_shlvl(t_shell *shell, char **shlvl_str)
 		*shlvl_str = NULL;
 		error(shell, MALLOC, FATAL, 1);
 	}
-	shell->env = add_to_array(shell, shell->env, output);
+	shell->env = add_to_array(shell, shell->env, output, FREEABLE);
 	free(*shlvl_str);
 	free(output);
 }

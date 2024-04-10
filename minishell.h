@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/09 11:50:56 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/10 14:34:50 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,8 @@ typedef enum e_status
 	RUNNING,
 	EXECUTE,
 	EXPORT,
-	UNSET
+	UNSET,
+	FREEABLE
 }	t_status;
 
 typedef enum e_signal
@@ -50,6 +51,7 @@ typedef enum e_signal
 # define PIPE "Error: error opening a pipe"
 # define IS_DIR ": is a directory"
 # define NO_CMD ": command not found"
+# define GETCWD "Error: getcwd failed"
 # define SYNTAX_PIPE "syntax error near unexpected token `|'"
 # define SYNTAX_INFILE "syntax error near unexpected token `<'"
 # define SYNTAX_OUTFILE "syntax error near unexpected token `>'"
@@ -86,6 +88,8 @@ typedef struct s_shell
 	int			std_in;
 	int			std_out;
 	int			parent_redir;
+	char		*pwd;
+	char		*old_pwd;
 }	t_shell;
 
 typedef struct s_parse
@@ -142,6 +146,7 @@ void	unset(t_shell *shell, t_cmd *cmd);
 int		run_builtin(t_shell *shell, t_cmd *cmd);
 int		check_builtin(t_cmd *cmd);
 char	*ft_getenv(t_shell *shell, char *to_find);
+int		exists_in_env(char **env, char *identifier);
 
 // EXECUTION
 void	do_fork(t_shell *shell);
@@ -172,10 +177,11 @@ void	free_and_exit(t_shell *shell, int status);
 void	cd_error(t_shell *shell, char *path);
 char	*create_error_msg_strerr(char *filename);
 char	*create_error_msg(char *msg);
+void	malloc_error(t_shell *shell, char *str, t_status status);
 
 // GENERAL UTILS
 void	paths(t_shell *shell, char **envp);
-char	**add_to_array(t_shell *shell, char **array, char *new);
+char	**add_to_array(t_shell *shell, char **array, char *new, t_status mode);
 void	remove_from_array(char **array, char *identifier);
 char	**copy_array(t_shell *shell, char **array);
 int		find_in_array(char **array, char *identifier);
