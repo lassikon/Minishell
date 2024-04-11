@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:19:45 by okarejok          #+#    #+#             */
-/*   Updated: 2024/04/10 11:52:30 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/10 19:21:09 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void	export_shlvl(t_shell *shell, char **shlvl_str)
 {
 	char	*output;
 
-	remove_from_array(shell->env, "SHLVL=");
+	remove_from_array(shell->env, "SHLVL");
 	output = ft_strjoin("SHLVL=", *shlvl_str);
 	if (!output)
 	{

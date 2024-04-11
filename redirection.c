@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:30:18 by okarejok          #+#    #+#             */
-/*   Updated: 2024/04/08 13:45:01 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/11 16:48:07 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,13 +49,42 @@ void	redir_to_pipe(t_shell *shell, t_cmd *cmd_vars)
 	}
 }
 
+static int	ambiguous_redirect(t_shell *shell, char **file, t_status mode)
+{
+	char	*tmp;
+	char	*msg;
+	int		i;
+
+	i = 2;
+	if (!strchr(*file, '$'))
+		return (0);
+	tmp = ft_strdup(*file + 2);
+	if (!tmp)
+		return (error(shell, MALLOC, FATAL, 1));
+	expand(shell, file);
+	while (file[0][i] && file[0][i] != ' ')
+		i++;
+	if (i == 2 || file[0][i] == ' ')
+	{
+		msg = ft_strjoin(tmp, AMBIGUOUS_REDIR);
+		free(tmp);
+		error(shell, msg, mode, 1);
+		free(msg);
+		return (1);
+	}
+	free(tmp);
+	return (0);
+}
+
 void	redir_to_file(t_shell *shell, t_cmd *c, t_status mode)
 {
 	int	i;
 
-	i = 0;
-	while (c->redir[i] && shell->status != ERROR)
+	i = -1;
+	while (c->redir[++i] && shell->status != ERROR)
 	{
+		if (ambiguous_redirect(shell, &c->redir[i], mode))
+			return ;
 		if (ft_strncmp(&c->redir[i][0], "< ", 2) == 0)
 		{
 			c->infile = open(c->redir[i] + 2, O_RDONLY);
@@ -73,6 +102,5 @@ void	redir_to_file(t_shell *shell, t_cmd *c, t_status mode)
 		}
 		if (c->infile == -1 || c->out == -1)
 			p_error(shell, c->redir[i] + 2, mode, 1);
-		i++;
 	}
 }

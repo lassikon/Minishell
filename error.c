@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 14:49:10 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/10 11:50:12 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/11 12:35:13 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@ int	error(t_shell *shell, char *msg, t_status status, int code)
 {
 	char	*error_msg;
 
-	if (shell->parent_redir)
-		restore_std(shell);
 	if (!msg)
 		free_and_exit(shell, 1);
+	if (shell->parent_redir)
+		restore_std(shell);
 	error_msg = create_error_msg(msg);
 	if (!error_msg)
 		free_and_exit(shell, 1);

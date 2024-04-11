@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/25 15:46:31 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/06 12:17:17 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/11 12:17:34 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int	illegal_arrows(t_shell *shell, char *line, char arrow, int i)
 	i++;
 	while (line[i] == ' ')
 		i++;
-	if (!line)
+	if (!line[i])
 		return (error(shell, SYNTAX_NL, ERROR, 258));
 	if (line[i] == '>')
 		return (error(shell, SYNTAX_OUTFILE, ERROR, 258));

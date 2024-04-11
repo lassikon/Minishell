@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 14:19:05 by okarejok          #+#    #+#             */
-/*   Updated: 2024/04/08 17:09:29 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/10 19:21:35 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ void	handle_child(t_shell *shell, t_cmd *cmd_vars)
 	if (cmd_vars->cmd == NULL)
 		free_and_exit(shell, 0);
 	if (run_builtin(shell, cmd_vars))
-		free_and_exit(shell, 0);
+		free_and_exit(shell, shell->exit_status);
 	if (cmd_vars->cmd[0])
 		validate_command(shell, cmd_vars);
 	execve(cmd_vars->cmd, cmd_vars->args, shell->env);

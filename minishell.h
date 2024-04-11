@@ -6,7 +6,7 @@
 /*   By: lkonttin <lkonttin@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/28 12:08:11 by lkonttin          #+#    #+#             */
-/*   Updated: 2024/04/10 16:59:59 by lkonttin         ###   ########.fr       */
+/*   Updated: 2024/04/11 12:30:59 by lkonttin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ typedef enum e_signal
 # define IS_DIR ": is a directory"
 # define NO_CMD ": command not found"
 # define GETCWD "Warning: getcwd failed"
+# define AMBIGUOUS_REDIR ": ambiguous redirect"
 # define SYNTAX_PIPE "syntax error near unexpected token `|'"
 # define SYNTAX_INFILE "syntax error near unexpected token `<'"
 # define SYNTAX_OUTFILE "syntax error near unexpected token `>'"

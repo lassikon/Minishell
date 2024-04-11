@@ -1,6 +1,6 @@
 NAME		:= minishell
 CC			:= cc
-CFLAGS		:= -Wall -Wextra -Werror
+CFLAGS		:= -Wall -Wextra -Werror #-fsanitize=address -g -static-libsan
 LIBFT_DIR	:= ./libft
 
 HEADERS	:= -I $(LIBFT)/include
